@@ -6,7 +6,7 @@ function event_spawn(e)
 end
 
 function event_timer(e)
-	if(timer=="yay") then
+	if(e.timer=="yay") then
 		eq.depop();
 	end
 end

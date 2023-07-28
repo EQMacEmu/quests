@@ -12,7 +12,7 @@ function event_timer(e)
 end
 
 function event_combat(e)
-	if(joined) then
+	if(e.joined) then
 		eq.stop_timer("summit");
 	else
 		eq.set_timer("summit",2880000);
