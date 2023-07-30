@@ -165,7 +165,6 @@ end
 
 function GuardianDeathComplete(e)
 	eq.signal(COIRNAV_TYPE, 1);
-	eq.csr_notice(string.format("PoWater Coirnav event started by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 end
 
 function AddDeathComplete(e)
@@ -195,7 +194,6 @@ function CoirnavDeathComplete(e)
 	eq.zone_emote(0, "The monstrous creature spasms in its last death throes sending shockwaves through the reef.  Corinav the Avatar of Water, empowered by the focus of the Triumvirate, has fallen at the hands of the brave adventurers deep within the reef.");
 	eq.spawn2(PROJECTION_TYPE, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0);
 	eq.signal(PROJECTION_TYPE, e.killer:GetID()); -- e.killer for death_complete is somebody with kill rights, not death blow
-	eq.csr_notice(string.format("PoWater Coirnav slain by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 end
 
 function MonstrousSignal(e)
@@ -216,7 +214,6 @@ function MonstrousSignal(e)
 		if ( phase == 1 ) then
 			eq.update_spawn_timer(COIRNAV_SPAWNID, 10800000);
 		end
-		eq.csr_notice("PoWater Coirnav event failed");
 	end
 end
 

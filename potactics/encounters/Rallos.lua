@@ -109,7 +109,6 @@ function ControllerTimerEvent(e)
 				eq.get_entity_list():GetSpawnByID(BERIK_SPAWNID):Disable();
 				CheckFloorSpawns(); -- anti-cheat
 				eq.debug(string.format("PoTactics Rallos Zek Event Phase 1 Started by %s's raid <%s>", killerName, killerGName));
-				eq.csr_notice(string.format("PoTactics Rallos Zek Event Phase 1 Started by %s's raid <%s>", killerName, killerGName));
 			end
 		end
 		
@@ -126,7 +125,6 @@ function ControllerTimerEvent(e)
 				eq.unique_spawn(RALLOS_ZEK_TYPE, 0, 0, mob:GetX(), mob:GetY(), mob:GetZ(), mob:GetHeading());
 				eq.depop_with_timer(UNTARGETABLE_TYPE);
 				eq.debug(string.format("PoTactics Rallos Zek Event Phase 2 Started by %s's raid <%s>", killerName, killerGName));
-				eq.csr_notice(string.format("PoTactics Rallos Zek Event Phase 2 Started by %s's raid <%s>", killerName, killerGName));
 			end
 		end
 		CheckFloorSpawns(); -- anti-cheat
@@ -342,7 +340,6 @@ function RallosHPEvent(e)
 		phase = 3;
 		killerName, killerGName = e.self:GetTarget():GetName() or "", e.self:GetTarget():CastToClient():GetGuildName() or "";
 		eq.debug(string.format("PoTactics Rallos Zek Event Phase 3 Started by %s's raid <%s>", killerName, killerGName));
-		eq.csr_notice(string.format("PoTactics Rallos Zek Event Phase 3 Started by %s's raid <%s>", killerName, killerGName));
 		eq.depop();
 	end
 end
@@ -424,7 +421,6 @@ function WarlordTimerEvent(e)
 		eq.spawn_from_spawn2(UNTARGETABLE_SPAWNID);
 		RespawnArena();
 		RespawnDoorGuards();
-		eq.csr_notice("PoTactics Rallos Zek the Warlord despawned");
 		eq.depop();
 	end
 end
@@ -435,7 +431,6 @@ function WarlordDeathEvent(e)
 	RespawnDoorGuards();
 	eq.signal(CONTROLLER_TYPE, 3);
 	eq.debug(string.format("PoTactics Rallos Zek the Warlord slain by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
-	eq.csr_notice(string.format("PoTactics Rallos Zek the Warlord slain by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 end
 
 function WarlordHateListEvent(e)

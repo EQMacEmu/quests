@@ -173,7 +173,6 @@ function GuardianDeathComplete(e)
 	phase = 1;
 	SpawnPhase(phase);
 	eq.signal(CONTROLLER_TYPE, 1);
-	eq.csr_notice(string.format("PoFire Fennin Ro script started by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 end
 
 function ControllerSignal(e)
@@ -199,7 +198,6 @@ function ControllerTimer(e)
 		end
 		eq.depop_all(FENNIN_TYPE);
 		ToggleElites(false);
-		eq.csr_notice("PoFire Fennin event timed out");
 	end
 end
 
@@ -221,7 +219,6 @@ function FenninDeathComplete(e)
 	eq.spawn2(PROJECTION_TYPE, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0);
 	eq.signal(PROJECTION_TYPE, e.killer:GetID()); -- e.killer for death_complete is somebody with kill rights, not death blow
 	eq.zone_emote(0, "Loud cries of hopelessness echo throughout the burning lands. The creatures of Doomfire call out to their master, Fennin Ro the Tyrant of Fire, for his dead body now lies at the feet of the mighty adventurers.");
-	eq.csr_notice(string.format("PoFire Fennin Ro slain by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 end
 
 function event_encounter_load(e)

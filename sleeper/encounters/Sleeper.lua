@@ -67,7 +67,6 @@ function ControllerSignal(e)
 		end
 		local rng = math.random(33); -- 3% chance to wake
 		if ( rng > 1 ) then
-			eq.csr_notice("All warders killed and Sleeper roll failed. ("..rng..")");
 			eq.debug("All warders killed and Sleeper roll failed. ("..rng..")");
 			return;
 		end
@@ -103,7 +102,6 @@ function ControllerSignal(e)
 			eq.signal(t, 1);
 		end
 
-		eq.csr_notice("Sleeper awakened");
 	end
 end
 

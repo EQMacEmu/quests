@@ -79,7 +79,6 @@ function ControllerTimer(e)
 		eq.zone_emote(0, "Harsh laughter echoes around the crypt and a voice then speaks saying, 'Perhaps you would care to try when you are more powerful fools.'  The harsh laughter continues softly as all of  the summoned minions of Bertoxxulous vanish.");
 		eq.update_spawn_timer(SPECTRE_SPAWNID, 21600000);
 		StopSpawns();
-		eq.csr_notice("CoDecay Bertox event failed");
 	end
 	eq.stop_timer(e.timer);
 end
@@ -105,7 +104,6 @@ function SpectreDeathComplete(e)
 	for _, loc in ipairs(SUMMONER_LOCS) do
 		eq.spawn2(SUMMONER_TYPE, 0, 0, loc[1], loc[2], loc[3], loc[4]);
 	end
-	eq.csr_notice(string.format("CoDecay Bertox event started by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 end
 
 function StartSpawns()
@@ -186,7 +184,6 @@ function BertoxDeathComplete(e)
 	eq.zone_emote(0, "A nimbus of light floods throughs the crypt in one magnificent wave as an earth shattering howl is heard.  The bringer of plagues, lord of all disease and decay, Bertoxxulous has been defeated. Suddenly an urgent whisper fills your head simply saying, 'The Torch of Lxanvom shall burn bright again.  Freedom is now ours, for that we thank you.'");
 	eq.spawn2(PROJECTION_TYPE, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0);
 	eq.signal(PROJECTION_TYPE, e.killer:GetID()); -- e.killer for death_complete is somebody with kill rights, not death blow
-	eq.csr_notice(string.format("CoDecay Bertox slain by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 end
 
 function event_encounter_load(e)

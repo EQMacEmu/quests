@@ -16,7 +16,6 @@ end
 function event_death_complete(e)
 	eq.zone_emote(0, "Dark laughter sounds from deeper within the chapel as a menacing voice is heard saying, 'Come great corrupter of entropy and decay. Stop these foolish mortals from violating our masters chapel.");
 	eq.unique_spawn(200225, 0, 0, 405, 135, -54, 128); -- #Avhi_Escron
-	eq.csr_notice(string.format("CoDecay Carprin slain by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 end
 
 function event_timer(e)
@@ -33,6 +32,5 @@ function event_timer(e)
 		
 	elseif ( e.timer == "depop" ) then
 		eq.depop();
-		eq.csr_notice("CoDecay Carprin despawned");
 	end
 end

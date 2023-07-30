@@ -27,5 +27,4 @@ end
 function event_death_complete(e)
 	eq.spawn2(212420, 0, 0, 0, -815, 244, 128);
 	eq.signal(212420, e.killer:GetID()); -- e.killer for death_complete is somebody with kill rights, not death blow
-	eq.csr_notice(string.format("SolRoTower Solusek Ro slain by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 end

@@ -178,7 +178,6 @@ function DeathEvent(e)
 		end
 		
 		eq.debug(string.format("VexThal %s's raid death touched for cheating at %i %i %i <%s>", name, x, y, e.self:GetZ(), guild));
-		eq.csr_notice(string.format("VexThal %s's raid death touched for cheating at %i %i %i <%s>", name, x, y, e.self:GetZ(), guild));
 	end
 end
 

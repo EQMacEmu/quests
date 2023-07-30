@@ -94,7 +94,6 @@ function BlueDeath(e)
 		
 		eq.zone_emote(0, "The last of the mud walkers has been slain. A loud roar is heard from the center of the muddite temple as the Sludge Lurker comes into being.");
 		eq.debug("Mud Ring started");
-		eq.csr_notice(string.format("PoEarthA Mud Ring started started by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 	end
 end
 
@@ -308,7 +307,6 @@ function EventSuccess(e)
 	end
 	
 	eq.signal(ARBITOR_GUY_TYPE, 2);
-	eq.csr_notice("PoEarthA Mud Ring success");
 end
 
 function DespawnSpawn(e)
@@ -341,7 +339,6 @@ function DespawnTimer(e)
 		
 		eq.debug("Mud Ring failed and reset");
 		eq.depop();
-		eq.csr_notice("PoEarthA Mud Ring failed");
 	end
 end
 

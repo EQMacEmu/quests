@@ -13,5 +13,4 @@ function event_signal(e)
 	end
 	
 	eq.update_spawn_timer(GINTO_SPAWNID, 1000);
-	eq.csr_notice("PoEarthB Gintolaken spawned");
 end

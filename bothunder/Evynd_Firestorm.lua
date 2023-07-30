@@ -9,7 +9,6 @@ end
 
 function event_death_complete(e)
 	eq.spawn2(209156, 0, 0, -1123, -1732, 1269, 64); -- #Askr_the_Lost
-	eq.csr_notice(string.format("BoThunder Evynd Firestorm slain by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 end
 
 function event_timer(e)

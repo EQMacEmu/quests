@@ -464,7 +464,6 @@ function BossDeath(e)
 				e.self:ClearItemList();
 				e.self:Depop();
 				eq.depop_all(corpseType);
-				eq.csr_notice("PoTime error: Rallos Zek did not power up correctly");
 				return;
 			end
 			
@@ -473,7 +472,6 @@ function BossDeath(e)
 				e.self:ClearItemList();
 				e.self:Depop();
 				eq.depop_all(corpseType);
-				eq.csr_notice("PoTime error: Bertox did not power up correctly");
 				return;
 			end
 			
@@ -483,16 +481,11 @@ function BossDeath(e)
 	end
 end
 
-function BossDeathComplete(e)
-	eq.csr_notice(string.format("PoTime %s slain by %s's raid <%s>", e.self:GetCleanName(), e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
-end
-
 function event_encounter_load(e)
 	eq.register_npc_event("Phase5", Event.signal, EVENTS_CONTROLLER_TYPE, Phase5Signal);
 
 	for _, typ in pairs(BOSS_NUMS) do
 		eq.register_npc_event("Phase5", Event.death, typ, BossDeath);
-		eq.register_npc_event("Phase5", Event.death_complete, typ, BossDeathComplete);
 		eq.register_npc_event("Phase5", Event.combat, typ, BossCombat);
 		eq.register_npc_event("Phase5", Event.timer, typ, BossTimer);
 	end

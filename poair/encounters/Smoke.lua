@@ -150,7 +150,6 @@ end
 function BossDeathComplete(e)
 	eq.unique_spawn(AVATAR_TYPE, 0, 0, 1396, -680, 18, 0);
 	eq.depop_with_timer(GUY_TYPE);
-	eq.csr_notice(string.format("PoAir An Elemental Masterpiece slain by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 end
 
 function AvatarSpawn(e)
@@ -191,7 +190,6 @@ function AvatarTimer(e)
 		
 	elseif ( e.timer == "depop") then
 		eq.depop();
-		eq.csr_notice("PoAir Avatar of Smoke despawned");
 	end
 end
 

@@ -90,5 +90,4 @@ end
 function event_death_complete(e)
 	eq.spawn2(KARANA_TYPE, 0, 0, -477, -1758, 2355, 192);
 	eq.signal(KARANA_TYPE, e.killer:GetID()); -- e.killer for death_complete is somebody with kill rights, not death blow
-	eq.csr_notice(string.format("BoThunder Agnarr slain by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 end

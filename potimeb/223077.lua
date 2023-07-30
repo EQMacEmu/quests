@@ -345,7 +345,6 @@ function TryStartTrials()
 						eq.set_timer("trial"..i.."start", 44000);
 						trialStates[i] = 1;
 						eq.debug("Trial "..i.." started");
-						eq.csr_notice(string.format("PoTime trial %i started by %s <%s>", i, client:GetName(), client:GetGuildName()));
 					end
 				end
 			end
@@ -575,7 +574,6 @@ function event_signal(e)
 			if ( instanceID == 0 ) then
 				eq.debug("zone inactive and player has no instance; creating new instance and notifying PoTimeA");
 				instanceID = SetupNewInstance(e.self);				
-				eq.csr_notice("PoTime started using new instance ("..instanceID..") for player ID "..charID.." ("..(charName or "?")..")");
 			else
 				eq.debug("zone inactive and player has previous instance; using previous instance");
 				local qglobals = eq.get_qglobals(e.self);
@@ -583,25 +581,19 @@ function event_signal(e)
 				local timerData = qglobals["time_timers_"..instanceID];
 				if ( not killData or not timerData ) then
 					instanceID = SetupNewInstance(e.self);					
-					eq.csr_notice("PoTime player's instance expired; creating new one ("..instanceID..") for player ID "..charID.." ("..(charName or "?")..")");
 				else
 					eq.debug("Instance kill data: "..killData);
 					eq.debug("Instance timer data: "..timerData);
 					eq.debug("current os.time() is "..os.time());
 					if ( not SetInstanceVars(killData, timerData) ) then
 						eq.debug("Error: Time instance qglobals are corrupted!  Instance ID: "..instanceID);
-						eq.csr_notice("PoTime Error: Instance qglobals are corrupted!  Instance ID: "..instanceID);
 						return;
 					end					
-					
-					eq.csr_notice("PoTime started reusing instance ID "..instanceID.." for player ID "..charID.." ("..(charName or "?")..")");
-					eq.csr_notice("Instance kills: "..killData);
 				end
 			end
 			zoneInstanceID = instanceID;
 			if ( zoneInstanceID == 0 ) then
 				eq.debug("Critical Error: All instance qglobals are in use.");
-				eq.csr_notice("PoTime Critical Error: All instance qglobals are in use");
 				return;
 			end
 			zonePhase = 1;
@@ -754,7 +746,6 @@ function event_signal(e)
 			for i = 1, 5 do
 				SetTrialCompleted(i);
 			end
-			eq.csr_notice("Plane of Time phase 1 skipped by GM");
 			
 		elseif ( op == 5 ) then	-- zone status
 			if ( zonePhase == -1 ) then
@@ -836,7 +827,6 @@ function event_timer(e)
 		end
 		KickRaid();
 		DepopZone();
-		eq.csr_notice("PoTime running instance expired");
 	
 	elseif ( e.timer == "phase1" ) then
 		SetupPhaseOne();
@@ -920,7 +910,6 @@ function PhaseStart()
 	end		
 
 	eq.signal(EVENTS_CONTROLLER, zonePhase*100+1, 0, data);
-	eq.csr_notice("PoTime Phase "..zonePhase.." started");
 end
 
 function PhaseDialog()

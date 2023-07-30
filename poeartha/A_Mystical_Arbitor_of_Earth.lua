@@ -2,7 +2,6 @@ local PLANAR_PROJECTION_TYPE = 218398;
 
 function event_spawn(e)
 	eq.set_timer("depop", 3000000);
-	eq.csr_notice("PoEarthA Arbitor spawned");
 end
 
 function event_combat(e)
@@ -37,12 +36,10 @@ function event_timer(e)
 	elseif ( e.timer == "depop" ) then
 		eq.debug("Arbitor depop");
 		eq.depop();
-		eq.csr_notice("PoEarthA Arbitor despawned");
 	end
 end
 
 function event_death_complete(e)
 	eq.spawn2(PLANAR_PROJECTION_TYPE, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0);
 	eq.signal(PLANAR_PROJECTION_TYPE, e.killer:GetID()); -- e.killer for death_complete is somebody with kill rights, not death blow
-	eq.csr_notice(string.format("PoEarthA Arbitor slain by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 end

@@ -89,7 +89,6 @@ function WarderDeath(e)
 	eq.spawn2(ELEMDESPAWN_TYPE, 0, 0, 28, -560, 28.625, 0);
 	eq.zone_emote(0, "The creature explodes into a maelstrom of dirt and dust.  Suddenly from the whirling cloud of dust three different streams of dirt come form heading to the elemental temple and then the remainder of the maelstrom bursts apart forming into numerous dust devotees.");
 	eq.debug("Dust ring active");
-	eq.csr_notice(string.format("PoEarthA Dust Ring started by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 end
 
 function DevoteeDeath(e)
@@ -281,7 +280,6 @@ function EventSuccess(e)
 	end
 	
 	eq.signal(ARBITOR_GUY_TYPE, 4);
-	eq.csr_notice("PoEarthA Dust Ring success");
 end
 
 function DespawnSpawn(e)
@@ -303,7 +301,6 @@ function DespawnTimer(e)
 
 		eq.debug("Dust Ring failed and reset");
 		eq.depop();
-		eq.csr_notice("PoEarthA Dust Ring failed");
 	end
 end
 

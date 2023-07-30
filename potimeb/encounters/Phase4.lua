@@ -323,7 +323,6 @@ function BossDeathComplete(e)
 		end
 	end
 	eq.debug("PoTime "..e.self:GetCleanName().." slain by "..e.killer:GetName().."'s raid");
-	eq.csr_notice(string.format("PoTime %s slain by %s's raid <%s>", e.self:GetCleanName(), e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 end
 
 

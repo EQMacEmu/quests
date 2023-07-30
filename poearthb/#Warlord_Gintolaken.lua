@@ -57,5 +57,4 @@ end
 function event_death_complete(e)
 	eq.get_entity_list():GetSpawnByID(369490):GetNPC():Depop(true);
 	eq.get_entity_list():GetSpawnByID(369490):SetTimer(302400000);
-	eq.csr_notice(string.format("PoEarthB Gintolaken killed by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 end

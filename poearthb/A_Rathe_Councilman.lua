@@ -117,7 +117,6 @@ function event_timer(e)
 				
 				if ( e.self:GetTarget().valid and e.self:GetTarget():IsClient() ) then
 					eq.debug( string.format("PoEarthB Rathe Councilman disempowered; Tank: %s <%s>", e.self:GetTarget():GetName(), e.self:GetTarget():CastToClient():GetGuildName()) );
-					eq.csr_notice( string.format("PoEarthB Rathe Councilman disempowered; Tank: %s <%s>", e.self:GetTarget():GetName(), e.self:GetTarget():CastToClient():GetGuildName()) );
 				end
 			end
 			eq.zone_emote(0, "The ground shudders beneath your feet as flecks of dirt and stone fall away from one of the Rathe.");
@@ -210,6 +209,5 @@ function event_death_complete(e)
 		for i, id in ipairs(SPAWNIDS) do
 			eq.update_spawn_timer(id, t*1000);
 		end
-		eq.csr_notice(string.format("PoEarthB Avatar of Earth spawned by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 	end
 end

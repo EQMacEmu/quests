@@ -203,7 +203,6 @@ function BossDeath(e)
 	eq.unique_spawn(AVATAR_TYPE, 0, 0, -1591, 484, 15, 192);
 	eq.depop_with_timer(GUY_TYPE);
 	eq.depop_all(FAKE_BOSS_TYPE);
-	eq.csr_notice(string.format("PoAir Pherlondien Clawpike slain by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 end
 
 function AvatarSpawn(e)
@@ -244,7 +243,6 @@ function AvatarTimer(e)
 		
 	elseif ( e.timer == "depop") then
 		eq.depop();
-		eq.csr_notice("PoAir Avatar of Wind despawned");
 	end
 end
 

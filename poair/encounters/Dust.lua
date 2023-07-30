@@ -79,7 +79,6 @@ function ControllerTimer(e)
 		eq.depop_all(SPAWN_TYPE);
 		eq.stop_timer(e.timer);
 		eq.debug("Dust isle 1 hour despawn timer expired");
-		eq.csr_notice("PoAir Dust isle 1 hour despawn timer expired");
 	end
 end
 
@@ -211,7 +210,6 @@ function BossDeathComplete(e)
 	ToggleErraticSpawns(false);
 	eq.unique_spawn(AVATAR_TYPE, 0, 0, 1671, 527, 344, 192);
 	eq.depop_with_timer(GUY_TYPE);
-	eq.csr_notice(string.format("PoAir Sigismond Windwalker slain by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 end
 
 function AvatarSpawn(e)
@@ -252,7 +250,6 @@ function AvatarTimer(e)
 		
 	elseif ( e.timer == "depop") then
 		eq.depop();
-		eq.csr_notice("PoAir Avatar of Dust despawned");
 	end
 end
 

@@ -130,7 +130,6 @@ function XegonyTimer(e)
 		if ( (HP_TRIGGERS[trigger] == 99 and e.self:GetHP() < e.self:GetMaxHP()) or e.self:GetHPRatio() <= HP_TRIGGERS[trigger] ) then
 			SpawnWave();
 			trigger = trigger + 1;
-			eq.csr_notice("PoAir Xegony wave spawn");
 		end
 	end
 end
@@ -138,7 +137,6 @@ end
 function XegonyDeathComplete(e)
 	eq.spawn2(PLANAR_PROJECTION_TYPE, 0, 0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), 0);
 	eq.signal(PLANAR_PROJECTION_TYPE, e.killer:GetID()); -- e.killer for death_complete is somebody with kill rights, not death blow
-	eq.csr_notice(string.format("PoAir Xegony slain by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 end
 
 function AddCombat(e)

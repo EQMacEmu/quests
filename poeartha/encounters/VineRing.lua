@@ -72,7 +72,6 @@ function TaintedDeath(e)
 		
 		elist:MessageClose(elist:GetMobByNpcTypeID(VEGTXT_TYPE), true, 300, 0, "The last of the tainted rock beasts crashes to the ground and yet another creature rises at the top of the temple.");
 		eq.debug("Vine ring phase 2");
-		eq.csr_notice(string.format("PoEarthA Vine Ring phase 2 started by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 	end
 end
 
@@ -171,7 +170,6 @@ function EventSuccess(e)
 	end
 	
 	eq.signal(ARBITOR_GUY_TYPE, 3);
-	eq.csr_notice("PoEarthA Vine Ring success");
 end
 
 function MangledSpawn(e)
@@ -214,7 +212,6 @@ function DespawnTimer(e)
 
 		eq.debug("Vine Ring failed and reset");
 		eq.depop();
-		eq.csr_notice("PoEarthA Vine Ring failed");
 	end
 end
 

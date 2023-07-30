@@ -83,7 +83,6 @@ function ControllerTimer(e)
 		
 			if ( kills < 10 ) then
 				eq.debug("Refusing to wake the behemonth; not enough kills");
-				eq.csr_notice("PoInnovation Warning: Refusing to wake the behemonth; not enough kills");
 				return;
 			end
 
@@ -108,7 +107,6 @@ function ControllerTimer(e)
 			eq.set_timer("boundscheck", 2000, behe);
 			woken = true;
 			eq.debug("Behemoth awakened");
-			eq.csr_notice("PoInnovation Behemoth awakened");
 		end
 	end
 end
@@ -155,7 +153,6 @@ function BehemothTimer(e)
 	elseif ( e.timer == "depop" ) then
 		eq.depop_with_timer();
 		woken = false;
-		eq.csr_notice("PoInnovation Behemoth despawned");
 	end
 end
 
@@ -163,7 +160,6 @@ function BehemothDeathComplete(e)
 	eq.spawn2(GIWIN_FLAGGER_TYPE, 0, 0, 1013, 0, 2.1, 193);
 	eq.signal(GIWIN_FLAGGER_TYPE, e.killer:GetID()); -- e.killer for death_complete is somebody with kill rights, not death blow
 	woken = false;
-	eq.csr_notice(string.format("PoInnovation Behemoth slain by %s's raid <%s>", e.killer:GetName(), e.killer:CastToClient():GetGuildName()));
 end
 
 function BlowUp(e)
