@@ -1,5 +1,5 @@
-local level_for_tier_two = 255;			-- level thresholds at which a player gains free access to otherwise flag restricted zones
-local level_for_tier_three = 255;
+local level_for_tier_two = 55;			-- level thresholds at which a player gains free access to otherwise flag restricted zones
+local level_for_tier_three = 62;
 local level_for_tier_four = 255;
 local level_for_elemental = 255;
 
@@ -29,8 +29,10 @@ function event_click_door(e)
 			end
 			
 			-- zone flag is set by dropping down the Plane of Disease zone-in 'toilet' near Grummus
-			if ( e.self:GetLevel() >= level_for_tier_three or e.self:KeyRingCheck(9294) ) then
-				e.self:SetZoneFlag(200);
+			if( e.self:GetLevel() >= level_for_tier_two) then
+				if ( e.self:GetLevel() >= level_for_tier_three or e.self:KeyRingCheck(9294) ) then
+					e.self:SetZoneFlag(200);
+				end
 			else
 				e.self:Message(13, "You lack the will to pass through this portal safely.");
 			end
@@ -84,10 +86,10 @@ function event_click_door(e)
 	-- potactics
 	if(door_id == 24) then
 		local zeks = tonumber(qglobals.zeks or 0);
-		if ( e.self:GetItemIDAt(0) == 29215 and not e.self:KeyRingCheck(29215) ) then
+		if ( (e.self:GetItemIDAt(0) == 29215 and not e.self:KeyRingCheck(29215) ) ) then
 			e.self:KeyRingAdd(29215);
 		end
-		if(e.self:GetLevel() >= level_for_tier_three or zeks >= 2 or e.self:KeyRingCheck(29215)) then
+		if(e.self:GetLevel() >= 60 or zeks >= 2 or e.self:KeyRingCheck(29215)) then
 			if(e.self:HasZoneFlag(214) == false) then
 				e.self:SetZoneFlag(214);
 			end
