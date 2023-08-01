@@ -48,7 +48,7 @@ function event_trade(e)
 		e.other:QuestReward(e.self,0,0,0,2,4266,10000);
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 48037})) then
 		e.self:Say("You have done well in doing what I have asked. To make a gem of reflection you will need some Mt Death mineral salts, a green goblin skin, spiroc bone dust, essence of rathe, blue slumber fungus, and a vial of pure essence. Combine all of these in this container and you will have what it is you seek.");
-		QuestReward(e.self,{itemid = 48039});
+		e.other:QuestReward(e.self,{itemid = 48039});
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 14794})) then
 		e.self:Emote("hisses and says venomously, 'And I am disturbed yet again. I hope for your sake it is important.'");
 		e.self:Emote("The gaunt necromancer looks down at the paper in his hands and after reading a few lines gasps, then falls into a violent coughing fit. After recovering he takes a deep breath, puffs his chest out and hands the paper back to you. With his head held high, he says in a raspy voice, 'Show this to Rixiz. He will test you.'");
