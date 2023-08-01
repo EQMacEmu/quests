@@ -530,7 +530,6 @@ function event_encounter_load(e)
 	eq.register_npc_event("Necin", Event.signal, JHERUM_WALKING_CAT_TYPE, JherumSignalEvent);
 	eq.register_npc_event("Necin", Event.signal, JHERUM_ROOTED_CAT_TYPE, JherumSignalEvent);
 	eq.register_npc_event("Necin", Event.waypoint_arrive, JHERUM_WALKING_CAT_TYPE, JherumWaypointArrive);
-	eq.register_npc_event("Necin", Event.waypoint_depart, JHERUM_WALKING_CAT_TYPE, JherumWaypointDepart);
 	eq.register_npc_event("Necin", Event.timer, JHERUM_WALKING_CAT_TYPE, JherumTimer);
 	eq.register_npc_event("Necin", Event.death, JHERUM_WALKING_CAT_TYPE, JherumDeath);
 	eq.register_npc_event("Necin", Event.death, JHERUM_ROOTED_CAT_TYPE, JherumDeath);

@@ -134,7 +134,7 @@ function TrapCombatEvent(e)
 	end
 end
 
-function MobTimerEvent(e)
+function MobCombatEvent(e)
 	if ( e.joined ) then
 		if ( not eq.is_paused_timer("depop") ) then
 			eq.pause_timer("depop");

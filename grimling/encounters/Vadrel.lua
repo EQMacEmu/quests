@@ -556,7 +556,6 @@ function event_encounter_load(e)
 	eq.register_npc_event("Vadrel", Event.signal, GERGIL_WALKING_CAT_TYPE, GergilSignalEvent);
 	eq.register_npc_event("Vadrel", Event.signal, GERGIL_ROOTED_CAT_TYPE, GergilSignalEvent);
 	eq.register_npc_event("Vadrel", Event.waypoint_arrive, GERGIL_WALKING_CAT_TYPE, GergilWaypointArrive);
-	eq.register_npc_event("Vadrel", Event.timer, GERGIL_WALKING_CAT_TYPE, GergilTimer);
 	eq.register_npc_event("Vadrel", Event.death, GERGIL_WALKING_CAT_TYPE, GergilDeath);
 	eq.register_npc_event("Vadrel", Event.death, GERGIL_ROOTED_CAT_TYPE, GergilDeath);
 
