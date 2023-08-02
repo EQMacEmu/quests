@@ -20,10 +20,10 @@ end
 
 function IksarShoutBow()
 	eq.get_entity_list():GetMobByNpcTypeID(162234):Emote("shout in unison, 'All praises to our lord!  We are but filth!'");
-	call_iksar_bow(e);
+	call_iksar_bow();
 end
 
-function call_iksar_bow(e)
+function call_iksar_bow()
 	-- grab the entity list
 	local entity_list = eq.get_entity_list();
 	-- move the mobs to the location that is calling to.

@@ -3,22 +3,22 @@ local Zhesz = nil;
 
 function ZheszLecture()
 	Zhesz:Say("The Emperor is your god.");
-	call_iksar_bow(e);
+	call_iksar_bow();
 	ThreadManager:Wait(0.65);
 
 	Zhesz:Say("You were created from filth by the will of the Emperor");
-	call_iksar_bow(e);
+	call_iksar_bow();
 	ThreadManager:Wait(0.65);
 
 	Zhesz:Say("You are no better than filth.  Of no value to the Emperor");
-	call_iksar_bow(e);
+	call_iksar_bow();
 	ThreadManager:Wait(0.65);
 
 	Zhesz:Say("Yet only the will of the Emperor keeps you alive");
-	call_iksar_bow(e);
+	call_iksar_bow();
 end
 
-function call_iksar_bow(e)
+function call_iksar_bow()
 	-- grab the entity list
 	local entity_list = eq.get_entity_list();
 	-- move the mobs to the location that is calling to.
