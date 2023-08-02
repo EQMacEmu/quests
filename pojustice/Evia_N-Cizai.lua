@@ -10,7 +10,7 @@ function event_say(e)
         elseif(e.message:findi("Dark Paths")) then
             e.self:Say("You shall see...  foolish, mortal ".. e.other:GetName() .. ".  When your families are burned at the stake, and my armies raze your cities and slaughter your animals...  then you shall see!  Just like they did in Perronium!'  She throws back her head and lets loose a laugh of purest, unadulterated evil.  'I shall bathe in the blood of the weak, just as I did in [Perronium]!",11);
         elseif(e.message:findi("Perronium")) then
-            e.self:Emote("grins and regards you with malice.  'Your time will come.",11);
+            e.self:Emote("grins and regards you with malice.  'Your time will come.'");
         end
     else
         e.self:Emote('does not appear to understand you.');
