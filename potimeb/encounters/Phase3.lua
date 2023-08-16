@@ -99,14 +99,6 @@ function Phase3Signal(e)
 		kills = 0;
 		wave = 0;
 		SpawnPhase();
-	
-	elseif ( e.signal == 100 ) then	-- depopulate zone
-	
-		for _, typ in ipairs(BOSSES) do
-			eq.depop_all(typ);
-		end
-		
-		
 	end
 end
 
@@ -209,6 +201,31 @@ function SpawnWave()
 	end
 end
 
+function IsAllMobsAggro()
+	local npc_list = eq.get_entity_list():GetNPCList();
+	local typeid;
+	local count = 0;
+	for npc in npc_list.entries do
+		typeid = npc:GetNPCTypeID();
+		
+		for _, wid in ipairs(WAVES[wave]) do
+		
+			if ( wid == typeid ) then
+				if ( not npc:IsEngaged() ) then
+					return false;
+				else
+					count = count + 1;
+				end
+			end
+		end
+	end
+	if ( count > 0 ) then
+		return true;
+	else
+		return false;
+	end
+end
+
 function DeathComplete(e)
 	kills = kills + 1;
 	
@@ -236,7 +253,7 @@ end
 
 function MobCombat(e)
 	if ( e.joined ) then
-		eq.set_timer("hatelink", 1000);
+		eq.set_timer("hatelink", 2000);
 		mobsAggro = mobsAggro + 1;
 	else
 		mobsAggro = mobsAggro - 1;
@@ -249,7 +266,7 @@ function MobTimer(e)
 	if ( e.timer == "hatelink" ) then
 		-- this prevents kiting all the mobs around and peeling them off one at a time
 	
-		if ( mobsAggro > 4 and e.self:GetX() < 1400 ) then
+		if ( mobsAggro > 4 and IsAllMobsAggro() and e.self:GetX() < 1400 ) then
 		
 			local elist = eq.get_entity_list();
 			local topHater, mob;
@@ -257,7 +274,7 @@ function MobTimer(e)
 			
 			for i, id in ipairs(waveIDs) do
 				mob = elist:GetMob(id);
-				if ( mob.valid and mob:IsEngaged() and mob:GetX() < 1375 and not mob:CombatRange(mob:GetTarget()) ) then
+				if ( mob.valid and mob:IsEngaged() and mob:GetX() < 1375 and not mob:CombatRange(mob:GetTarget()) and mob:GetHPRatio() > 95 ) then
 					if ( mob:GetHateAmount(mob:GetHateTop(), false) > topHate ) then
 						topHate = mob:GetHateAmount(mob:GetHateTop(), false);
 						topHater = mob:GetHateTop();
@@ -271,10 +288,10 @@ function MobTimer(e)
 			
 			for i, id in ipairs(waveIDs) do
 				mob = elist:GetMob(id);
-				if ( mob.valid and mob:IsEngaged() and not mob:CombatRange(mob:GetTarget()) ) then
+				if ( mob.valid and mob:IsEngaged() and not mob:CombatRange(mob:GetTarget()) and mob:GetHPRatio() > 95 ) then
 					if ( mob:GetHateAmount(mob:GetHateTop(), false) < topHate ) then
 						mob:SetHate(topHater, topHate);
-						--eq.debug(mob:GetName().."'s top hater is now "..topHater:GetName());
+						eq.debug("anti kite: "..mob:GetName().."'s top hater is now "..topHater:GetName());
 					end
 				end
 			end

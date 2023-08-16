@@ -235,14 +235,6 @@ function Phase2Signal(e)
 		shadows = Unpacket(e.data, true, true);
 		SpawnPhase();
 		kills, undead1, undead2, undead3, ralthosAdds = 0, 0, 0, 0, 0;
-	
-	elseif ( e.signal == 100 ) then	-- depopulate zone
-	
-		for _, t in pairs(MOBS) do
-			for _, t2 in pairs(t) do
-				eq.depop_all(t2[1]);
-			end
-		end	
 	end
 end
 

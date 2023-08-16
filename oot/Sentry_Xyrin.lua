@@ -17,16 +17,20 @@ function event_say(e)
 	elseif(e.message:findi("boat disaster")) then
 		e.self:Say("I was returning to my temple in Freeport in a small boat when the storm hit. I soon found myself shipwrecked on this evil island of undead. The words of Marr tell me to destroy these beings, but I am far too weak. If I only had a sip of the [Potion of Marr].");
 	elseif(e.message:findi("potion of marr")) then
-		e.self:Say("The Potion of Marr was created for the Sentries of Passion. It makes us alert and energetic. It will work only on sentries such as myself. It is distributed by Serna Tasknon of the Temple of Marr in Freeport.");
-		eq.start(62);
-		e.self:SetRunning(true);
+		if(e.other:GetFactionValue(e.self) >= 0) then
+			e.self:Say("The Potion of Marr was created for the Sentries of Passion. It makes us alert and energetic. It will work only on sentries such as myself. It is distributed by Serna Tasknon of the Temple of Marr in Freeport.");
+			eq.start(62);
+			e.self:SetRunning(true);
+		else
+			e.self:Say("The passion of the Queen of Love does not favor you. Begone from my sight!"));
+		end
 	end
 end
 
 function event_trade(e)
 	local item_lib = require("items");
 
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12134})) then
+	if(e.other:GetFactionValue(e.self) >= 0 and item_lib.check_turn_in(e.self, e.trade, {item1 = 12134})) then
 		e.self:Say("I thank you. I cannot do battle at this moment. I am summoned elsewhere. May Marr guide you from this isle.");
 		e.other:Faction(e.self,362,20,0); -- Faction: Priests of Marr
 		e.other:Faction(e.self,330,-3,0); -- Faction: The Freeport Militia

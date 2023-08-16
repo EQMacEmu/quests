@@ -1,17 +1,23 @@
 function event_say(e)
-	local fac = e.other:GetFaction(e.self);
-	
 	if(e.message:findi("hail")) then
 		e.self:Say("It is a good thing to see new faces visiting our temple. We are the source of strength within this city. Do not be fooled by the Freeport Militia. They are not warriors of valor. [Join the fight against the Freeport Militia].");
 	elseif(e.message:findi("join the fight")) then
-		e.self:Say("You are wise. If you are a paladin, either speak with Theron of this temple or visit the Hall of Truth here in North Freeport. Clerics should concetrate on keeping the knights strong and healthy. Would you care to [assist the Temple of Marr]?");
+		if(e.other:GetFactionValue(e.self) >= -100) then
+			e.self:Say("You are wise. If you are a paladin, either speak with Theron of this temple or visit the Hall of Truth here in North Freeport. Clerics should concetrate on keeping the knights strong and healthy. Would you care to [assist the Temple of Marr]?");
+		else
+			e.self:Say("The passion of the Queen of Love does not favor you. Begone from my sight!");
+		end
 	elseif(e.message:findi("assist")) then
-		if(fac < 5) then
+		if(e.other:GetFactionValue(e.self) >= 100) then
 			e.self:Say("Good. Take this Potion of Marr to the Sentries of Passion. They are the protectors of this temple. Start in alphabetical order and the first shall take but a sip then you shall take it to the next in order of the alphabet. There are but eight sentries. Sentry Andlin to Sentry Xyrin. Go.");
 			e.other:SummonCursorItem(12127); -- Item: Full Potion of Marr
-		else
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("The path you walk is correct, but you have further to travel before you need worry about this.");
+		else
+			e.self:Say("The passion of the Queen of Love does not favor you. Begone from my sight!");
 		end
+	elseif(e.message:findi("heal")) then
+		e.self:Say("It is not my duty to see to the wounded. You must seek out Plur Etinu. He is in here somewhere.");
 	end
 end
 

@@ -56,7 +56,7 @@ local TRIUMVIRATE_LOCS = {
 	{ 28, -560, 35.5, 189 },
 };
 
-local triKills, bossWave = 0, 0, 0;
+local triKills, bossWave = 0, 0;
 local bossTimer;
 
 function WarderDeath(e)

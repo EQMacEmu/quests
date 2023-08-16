@@ -3,7 +3,7 @@
 local MAX_CLIENTS = 60;
 local POTIMEA_CONTROLLER_TYPE = 219053;
 local POTIMEB_CONTROLLER_TYPE = 223077;
-local EVENTS_CONTROLLER = 223078;
+local EVENTS_CONTROLLER_TYPE = 223078;
 local QUARM_TYPE = 223008;
 
 local EMOTE_STRINGS = {
@@ -498,7 +498,7 @@ function DepopZone()
 	
 	if ( npc_list ) then
 		for npc in npc_list.entries do
-			if ( npc.valid and npc:GetNPCTypeID() ~= POTIMEB_CONTROLLER_TYPE and npc:GetNPCTypeID() ~= EVENTS_CONTROLLER ) then
+			if ( npc.valid and npc:GetNPCTypeID() ~= POTIMEB_CONTROLLER_TYPE and npc:GetNPCTypeID() ~= EVENTS_CONTROLLER_TYPE ) then
 				npc:Depop();
 			end
 		end
@@ -589,6 +589,7 @@ function event_signal(e)
 						eq.debug("Error: Time instance qglobals are corrupted!  Instance ID: "..instanceID);
 						return;
 					end					
+					
 				end
 			end
 			zoneInstanceID = instanceID;
@@ -840,7 +841,7 @@ function event_timer(e)
 		local _, _, trialNum = e.timer:find("^trial(%d)start$");
 		trialNum = tonumber(trialNum);
 		if ( trialNum ) then
-			eq.signal(EVENTS_CONTROLLER, tonumber("1"..trialNum.."1"), 0, tostring(zoneBossTable[1][trialNum]));
+			eq.signal(EVENTS_CONTROLLER_TYPE, tonumber("1"..trialNum.."1"), 0, tostring(zoneBossTable[1][trialNum]));
 			eq.debug("Trial "..trialNum.." spawned.  Boss status == "..tostring(zoneBossTable[1][trialNum]));
 		end
 	end
@@ -909,7 +910,7 @@ function PhaseStart()
 		data = data..b;
 	end		
 
-	eq.signal(EVENTS_CONTROLLER, zonePhase*100+1, 0, data);
+	eq.signal(EVENTS_CONTROLLER_TYPE, zonePhase*100+1, 0, data);
 end
 
 function PhaseDialog()

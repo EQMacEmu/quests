@@ -78,7 +78,7 @@ function ControllerTimer(e)
 			eq.set_timer(TIMER, 1080000); -- 18 mins
 		end
 		
-		RepopIsland(ISLAND_SPAWNIDS);
+		RepopIsland();
 	end
 end
 

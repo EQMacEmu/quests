@@ -255,7 +255,7 @@ function QuarmDeath(e)
 		eq.debug("Error: Quarm did not power up correctly.  Depoping corpse.");
 		e.self:ClearItemList();
 		e.self:Depop();
-		eq.depop_all(corpseType);
+		eq.depop_all(e.self:GetNPCTypeID());
 	end
 end
 
