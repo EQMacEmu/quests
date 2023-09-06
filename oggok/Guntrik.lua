@@ -23,12 +23,18 @@ function event_trade(e)
 		e.other:Faction(e.self,228,15);  	-- Clurg
 		e.other:Faction(e.self,261,-15); 	-- Green Blood Knight
 		e.other:QuestReward(e.self,0,0,0,0,13525,20);
-	elseif(e.other:GetFactionValue(e.self) >= 0 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13361})) then
+	elseif(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13361})) then
 		e.self:Say("One less trouble. Hunhuh!! You do good work. Keep up. Remember to bring any special things to Guntrik. Here junk for good work. Go away now.");
 		e.other:Faction(e.self,232,15);  	-- Craknek Warrior
 		e.other:Faction(e.self,228,2);  	-- Clurg
 		e.other:Faction(e.self,261,-2); 	-- Green Blood Knight
 		e.other:QuestReward(e.self,0,0,0,0,eq.ChooseRandom(5030,5037,6021),500);
+	elseif(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 18883})) then
+		e.self:Say("Ooh! This where hunters stay. You must go to Rathe Mountains and find Drinn's Inn. Kill all. Bring owners' scalps back and me give good junk. You get more warriors to help. Say Guntrik command them. You will need all help you get.");
+		e.other:Faction(e.self,232,2);  	-- Craknek Warrior
+		e.other:Faction(e.self,228,1);  	-- Clurg
+		e.other:Faction(e.self,261,-1); 	-- Green Blood Knight
+		e.other:QuestReward(e.self,0,0,0,0,0,1000); -- Need rewards from live
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

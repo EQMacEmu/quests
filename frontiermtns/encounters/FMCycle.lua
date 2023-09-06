@@ -28,7 +28,7 @@ function GoblinSE(e)
 	if(math.random(100) > 45) then
 		goblin = 92011;
 	else
-		goblin = eq.ChooseRandom(92004,92009,92012,92020,92021,92022,92023,92024,92197,92198);
+		goblin = eq.ChooseRandom(92004,92009,92012,92020,92021,92022,92023,92024,92197);
 	end
 	if(location == 6) then
 		eq.spawn2(goblin,28,0,-3247,-2839,-376,0);
@@ -200,10 +200,6 @@ function Goblin10Death(e)
 	GiantSW(e);
 end
 
-function Goblin11Death(e)
-	GiantSW(e);
-end
-
 function Giant1Death(e)
 	BurynaiNW(e);
 end
@@ -361,7 +357,6 @@ function event_encounter_load(e)
 	eq.register_npc_event("FMCycle", Event.death_complete, 92023, Goblin8Death);
 	eq.register_npc_event("FMCycle", Event.death_complete, 92024, Goblin9Death);
 	eq.register_npc_event("FMCycle", Event.death_complete, 92197, Goblin10Death);
-	eq.register_npc_event("FMCycle", Event.death_complete, 92198, Goblin11Death);
 	eq.register_npc_event("FMCycle", Event.death_complete, 92055, Giant1Death);
 	eq.register_npc_event("FMCycle", Event.death_complete, 92030, Giant2Death);
 	eq.register_npc_event("FMCycle", Event.death_complete, 92025, Giant3Death);

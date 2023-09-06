@@ -79,7 +79,7 @@ end
 function GnollSpawnEvent(e)
 	e.self:PauseWandering(20);
 	
-	if ( e.self:GetSpawnPointID() == 368619 ) then -- controller spawn; 12 minutes
+	if ( e.self:GetSpawnPointID() == 368619 ) then -- controller spawn; 10 minutes
 	
 		local roll = math.random(0, #GNOLL_SPAWNIDS);
 		local spawnIDs = {};

@@ -2,7 +2,7 @@
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Ya wanna be a member a Da Bashers. duz ya?  What making ya tink yooz is good nuff ta be one o' us?  Can ya proves ta me why I shouldn't oughtta just eat yer smelly hide?  I gonna tests ya. ya big. ugly peece o' meet.  Ya [willin ta test] or duz I just eats ya now?");
+		e.self:Say("Ya wanna be a member a Da Bashers, duz ya?  What making ya tink yooz is good nuff ta be one o' us?  Can ya proves ta me why I shouldn't oughtta just eat yer smelly hide?  I gonna tests ya, ya big, ugly peece o' meet.  Ya [willin ta test] or duz I just eats ya now?");
 	elseif(e.message:findi("willin ta test")) then
 		if(e.other:GetFactionValue(e.self) >= 100) then			
 			e.self:Say("Stoopid meat.  I gonna eats ya anyways sumday.  Brings me a froglok meat and two dem li'l froglok tadpole fleshes.  Dey berry good.");
@@ -25,7 +25,7 @@ function event_trade(e)
 		e.self:Say("You is berry slow. Me too hungry. Me shood eats you for being slow. Gib me dat stuff. Here, take dis and git more stuff fer us. You much kllin, come backs sees me. I teeches ya hows ta kill bedder. Now git and kill stuff. We be Da Bashers fer a reesun.");
 		e.other:Faction(e.self,235,5,0);  	-- Da Basher
 		e.other:Faction(e.self,222,-1,0);  -- Broken Skull Clan		
-		e.other:QuestReward(e.self,0,0,0,0,eq.ChooseRandom(6022,6025,7014,5026,7015)); -- Item(s): Bronze Warhammer (6022), Bronze Warclub (6025), Bronze Spear (7014), Bronze Short Sword (5026), Bronze Main Gauche (7015)
+		e.other:QuestReward(e.self,0,0,0,0,5025,100); -- Rusty Battle Axe
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

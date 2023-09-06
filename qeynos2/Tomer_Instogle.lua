@@ -13,14 +13,14 @@ function event_say(e)
 			end
 		elseif(e.message:findi("dogs") or e.message:findi("mutts")) then
 			e.self:Say("It's those Darkpaws.. They've beat me pretty badly.. but they'll get theirs soon enough!");
-		elseif(e.message:findi("Silent Fist Clan")) then
+		elseif(e.message:findi("silent.* clan")) then
 			e.self:Say("I am a new member of the Silent Fist Clan.. I need someone from my guild to help me find my way back.");
-		elseif(e.message:findi("Seta sent me to find you")) then
+		elseif(e.message:findi("seta.* find you")) then
 			e.self:Say("Oh.. Thank goodness you found me.. I'm lost and weak, those [mutts] are a vicious lot.. an you carry my [backpack] for me?");
-		elseif(e.message:findi("carry your backpack")) then
+		elseif(e.message:findi("carry.* backpack")) then
 			e.self:Say("Thank you, friend.. Now, can you lead me back to Master Seta of the [Silent Fist Clan]? ");
 			e.other:SummonCursorItem(13769); -- Ruined Backpack
-		elseif(e.other:GetFaction(e.self) <= 5 and e.message:findi("lead you back")) then
+		elseif(e.other:GetFaction(e.self) <= 5 and e.message:findi("lead.* seta")) then
 			e.self:Say("Lead the way, and I shall follow. When we make it back, please inform Seta that you have rescued me.");
 			eq.stop();
 			eq.follow(e.other:GetID());
