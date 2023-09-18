@@ -33,7 +33,7 @@ function event_trade(e)
 		e.other:Faction(e.self,226,2);  -- Clerics of Tunare
 		e.other:Faction(e.self,310,2); -- Soldiers of Tunare
 		e.other:Faction(e.self,234,-2); -- Crushbone Orcs
-		e.other:QuestReward(e.self,math.random(10),math.random(20),0,0,eq.ChooseRandom(5047,5048,7032),500); -- Tarnished Scimitar, Tarnished Bastard Sword, Cast-Iron Rapier
+		e.other:QuestReward(e.self,math.random(10),math.random(20),0,0,eq.ChooseRandom(5047,5048,7032,5046),500); -- Tarnished Scimitar, Tarnished Bastard Sword, Cast-Iron Rapier, Tarnished Battle Axe
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 18840})) then -- Sealed Letter (Letter To King Naythox Thex)
 		e.self:Say("Yes. A recent report has proven this to be true. An evil alliance has been made. We shall soon need many more experienced adventurers such as yourself. For now, take this reward and strengthen your skills.");
 		e.other:Faction(e.self,246,30);  -- Faydark's Champions

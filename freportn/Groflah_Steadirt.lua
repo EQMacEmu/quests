@@ -14,7 +14,7 @@ function event_trade(e)
 		e.other:QuestReward(e.self,0,0,0,0,0,500);
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13919})) then
 		e.self:Say("I heard you were on your way back. Here then. Let us sharpen that blade for you. There you are. That should be much better in a fray now.");
-		e.other:Faction(e.self,63,10); -- coalition of tradefolk
+		e.other:Faction(e.self,229,10); -- coalition of tradefolk
 		e.other:Faction(e.self,281,10); -- knights of truth
 		e.other:Faction(e.self,291,7); -- merchants of qeynos
 		e.other:Faction(e.self,336,10); -- coalition of tradefolk underground

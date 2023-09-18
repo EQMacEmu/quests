@@ -5,6 +5,8 @@ function event_say(e)
 		e.self:Say("How dare you accuse me of being a thief!? I labor hour after hour trying to catch one fish which will bring me one copper piece to buy one slice of bread which I will split into five pieces to feed me, my sick wife and three little children, one of whom has the plague!! Poor little Repi. Now please, leave this humble little fisherman alone!");
 	elseif(e.message:findi("Gregor")) then
 		e.self:Say("Gregor Nasin is the barkeep at the Seafarer's Roost. He is the man who pays me for the fish I catch. A really good man.");
+	elseif(e.message:findi("fishing")) then
+		e.self:Say("Oh, yes.  It will be a good haul today.  Gregor will pay me plenty today.");
 	end
 end
 

@@ -27,6 +27,8 @@ function event_say(e)
 		e.self:Say("Kevlin's Gear is a good place to find armor if you plan on venturing into Kithicor Forest or the Misty Thicket. If you need it, it is located next to the Fool's Gold.");
 	elseif(e.message:findi("loom") or e.message:findi("sewing")) then
 		e.self:Say("Meeka Diggs in the center of Rivervale behind the Fool's Gold Tavern may be able to provide you with a sewing kit. There is also a loom near where she peddles her goods.");
+	elseif(e.message:findi("forge")) then
+		e.self:Say("There is a forge at the Tagglefoot's Farm near the vegetable stand and the main house of the farm.");
 	end
 end
 

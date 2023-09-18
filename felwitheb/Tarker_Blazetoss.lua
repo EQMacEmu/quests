@@ -30,7 +30,7 @@ function event_trade(e)
 		e.other:Faction(e.self,279,1); -- King Tearis Thex
 		e.other:Faction(e.self,246,1); -- Faydark's Champions
 		e.other:Faction(e.self,239,-1); -- The Dead
-		e.other:QuestReward(e.self,0,0,0,0,eq.ChooseRandom(7007,13009,6012,15374,10004,6018),350); -- Item(s): Rusty Dagger (7007), Bandages (13009), Worn Great Staff (6012), Spell: Numbing Cold (15374), Copper Band (10004), Cracked Staff (6018)
+		e.other:QuestReward(e.self,0,0,0,0,eq.ChooseRandom(7007,13009,6012,15374,10004,6018,10008),350); -- Item(s): Rusty Dagger (7007), Bandages (13009), Worn Great Staff (6012), Spell: Numbing Cold (15374), Copper Band (10004), Cracked Staff (6018), Gold Ring (10008)
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

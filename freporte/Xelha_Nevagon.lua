@@ -34,7 +34,7 @@ function event_trade(e)
 		e.other:Faction(e.self,271,10); -- Dismal Rage
 		e.other:Faction(e.self,281,-1); -- Knights of Truth
 		e.other:Faction(e.self,296,2); -- Opal Dark Briar
-		e.other:QuestReward(e.self,math.random(9),math.random(7),0,0,eq.ChooseRandom(15338,15331),250); -- Spell: Cavorting Bones, Spell: Reclaim Energy
+		e.other:QuestReward(e.self,math.random(9),math.random(7),0,0,eq.ChooseRandom(15338,15331),225); -- Spell: Cavorting Bones, Spell: Reclaim Energy
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13073, item2 = 13073, item3 = 13073, item4 = 13073})) then -- Bone Chips -- worked at appre
 		e.self:Say("Excellent work! You are quite the little helper. Here you go, then. A little something for your little work. Your service to me has caused Innoruuk to look upon you favorably. Your faith in our group has grown. Continue the work.");
 		-- HK confirmed live factions

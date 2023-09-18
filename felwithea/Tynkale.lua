@@ -4,7 +4,7 @@ function event_say(e)
 	elseif(e.message:findi("service to the clerics of tunare")) then
 		if(e.other:GetFactionValue(e.self) >= 100) then	
 			e.self:Say("That is good. Prove yourself, then.  Are you [new to Felwithe] or have I been conversing with a [veteran of the good fight]?");
-		elseif(e.other:GetFaction(e.self) == 5) then
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("When you have furthered your service to the Paladins of Tunare, we shall make conversation.");
 		else
 			e.self:Say("You have some nerve to approach a loyal member of the Paladins of Tunare! Run, while you can!");
@@ -12,7 +12,7 @@ function event_say(e)
 	elseif(e.message:findi("new to felwithe")) then
 		if(e.other:GetFactionValue(e.self) >= 100) then	
 			e.self:Say("Then stand at attention when I speak.  I want you to venture to Kelethin and seek out Tandan Nybright.  He is an old member of ours.  He had some hardships and he fell from Tunare's grace, yet he is still a member of our family.  He will be the one who reeks of elven wine.  Greet him by name.  We are worried for him.");
-		elseif(e.other:GetFaction(e.self) == 5) then
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("When you have furthered your service to the Paladins of Tunare, we shall make conversation.");
 		else
 			e.self:Say("You have some nerve to approach a loyal member of the Paladins of Tunare! Run, while you can!");
@@ -20,7 +20,7 @@ function event_say(e)
 	elseif(e.message:findi("veteran of the good fight")) then
 		if(e.other:GetFactionValue(e.self) >= 100) then	
 			e.self:Say("I command you to venture to Innothule and seek a beast called Jojongua, a name penned by the trolls.  It is said to be ten feet tall and nothing but fury.  Some say it resembles a kobold, but how can that be?  You bring this beast's hide to me and then I will believe you to be a veteran.  Beware!  Innothule is a very dangerous place even for a noble veteran.");
-		elseif(e.other:GetFaction(e.self) == 5) then
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("When you have furthered your service to the Paladins of Tunare, we shall make conversation.");
 		else
 			e.self:Say("You have some nerve to approach a loyal member of the Paladins of Tunare! Run, while you can!");

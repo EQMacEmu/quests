@@ -70,26 +70,26 @@ function event_trade(e)
 		e.other:Faction(e.self,361,1,0); -- Faction: Ashen Order
 		e.other:QuestReward(e.self,0,0,0,0,13006,1500); -- Water Flask
 	-- White Headband ID-10110 requires four Gnoll Pup Scalp ID-13789
-	elseif(e.other:GetFactionValue(e.self) >= 150 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13789,item2 = 13789, item3 = 13789,item4 = 13789},1,text1)) then
+	elseif(e.other:GetFactionValue(e.self) >= 150 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13789,item2 = 13789, item3 = 13789,item4 = 13789},1,text1)) then -- verified xp live 9/16/2023
 		e.self:Say("Good job, " .. e.other:GetCleanName() .. ", keep up the good work! Here is your white training headband. Wear it with honor, and make Lu'Sun proud.");
 		e.other:Faction(e.self,309,25,0); -- Faction: Silent Fist Clan
 		e.other:Faction(e.self,262,3,0); -- Faction: Guards of Qeynos
 		e.other:Faction(e.self,361,1,0); -- Faction: Ashen Order
-		e.other:QuestReward(e.self,0,0,0,0,10110,100); -- Item: White Headband
+		e.other:QuestReward(e.self,0,0,0,0,10110,200); -- Item: White Headband 
 	-- Yellow Headband ID-10111 requires three Putrid Rib Bone ID-13722 and the White Headband ID-10110
-	elseif(e.other:GetFactionValue(e.self) >= 175 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13722,item2 = 13722, item3 = 13722,item4 = 10110},1,text2)) then
+	elseif(e.other:GetFactionValue(e.self) >= 175 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13722,item2 = 13722, item3 = 13722,item4 = 10110},1,text2)) then -- verified xp live 9/16/2023
 		e.self:Say("Good work.. and, as promised, here is your reward. It is an honor to present this yellow headband to " .. e.other:GetCleanName() .. ", for recent acts of courage and heroism, on behalf of the Silent Fist Clan.");
 		e.other:Faction(e.self,309,50,0); -- Faction: Silent Fist Clan
 		e.other:Faction(e.self,262,7,0); -- Faction: Guards of Qeynos
 		e.other:Faction(e.self,361,2,0); -- Faction: Ashen Order
-		e.other:QuestReward(e.self,0,0,0,0,10111,200); -- Item: Yellow Headband
+		e.other:QuestReward(e.self,0,0,0,0,10111,400); -- Item: Yellow Headband
 	-- Orange Headband ID-10112 requires two Blackburrow Gnoll Pelt ID-13027, one Blackburrow Gnoll Skin ID-13028 and the Yellow Headband ID-10111
-	elseif(e.other:GetFactionValue(e.self) >= 225 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13027,item2 = 13027, item3 = 13028,item4 = 10111},1,text3)) then
+	elseif(e.other:GetFactionValue(e.self) >= 225 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13027,item2 = 13027, item3 = 13028,item4 = 10111},1,text3)) then -- verified xp live 9/16/2023
 		e.self:Say("It is an honor to present the orange headband of the Silent Fist Clan to one of our finest members, " .. e.other:GetCleanName() .. " the mighty!");
 		e.other:Faction(e.self,309,50,0); -- Faction: Silent Fist Clan
 		e.other:Faction(e.self,262,7,0); -- Faction: Guards of Qeynos
 		e.other:Faction(e.self,361,2,0); -- Faction: Ashen Order
-		e.other:QuestReward(e.self,0,0,0,0,10112,300); -- Item: Orange Headband
+		e.other:QuestReward(e.self,0,0,0,0,10112,800); -- Item: Orange Headband
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

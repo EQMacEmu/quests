@@ -31,6 +31,8 @@ function event_say(e)
 		e.self:Say("A class of people lost in their mythical art.  They are nothing more than dust under the feet of the empire of the Teir'Dal.");
 	elseif(e.message:findi("paladin guild")) then
 		e.self:Say("Hold your tongue, whelp!  You are on the grounds of the shadowknights.  If they were to hear you talking of such things they would skin you alive!");
+	elseif(e.message:findi("loom") or e.message:findi("sewing")) then
+		e.self:Say("A sewing kit may be purchased at the Furrier Royale in Neriaks Third Quarter or at the Silk Underground in Neriaks Foreign Quarter. A community loom may be found at the Silk Underground in Neriaks Foreign Quarter.");
 	end
 end
 

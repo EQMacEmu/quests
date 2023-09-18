@@ -7,7 +7,7 @@ end
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Ahhh, hello there. What can I do for you, " .. e.other:GetCleanName() .. "");
-	elseif((e.message:findi("name of the slain") or e.message:findi("name of a slain")) and e.self:GetGrid() == 22) then
+	elseif((e.message:findi("name.* slain")) and e.self:GetGrid() == 22) then
 		e.self:Say("The name of Dragon, you say? One that was slain? Hmmm, sounds interesting. Like I said, we've had little contact with Dragons, but I vaguely recall an ancient legend about a slain dragon and one of our people meeting. Follow me to the Library and we'll talk along the way.");
 		e.self:CastToNPC():AssignWaypoints(31);
 	elseif(e.message:findi("dragon")) then

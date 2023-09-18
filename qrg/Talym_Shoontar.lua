@@ -5,3 +5,4 @@ function event_say(e)
 		e.self:Say("Hager Sureshot is that know-nothing ranger in charge of the Protectors of the Pine. He thinks he can protect all of Surefall Glade. He is wrong.");
 	end
 end
+

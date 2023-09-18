@@ -1,7 +1,7 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Not so loud! My head is spinning so! What I wouldn't give for a Tumpy's Tonic right now! They were always just the thing for the hair of the gnoll that bit me.");
-	elseif(e.message:findi("tonic")) then
+	elseif(e.message:findi("tumpy.* tonic")) then
 		e.self:Say("Ahh! If you need to ask, you've never had one. Tumpy Irontoe in Kaladim made me drink one of his special brews when I lost a game of King's Court with him. I would give anything I own for one of those right now!");
 	end
 end

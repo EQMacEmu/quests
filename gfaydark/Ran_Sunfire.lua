@@ -19,15 +19,15 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	local ranrew = 0;
 	
 	if(e.other:GetFactionValue(e.self) >= 100 and (item_lib.check_turn_in(e.self, e.trade, {item1 = 12109 }))) then -- Pouch of Pixie Dust
-		e.self:Say("Good work. scout!!  You have earned this reward.  It is all we have at the time.  I am certain you are satisfied.  If not, then do not let me hear of it.");
-		e.other:Faction(e.self,316, 1); -- Scouts of Tunare
-		if(math.random(100) < 20) then
-			ranrew = eq.ChooseRandom(2104, 2106, 2108, 2111, 2112); -- Patchwork Tunic, Patchwork Cloak, Patchwork Sleeves, Patchwork Pants, Patchwork Boots
-		end
-		e.other:QuestReward(e.self,0,math.random(9),0,0,ranrew,800);
+		e.self:Say("We thank you for your deed. Here, then, is a small reward. Nothing more than long forgotten equipment, but it may be useful to a young ranger.");
+		e.other:Faction(e.self,246,20); -- Faydark champions
+		e.other:Faction(e.self,279,5); -- King Tearis Thex
+		e.other:Faction(e.self,226,5); -- Clerics of Tunare
+		e.other:Faction(e.self,310,5); -- Soldiers of Tunare
+		e.other:Faction(e.self,234,-5); -- Crushbone Orcs
+		e.other:QuestReward(e.self,math.random(10),math.random(10),0,0,eq.ChooseRandom(2111,2112,2104,2108,2106,2143,2148,2142,2146,2139,2147,2138,2141,2137,2144,2140,2145),800); -- Patchwork Pants, Patchwork Boots, Patchwork Tunic, Patchwork Sleeves, Patchwork Cloak, Raw-hide Belt, Raw-hide Boots, Raw-hide Cloak, Raw-hide Gloves, Raw-Hide Gorget, Raw-hide Leggings, Raw-hide Mask, Raw-hide Shoulderpads, Raw-hide Skullcap, Raw-hide Sleeves, Raw-hide Tunic, Raw-hide Wristbands  
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

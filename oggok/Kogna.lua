@@ -21,7 +21,7 @@ function event_trade(e)
 		e.other:Faction(e.self,232,5); -- Faction: Craknek Warriors
 		e.other:Faction(e.self,228,1); -- Faction: Clurg
 		e.other:Faction(e.self,261,-1); -- Faction: Green Blood Knights
-		e.other:QuestReward(e.self,0,0,0,0,eq.ChooseRandom(2136,2135,2132,2128,2130),500);
+		e.other:QuestReward(e.self,0,0,0,0,eq.ChooseRandom(5025,5023),500); -- Rusty Two Handed Battle Axe, Rusty Two Handed Sword
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

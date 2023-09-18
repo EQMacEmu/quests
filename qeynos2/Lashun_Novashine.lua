@@ -46,7 +46,7 @@ function event_trade(e)
 			e.other:Faction(e.self,262,1,0); -- Guards of Qeynos
 			e.other:Faction(e.self,221,-1,0); -- Bloodsabers
 			e.other:Faction(e.self,219,1,0);		-- Antonius Bayle
-			e.other:QuestReward(e.self,0,0,0,0,0,25);
+			e.other:QuestReward(e.self,0,0,0,0,0,100);
 			times = times - 1
 		until times <= 0			
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13073,item2 = 13073}, 0)) then
@@ -58,7 +58,7 @@ function event_trade(e)
 		e.other:Faction(e.self,262,1,0); -- Guards of Qeynos
 		e.other:Faction(e.self,221,-1,0); -- Bloodsabers
 		e.other:Faction(e.self,219,1,0);		-- Antonius Bayle
-		e.other:QuestReward(e.self,0,0,0,0,0,25);
+		e.other:QuestReward(e.self,0,0,0,0,0,100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

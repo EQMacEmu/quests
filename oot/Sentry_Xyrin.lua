@@ -22,7 +22,7 @@ function event_say(e)
 			eq.start(62);
 			e.self:SetRunning(true);
 		else
-			e.self:Say("The passion of the Queen of Love does not favor you. Begone from my sight!"));
+			e.self:Say("The passion of the Queen of Love does not favor you. Begone from my sight!");
 		end
 	end
 end

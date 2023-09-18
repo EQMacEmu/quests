@@ -45,12 +45,12 @@ function event_trade(e)
 	
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 13892})) then
 		e.self:Say("Good work! I knew you could prove your worth. Most waste time training. I do not reward those who waste my time. Please take this. It is from our horde, from countless robberies. I hope you can use it to advance yourself. Remember to always stay faithful to Neriak.");
-		e.other:Faction(e.self,244,5); -- Faction: Ebon Mask
-		e.other:Faction(e.self,262,-5); -- Faction: Guards of Qeynos
+		e.other:Faction(e.self,244,20); -- Faction: Ebon Mask
+		e.other:Faction(e.self,262,-1); -- Faction: Guards of Qeynos
 		e.other:Faction(e.self,320,-5); -- Faction: Wolves of the North
-		e.other:Faction(e.self,263,-5); -- Faction: Guardians of the Vale
+		e.other:Faction(e.self,263,-2); -- Faction: Guardians of the Vale
 		e.other:Faction(e.self,329,-5); -- Faction: Carson McCabe
-		e.other:QuestReward(e.self,0,8,0,0,5066,5000);
+		e.other:QuestReward(e.self,0,9,0,0,5066,5000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

@@ -4,7 +4,7 @@ function event_say(e)
 	elseif(e.message:findi("interested")) then
 		e.self:Say("Ah, so you do have half a wit about you! Very well. As you can clearly see, I am the librarian here. I keep track of all of the mystic tomes that enter this divine building. I also take care of all of the purchasing. Have you something to [offer]?");
 	elseif(e.message:findi("offer")) then
-		e.self:Say("Excellent! You have no idea how difficult it is to get good help these days. Do you think you would have the time to gather some [information] for me? ");
+		e.self:Say("Excellent! You have no idea how difficult it is to get good help these days. Do you think you would have the time to gather some [information] for me?");
 	elseif(e.message:findi("information")) then
 		e.self:Say("Even better! Well, it has been some time since the Tesch Val gnolls moved in on the Split Paw. That being said, we still know little to nothing of their origins. If you can bring me back the four scrolls that our diviners speak of, I believe I can reward you well.");
 	end
