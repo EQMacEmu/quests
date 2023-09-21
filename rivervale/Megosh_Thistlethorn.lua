@@ -17,7 +17,7 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18432})) then -- Handin the Halfling Ranger note
-		e.self:Say("Welcome to the Storm Reapers " .. e.other:GetCleanName() .. "! Here is a tunic to keep you warm in your travels. Rivervale, our lovely home is facing dangerous times. From both the east and west forces devoted to the evil Gods Bertoxxulous adn Innoruuk are corrupting and destroying the wilds of Norrath. Also, the Orcs of Clan Deathfist are waging war on this entire region and gathering lumber and stone for some unknown purpose. We must do our best to preserve the lands and way of life of all Karanas people.");
+		e.self:Say("Welcome to the Storm Reapers " .. e.other:GetCleanName() .. "! Here is a tunic to keep you warm in your travels. Rivervale, our lovely home is facing dangerous times. From both the east and west forces devoted to the evil Gods Bertoxxulous and Innoruuk are corrupting and destroying the wilds of Norrath. Also, the Orcs of Clan Deathfist are waging war on this entire region and gathering lumber and stone for some unknown purpose. We must do our best to preserve the lands and way of life of all Karanas people.");
 		e.other:Faction(e.self,355,100,0); -- +Storm Reapers
 		e.other:Faction(e.self,286,10,0); -- +Mayor Gubbin
 		e.other:Faction(e.self,292,15,0); -- +Merchants of Rivervale
