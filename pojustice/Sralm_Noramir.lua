@@ -1,8 +1,10 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("pounces at you, grabbing you by your throat. 'What are you doing here? Who sent you?'");
-	elseif(e.message:findi("sent m")) then
+		e.self:Emote("pounces at you, grabbing you by your throat. 'What are you doing here? Who sent you?'");
+	elseif(e.message:findi("no one.* sent me")) then
 		e.self:Say("I hope you are not here to free a prisoner. The Tribunal punishes such actions harshly. Once here there is no hope of escape. Even for one such as I.");
+	elseif(e.message:findi(".* sent me")) then
+		e.self:Say("Hmm, that name is not familiar to me.  You must be in the wrong place.  Begone before I wear your hide to keep myself warm.");		
 	elseif(e.message:findi("such as i")) then
 		e.self:Say("Ahh, how rude of me. Allow me to introduce myself. I am Sralm Noramir, warrior by birth thief by choice.");
 	elseif(e.message:findi("thief")) then
@@ -19,5 +21,9 @@ function event_say(e)
 		e.self:Emote("sighs, 'It seems the good Emperor was quite paranoid, and took precautions against this contingency.  All of his wealth was enchanted by a tracking spell.  It was silly of me not to look for it.  Stealing was a minor crime in Sebilis, but stealing from the [Emperor] was another issue all its own.'");
 	elseif(e.message:findi("Sebilis")) then
 		e.self:Say("Sebilis is the city of the Iksar.  The greatest city on all of Kunark, and was my home at one time.  I guess no news is good news.");
+	elseif(e.message:findi("trakanon.* dragon") or e.message:findi("dragon.* trakanon")) then
+		e.self:Say("A dragon in Sebilis!  Stop your foul lies. Your humor does not suit my tastes.");
+	elseif(e.message:findi("who am i")) then
+		e.self:Say("Well, assuming the question is as silly as it sounds, you are " .. e.other:GetCleanName() .. ".");
 	end
 end

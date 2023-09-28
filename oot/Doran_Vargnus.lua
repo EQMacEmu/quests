@@ -14,7 +14,7 @@ function event_trade(e)
 		e.other:Faction(e.self,293, 1); -- Miner's Guild 249
 		e.other:Faction(e.self,290, 1); -- Merchants of Kaladim
 		e.other:Faction(e.self,232, -1); -- Craknek Warriors
-		e.other:QuestReward(e.self,0,0,0,0,eq.ChooseRandom(3301,3048,3042,3050,3044,7012,3103,3111,3110,7015));
+		e.other:QuestReward(e.self,0,0,0,0,eq.ChooseRandom(3301,3048,3042,3050,3044,7012,3103,3111,3110,7015,9011),2000); -- verified live xp -- item 9011 small targ shield
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

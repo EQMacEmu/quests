@@ -56,7 +56,7 @@ function event_trade(e)
 		e.other:Faction(e.self,326,-7); --Emerald Warriors
 		e.other:Faction(e.self,311,-2); --Steel Warriors
 		e.other:Faction(e.self,1522,-100); --Primordial Malice
-		e.other:QuestReward(e.self,0,0,7,0,12257,250); --Footman's Voulge
+		e.other:QuestReward(e.self,0,0,7,0,12257,25000); --Footman's Voulge ; confirmed exp data
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

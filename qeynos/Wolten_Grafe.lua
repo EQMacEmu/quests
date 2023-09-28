@@ -69,7 +69,7 @@ function event_trade(e)
 		e.other:Faction(e.self,221,-50,0); -- Bloodsabers
 		e.other:Faction(e.self,341,37,0); -- Preists of Life
 		e.other:Faction(e.self,262,37,0); -- Guards of Qeynos
-		e.other:QuestReward(e.self,7,5,0,0,eq.ChooseRandom(2112, 2106, 2111, 2104, 2108),500); -- Item(s): Patchwork Boots (2112)
+		e.other:QuestReward(e.self,7,5,0,0,eq.ChooseRandom(2112, 2106, 2111, 2104, 2108),4900); -- Item(s): Patchwork Boots (2112) ; exp data confirmed
 	elseif(e.other:GetFactionValue(e.self) >= -100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13288})) then -- Order of Thunder
 		e.self:Say("Ahh. Drosco's Order of Thunder. You are truly an honorable knight. Many vile people would pay greatly for this medal. I thank you for its return. I shall honor you by rewarding you with a thunder staff. Meant for young clerics and paladins of this temple. Never let it leave your side.");
 		-- Confirmed Live Factions

@@ -4,6 +4,9 @@ function event_say(e)
 		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(114467)) then
 			eq.get_entity_list():GetMobByNpcTypeID(114467):Emote("laughs, 'I'm sure they'd prefer my Boysenberry pie to your Roasted Walrus with Plum Sauce any day.'");
 			e.self:Emote("laughs, 'Don't get me started. You know that my cuisine Is prefered over yours two to one.'");
+		elseif(eq.get_entity_list():IsMobSpawnedByNpcTypeID(114639)) then
+			eq.get_entity_list():GetMobByNpcTypeID(114639):Emote("laughs, 'I'm sure they'd prefer my Boysenberry pie to your Roasted Walrus with Plum Sauce any day.'");
+			e.self:Emote("laughs, 'Don't get me started. You know that my cuisine Is prefered over yours two to one.'");
 		end
 	end
 end

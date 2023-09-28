@@ -74,7 +74,7 @@ function event_trade(e)
 					
 		e.other:Faction(e.self,304,-1,0); -- ring of scale
 		e.other:Faction(e.self,285,-1,0); -- mayong mistmoore
-		e.other:QuestReward(e.self,math.random(10),0,0,0,0,500);
+		e.other:QuestReward(e.self,math.random(10),0,0,0,0,50);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

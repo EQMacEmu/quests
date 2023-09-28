@@ -29,11 +29,11 @@ function event_trade(e)
 	
 	if(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 12157, item2 = 12157, item3 = 12157, item4 = 12157},1,text)) then
 		e.self:Say("You have done well. Your deeds shall be recorded within our journals. Here, then, is your reward. May you strive to serve us to the full extent of your powers. The [elders] must also die.");
-		-- faction from ZAM post
+		-- faction from ZAM post -- verified live xp
 		e.other:Faction(e.self,227, 5);  --Clerics Of Underfoot
 		e.other:Faction(e.self,274, 5); --Kazon Stormhammer
 		e.other:Faction(e.self,293, 3); --Miner's Guild 249
-		e.other:QuestReward(e.self,math.random(0,5),math.random(0,5),0,0,eq.ChooseRandom(2113,2114,2115,2116,2117,2118,2119,2120,2121,2122,2123,2124,5045,6041),5000); -- Item(s): Small Patchwork Tunic (2116), Small Patchwork Sleeves (2120), Small Patchwork Pants (2123), Small Patchwork Boots (2124), Small tattered and patchwork set, tarnished long sword, cast-iron warhammer
+		e.other:QuestReward(e.self,math.random(0,5),math.random(0,5),math.random(0,3),0,eq.ChooseRandom(2113,2114,2115,2116,2117,2118,2119,2120,2121,2122,2123,2124,5045,6041),5000); -- Item(s): Small Patchwork Tunic (2116), Small Patchwork Sleeves (2120), Small Patchwork Pants (2123), Small Patchwork Boots (2124), Small tattered and patchwork set, tarnished long sword, cast-iron warhammer
 	elseif(e.other:GetFactionValue(e.self) >= 500 and item_lib.check_turn_in(e.self, e.trade, {item1 = 12158, item2 = 12158, item3 = 12158, item4 = 12158},1,text1)) then -- need kindly
 		e.self:Say("Fine work! You shall be known for your great deeds. Take this and may it aid you in your defense of Kaladim. Hail King Kazon!");
 		-- confirmed live faction

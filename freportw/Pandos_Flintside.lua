@@ -35,7 +35,7 @@ function event_trade(e)
 			e.other:Faction(e.self,226,1,0); -- Clerics of Tunare
 			e.other:Faction(e.self,310,1,0); -- Soldiers of Tunare
 			e.other:Faction(e.self,234,-1,0); -- Crushbone Orcs
-			e.other:QuestReward(e.self,0,0,0,0,0,5);
+			e.other:QuestReward(e.self,0,0,0,0,0,5); -- exp data confirmed
 			muffin = muffin - 1;
 		until muffin == 0
 	end

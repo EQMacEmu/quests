@@ -13,6 +13,10 @@ function event_say(e)
 		e.self:Say("Ticar Lorestring sings for the people of the city of Erudin.");
 	elseif(e.message:findi("mistrana.* note")) then
 		e.self:Say("Mistrana Two-Notes is currently visiting with the McMannus tribe in the Karanas.");
+	elseif(e.message:findi("felisity starbright")) then
+		e.self:Say("Postmistress Felisity Stabright lives in the city of Freeport.");
+	elseif(e.message:findi("lislia goldtune")) then
+		e.self:Say("Postmistress Lislia Goldtune lives in the fortress of High Keep.");
 	end
 end
 

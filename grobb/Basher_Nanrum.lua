@@ -5,6 +5,9 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Peh! What am you wanted?! I am Basher Nanrum. You? " .. e.other:GetCleanName() .. " ? Heh, you look for works? Hmm, me tinks you too weakling for [job] me need done. Hmm.. You might do, mebbe.");
+	elseif(e.message:findi("skeleton")) then
+		e.self:Say("Yeah! Me see dat bone man. He over by da Cleaver. He tink he a butcher or sumting!");
+		eq.spawn2(52125,0,0,-466,361,9.8,41); -- NPC: #a_skeleton		
 	elseif(e.message:findi("job")) then
 		e.self:Say("Me in charge of making torches for basher patrols. But Nanrum is much too mighty for such stupid job and Nanrum get idea. Dem fire bugses in da desert - dem eyes glowed. And dem don't burneded like torches. If " .. e.other:GetCleanName() .. " getted Nanrum three fire beetle eyes me would giveded " .. e.other:GetCleanName() .. " a shiny thingie dat you wanteded. Go ahed, " .. e.other:GetCleanName() .. " , an' get me da eyes.");
 	elseif(e.message:findi("armor")) then

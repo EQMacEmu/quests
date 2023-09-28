@@ -31,7 +31,7 @@ function event_trade(e)
 		for i = 1, bandage do
 			--Bandages for Honeybugger (END)
 			e.self:Say("Oh thank you, " .. e.other:GetCleanName() .. ". If you are ever going to gather bixie honeycomb's pray you do not run into the queen. The only way I know of collecting the honey is by intercepting the drone's and taking the honeycomb's they sometime's carry. Good luck!!");
-			-- confirmed live factions
+			-- confirmed live factions and confirmed no exp
 			e.other:Faction(e.self,292,1);  -- +Merchants of Rivervale
 			e.other:Faction(e.self,241,1);   -- +Deeppockets
 			e.other:Faction(e.self,263,1);  -- +Guardians of the Vale

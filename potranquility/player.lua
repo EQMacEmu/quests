@@ -29,10 +29,8 @@ function event_click_door(e)
 			end
 			
 			-- zone flag is set by dropping down the Plane of Disease zone-in 'toilet' near Grummus
-			if( e.self:GetLevel() >= level_for_tier_two) then
-				if ( e.self:GetLevel() >= level_for_tier_three or e.self:KeyRingCheck(9294) ) then
-					e.self:SetZoneFlag(200);
-				end
+			if ( e.self:GetLevel() >= level_for_tier_two or e.self:KeyRingCheck(9294) ) then
+				e.self:SetZoneFlag(200);
 			else
 				e.self:Message(13, "You lack the will to pass through this portal safely.");
 			end

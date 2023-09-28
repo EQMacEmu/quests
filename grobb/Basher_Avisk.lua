@@ -1,5 +1,10 @@
 function event_say(e)
-	if(e.message:findi("armor")) then
+	if(e.message:findi("hail")) then
+		e.self:Say("Ranjor tell shaddernites to gets rids of spore guardian.  Ha!  Gud.");
+	elseif(e.message:findi("minstrel")) then
+		e.self:Say("Dere stewpid skeleton singing by Basher Ganbaku. His post be up high.");
+		eq.spawn2(52126,0,0,-107,194,46.6,64); -- NPC: ##a_skeleton		
+	elseif(e.message:findi("armor")) then
 		e.self:Say("Chain, plate, leather, Krung's Clubs and Junk inside you will find.  Grobb, in the center it be.");
 	elseif(e.message:findi("warrior guild")) then
 		e.self:Say("Da bashers warriors of Grobb close to entrance they be.");

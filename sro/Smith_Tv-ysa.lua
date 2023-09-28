@@ -23,13 +23,13 @@ function event_trade(e)
 		e.other:Faction(e.self,236,10,0); -- Dark Bargainers
 		e.other:Faction(e.self,334,1,0); -- Dreadguard Outer
 		e.other:Faction(e.self,370,1,0); -- Dreadguard Inner
-		e.other:QuestReward(e.self,0,0,0,0,eq.ChooseRandom(18175, 18176),28000); -- Runes and Research Volume I or II
+		e.other:QuestReward(e.self,0,0,0,0,eq.ChooseRandom(18175, 18176),10000); -- Runes and Research Volume I or II
 	elseif(e.other:GetFaction(e.self) <= 5 and (item_lib.check_turn_in(e.self, e.trade, {item1 = 10400}))) then -- Greater Lightstone
 		e.self:Say("A greater lightstone? Thank you very much. Here is a 'Concordance of Research' for you.");
 		e.other:Faction(e.self,236,10,0); -- Dark Bargainers
 		e.other:Faction(e.self,334,1,0); -- Dreadguard Outer
 		e.other:Faction(e.self,370,1,0); -- Dreadguard Inner
-		e.other:QuestReward(e.self,0,0,0,0,17504,55000); -- Concordance of Research
+		e.other:QuestReward(e.self,0,0,0,0,17504,10000); -- Concordance of Research
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

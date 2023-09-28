@@ -31,7 +31,7 @@ function event_trade(e)
 		e.other:Faction(e.self,267,3,0); -- high guard of erudin
 		e.other:Faction(e.self,266,2,0); -- high council of erudin
 		e.other:Faction(e.self,265,-3,0); -- heretics
-		e.other:QuestReward(e.self,0,math.random(5),0,0,0,5000);
+		e.other:QuestReward(e.self,0,math.random(5),0,0,0,1000);
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13128})) then -- Bones (Heretic)
 		e.self:Say("This is fine work, young one. You keep this up and you shall be knighted before long.");
 		-- Confirmed Live Factions
@@ -39,7 +39,7 @@ function event_trade(e)
 		e.other:Faction(e.self,267,7,0); -- high guard of erudin
 		e.other:Faction(e.self,266,5,0); -- high council of erudin
 		e.other:Faction(e.self,265,-7,0); -- heretics
-		e.other:QuestReward(e.self,0,math.random(5),0,0,0,5000);
+		e.other:QuestReward(e.self,0,math.random(5),0,0,0,1000); -- confirmed exp data
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

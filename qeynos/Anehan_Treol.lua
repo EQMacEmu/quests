@@ -14,7 +14,7 @@ function event_trade(e)
 		e.other:Faction(e.self,262,1,0); -- Faction: Guards of Qeynos
 		e.other:Faction(e.self,304,-1,0); -- Faction: Ring of Scale
 		e.other:Faction(e.self,285,-1,0); -- Faction: Mayong Mistmoore
-		e.other:QuestReward(e.self,0,0,0,0,18022,200); -- Item: Anehans Report
+		e.other:QuestReward(e.self,0,0,0,0,18022,50); -- Item: Anehans Report ; exp data confirmed
 	end
 	item_lib.return_items(e.self, e.other, e.trade, e.text)
 end

@@ -47,7 +47,7 @@ function event_trade(e)
 		e.other:QuestReward(e.self,math.random(0,5),math.random(0,5),math.random(0,5),0,eq.ChooseRandom(13005,13007,13006,13002,13003),3800); -- Random Reward: Ration, Iron Ration, Water Flask, Torch
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13915, item2 = 13915, item3 = 13915},0)) then	-- Gnoll Bounty - Return 3 Gnoll Fangs
 		e.self:Say("Fine work, fine work!  The gnoll threat must be extinguished before it can ever fully grow.  Ye've done yer part to aid our cause.  Please allow me to repay ye with a few provisions and a wee bit o' coin.  Then, continue with yer good deeds.");
-		-- Confirmed Live Factions
+		-- Confirmed Live Factions and exp data
 		e.other:Faction(e.self,320,15);		-- Wolves of the North
 		e.other:Faction(e.self,327,3);		-- Shamen of Justice
 		e.other:Faction(e.self,328,3);		-- Merchants of Halas

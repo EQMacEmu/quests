@@ -30,12 +30,12 @@ function event_trade(e)
 		e.other:Faction(e.self,326,-1); --Emerald Warriors
 		e.other:Faction(e.self,311,-1); --Steel Warriors
 		e.other:Faction(e.self,1522,-10); --Primordial Malice
-		e.other:QuestReward(e.self,5,0,0,0,eq.ChooseRandom(13005,13007),500);
+		e.other:QuestReward(e.self,5,0,0,0,eq.ChooseRandom(13005,13007),3000); -- confirmed exp data
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 9998})) then
 		e.self:Say("Those young warriors who dared to run from battle are now our fodder. They shall help us teach you that sometimes you must kill your own kind. In the center of the arena we have set a coward. Show me you can kill your own when required and bring me his head. Do not grant him mercy nor allow him to flee.");
 		eq.spawn2(41119,0,0,-1218,-25,-25,128); -- NPC: TeirDal coward
 	elseif(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13888})) then
-		e.self:Say("You have performed greatly. A coward deserves no pity or mercy. You will be fine addition to our house. Let us replace your weapon with this. a sullied two handed sword! The weapon of a young brother of this hall. It is a finer weapon than your first. Go and spread the hate of Innoruuk.");
+		e.self:Say("You have performed greatly. A coward deserves no pity or mercy. You will be fine addition to our house. Let us replace your weapon with this, a sullied two handed sword! The weapon of a young brother of this hall. It is a finer weapon than your first. Go and spread the hate of Innoruuk.");
 		e.other:Faction(e.self,270, 15); --Indigo Brotherhood
 		e.other:Faction(e.self,326,-2); --Emerald Warriors
 		e.other:Faction(e.self,311,-1); --Steel Warriors

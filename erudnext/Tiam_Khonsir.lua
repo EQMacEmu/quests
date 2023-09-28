@@ -24,7 +24,7 @@ function event_trade(e)
 		e.other:Faction(e.self,242,7,0);  -- Deepwater Knights
 		e.other:Faction(e.self,266,1,0); -- High Council of Erudin
 		e.other:Faction(e.self,265,-1,0);-- Heretics
-		e.other:QuestReward(e.self,0,0,0,0,ranitem,2000);
+		e.other:QuestReward(e.self,0,0,0,0,ranitem,3800); -- confirmed exp data
 		e.other:GiveCash(12,14,5,0); -- Copper x 12, Silver x 14, Gold x 5
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

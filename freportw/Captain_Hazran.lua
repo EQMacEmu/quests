@@ -17,7 +17,7 @@ function event_trade(e)
 			e.other:Faction(e.self,336,1); -- Coalition of Tradefolks Underground
 			e.other:Faction(e.self,281,-1); -- Knights of Truth
 			e.other:Faction(e.self,362,-1); -- Priest of Marr
-			e.other:QuestReward(e.self,0,0,math.random(10),0,0,5000);
+			e.other:QuestReward(e.self,0,0,math.random(10),0,0,9350); -- confirmed exp data
 			count = count - 1;
 		until count == 0;
 	end

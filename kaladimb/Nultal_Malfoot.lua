@@ -10,7 +10,7 @@ function event_say(e)
 	elseif(e.message:findi("glands")) then
 		if(e.other:GetFactionValue(e.self) >= 100) then
 			e.self:Say("I have made an offer to all clerics of this cathedral. I shall reward one cleric scroll from our scribes for the return of four skunk scent glands. This offer is best left to our clerics.");
-		elseif(e.other:GetFaction(e.self) == 5) then
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("The Clerics of Underfoot have yet to see your faith directed towards our wills. Perhaps you should assist Master Gunlok Jure in the crusade against the undead.");
 		else
 			e.self:Say("How dare you approach a member of the Clerics of Underfoot?!  Dogs such as you lie in the same bed as aviaks and ogres!")
@@ -30,7 +30,7 @@ function event_trade(e)
 		e.other:Faction(e.self,227,5,0); 			--Clerics of Underfoot
 		e.other:Faction(e.self,274,5,0); 		--Kazon Stormhammer
 		e.other:Faction(e.self,293,3,0); 		--Miners Guild 249
-		e.other:QuestReward(e.self,0,5,0,0,eq.ChooseRandom(15203,15229,15560,15036,15216),2000); --Random Spell: Cure Poison, Fear, Furor, Gate, Stun
+		e.other:QuestReward(e.self,0,math.random(0,10),0,0,eq.ChooseRandom(15203,15229,15560,15036,15216,15215),5000); --Random Spell: Cure Poison, Fear, Furor, Gate, Stun, Reckless Strength -- Verified exp
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

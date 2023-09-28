@@ -6,12 +6,13 @@ function event_say(e)
 	elseif(e.message:findi("princess lenya thex")) then
 		e.self:Say("The Princess Lenya Thex is the daughter of His Royal Majesty, King Tearis Thex of Felwithe. She was on her way to Qeynos when we believe she was kidnapped by Carson McCabe, the governor of this vile city. I await the paladin from Felwithe.");
 	elseif(e.message:findi("all is not bright above the clouds")) then
-		if(fac < 4) then
+		if(e.other:GetFactionValue(e.self) >= 500) then
 			e.self:Say("Taken from this place she has been.  Seek the Highpass hussy.  Ask of her.  Only she knows where.  Find the Princess.  Give her this.  Show your allegiance.  This and her key. Then return the room key to me with the prize from the princess.  Become a hero!!");
-			
 			e.other:SummonCursorItem(13108); -- Item: Tearons Bracer
-		else
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("When you have furthered your service to the Paladins of Tunare, we shall make conversation.");
+		else
+			e.self:Say("You have some nerve to approach a loyal member of the Paladins of Tunare! Run, while you can!");		
 		end
 	end
 end
@@ -23,7 +24,7 @@ function event_trade(e)
 		e.self:Say("Peace..  I can rest now.  You now hold my Silent Watch Shield.  Protect Felwithe..");
 		e.other:Faction(e.self,226,25); -- Faction: Clerics of Tunare
 		e.other:Faction(e.self,279,25); -- Faction: King Tearis Thex
-		e.other:Faction(e.self, 5002, 15002); -- Faction: Anti-mage
+		e.other:Faction(e.self,5002,18); -- Faction: Anti-mage
 		e.other:QuestReward(e.self,0,0,0,0,9312,2000); -- Item: Silent Watch Shield
 		eq.depop_with_timer();
 	end

@@ -11,7 +11,7 @@ function event_say(e)
 	elseif(e.message:findi("take a little trip")) then
 		if(e.other:GetFactionValue(e.self) >= 100) then
 			e.self:Say("Yes.  You will do.  My sister was once engaged to a fellow warrior.  He disgraced her and left her crying at the altar.  I will have his head for such a slap in the face of my family.  His name was Trumpy Irontoe, once a member of the now defunct Irontoe Brigade.  I know not where he went.  Find his whereabouts and return his head to me.  Do so, and I shall make you an honorary member of the Bloodforge Brigade.");
-		elseif(e.other:GetFaction(e.self) == 5) then
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("Prove yourself to the Stormguard and then we shall talk.  Perhaps you may assist Master Canloe and show your worth to us.");
 		else
 			e.self:Say("Your shifty eyes tell me that you are no ally of the Stormguard.")

@@ -57,7 +57,7 @@ function event_trade(e)
 	local text = "I will require two minotaur horns for further studies.";
 	local text1 = "I believe I called for FOUR basilisk tongues.";
 	
-	if(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13077, item2 = 13077},1,text)) then -- Minotaur Horn x 2
+	if(e.other:GetFactionValue(e.self) >= -100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13077, item2 = 13077},1,text)) then -- Minotaur Horn x 2
 		e.self:Say("Fine work. You have earned the respect of the Library. Here is a small token of our appreciation. We shall have this ground down as soon as we find someone to go to Kaladim.");
 		e.other:Faction(e.self,245,20,0);	-- eldritch collective
 		e.other:Faction(e.self,238,-3,0); 	-- Dark reflection

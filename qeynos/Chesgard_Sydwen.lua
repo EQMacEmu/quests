@@ -45,12 +45,12 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12100})) then
 		e.self:Say("Good work " .. e.other:Class() .. ". The Karana Bandits have been plaguing the Rainkeepers flock for some time.  Take this as a small reward for your devotion.  Continue the fight against the Karana Bandits.  Ahh... I wish [Cheslin] was equally as skilled.");
 		-- random bronze item reward
-		-- Confirmed Live Factions
+		-- Confirmed Live Factions and exp data
 		e.other:Faction(e.self,280,20,0); -- Knights of Thunder
 		e.other:Faction(e.self,221,-20,0); -- Blood Sabers
 		e.other:Faction(e.self,341,15,0); -- Priests of Life
 		e.other:Faction(e.self,262,15,0); -- Guards of Qeynos
-		e.other:QuestReward(e.self,math.random(10),math.random(10),math.random(10),math.random(2),eq.ChooseRandom(7012,7013,7014,7015,7016,5026,5027,5028,5029,5030,5031,5032,5033,5034,5035,5036,5037,6019,6021,6022,6023,6024,9002),6200);
+		e.other:QuestReward(e.self,math.random(10),math.random(10),math.random(10),math.random(2),eq.ChooseRandom(7012,7013,7014,7015,7016,5026,5027,5028,5029,5030,5031,5032,5033,5034,5035,5036,5037,6019,6021,6022,6023,6024,9002),4850);
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 18839})) then
 		e.self:Say("Hmmph!! My son is living in a fantasy world. Still, you have done well. Take this as a token of appreciation. It is not much, but it may come in handy.");
 		-- Backpack, Cast-Iron Warhammer, Raw-hide Gorget, Small Raw-hide Mask, Buckler

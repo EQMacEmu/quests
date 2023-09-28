@@ -6,7 +6,7 @@ function event_say(e)
 			e.self:Say("The word around the mines is that you are not to be trusted. You'd best leave before my dagger finds a new home in your back.");
 		end
 	elseif(e.message:findi("cleaner")) then
-		if(e.other:GetFactionValue(e.self) >= 100) then
+		if(e.other:GetFactionValue(e.self) >= 200) then -- min. amiable didn't work
 			e.self:Say("Darn that blasted clockwork cleaner!! No one in Kaladim even knows what it is! They all think it's some kinda rat in armor!! Rat paladins?!! The name fits. We miners have seen many like it in the gnome city during heists, err.. visits. We have to get rid of this one in Kaladim!! If you smash it and get its scrap metal, I am authorized to give you a mining cap, if you are a member of Miner's Guild 628.");
 		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("Don't take this personally, but I can't quite trust you with such matters. Maybe a few less Butcherblock bandits would prove your worth.");
@@ -60,7 +60,7 @@ function event_trade(e)
 		e.other:Faction(e.self,379, -1); -- Butcherblock Bandits
 		e.other:Faction(e.self,241, 1);  -- Deeppockets
 		e.other:Faction(e.self,244, -3); -- Ebon Mask
-		e.other:QuestReward(e.self,0,0,0,0,eq.ChooseRandom(2113,2114,2115,2116,2117,2118,2119,2120,2121,2122,2123,2124),5000); -- Item(s): Small patchwork and small tattered set
+		e.other:QuestReward(e.self,0,0,0,0,eq.ChooseRandom(2113,2114,2115,2116,2117,2118,2119,2120,2121,2122,2123,2124),4000); -- Item(s): Small patchwork and small tattered set -- verified live xp
 	elseif(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13282})) then -- Scrap Metal
 		e.self:Say("Great work!! We need this junk for something and we sure didn't need this rat sucking up any of our gems. Here. This is a Mining Cap 628. It's not much, but it is the mark of our miners and provides light for mining purposes. Hold onto it. You never know when we may call upon you to produce it.");
 		e.other:Faction(e.self,322, 15); -- Miners Guild 628

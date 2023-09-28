@@ -20,13 +20,13 @@ function event_trade(e)
 
 	if(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13383})) then  -- requires amiably
 		e.self:Say("Thank you my friend! Every Koalindl must be accounted for, even the dead. Rodcet Nife shall be pleased and I shall reward you. Nothing much. Just a token of gratitude.");
-		-- Confirmed Live Factions
+		-- Confirmed Live Factions and exp data
 		e.other:Faction(e.self,341,100); -- Priest of Life
 		e.other:Faction(e.self,280,30); -- Knight of Thunder
 		e.other:Faction(e.self,262,50); -- Guards of Qeynos
 		e.other:Faction(e.self,221,-25); -- Bloodsabers
 		e.other:Faction(e.self,219,15); -- Antonius Bayle
-		e.other:QuestReward(e.self,0,0,math.random(20),0,eq.ChooseRandom(13297,13296),1000);
+		e.other:QuestReward(e.self,0,0,math.random(20),0,eq.ChooseRandom(13297,13296),5850);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

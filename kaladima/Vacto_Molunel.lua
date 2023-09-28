@@ -57,7 +57,7 @@ function event_trade(e)
 		e.other:Faction(e.self,293,1,0); -- Miners Guild 249
 		e.other:Faction(e.self,290,1,0); -- Merchants of Kaladim
 		e.other:Faction(e.self,232,-1,0);	-- Craknek Warrior
-		e.other:QuestReward(e.self,0,0,0,0,2175,5000);
+		e.other:QuestReward(e.self,0,0,0,0,2175,500); -- verified live xp
 	end
 	if(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13133, gold = 22},1,text2)) then -- breastplate
 		e.self:Say("If I do say so myself, this is one of the finest breastplates in all of Norrath. I am truly a master at my craft. You might want to wipe out some of the excess scarab goo before wearing it, though.");

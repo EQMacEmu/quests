@@ -44,11 +44,11 @@ function event_trade(e)
 	elseif(Red_Wine > 0) then
 		repeat
 			e.self:Say("Ah, yes, let me pray to our god.. Yes, Innoruuk has given me wisdom. A Scribe of Dal still exists, disguised as a barkeep in the Blind Fish. This information will not help you though, for she has sworn a [vow] of silence and will not speak of the Dal.");
-			-- confirmed live factions
+			-- confirmed live factions and exp data
 			e.other:Faction(e.self,370, 10);--Dreadguard Inner
 			e.other:Faction(e.self,334, 1);--Dreadguard Outer
 			e.other:Faction(e.self,236, 1);--Dark Bargainers
-			e.other:QuestReward(e.self,0,0,0,0,0,150);
+			e.other:QuestReward(e.self,0,0,0,0,0,100);
 			Red_Wine = Red_Wine - 1;
 		until Red_Wine == 0;
 	end

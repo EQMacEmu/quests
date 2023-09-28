@@ -53,7 +53,7 @@ function event_trade(e)
 			e.other:Faction(e.self,262,1); -- Faction: Guards of Qeynos
 			e.other:Faction(e.self,341,1); -- Faction: Priests of Life
 			e.other:Faction(e.self,280,1); -- Faction: Knights of Thunder
-			e.other:QuestReward(e.self,0,0,0,0,13107,100); -- Item: Black Burrow Stout
+			e.other:QuestReward(e.self,0,0,0,0,13107,100); -- Item: Black Burrow Stout ; exp data confirmed
 			moonstone = moonstone - 1;
 		until moonstone == 0
 	end

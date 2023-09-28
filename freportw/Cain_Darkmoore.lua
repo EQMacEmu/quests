@@ -26,7 +26,7 @@ function event_trade(e)
 			e.other:Faction(e.self,230,-1,0); -- Corrupt Qeynos Guards
 			e.other:Faction(e.self,330,-1,0); -- Freeport Militia
 			e.other:Faction(e.self,281,1,0); -- Knights of Truth
-			e.other:QuestReward(e.self,0,0,8,0,0,7500);
+			e.other:QuestReward(e.self,0,0,8,0,0,17750); -- exp data confirmed
 			count = count - 1;
 		until count == 0;
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 18748})) then -- A Tattered Note
