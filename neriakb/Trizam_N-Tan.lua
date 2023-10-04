@@ -24,19 +24,15 @@ function event_trade(e)
 	local item_lib = require("items");
 	local text = "I instructed you to return with no fewer than four pawn picks!";
 	
-	if(e.other:GetFactionValue(e.self) >= 100) then
-		if(item_lib.check_turn_in(e.self, e.trade, {item1 = 13885, item2 = 13885, item3 = 13885, item4 = 13885},1,text)) then
-			e.self:Say("So you have done your part to serve the King. As instructed, I shall reward your good deed. But I choose to reward you with provisions from the pantries of Neriak. They shall keep you strong.");
-			e.other:Faction(e.self,270,10); -- +Indigo Brotherhood
-			e.other:Faction(e.self,326,-1); -- -Emerald Warriors
-			e.other:Faction(e.self,311,-1); -- -Steel Warriors
-			e.other:Faction(e.self,1522,-20); -- Primordial Malice
-			e.other:QuestReward(e.self,0,5,2,0,eq.ChooseRandom(13022,13021),1000); -- Neriak Nectar, Rotgrub Rye
-		end
-		item_lib.return_items(e.self, e.other, e.trade)
-	else
-		e.self:Say("Go! Return when you have done more to serve the Indigo Brotherhood of Neriak. Fewer Leatherfoot Raiders in Nektulos and a few Leatherfoot skullcaps in the palms of Master Narex shall prove your true warrior nature and loyalty to our house.");
+	if(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13885, item2 = 13885, item3 = 13885, item4 = 13885},1,text)) then
+		e.self:Say("So you have done your part to serve the King. As instructed, I shall reward your good deed. But I choose to reward you with provisions from the pantries of Neriak. They shall keep you strong.");
+		e.other:Faction(e.self,270,10); -- +Indigo Brotherhood
+		e.other:Faction(e.self,326,-1); -- -Emerald Warriors
+		e.other:Faction(e.self,311,-1); -- -Steel Warriors
+		e.other:Faction(e.self,1522,-20); -- Primordial Malice
+		e.other:QuestReward(e.self,0,5,2,0,eq.ChooseRandom(13022,13021),1000); -- Neriak Nectar, Rotgrub Rye
 	end
+	item_lib.return_items(e.self, e.other, e.trade)
 end
 
 
