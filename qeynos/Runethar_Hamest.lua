@@ -61,10 +61,10 @@ function event_trade(e)
 		e.other:QuestReward(e.self,0,0,0,0,13505,100); -- Old Gray Tunic*
 	elseif(e.other:GetFaction(e.self) < 3 and item_lib.check_turn_in(e.self, e.trade, {item1 = 18809,item2 = 6357},1,text)) then
 		e.self:Say("Antonius Bayle will be pleased. The Temple is also pleased. Here is the enchanted staff we call Bonethunder. Should you find the enchantment gone, just ask Kasine to [enchant Bonethunder]. We need more disciples like you! Go forth to tell the world of the Rainkeeper.");
-		e.other:Faction(e.self,280,-50,0); -- Faction: Knights of Thunder
-		e.other:Faction(e.self,221,50,0); -- Faction: Bloodsabers
-		e.other:Faction(e.self,341,-37,0); -- Faction: Priests of Life
-		e.other:Faction(e.self,262,-37,0); -- Faction: Guards of Qeynos
+		e.other:Faction(e.self,280,50,0); -- Faction: Knights of Thunder
+		e.other:Faction(e.self,221,-50,0); -- Faction: Bloodsabers
+		e.other:Faction(e.self,341,37,0); -- Faction: Priests of Life
+		e.other:Faction(e.self,262,37,0); -- Faction: Guards of Qeynos
 		e.other:QuestReward(e.self,0,0,0,0,6358,1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
