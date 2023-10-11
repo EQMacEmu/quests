@@ -16,7 +16,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if (e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13073, item2 = 13073, item3 = 13070, item4 = 13070})) then -- Majik power
-		e.self:Say("SNORT!! Good. Innoruuk get special gift. Not you, dis time. Here. Learning majik wid dis. You more want to [help Innoruuk]?");
+		e.self:Say("SNORT!! Good. Innoruuk get special gift. Not you, dis time. Here. Learning majik wid dis. You more want to help Innoruuk?");
 		e.other:Faction(e.self,237,5);  -- +Dark Ones
 		e.other:Faction(e.self,308,1);  -- +Shadowknights of Night Keep
 		e.other:Faction(e.self,251,-1); -- -Frogloks of Guk

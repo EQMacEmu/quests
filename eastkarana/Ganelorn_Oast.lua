@@ -22,7 +22,7 @@ function event_trade(e)
 		e.other:QuestReward(e.self,0,0,0,0,20879,1000); -- Item: A note of credit
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20881,item2 = 20880,item3 = 10151,item4 = 5408})) then
 		e.self:Say("You have done well. I sense the one I have been hunting in the distance. As your final test, you must track him down and destroy him.");
-		eq.spawn2(15183,0,0,-800,-2712,15.6,138); -- NPC: Vance_Bearstalker
+		eq.unique_spawn(15183,0,0,-800,-2712,15.6,138); -- NPC: Vance_Bearstalker
 		e.other:Faction(e.self,246,100,0); -- faydarks champion
 		e.other:Faction(e.self,279,25,0); -- king tearis thex
 		e.other:Faction(e.self,226,25,0); -- cleric of tunare

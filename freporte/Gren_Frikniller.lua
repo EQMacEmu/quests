@@ -1,12 +1,12 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		if(e.other:GetFactionValue(e.self) >= -100) then
+		if(e.other:GetFactionValue(e.self) >= -500) then
 			e.self:Say("Aya, howdy there, " .. e.other:GetCleanName() .. ".  The name's Gren Frikniller.  'Niller the Killer' The only person who can give me a run for my money is my [sister].");
 		else
 			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
 		end
 	elseif(e.message:findi("sister") or e.message:findi("falia")) then
-		if(e.other:GetFactionValue(e.self) >= -100) then
+		if(e.other:GetFactionValue(e.self) >= -500) then
 			e.self:Say("Ah, my sister Falia has traveled here all the way from Rivervale. I hear that she's been staying up in North Freeport, but I haven't had a chance to find her yet. If you get some spare time, could you take this letter to her for me? Thanks, " .. e.other:GetCleanName() .. ", you're really not so bad after all.");
 			e.other:SummonCursorItem(18925); -- Letter to Falia
 		else

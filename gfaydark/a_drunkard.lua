@@ -21,7 +21,8 @@ function event_trade(e)
 		e.other:Faction(e.self,226,10); -- clerics of tunare
 		e.other:Faction(e.self,279,10); -- king tearis thex
 		e.other:Faction(e.self,5002,7); -- anti-mage
-		e.other:QuestReward(e.self,0,0,0,0,eq.ChooseRandom(2314, 2007, 2005, 9003),1000); -- Item(s): Bearskin Gloves (2314), Leather Belt, Leather Shoulderpads, Targ Shield
+		e.other:QuestReward(e.self,0,0,0,0,eq.ChooseRandom(2314, 2007, 2005, 9003),44000); -- Item(s): Bearskin Gloves (2314), Leather Belt, Leather Shoulderpads, Targ Shield
+		-- exp reward confirmed on Live
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

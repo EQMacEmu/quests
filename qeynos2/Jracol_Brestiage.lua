@@ -45,7 +45,7 @@ function event_trade(e)
 		e.other:Faction(e.self,304,-1,0); -- Ring of Scale
 		e.other:Faction(e.self,332,5,0); -- Highpass Guards
 		e.other:Faction(e.self,331,5,0); -- Merchants of Highpass
-		e.other:QuestReward(e.self,0,0,0,0,18722,1000);
+		e.other:QuestReward(e.self,0,0,0,0,18722,100);	-- confirmed Live exp
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

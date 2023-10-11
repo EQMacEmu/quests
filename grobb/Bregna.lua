@@ -24,7 +24,7 @@ function event_trade(e)
 		e.other:Faction(e.self,237,5); -- Faction: Dark Ones
 		e.other:Faction(e.self,308,1); -- Faction: Shadowknights of Night Keep
 		e.other:Faction(e.self,251,-1); -- Faction: Frogloks of Guk
-		e.other:QuestReward(e.self,0,0,0,0,15272,500); -- Spell: Spirit Pouch
+		e.other:QuestReward(e.self,0,0,0,0,15272,50); -- Spell: Spirit Pouch -- verified live xp
 	elseif (item_lib.check_turn_in(e.self, e.trade, {item1 = 26632, item2 = 26640, item3 = 29921, item4 = 26662})) then -- Aid Garuuk
 		e.self:Say("Dis am gud. I see you've been talkin' to Garuuk. Methanks you fer da help. Take dis note back ta Garuuk so he knows you helped me. Tanks again!");
 		e.other:Faction(e.self,237,10); -- Faction: Dark Ones

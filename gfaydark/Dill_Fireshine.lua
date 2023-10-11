@@ -26,6 +26,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	local text = "I expect to receive TWO orc hatchets.";
 	
+	-- exp and money rewards for all 3 confirmed by Torven
 	if(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 12108,item2 = 12108},1,text)) then -- Orc Hatchet x 2
 		e.self:Say("Fantastic work!! Your actions shall earn you the respect of all Fier'Dal!  Take this as a small bounty for your deed.  We have heard of [Crushbone allies] who wish our demise.");
 		e.other:Faction(e.self,246,10);  -- Faydark's Champions
@@ -33,7 +34,12 @@ function event_trade(e)
 		e.other:Faction(e.self,226,2);  -- Clerics of Tunare
 		e.other:Faction(e.self,310,2); -- Soldiers of Tunare
 		e.other:Faction(e.self,234,-2); -- Crushbone Orcs
-		e.other:QuestReward(e.self,math.random(10),math.random(20),0,0,eq.ChooseRandom(5047,5048,7032,5046),500); -- Tarnished Scimitar, Tarnished Bastard Sword, Cast-Iron Rapier, Tarnished Battle Axe
+		e.other:QuestReward(e.self,math.random(10),0,0,0,eq.ChooseRandom(5047,5048,7032,5046),2500); -- Tarnished Scimitar, Tarnished Bastard Sword, Cast-Iron Rapier, Tarnished Battle Axe
+		e.other:SummonItem(eq.ChooseRandom(5047,5048,7032,5046)); -- he awards more than one weapon
+		if ( math.random() < 0.5 ) then
+			e.other:SummonItem(eq.ChooseRandom(5047,5048,7032,5046));
+		end
+
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 18840})) then -- Sealed Letter (Letter To King Naythox Thex)
 		e.self:Say("Yes. A recent report has proven this to be true. An evil alliance has been made. We shall soon need many more experienced adventurers such as yourself. For now, take this reward and strengthen your skills.");
 		e.other:Faction(e.self,246,30);  -- Faydark's Champions
@@ -41,7 +47,7 @@ function event_trade(e)
 		e.other:Faction(e.self,226,7);  -- Clerics of Tunare
 		e.other:Faction(e.self,310,7); -- Soldiers of Tunare
 		e.other:Faction(e.self,234,-7); -- Crushbone Orcs
-		e.other:QuestReward(e.self,math.random(0,10),math.random(0,10),math.random(0,10),math.random(0,2),8003,1500); -- Longbow
+		e.other:QuestReward(e.self,0,math.random(1,9),1,1,8003,23400); -- Longbow
 	elseif(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13226})) then -- Runner Pouch
 		e.self:Say("Good work. We shall cut off correspondence between these two. It is for the best. Remember, if you find any notes to Neriak from the ambassador in Crushbone, give them to me.");
 		e.other:Faction(e.self,246,20);  -- Faydark's Champions
@@ -49,7 +55,7 @@ function event_trade(e)
 		e.other:Faction(e.self,226,5);  -- Clerics of Tunare
 		e.other:Faction(e.self,310,5); -- Soldiers of Tunare
 		e.other:Faction(e.self,234,-5); -- Crushbone Orcs
-		e.other:QuestReward(e.self,math.random(0,10),math.random(0,10),math.random(0,10),math.random(0,2),eq.ChooseRandom(2148, 2142, 2146, 2147, 2138, 2141, 2137, 2144, 2145, 2143, 2140, 2139),1500); -- Raw-hide Armors
+		e.other:QuestReward(e.self,math.random(0,10),math.random(0,10),math.random(0,10),0,eq.ChooseRandom(2001, 2002, 2008, 2010, 2140, 2142, 2147, 2148),21800);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

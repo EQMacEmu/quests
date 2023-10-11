@@ -33,7 +33,7 @@ function event_trade(e)
 		e.other:Faction(e.self,223,-10,0); -- Circle of Unseen Hands
 		e.other:Faction(e.self,291,4,0); -- Merchants of Qeynos
 		e.other:QuestReward(e.self,math.random(10),math.random(9),math.random(5),0,13305,500);
-		eq.spawn2(1202,62,0,-412,75,-24,0); -- NPC: Executioner
+		eq.unique_spawn(1202,62,0,-412,75,-24,0); -- NPC: Executioner
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 18912}, 0)) then
 		e.self:Say("So, an assassin has been sent to Qeynos! I shall have my guards keep an eye out for any suspicious looking visitors. As for you... you should speak with the Surefall Glade ambassador. Ambassador Gash is staying at the Lion's Mane Inn here in South Qeynos. Inform him that [an assassin has been sent to kill] him. Do not let the assassin near him!");
 		-- confirmed live factions

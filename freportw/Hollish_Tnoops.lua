@@ -1,3 +1,18 @@
 function event_spawn(e)
-  e.self:SetRunning(true);
+	eq.set_timer("depop",1800000); --Despawn after 30 minutes
+	e.self:SetRunning(true);
+end
+
+function event_combat(e)
+	if(e.joined) then
+		if(not eq.is_paused_timer("depop")) then
+			eq.pause_timer("depop");
+		end
+	else
+		eq.resume_timer("depop");
+	end
+end
+
+function event_timer(e)
+	eq.depop();
 end

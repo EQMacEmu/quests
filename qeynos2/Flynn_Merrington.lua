@@ -5,9 +5,9 @@ function event_say(e)
 		else
 			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
 		end
-	elseif(e.message:findi("mira sayer's tax")) then
+	elseif(e.message:findi("mira.* tax")) then
 		e.self:Say("Ha! Yeah, I took their tax money. What are you going to do about it, little gnoll pup? Tell you want.. I will cut you a deal. You tell me you are a [gnoll loving weakling who isn't fit to comb my feet] and I will give you that merchant's tax money.");
-	elseif(e.message:findi("gnoll loving weakling who isn't fit to comb my feet")) then
+	elseif(e.message:findi("gnoll loving weakling.* feet")) then
 		e.other:Faction(e.self,223,-1); -- Faction: Circle of Unseen Hands
 		e.self:Say("BWAH! HA HA HA! Did you all hear that?! " .. e.other:GetCleanName() .. " is a gnoll loving weakling who isn't fit to comb my feet! BWAH HA HA! MY FEET! HA HA HA! Oh.. too rich.. Heh.. HA HA HA! Oh.. Heh heh heh");
 		e.other:SummonCursorItem(13174); -- Item: Sayers Tax Payment

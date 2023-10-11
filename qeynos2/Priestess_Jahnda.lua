@@ -29,7 +29,7 @@ end
 function event_trade(e)
 	local item_lib =require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18714}, 0)) then -- Tattered Note
-		e.self:Say("Welcome to the Temple of Life. I am Jahnda. the High Priestess of the Clerics of Nife. Wear this tunic with pride and carry out the will of Nife. Please. see Tonmerk Plorsin or Nomsoe Jusagta. They will help get you started spreading the will of The Prime Healer.");
+		e.self:Say("Welcome to the Temple of Life. I am Jahnda, the High Priestess of the Clerics of Nife. Wear this tunic with pride and carry out the will of Nife. Please, see Tonmerk Plorsin or Nomsoe Jusagta. They will help get you started spreading the will of The Prime Healer.");
 		e.other:Faction(e.self,341,100,0); -- Priest of Life
 		e.other:Faction(e.self,280,30,0); -- Knight of Thunder
 		e.other:Faction(e.self,262,50,0); -- Guards of Qeynos
@@ -37,7 +37,7 @@ function event_trade(e)
 		e.other:Faction(e.self,219,15,0); -- Antonius Bayle
 		e.other:QuestReward(e.self,0,0,0,0,13506,100); -- Faded Tunic*
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13724}, 0)) then
-		e.self:Say("Excellent! Rodcet smiles upon us this day! Here, please take this pouch of evidence to Jahnda in the Temple of Life. She will know what we must do. I will remain here to keep an eye out for the minions of Bertoxxlous. Also, accept this small reward as a token of my appreciation of your efforts to rid Norrath of the influence of the Plaguebringer.");
+		e.self:Say("Excellent work! You are surely under the protection and guidance of the Prime Healer. This evidence will help us greatly to convince Antonious and the guild leaders of Qeynos that the Bloodsabers are here and seek to destroy all we have worked so long for.");
 		-- Confirmed Live Factions
 		e.other:Faction(e.self,341,50); -- Priest of Life
 		e.other:Faction(e.self,280,15); -- Knight of Thunder

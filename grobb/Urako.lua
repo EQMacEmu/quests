@@ -22,7 +22,7 @@ function event_say(e)
 	elseif(e.message:findi("i.* collect kaglari skeleton")) then
 		if(e.other:GetFactionValue(e.self) >= 200) then -- requires mid amiably	
 			e.self:Say("Tank you!!  Dere is fours of dem.  You can finds dem here in Grobb.  I no tink dey will want to come homes to Kaglari's closet.  You ask dem to [come back to the closet] and see whut dey say.  If you gets dem back me promise to gives you a [Kaglari mana doll].");
-			eq.spawn2(52056,0,0,-265,156,8,258); -- NPC: a_skeleton
+			eq.unique_spawn(52056,0,0,-265,156,8,258); -- NPC: a_skeleton
 		elseif(e.other:GetFactionValue(e.self) >= 0) then 
 			e.self:Say("Darkones no hates you, buts you not helps us enuff.");
 		else

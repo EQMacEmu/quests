@@ -37,17 +37,17 @@ function event_trade(e)
 	if(e.other:GetFactionValue(e.self) >= 0 and item_lib.check_turn_in(e.self, e.trade, {platinum = 7})) then
 		e.self:Say("Take this note to the Scribe of Dal, and perhaps she will break her vow.");
 		-- confirmed live factions
-		e.other:Faction(e.self,370, 10);--Dreadguard Inner
+		e.other:Faction(e.self,236, 10);--Dark Bargainers		
+		e.other:Faction(e.self,370, 1);--Dreadguard Inner
 		e.other:Faction(e.self,334, 1);--Dreadguard Outer
-		e.other:Faction(e.self,236, 1);--Dark Bargainers
 		e.other:QuestReward(e.self,0,0,0,0,18200); --a note (renounce the D'al, Text: TomeOfAges1)
 	elseif(Red_Wine > 0) then
 		repeat
 			e.self:Say("Ah, yes, let me pray to our god.. Yes, Innoruuk has given me wisdom. A Scribe of Dal still exists, disguised as a barkeep in the Blind Fish. This information will not help you though, for she has sworn a [vow] of silence and will not speak of the Dal.");
 			-- confirmed live factions and exp data
-			e.other:Faction(e.self,370, 10);--Dreadguard Inner
+			e.other:Faction(e.self,236, 10);--Dark Bargainers			
+			e.other:Faction(e.self,370, 1);--Dreadguard Inner
 			e.other:Faction(e.self,334, 1);--Dreadguard Outer
-			e.other:Faction(e.self,236, 1);--Dark Bargainers
 			e.other:QuestReward(e.self,0,0,0,0,0,100);
 			Red_Wine = Red_Wine - 1;
 		until Red_Wine == 0;

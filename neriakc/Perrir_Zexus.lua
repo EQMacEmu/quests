@@ -22,7 +22,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if(e.other:GetFactionValue(e.self) >= 150 and item_lib.check_turn_in(e.self, e.trade, {item1 = 14550, item2 = 14550, item3 = 14550, item4 = 14550})) then--Woven Grass Amulets
-		e.self:Emote("laughs. 'Here, take this then!  You are now and initiate of Innoruuk.  Speak with Ithvol K`Jasn for further advancement.'");--text made up
+		e.self:Say("You have done well, young initiate. I grant you this medallion invested with the divine hatred of Innoruuk. Wear it proudly as a representation of your importance to these sacred spires. Now, if you will excuse me, I must proceed with the burning of these pathetic halfling symbols of faith.");
 		e.other:Faction(e.self,340,50);--Priests of Innoruuk
 		e.other:Faction(e.self,278,7);--King Naythox Thex
 		e.other:Faction(e.self,362,-17);--Priests of Marr

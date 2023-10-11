@@ -18,5 +18,5 @@ function event_waypoint_arrive(e)
 end
 
 function event_death_complete(e)
-	eq.spawn2(9144,86,0,704,-554,-24,0); -- spawn hollish tnoops
+	eq.unique_spawn(9144,86,0,704,-554,-24,0); -- spawn hollish tnoops
 end

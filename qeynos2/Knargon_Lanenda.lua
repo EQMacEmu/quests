@@ -68,7 +68,7 @@ function event_trade(e)
 		e.other:Faction(e.self,230,1,0); -- Corrupt Qeynos Guards
 		e.other:Faction(e.self,262,-1,0); -- Guards of Qeynos
 		e.other:Faction(e.self,273,1,0); -- Kane Bayle
-		e.other:QuestReward(e.self,0,0,0,0,0,250);
+		e.other:QuestReward(e.self,0,0,0,0,0,100);	-- confirmed Live exp
 	end
 	local returned = item_lib.return_items(e.self, e.other, e.trade, false)
 	if ( returned ) then

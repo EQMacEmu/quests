@@ -17,7 +17,7 @@ function event_say(e)
 		e.self:Say("His name is Trumpy. He is one of those [Irontoes] I think. I've seen him hanging out in the Fish's Ale. I don't know why he likes to torment me.");
 	elseif(e.message:findi("irontoe")) then
 		e.self:Say("Ah! The Irontoes are a rough bunch of dwarves from Kaladim. The seem to get quite drunk on a frequent basis.");
-	elseif(e.message:findi("fishing"))then
+	elseif(e.message:findi("fishing") or e.message:findi("bite"))then
 		e.self:Say("Huh?  OH!  Sorry, I was dozing off!  It's been a slow day.  A few fish and an old shoe are all I have reeled in.  I did see a shark swim by, though!");
 	elseif(e.message:findi("kane"))then
 		e.self:Say("Commander Kane Bayle is the commander of all the Qeynos Guard.  He is second only to his brother, Antonius Bayle.  His post is in the guard house at the city gates.  Mind you, do not bother him, he has a bit of a temper.");		

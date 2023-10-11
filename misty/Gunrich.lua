@@ -1,13 +1,17 @@
 function event_say(e)
-	if(e.other:GetFaction(e.self) < 5) then
-		if(e.message:findi("hail")) then
-			e.self:Say("Hello, " .. e.other:GetCleanName() .. ". What can I do for you?");
-		elseif(e.message:findi("dark rivers flow east")) then
-			e.self:Say("So, Rueppy Kutpurse must have sent you. Here, take this case. Be careful, though. You don't want to get caught with that in town. It is illegal to possess such alcohol.");
+	
+	if(e.message:findi("hail")) then
+		e.self:Say("Mlech!  You am NOT [Deeppocketsss].  Go aways and don't talk to Gunrich or I am hafta kill you.");
+	elseif(e.message:findi("deeppockets")) then
+		e.self:Say("MLACH!  I AM TOLDED YOU!  NOT TO TALKS!");
+		e.self:AddToHateList(e.other, 1);
+	elseif(e.message:findi("dark rivers flow east")) then
+		if(e.other:GetFactionValue(e.self) >= 300) then
+			e.self:Say("Heh!  Here, here, here.  Tell Rueppy hellos from Gunrich.  She am so perties.  Heh, heh.");
 			e.other:SummonCursorItem(13131); --Case of Blackburrow Stout
+		else
+			e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");
 		end
-	else
-		e.self:Say("I am sorry, " .. e.other:GetCleanName() .. ". You aren't trustworthy enough yet.");
 	end
 end
 
