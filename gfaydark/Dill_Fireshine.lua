@@ -8,17 +8,35 @@ function event_say(e)
 	elseif(e.message:findi("orc saboteurs")) then
 		if(e.other:GetFactionValue(e.self) >= 100) then
 			e.self:Say("As others move to battle the orc armies. we have word that the orc pawns have been sent into the woods to damage the great trees which support Kelethin. We shall employ the talents of our young rangers to halt their efforts. I currently seek those who will [hunt the orc pawns].");
-		elseif(e.other:GetFaction(e.self) == 5) then
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("Faydark's Champions cannot call you foe. but you have yet to earn our trust.");
 		else
 			e.self:Say("Your ways are considered vile to Faydark's Champions. Leave before my rage overcomes my restraint.");
 		end
-	elseif(e.message:findi("hunt the orc pawns")) then
-		e.self:Say("Go to the forest floor and seek out the orc pawns. Within their ranks can sometimes be found orc hatchetmen. They carry orc hatchets which you must return and I shall reward you for every two orc hatchets and perhaps offer you a weapon in return. should we have any to spare at the time.");
-	elseif(e.message:findi("crushbone allies")) then
-		e.self:Say("It seems the orcs have allied themselves with the wicked Teir'Dal. We know of this through reports of a Teir'Dal presence within Crushbone. We must [intercept the Crushbone runners] and find a reason for their union.");
-	elseif(e.message:findi("intercept the crushbone runners")) then
-		e.self:Say("Go to the Butcherblocks. You stand a greater chance of finding the runners there. I shall pay a bounty for all returned runner pouches.");
+	elseif(e.message:findi("hunt.* orc pawn")) then
+		if(e.other:GetFactionValue(e.self) >= 100) then
+			e.self:Say("Go to the forest floor and seek out the orc pawns. Within their ranks can sometimes be found orc hatchetmen. They carry orc hatchets which you must return and I shall reward you for every two orc hatchets and perhaps offer you a weapon in return. should we have any to spare at the time.");
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
+			e.self:Say("Faydark's Champions cannot call you foe. but you have yet to earn our trust.");
+		else
+			e.self:Say("Your ways are considered vile to Faydark's Champions. Leave before my rage overcomes my restraint.");
+		end
+	elseif(e.message:findi("crushbone allies") or e.message:findi("crushbone ally")) then
+		if(e.other:GetFactionValue(e.self) >= 100) then
+			e.self:Say("It seems the orcs have allied themselves with the wicked Teir'Dal. We know of this through reports of a Teir'Dal presence within Crushbone. We must [intercept the Crushbone runners] and find a reason for their union.");
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
+			e.self:Say("Faydark's Champions cannot call you foe. but you have yet to earn our trust.");
+		else
+			e.self:Say("Your ways are considered vile to Faydark's Champions. Leave before my rage overcomes my restraint.");
+		end
+	elseif(e.message:findi("intercept.* crushbone runner")) then
+		if(e.other:GetFactionValue(e.self) >= 100) then
+			e.self:Say("Go to the Butcherblocks. You stand a greater chance of finding the runners there. I shall pay a bounty for all returned runner pouches.");
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
+			e.self:Say("Faydark's Champions cannot call you foe. but you have yet to earn our trust.");
+		else
+			e.self:Say("Your ways are considered vile to Faydark's Champions. Leave before my rage overcomes my restraint.");
+		end
 	end
 end
 

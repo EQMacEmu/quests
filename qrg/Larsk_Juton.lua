@@ -63,7 +63,7 @@ function event_trade(e)
 		e.other:Faction(e.self,272,6,0); -- Jaggedpine Treefolk
 		e.other:Faction(e.self,306,-3,0); -- Sabertooths of Blackburrow
 		e.other:Faction(e.self,262,1,0); -- Guards of Qeynos
-		e.other:QuestReward(e.self,math.random(5),math.random(5),math.random(5),0,eq.ChooseRandom(2137,2172,9006,5033),20000); --items: Raw-Hide Skullcap, Large Raw-Hide Boots, Wooden Shield, Bronze Broad Sword
+		e.other:QuestReward(e.self,math.random(5),math.random(5),math.random(5),0,eq.ChooseRandom(2137,2140,9006,5033),20000); --items: Raw-Hide Skullcap, Raw-Hide Tunic, Wooden Shield, Bronze Broad Sword
 	elseif(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 17970,item2 = 17970, item3 = 17970},1,text)) then
 		e.self:Say("Excellent!  Ridding the area of those foul beasts will certainly slow down whatever it is they are planning.  Here is the Cloak of Jaggedpine.  You should keep this, for you never know when we may decide to alter the enchantments on it.");
 		e.other:Faction(e.self,302,20,0); -- Faction: Protectors of Pine

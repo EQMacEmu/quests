@@ -1,3 +1,15 @@
+function event_spawn(e)
+	eq.set_timer("pick_up", 6000);
+end
+
+function event_timer(e)
+	if ( e.timer == "pick_up" ) then		
+		while ( e.self:CheckGround() ) do
+			e.self:Emote("picks up something from the ground.");
+		end
+	end	
+end
+
 function event_say(e)
 	if(e.message:findi("Stanos")) then
 		e.self:Say("Stanos? Stanos!! That dog, I WILL see him dead for what he cost me. Outcast I am, stripped of my position, my god has forsaken me, blaming ME for the loss of some tome. And you, " .. e.other:GetCleanName() .. ", you have aided him. For that, you will die first. Please, struggle and beg, I do so enjoy watching my victims squirm, and I have little joy left in my life now. If you want my favor, perhaps if you came bearing Stanos' head I would be more forgiving. But I doubt it.");

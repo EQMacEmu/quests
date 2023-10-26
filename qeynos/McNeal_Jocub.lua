@@ -20,11 +20,8 @@ function event_waypoint_arrive(e)
 end
 
 function event_signal(e)
-	local rando = math.random(2);
 	e.self:Say("You shall never take me alive!!");
-	if(rando == 1) then
-		eq.attack_npc_type(1202);
-	end
+	eq.attack_npc_type(1202);
 end
 
 function event_trade(e)

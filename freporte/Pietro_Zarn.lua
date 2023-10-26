@@ -17,14 +17,12 @@ function event_trade(e)
 		e.other:Faction(e.self,281,-15,0); -- Knights of Truth
 		e.other:Faction(e.self,296,20,0); -- Opal Dark Briar
 		e.other:QuestReward(e.self,0,0,0,0,13561,20); -- Faded Crimson Tunic
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 18825})) then -- Bayle List
-		if(e.other:GetFactionValue(e.self) >= 250) then
-			e.self:Say("You have proven yourself truly evil. Your hatred shall shine from this day forth. Innoruuk commands that I reward you with this. It is called Rage and it serves the powers of hate. Use it to smite the forces of good. Hail Innoruuk!");
-			e.other:Faction(e.self,271,100,0); -- Dismal Rage
-			e.other:Faction(e.self,281,-15,0); -- Knights of Truth
-			e.other:Faction(e.self,296,20,0); -- Opal Dark Briar
-			e.other:QuestReward(e.self,0,0,0,0,12153,100); -- Rage War Maul
-		end
+	elseif(e.other:GetFactionValue(e.self) >= 250 and item_lib.check_turn_in(e.self, e.trade, {item1 = 18825})) then -- Bayle List
+		e.self:Say("You have proven yourself truly evil. Your hatred shall shine from this day forth. Innoruuk commands that I reward you with this. It is called Rage and it serves the powers of hate. Use it to smite the forces of good. Hail Innoruuk!");
+		e.other:Faction(e.self,271,100,0); -- Dismal Rage
+		e.other:Faction(e.self,281,-15,0); -- Knights of Truth
+		e.other:Faction(e.self,296,20,0); -- Opal Dark Briar
+		e.other:QuestReward(e.self,0,0,0,0,12153,100); -- Rage War Maul
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

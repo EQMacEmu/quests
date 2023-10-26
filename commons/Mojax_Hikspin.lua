@@ -16,7 +16,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	local milk = item_lib.count_handed_item(e.self, e.trade, {13087});
 	
-	if(e.self:GetX() == 2770 and e.self:GetY() == -306 and milk > 0) then
+	if(not e.self:IsMoving() and milk > 0) then
 		repeat
 			e.self:Say("Aaahhhh. Now that is refreshing. Just let me rest for a bit. The note is safe and sound in my bedroll inside the inn.");
 			e.other:Faction(e.self,281,1); -- Faction: Knights of Truth

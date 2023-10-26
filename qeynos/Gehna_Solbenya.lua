@@ -10,6 +10,7 @@ function event_say(e)
 	elseif(e.message:findi("deliver.* flock")) then					
 		if(e.other:GetFactionValue(e.self) >= 100) then
 			e.self:Say("Then go to the Plains of Karana. It is there that the blessings are needed. Ask every resident of the plains if they are followers of Karana. If they are, then ask them if they [require Karana's blessings]. Let them drink from this temple chalice. Return the empty chalice to me and you shall never go thirsty again.");
+			e.other:SummonCursorItem(12103); -- Item: A Full Chalice
 		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("Well, friend, the Temple of Thunder has recognized and appreciates your past deeds for us.  But this matter is of vital importance to us and we need more proof of your devotion to our cause.");
 		else
@@ -18,7 +19,6 @@ function event_say(e)
 	elseif(e.message:findi("hunt.* binders")) then
 		if(e.other:GetFactionValue(e.self) >= 250) then	-- requires mid amiably
 			e.self:Say("Go to the Plains of Karana and seek out the Karana Bandits. Among them can be found their bandit binders. They are healers of sorts. Which evil deity granted them this power is unknown to us. Each carries a binder spectacle. I shall reward clerics for every two returned spectacles. Perhaps a new power may even be bestowed.");				
-			e.other:SummonCursorItem(12103); -- Item: A Full Chalice
 		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("Well, friend, the Temple of Thunder has recognized and appreciates your past deeds for us.  But this matter is of vital importance to us and we need more proof of your devotion to our cause.");
 		else

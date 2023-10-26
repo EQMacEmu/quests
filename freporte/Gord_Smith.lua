@@ -1,6 +1,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Welcome to Gord's Smithy! What brings you to our shop this good day? Is it our lavish assortment of weapons? Or perhaps it is to learn the art of the [seafarers' buckler] and [seafarers' weapons]?");
+		e.self:Say("Welcome to Gord's Smithy!! What brings you to our shop this good day? Is it our lavish assortment of weapons? Or perhaps it is to learn the art of the [seafarers' buckler] and [seafarers' weapons]?");
 		e.self:DoAnim(49);
 	elseif(e.message:findi("buckler")) then
 		e.self:Say("Seafarers' bucklers are light shields, perfect for sailors, pirates, and anyone who frequently spends time on the seas. The bucklers can only be crafted in the unique forge here in Freeport. If you're interested in attempting a seafarers' buckler, you will need a buckler mold, a flask of water, a smithy hammer, and a high quality sheet of metal.");

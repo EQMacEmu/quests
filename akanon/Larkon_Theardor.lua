@@ -1,7 +1,7 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings! Welcome to the Library of Mechanimagica. You must be a [current member of the Library] or has my [mind begun to slip]?");
-	elseif(e.message:findi("slipping")) then
+	elseif(e.message:findi("slip")) then
 		if(e.other:GetFactionValue(e.self) >= 100) then -- Needs amiably or better
 			e.self:Say("What!!? That was but a joke. I try to make you feel comfortable with a little levity and you proclaim my mind has gone the way of Meldrath's. Well.. enough frivolity. You will do your part to help in the menial tasks of the Collective. Do you want the [clean tasks] or the [dirty tasks]?");
 		elseif(e.other:GetFaction(e.self) == 5) then

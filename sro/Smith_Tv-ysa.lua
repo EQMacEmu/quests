@@ -2,6 +2,14 @@
 -- The xp from this quest was what made it worthwhile, more than the concordance. -Kilelen
 -- Converted to .lua by Speedz
 
+function event_spawn(e)
+	eq.set_timer("ww",3600000);
+end
+
+function event_timer(e)
+	eq.set_sky(5);
+end
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		if(e.other:GetFactionValue(e.self) >= 0) then
