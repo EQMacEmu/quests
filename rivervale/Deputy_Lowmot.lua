@@ -1,6 +1,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say(string.format("Greetings, %s!  I am Deputy Lowmot.  In addition to my duties as a deputy, I am also in charge of organizing all of our meals here at the Guardian Stronghold.", e.other:GetCleanName())); 	
+		e.self:Say("Greetings, " .. e.other:GetCleanName() .. "!  I am Deputy Lowmot.  In addition to my duties as a deputy, I am also in charge of organizing all of our meals here at the Guardian Stronghold."); 	
 	elseif(e.message:findi("nice hat") or e.message:findi("nice mask")) then
 		e.self:Say("Thank you. It is worn with pride and is the trademark of the deputies of the Guardians of the Vale.");
 	elseif(e.message:findi("farm")) then

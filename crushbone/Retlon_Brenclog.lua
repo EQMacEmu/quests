@@ -1,6 +1,10 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Oh my word!! A rescuer!! Hurry! Get me out of these chains!! Go find the orc who has the keys!");
+	elseif(e.message:findi("get.* out")) then
+		e.self:Say("I am from Ak'Anon! I must return a [spellbook] to the Eldritch Collective.");
+	elseif(e.message:findi("spellbook")) then
+		e.self:Say("What?! I am stuck here and you are worried about a spellbook?! Forget that! Just get the keys to my shackles from one of the orcs! HURRY!");
 	end
 end
 

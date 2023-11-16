@@ -1,11 +1,3 @@
-function event_spawn(e)
-	eq.set_timer("ww",3600000);
-end
-
-function event_timer(e)
-	eq.set_sky(5);
-end
-
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("He.. Hello. Wou.. would you like to buy something? Be quick or [Kizdean] will return!");

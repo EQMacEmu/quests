@@ -9,20 +9,20 @@ function event_say(e)
 	local fac = e.other:GetFaction(e.self);
 
 	if(e.message:findi("hail")) then
-		e.self:Say("Hello. " .. e.other:GetCleanName() .. ".  I am Lanena Wickystick. marshal of all Vale concerns.  If there are any troubles brewing in our fine town which concern the Guardians of the Vale. please inform me.  You must be a [new deputy] or are you an [outsider]?");
+		e.self:Say("Hello. " .. e.other:GetCleanName() .. ".  I am Lanena Wickystick, marshal of all Vale concerns.  If there are any troubles brewing in our fine town which concern the Guardians of the Vale, please inform me.  You must be a [new deputy] or are you an [outsider]?");
 	elseif(e.message:findi("new deputy")) then
-		if(e.other:GetFactionValue(e.self) >= 100) then
-			e.self:Say("It is good to see such fine stock in the ranks of the Guardians.  Being new. there is much to learn. in battle and in life itself.  If you are not presently obligated. we have need of you here in the hollow.  There seems to be a [small problem].");
+		if(e.other:GetFactionValue(e.self) >= 100) then -- confirmed exact - Elroz
+			e.self:Say("It is good to see such fine stock in the ranks of the Guardians.  Being new, there is much to learn, in battle and in life itself.  If you are not presently obligated, we have need of you here in the hollow.  There seems to be a [small problem].");
 		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("You are in good standing with the Guardians of the Vale. Continue with your good work and then we may speak.")
 		else
 			e.self:Say("How can you expect to just waltz into Guardian Stronghold and expect to gather information?! Consider yourself lucky I don't command the Guardian of the Vale deputies to show you the sharpness of their blades!");
 		end
 	elseif(e.message:findi("outsider")) then
-		e.self:Say("Well. then!! You should not be in here.  This place is restricted to all outsiders.  You will leave at once!  Thank you and good day.");
+		e.self:Say("Well, then!! You should not be in here.  This place is restricted to all outsiders.  You will leave at once!  Thank you and good day.");
 	elseif(e.message:findi("small problem")) then
 		if(e.other:GetFactionValue(e.self) >= 100) then
-			e.self:Say("For months. Fiddy Bobick has petitioned the marshals to assist him with a problem he has.  With the addition of new deputies such as yourself. we can now give him the assistance he requires.  Just go down to Bobick's shop near the lake.  Tell him I sent you.");
+			e.self:Say("For months, Fiddy Bobick has petitioned the marshals to assist him with a problem he has.  With the addition of new deputies such as yourself, we can now give him the assistance he requires.  Just go down to Bobick's shop near the lake.  Tell him I sent you.");
 		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("You are in good standing with the Guardians of the Vale. Continue with your good work and then we may speak.")
 		else

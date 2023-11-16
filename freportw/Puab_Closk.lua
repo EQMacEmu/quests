@@ -1,19 +1,29 @@
 function event_say(e)
-	local fac = e.other:GetFaction(e.self);
-
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings. I am Puab Closk, Master of the Ashen Order.  Our home is your home, friend. Feel free to stay as long as you like.  Learn our ways as many have done in the past.  To fight like the tiger and strike like the cobra are your goals.");
-	elseif(e.message:findi("treant fists")) then
+	elseif(e.message:findi("treant fist")) then
 		e.self:Say("You desire the treant fists?  I have them and I will offer them to any [skilled monk of the Ashen House].");
-	elseif(e.message:findi("who is clawfist ")) then
-		e.self:Say("Clawfist is a Kerran, a catman. He braved the dangers of Norrath to reach the Ashen Order. He sought knowledge of our disiples. He learned well.");
-	elseif(e.message:findi("where is clawfist")) then
-		e.self:Say("Clawfist has been banished by the Kerrans of Odus. Where they have sent him I am unsure.");
-	elseif(e.message:findi("skilled monk of the Ashen House")) then
+	elseif(e.message:findi("who.* clawfist")) then
+		if(e.other:GetFactionValue(e.self) >= 100) then
+			e.self:Say("Clawfist is a Kerran, a catman. He braved the dangers of Norrath to reach the Ashen Order. He sought knowledge of our disiples. He learned well.");
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
+			e.self:Say("I have been watching you, and appreciate the help you've given to the brothers and sisters of the Ashen Order, but I feel that such a vital matter should be left to one of our more trusted members.");
+		else
+			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
+		end
+	elseif(e.message:findi("where.* clawfist")) then
+		if(e.other:GetFactionValue(e.self) >= 100) then	
+			e.self:Say("Clawfist has been banished by the Kerrans of Odus. Where they have sent him I am unsure.");
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
+			e.self:Say("I have been watching you, and appreciate the help you've given to the brothers and sisters of the Ashen Order, but I feel that such a vital matter should be left to one of our more trusted members.");
+		else
+			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
+		end
+	elseif(e.message:findi("skilled monk.* ashen house")) then
 		if(e.other:GetFactionValue(e.self) >= 100) then
 			e.self:Say("Then you shall aid our family. My former pupil [Clawfist] has been banished by his people. You will go to him and hand him this token as proof of your origin. He shall be expecting you.");
 			e.other:SummonCursorItem(12369); -- Puab's Token
-		elseif(e.other:GetFaction(e.self) == 5) then
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("I have been watching you, and appreciate the help you've given to the brothers and sisters of the Ashen Order, but I feel that such a vital matter should be left to one of our more trusted members.");
 		else
 			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));

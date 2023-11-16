@@ -1,6 +1,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Its nice to meet you " .. e.other:GetCleanName() .. ". Allow me to introduce myself. I am Lendel Deeppockets master Assassin of Rivervale. I am personally in charge of all [training] we have the new recruits go through before they are sent out on specific missions.");
+		e.self:Say("It's nice to meet you " .. e.other:GetCleanName() .. ". Allow me to introduce myself. I am Lendel Deeppockets master Assassin of Rivervale. I am personally in charge of all [training] we have the new recruits go through before they are sent out on specific missions.");
 	elseif(e.message:findi("stanos")) then
 		e.self:Say("Stanos is an old... <cough>... buddy of mine.  If yer looking for work, ya could take a message from me to him.  Just tell him I sent ya, and see what he wants.  But I gotta warn ya, he has more than a few fellers what want him dead, and anyone around him, too.  Other side of the coin, he pays well and is fair, and looks after his own.  Yer choice, you want the job or not?");
 	elseif(e.message:findi("want.* job")) then
@@ -47,7 +47,7 @@ function event_trade(e)
 		e.other:Faction(e.self,336,5,0); -- Coalition of Tradefolk Underground
 		e.other:Faction(e.self,329,5,0); -- Carson McCabe
 		e.other:QuestReward(e.self,0,0,0,0,13539,20); -- Old Brown Vest*
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 22693,item2 = 22694})) then
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 22693,item2 = 22694})) then -- missing quest reward dialogue?
 		e.other:Faction(e.self,241,10,0); -- Deeppockets
 		e.other:Faction(e.self,223,1,0); -- Circle of Unseen Hands
 		e.other:Faction(e.self,292,-1,0); -- Merchants of Rivervale

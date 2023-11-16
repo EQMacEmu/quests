@@ -1,17 +1,17 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Hmph. Hello. how are ye an' how do ye do? Now. what are ye planning to buy?");
+		e.self:Say("Hmph. Hello, how are ye an' how do ye do? Now, what are ye planning to buy?");
 		eq.signal(29043,1); -- NPC: Murtog_MacYee
 	elseif(e.message:findi("jinkus sent me")) then
-		if(e.other:GetFaction(e.self) < 5) then -- requires amiably
+		if(e.other:GetFactionValue(e.self) >= 100) then -- requires amiably
 			e.self:Say("So, ye're the next to be tested, then, eh?! I pray ye're able to return. Ye'll need to take this note to Einhorst in Clan McMannus' fishing village in the Plains o' Karana. He'll hand ye the monthly Karana clover shipment to be returned to me. Just remember, dinnae stop running! Do ye [need directions to Clan McMannus]?");
 			e.other:SummonCursorItem(18831); 								-- Tattered Note identifying as Message to Clan McMannus
-		elseif(e.other:GetFaction(e.self) == 5) then
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("Ye're no criminal to the Shamans o' Justice, but ye've yet to prrove yer devotion to justice.");
-		elseif(e.other:GetFaction(e.self) > 5) then
+		else
 			e.self:Say("The scales o' the Shamans o' Justice dinnae tip in yer favor. Ye'd best flee while ye still have the chance.");
 		end		
-	elseif(e.message:findi("directions to clan mcmannus")) then
+	elseif(e.message:findi("directions")) then
 		e.self:Say("Ye go through Everfrost Peaks and run through Blackburrow. Once in Qeynos Hills, ye'll head to yer left and follow the pathway to the Plains of Karana. In the plains, when the pathway splits, go to yer right. Then just head toward the horizon.");
 	end
 end

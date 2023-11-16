@@ -43,5 +43,5 @@ function event_enter(e)
 end
 
 function event_timer(e)
-	e.self:Say("picks up a discarded item from the ground and says 'Don't people have enough respect for our grand city to not throw things onto the streets?!'");
+	e.self:Emote("picks up a discarded item from the ground and says 'Don't people have enough respect for our grand city to not throw things onto the streets?!'");
 end

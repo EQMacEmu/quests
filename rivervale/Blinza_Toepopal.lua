@@ -10,7 +10,7 @@ end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say(string.format("Hello. %s.  Welcome to the Fool's Gold!  Cards are upstairs. drinks are down here.  Have fun!", e.other:GetCleanName())); 
+		e.self:Say("Hello, " .. e.other:GetCleanName() .. ".  Welcome to the Fool's Gold!  Cards are upstairs, drinks are down here.  Have fun!"); 
 	elseif(e.message:findi("jillin")) then
 		e.self:Say("Jillin is my courier. He was supposed to take this pot of [stew] over to Deputy Lowmot in Guardian Stronghold. It is just about ready and Mayor Gubbin hates cold stew!"); 
 	elseif(e.message:findi("stew")) then
@@ -23,7 +23,7 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if (item_lib.check_turn_in(e.self, e.trade,  {item1 = 13958})) then
-		e.self:Say("Well it is about time!  The mayor gets very upset if he does not have the freshest of carrots in his stew.  Here is the money for the carrots.  Be off with you.  Now. where the heck did [Jillin] go?");
+		e.self:Say("Well it is about time!  The mayor gets very upset if he does not have the freshest of carrots in his stew.  Here is the money for the carrots.  Be off with you.  Now, where the heck did [Jillin] go?");
 		e.other:Faction(e.self,241, 1); -- Faction: DeepPockets
 		e.other:Faction(e.self,223, 1); -- Faction: Circle of Unseen Hands
 		e.other:Faction(e.self,292, -1); -- Faction: Merchants of Rivervale

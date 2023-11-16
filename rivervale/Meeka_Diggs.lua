@@ -1,6 +1,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say(string.format("Hello, %s - my how you've grown!  Would you perhaps care to see my cloth armor for sale?'  Her eyes twinkle.  'Maybe you'd like to hear a little about the traditional halfling craft of [bagmaking]?", e.other:GetCleanName()));
+		e.self:Say("Hello, " .. e.other:GetCleanName() .. " - my how you've grown!  Would you perhaps care to see my cloth armor for sale?'  Her eyes twinkle.  'Maybe you'd like to hear a little about the traditional halfling craft of [bagmaking]?");
 	elseif(e.message:findi("bagmaking")) then
 		e.self:Say("Ah yes, we're reknowned for our bags!  Halflings are the travelers of the land, usually in search of fine pipeweed and a good ale.'  She grins at you.  'We sew together a number of patches of [wolf fur], and some special [thread], and use a little acorn oil to keep it water-tight, all in the special Halfling Sewing Kit.");
 	elseif(e.message:findi("wolf fur")) then

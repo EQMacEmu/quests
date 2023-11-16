@@ -23,7 +23,7 @@ function event_trade(e)
 		e.self:Say("Many thanks... rrrr... here is dull ring.");
 		e.other:QuestReward(e.self,0,0,0,0,13733);
 	elseif(e.other:GetFactionValue(e.self) >= -500 and item_lib.check_turn_in(e.self, e.trade, {item1 = 14043})) then
-		e.self:Say("You have gotten the spores that I asked for, very well, here is the ring as agreed");
+		e.self:Say("Melixis thanks you, Hamed will be pleased. A kinda shiny ring is yours.");
 		e.other:QuestReward(e.self,0,0,0,0,13731);
 	elseif(e.other:GetFactionValue(e.self) >= -500 and item_lib.check_turn_in(e.self, e.trade, {item1 = 14044})) then
 		e.self:Say("You done good job, furless one. Here is really shiny ring. Rarr...");

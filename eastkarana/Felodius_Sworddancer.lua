@@ -1,11 +1,3 @@
-function event_spawn(e)
-	eq.set_timer("ww",3600000);
-end
-
-function event_timer(e)
-	eq.set_sky(5);
-end
-
 function event_say(e)
 	if(e.message:findi("hai")) then
 		e.self:Say(string.format("Hello, %s, I am Felodious Sworddancer. A travelling historian and storyteller. Would you care to hear a [story]?",e.other:GetName()));

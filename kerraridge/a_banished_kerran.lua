@@ -1,8 +1,10 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Rrrrrr..  Away frrrom this isle of death and.. prrrr.. punishment.");
-	elseif(e.message:findi("remains of thipt")) then
+	elseif(e.message:findi("thipt")) then
 		e.self:Say("Clawknight Thipt wished to learn the ways of Ashen.  Prrr.. Together we go into green goblins' lair to train.  Prrr.. We find too many and he is too weak.  Separated and unable to find him, I hear his death cry.  Prr.. I cannot make it back, eyes upon me.  Now I must find one sent by Ashen to aid in the recoverrry of his remains.");
+	elseif(e.message:findi("puab")) then
+		e.self:Say("Prrr... Master Puab? Show me prrroof.");
 	end
 end
 

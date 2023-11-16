@@ -5,20 +5,26 @@ function event_say(e)
 		e.self:Say("Stand at attention!! You don't look fit enough to toe-wrestle my grandma!! You cannot be in my squad!! Are you [petitioning] or are you a [visitor]?");
 	elseif(e.message:findi("visitor")) then
 		e.self:Say("Well, why didn't you say so?! Forgive me for hollering. Allow me to introduce myself. I am Marshal Anrey Leadladle, commander of the [Leatherfoot Raiders].");
-	elseif(e.message:findi("leatherfoot raiders")) then
+	elseif(e.message:findi("leatherfoot raider")) then
 		e.self:Say("You must be a visitor. The Leatherfoot Raiders are the elite force of the Guardians of the Vale. I command them. It is good to meet an outsider.");		
-	elseif(e.message:findi("petitioning") or e.message:findi("from rivervale")) then
+	elseif(e.message:findi("petitioning")) then
 		if(e.other:GetFactionValue(e.self) >= 200) then -- requires amiably	(200)	
-			if(e.message:findi("petitioning")) then
-				e.self:Say("So you want to be a [Leatherfoot Raider]? What kind of joke is this? Look at you! You're a mess! Where are you [from]?");
-			elseif(e.message:findi("from rivervale")) then	
-				e.self:Say("So you're from Rivervale?!! You must be some kind of freak. No halfling from Rivervale would look, smell and act anything like you. Well, freak, if you think you're stout enough to be a Leatherfoot Raider, you prove it!! You travel the lands and return to me a polar bear skin, a grizzly bear skin, a shark skin and an alligator skin. Then maybe, just maybe, I will let you wear the cap of a Leatherfoot Raider.");	
-			end		
+			e.self:Say("So you want to be a [Leatherfoot Raider]? What kind of joke is this? Look at you! You're a mess! Where are you [from]?");
 		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("You are in good standing with the Guardians of the Vale. Continue with your good work and then we may speak.")
 		else
 			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common. Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here? Now go away!","I wonder how much I could get for the tongue of a blithering fool? Leave before I decide to find out for myself."));
 		end
+	elseif(e.message:findi("from rivervale")) then	
+		if(e.other:GetFactionValue(e.self) >= 200) then -- requires amiably	(200)	
+			e.self:Say("So you're from Rivervale?!! You must be some kind of freak. No halfling from Rivervale would look, smell and act anything like you. Well, freak, if you think you're stout enough to be a Leatherfoot Raider, you prove it!! You travel the lands and return to me a polar bear skin, a grizzly bear skin, a shark skin and an alligator skin. Then maybe, just maybe, I will let you wear the cap of a Leatherfoot Raider.");		
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
+			e.self:Say("You are in good standing with the Guardians of the Vale. Continue with your good work and then we may speak.")
+		else
+			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common. Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here? Now go away!","I wonder how much I could get for the tongue of a blithering fool? Leave before I decide to find out for myself."));
+		end
+	elseif(e.message:findi("from qeynos") or e.message:findi("from freeport") or e.message:findi("from akanon") or e.message:findi("from kaladim") or e.message:findi("from felwithe") or e.message:findi("from halas") or e.message:findi("from erudin")) then	
+		e.self:Say("What!  The only things from there are gnolls and trolls!  Which one are you?!  You kind of look like a troll, but you smell like a gnoll!  Get out of my sight or you will be cleaning the latrine with a toothbrush!")
 	end
 end
 

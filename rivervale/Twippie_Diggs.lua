@@ -1,6 +1,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say(string.format("What a lovely day it is, %s!  You look rather sunburned!'  Twippie winks at you.  'I've some fine leather armor for sale today, or perhaps I could bend your ear with a little [learning]?", e.other:GetCleanName()));
+		e.self:Say("What a lovely day it is, " .. e.other:GetCleanName() .. "!  You look rather sunburned!'  Twippie winks at you.  'I've some fine leather armor for sale today, or perhaps I could bend your ear with a little [learning]?");
 	elseif(e.message:findi("learning")) then
 		e.self:Say("I approve!  A young one with the urge to learn!'  Twippie chuckles, and leans on a crate.  'The Stormreapers, over there on the farm, have been employing me to come up with some [armor] to help defend the Vale!");
 	elseif(e.message:findi("armor")) then
