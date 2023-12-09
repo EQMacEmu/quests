@@ -1,7 +1,7 @@
 --This fallen monk will spawn the fallen monk master when we give him our Shackle of Tynnonium. This is part of the Whistling Fists quest line.
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Emote("Failed to find the rest I have. If you wish what is mine then give proof of the final shackle unto me.");
+		e.self:Say("Failed to find the rest I have. If you wish what is mine then give proof of the final shackle unto me.");
 	end
 end
 

@@ -66,7 +66,7 @@ function event_trade(e)
 		e.other:Faction(e.self,245,-3); --Eldritch Collective
 		e.other:Faction(e.self,1522,-50); --Primordial Malice
 		e.other:QuestReward(e.self,0,0,5,1,2317,33750); --Cloak of the Undead Eye
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13390})) then--Thex Mallet
+	elseif(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13390})) then--Thex Mallet
 		e.self:Say("Oh how grand it is!! Look at it!! I feel the power trembling within. Who would have thought such an item would be abandoned? You have performed supremely. Queen Cristanos shall reward me greatly and I shall reward you greatly. Here is my weapon from years past.. the Reaper of the Dead. I believe it has one soul still trapped within.");
 		e.other:Faction(e.self,239,100); --The Dead
 		e.other:Faction(e.self,303,15); --Queen Cristanos Thex

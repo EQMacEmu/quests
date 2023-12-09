@@ -25,7 +25,7 @@ function event_say(e)
 		end
 	elseif(e.message:findi("venture to freeport")) then
 		if(e.other:GetFactionValue(e.self) >= 100) then			
-			e.self:Say("Find a way to the port of Freeport.  Seek out Giz Dinree.  She is usually near the shores at night.  She is your contact. Tell her you were [sent by TanI].  She will fill you in on your mission.  Good luck.  Do not waste time practicing your skills. Go as you are.");
+			e.self:Say("Find a way to the port of Freeport.  Seek out Giz Dinree.  She is usually near the shores at night.  She is your contact. Tell her you were [sent by Tani].  She will fill you in on your mission.  Good luck.  Do not waste time practicing your skills. Go as you are.");
 		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("You have done nothing to upset the Ebon Mask, but there is much more which you must do before we do business.  Perhaps a task from Master Hekzin shall set things right.");
 		else

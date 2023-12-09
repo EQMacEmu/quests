@@ -1,6 +1,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Why. hello there fellow scholar!  Don't you just love books?  I am quite a bookworm myself.  I could read forever!  I am currently working my way through the 'T's.");
+		e.self:Say("Why, hello there fellow scholar!  Don't you just love books?  I am quite a bookworm myself.  I could read forever!  I am currently working my way through the 'T's.");
 	elseif(e.message:findi("erud's tonic")) then
 		e.self:Say("Erud's Tonic! That is none of your concern!"); 
 	elseif(e.message:findi("phloatin")) then

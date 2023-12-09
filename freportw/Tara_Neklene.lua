@@ -25,14 +25,14 @@ function event_trade(e)
 		e.other:Faction(e.self,281,2,0); -- Knights of Truth
 		e.other:Faction(e.self,296,-1,0); -- Opal Dark Briar
 		e.other:Faction(e.self,330,-1,0); -- Freeport Militia
-		e.other:QuestReward(e.self,math.random(15),math.random(15),0,0,0,25);
+		e.other:QuestReward(e.self,math.random(15),math.random(15),0,0,eq.ChooseRandom(13005,13007,13002,13006),250); -- Iron Ration, Ration, Torch, Water Flask  
 	elseif(e.other:GetFactionValue(e.self) >= 200 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13225})) then
 		e.self:Say("Wonderful! You have survived the might of an oracle. With this we can now continue our experiments. Now you may continue your teaching and study the power to summon those of earth, air, water and fire.");
 		e.other:Faction(e.self,220,15,0); -- Arcane Scientists
 		e.other:Faction(e.self,281,3,0); -- Knights of Truth
 		e.other:Faction(e.self,296,-2,0); -- Opal Dark Briar
 		e.other:Faction(e.self,330,-2,0); -- Freeport Militia
-		e.other:QuestReward(e.self,0,0,0,0,0,50);
+		e.other:QuestReward(e.self,math.random(15),math.random(15),math.random(2),0,eq.ChooseRandom(15317,15058,15316,15315),500); -- Spells : Elementalkin Air, Earth, Fire, Water
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

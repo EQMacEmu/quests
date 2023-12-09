@@ -12,7 +12,7 @@ function event_say(e)
 		else
 			e.self:Say("Leave at once!  I will warn you no longer.  You are no friend to the Swifttail Caste.");
 		end
-	elseif(e.message:findi("shackle of stone")) then
+	elseif(e.message:findi("shackle.* stone")) then
 		if(e.other:GetFactionValue(e.self) >= 100) then
 			e.self:Say("Interested in the shackle of stone are we? They are made for monks who have earned their first two shackles and are ready to climb up to the next rung. A monk who feels he is ready to wear the shackle of stone must first perform the [task of cleansing].");
 		elseif(e.other:GetFactionValue(e.self) >= 0) then
@@ -20,7 +20,7 @@ function event_say(e)
 		else
 			e.self:Say("Leave at once!  I will warn you no longer.  You are no friend to the Swifttail Caste.");
 		end
-	elseif(e.message:findi("task of cleansing")) then
+	elseif(e.message:findi("task.* cleansing")) then
 		if(e.other:GetFactionValue(e.self) >= 100) then
 			e.self:Say("Go forth to the outer gates and seek out the Iksar bandits. They have refused to bow to the will of the empire and shall pay dearly for their traitorous ways. They often wear bandit masks. If you return with two bandit masks and the shackles of dust and clay then I shall reward you with the shackle of stone.");
 		elseif(e.other:GetFactionValue(e.self) >= 0) then
@@ -30,7 +30,15 @@ function event_say(e)
 		end
 	elseif(e.message:findi("gandan tailfist")) then
 		if(e.other:GetFactionValue(e.self) >= 100) then
-			e.self:Say("Gandan Tailfist was a powerful commander of the Court of Pain. He went in search of the Whistling Fists, but all that was ever found of him was a worthless flute."); --Allah's comments hints at text, but gives nothing exact. Made this up in place of accurate text.
+			e.self:Say("Gandan Tailfist was the commander of a small band of Swifttails which I sent in search of the [Whistling Fists]. That was one season ago. I have heard that the Iksar Bandits have information regarding him. If you have a clue as to his whereabouts, hand it over. Unless it is merely half a note. That would do you no good. I require the full note.");
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
+			e.self:Say("The Swifttail Caste desires further service before I can share this with you.");
+		else
+			e.self:Say("Leave at once!  I will warn you no longer.  You are no friend to the Swifttail Caste.");
+		end
+	elseif(e.message:findi("whistling fist")) then
+		if(e.other:GetFactionValue(e.self) >= 100) then
+			e.self:Say("The legendary Whistling Fists are said to work only on the hands of a monk. They are said to bestow great power on the wielder.  It is written that they were crafted by the gods who devised the disciplines of this caste.");
 		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("The Swifttail Caste desires further service before I can share this with you.");
 		else

@@ -8,7 +8,7 @@ end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Hello there. sweetie!!  How about letting me dance for you?  Two gold and I will do a little dance for you.");
+		e.self:Say("Hello there, sweetie!!  How about letting me dance for you?  Two gold and I will do a little dance for you.");
 	elseif(e.message:findi("tayla")) then
 		e.self:Say("Why do you seek that little scamp when you have Mare right here? If you really want to know where she is, it will cost you. Did I ever tell you that my heart belongs to Jasper?");
 	end

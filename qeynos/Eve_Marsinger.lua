@@ -3,18 +3,18 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail, " .. e.other:GetCleanName() .. ". Are you [interested] in helping the League of Antonican Bards by delivering some [mail]?");
-	elseif(e.message:findi("interested")) then
-		e.self:Say("I have messages that need to go to Highpass and to Freeport.  Will you [deliver] mail to [Highpass] or [Freeport] for me?");
-	elseif(e.message:findi("agents")) then
-		e.self:Say("Sivina Lutewhisper, Marton Stringsinger, Ticar Lorestring and Mistrana Two-Notes all report to my husband, Tralyn.");
-	elseif(e.message:findi("mail")) then
-		e.self:Say("The League of Antonican Bards has a courier system made up of travelers, adventurers and [agents]. We pay good gold to anyone who will take messages from bards such as myself to one of our more distant offices. Are you [interested]?");
 	elseif(e.message:findi("deliver.* highpass")) then
 		e.self:Say("Take this pouch to Lislia Goldtune in Highpass. You can find her at the entrance to HighKeep. I am sure she will compensate you for your troubles.");
 		e.other:SummonCursorItem(18152); -- Item: A Pouch of Mail (Highpass)
 	elseif(e.message:findi("deliver.* freeport")) then
 		e.self:Say("Take this letter to Felisity Starbright in Freeport.  You can find her at the bard guild hall.  I am sure she will compensate you for your troubles.");
 		e.other:SummonCursorItem(18158); -- Item: A Bardic Letter (Freeport)
+	elseif(e.message:findi("interested")) then
+		e.self:Say("I have messages that need to go to Highpass and to Freeport.  Will you [deliver] mail to [Highpass] or [Freeport] for me?");
+	elseif(e.message:findi("agents")) then
+		e.self:Say("Sivina Lutewhisper, Marton Stringsinger, Ticar Lorestring and Mistrana Two-Notes all report to my husband, Tralyn.");
+	elseif(e.message:findi("mail")) then
+		e.self:Say("The League of Antonican Bards has a courier system made up of travelers, adventurers and [agents]. We pay good gold to anyone who will take messages from bards such as myself to one of our more distant offices. Are you [interested]?");
 	elseif(e.message:findi("marton stringsinger")) then
 		e.self:Say("Marton Stringsinger lives with the barbarians in the city of Halas.");
 	elseif(e.message:findi("sivina lutewhisper")) then

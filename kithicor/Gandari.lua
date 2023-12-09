@@ -2,7 +2,7 @@ function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Most call me Gandari the Terse.  You here for [ivy armor]?");
 	elseif(e.message:findi("ivy armor")) then
-		e.self:Say("I reward brave rangers with ivy etched armor - [Helm]s. [Tunic]s. [Sleeves] and [Bracers]. [Interested]?");
+		e.self:Say("I reward brave rangers with ivy etched armor - [Helm]s, [Tunic]s, [Sleeves], and [Bracers]. [Interested]?");
 	elseif(e.message:findi("bracer")) then
 		e.self:Say("I do not haggle, I do not bargain. The Bottom of the Rune of Ivy from the plains of Everfrost, a Watery Ring from the Cauldron of Tears and a Fire Emerald to warm my heart. Bring these to me and you shall earn your reward.");
 	elseif(e.message:findi("helm")) then

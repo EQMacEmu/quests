@@ -4,7 +4,7 @@ function event_say(e)
 	elseif(e.message:findi("great sorcerer")) then
 		if(e.other:GetFactionValue(e.self) >= 300) then
 			e.self:Emote("hands you a flaxen hilt or handle of sorts. It has four round slots on one end. 'Insert within what used to be. Return it to me when all is complete. With it shall you gain your Sorcerer's Skullcap. Go and prove your knowledge.");
-			e.other:SummonCursorItem(12887); -- Item: A Flaxen Hilt -- bugged version so the quest won't be completeable -- 17195 is fixed version to make quest completeable
+			e.other:SummonCursorItem(17195); -- Item: A Flaxen Hilt -- bugged quest on AK -- 17195 is fixed version to make quest completeable -- 12887 is the broken version
 		else
 			e.self:Say("Greatness comes from many deeds.  You have more work to do.");
 		end
