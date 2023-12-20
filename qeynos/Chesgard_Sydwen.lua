@@ -56,7 +56,7 @@ function event_trade(e)
 
 	if(sash > 0) then
 		repeat
-		e.self:Say("Good work " .. e.other:Class() .. ". The Karana Bandits have been plaguing the Rainkeepers flock for some time.  Take this as a small reward for your devotion.  Continue the fight against the Karana Bandits.  Ahh... I wish [Cheslin] was equally as skilled.");
+		e.self:Say("Good work, knight! The Karana Bandits have been plaguing the Rainkeepers flock for some time.  Take this as a small reward for your devotion.  Continue the fight against the Karana Bandits.  Ahh... I wish [Cheslin] was equally as skilled.");
 		-- random bronze item reward
 		-- Confirmed Live Factions and exp data
 		e.other:Faction(e.self,280,20,0); -- Knights of Thunder

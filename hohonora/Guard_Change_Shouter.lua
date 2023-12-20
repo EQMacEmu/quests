@@ -60,7 +60,7 @@ function event_timer(e)
 
 	if ( e.timer == "timecheck" ) then
 	
-		local zoneTime = eq.get_zone_time()["zone_hour"] + 1;
+		local zoneTime = eq.get_zone_time()["zone_hour"];
 		local npc, pause;
 		
 		if ( zoneTime == 7 or zoneTime == 19 ) then
@@ -101,7 +101,7 @@ function event_signal(e)
 
 	if ( newnpc and newnpc.valid ) then
 
-		local zoneTime = eq.get_zone_time()["zone_hour"] + 1;
+		local zoneTime = eq.get_zone_time()["zone_hour"];
 		
 		for i, id in ipairs(newIDs) do
 			if ( id == newnpc:GetID() and oldIDs[i] ) then

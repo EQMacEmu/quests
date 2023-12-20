@@ -9,9 +9,10 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
+	local text = "I require the fangs of four Vampyres!";	
 	
 	-- Handin: 4x Vampyre Fang (2691)
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 2691,item2 = 2691,item3 = 2691,item4 = 2691}, 0)) then
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 2691,item2 = 2691,item3 = 2691,item4 = 2691},1,text)) then
 		-- End of Vamprye Fang
 		e.self:Say("You have dedicated yourself to the war with the Coterie of the Eternal Night. I will continue to reward you for the fangs of every four vampyres that you slay. Should you be ambitious and skilled enough to confront the coterie leaders and live I will respectfully grant you honor that you deserve.");
 		e.other:Faction(e.self,1503,5); -- +Validus Custodus

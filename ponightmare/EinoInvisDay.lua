@@ -34,7 +34,7 @@ end
 
 function event_timer(e)
 	if ( e.timer == "timecheck" ) then
-		local zoneTime = eq.get_zone_time()["zone_hour"] + 1;
+		local zoneTime = eq.get_zone_time()["zone_hour"];
 		if ( zoneTime > 19 or zoneTime < 7 ) then
 			eq.debug("EinoInvisDay despawn", 2);
 			eq.depop_with_timer();

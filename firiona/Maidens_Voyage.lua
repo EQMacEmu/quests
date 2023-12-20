@@ -1,13 +1,13 @@
 function event_spawn(e)
-	local zone_time = eq.get_zone_time(); -- Time here is off by 1, so 6AM = 5.
-	local hour = zone_time["zone_hour"] + 1;
+	local zone_time = eq.get_zone_time();
+	local hour = zone_time["zone_hour"];
 	local minute = zone_time["zone_minute"];
 	eq.debug("Boat spawned! Name is: " .. e.self:GetName() .. " Time is: " .. hour ..":" .. minute .. "", 1);
 end
 
 function event_waypoint_arrive(e)
-	local zone_time = eq.get_zone_time(); -- Time here is off by 1, so 6AM = 5.
-	local hour = zone_time["zone_hour"] + 1;
+	local zone_time = eq.get_zone_time();
+	local hour = zone_time["zone_hour"];
 	local minute = zone_time["zone_minute"];
 	if(e.wp == 12) then
 		eq.debug("Boat to timorous (18) has reached the docks.  Name is: " .. e.self:GetName() .. " Time is: " .. hour ..":" .. minute .. "", 1);

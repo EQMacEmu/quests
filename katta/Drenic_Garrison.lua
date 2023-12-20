@@ -20,6 +20,8 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
+	local text = "I require three organs from the snake people.";
+";
 
 	-- Handin: 1x Muck Beetle Mandible (10412), 1x Black Fungal Fiend Spores (10413), 1x Green Fungal Fiend Spores (10414), 1x Grimfang Poison Sac (10415)
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 10412,item2 = 10413,item3 = 10414,item4 = 10415})) then
@@ -34,7 +36,7 @@ function event_trade(e)
 		e.other:Faction(e.self,1541,-1); -- -Hand Legionnaries
 		e.other:QuestReward(e.self,0,0,0,0,31743,5000); -- Mug of Purifying Tonic  
 	-- Handin: 3x Shissar Organs (10416)
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 10416,item2 = 10416,item3 = 10416})) then
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 10416,item2 = 10416,item3 = 10416},1,text)) then
 		-- End of Undead Snake Organs
 		e.self:Say("Excellent work " .. e.other:GetCleanName() .. "! The acquisition of these organs is a fantastic accomplishment!");
 		e.other:Faction(e.self,1504,10);  -- +Magus Conlegium

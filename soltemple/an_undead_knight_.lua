@@ -16,23 +16,26 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	local text1 = "Two damaged Freeport Militia helms, the decayed helm and the decayed visor.";	
+	local text1 = "Two damaged Freeport Militia helms, the decayed helm and the decayed visor.";
+	local text2 = "The decayed breastplate, decayed mail and two enchanted platinum bars.";
+	local text3 = "The minotaur hero shackles and both right and left decayed bracers.";
+	local text4 = "A Qeynos kite shield and the right and left decayed vambraces.";
 	
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12283, item2 = 12284, item3 = 13921, item4 = 13921},1,text1)) then
 		e.self:Say("You now own the darkforge helm.");
-		e.other:QuestReward(e.self,0,0,0,0,3140);
+		e.other:QuestReward(e.self,0,0,0,0,3140,5000);
 	end
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12285, item2 = 12286, item3 = 16507, item4 = 16507})) then
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12285, item2 = 12286, item3 = 16507, item4 = 16507},1,text2)) then
 		e.self:Say("I grant you the darkforge breastplate!!");
-		e.other:QuestReward(e.self,0,0,0,0,3141);
+		e.other:QuestReward(e.self,0,0,0,0,3141,5000);
 	end
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12288, item2 = 12287, item3 = 9023})) then
-		e.self:Say("Well done, " .. e.other:GetCleanName() .. ", here is your reward.");
-		e.other:QuestReward(e.self,0,0,0,0,3142);
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12288, item2 = 12287, item3 = 9023},1,text4)) then
+		e.self:Say("You now have the darkforge vambraces.");
+		e.other:QuestReward(e.self,0,0,0,0,3142,5000);
 	end
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12290, item2 = 12289, item3 = 19075})) then
-		e.self:Say("Well done, " .. e.other:GetCleanName() .. ", here is your reward.");
-		e.other:QuestReward(e.self,0,0,0,0,3143);
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12290, item2 = 12289, item3 = 19075},1,text3)) then
+		e.self:Say("You now own a darkforge bracer.");
+		e.other:QuestReward(e.self,0,0,0,0,3143,5000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

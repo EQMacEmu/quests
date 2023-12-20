@@ -16,17 +16,19 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
+	local text1 = "Two portions of fairy dust and the right and left decayed boots!!";	
+	
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12292, item2 = 12291, item3 = 16507})) then
 		e.self:Say("Well done, " .. e.other:GetCleanName() .. ", here is your reward.");
-		e.other:QuestReward(e.self,0,0,0,0,3144);
+		e.other:QuestReward(e.self,0,0,0,0,3144,5000);
 	end
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12294, item2 = 12293, item3 = 12297, item4 = 12297})) then
 		e.self:Say("You have been granted the darkforge greaves!!");
-		e.other:QuestReward(e.self,0,0,0,0,3145);
+		e.other:QuestReward(e.self,0,0,0,0,3145,5000);
 	end
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12296, item2 = 12295, item3 = 12106, item4 = 12106})) then
-		e.self:Say("Well done, " .. e.other:GetCleanName() .. ", here is your reward.");
-		e.other:QuestReward(e.self,0,0,0,0,3146);
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12296, item2 = 12295, item3 = 12106, item4 = 12106},1,text1)) then
+		e.self:Say("You may now wear the darkforge boots!!");
+		e.other:QuestReward(e.self,0,0,0,0,3146,5000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

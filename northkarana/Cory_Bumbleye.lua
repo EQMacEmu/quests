@@ -1,3 +1,20 @@
+function event_spawn(e)
+	eq.set_timer("follow",1000);
+end
+
+function event_timer(e)
+	if(e.timer == "follow") then
+		local mobtypeID =  eq.get_entity_list():GetMobByNpcTypeID(13065);
+		
+		if(mobtypeID) then
+			local follow_mob = mobtypeID:GetID();
+			eq.follow(follow_mob,25);
+			eq.stop_timer("follow");
+		end
+	end
+end
+
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hey, " .. e.other:GetCleanName() .. "!  I am Cory Bumbleye, expert [lycanthrope] tracker.  You had better be careful out here.  There are [werewolves] in these hills.  Heck, if it weren't for us [Fangbreakers], this whole area would be overrun with the flea-bitten beasts.");

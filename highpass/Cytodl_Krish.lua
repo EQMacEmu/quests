@@ -22,7 +22,7 @@ end
 function event_timer(e)
 	if ( e.timer == "timecheck" and not e.self:IsEngaged() ) then
 	
-		local zoneTime = eq.get_zone_time()["zone_hour"] + 1;
+		local zoneTime = eq.get_zone_time()["zone_hour"];
 
 		if ( zoneTime > 18 or zoneTime < 8 ) then
 			eq.depop_with_timer();

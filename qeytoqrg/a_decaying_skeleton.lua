@@ -15,7 +15,7 @@ function event_timer(e)
 end
 
 function event_waypoint_arrive(e)
-	local ZoneTime = eq.get_zone_time()["zone_hour"] + 1;
+	local ZoneTime = eq.get_zone_time()["zone_hour"];
 	if(e.self:GetGrid() == 26 and despawntime == 1) then
 		if(e.wp == 0 and ZoneTime > 7 and ZoneTime < 20) then
 			despawntime = 0;

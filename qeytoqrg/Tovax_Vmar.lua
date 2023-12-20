@@ -13,7 +13,7 @@ function event_spawn(e)
 end
 
 function event_waypoint_arrive(e)
-	local ZoneTime = eq.get_zone_time()["zone_hour"] + 1;
+	local ZoneTime = eq.get_zone_time()["zone_hour"];
 	if(e.self:GetGrid() == 13) then
 		if(e.wp > 0 and e.wp < 3) then
 			e.self:SetRunning(false);

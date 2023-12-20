@@ -9,9 +9,11 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
+	local text = "I require four samples of vampyre blood.";
+	local text1 = "I require four such samples for my research.  Please see if you can gather more.";	
 	
 	-- Handin: 4x Vampyre Ashes (2692) or 4x Vampyre Blood (2693)
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 2692,item2 = 2692,item3 = 2692,item4 = 2692}, 0) or item_lib.check_turn_in(e.self, e.trade, {item1 = 2693,item2 = 2693,item3 = 2693,item4 = 2693}, 0)) then
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 2692,item2 = 2692,item3 = 2692,item4 = 2692},1,text1) or item_lib.check_turn_in(e.self, e.trade, {item1 = 2693,item2 = 2693,item3 = 2693,item4 = 2693},1,text)) then
 		e.self:Say("Thank you " .. e.other:GetCleanName() .. "! These samples will be put to good use I assure you. The Coterie will not stand much longer against the forces of Katta Castellum.");
 		e.other:Faction(e.self,1504,3);  -- +Magus Conlegium
 		e.other:Faction(e.self,1502,1);  -- +Katta Castellum Citizens
