@@ -14,9 +14,13 @@ function event_waypoint_arrive(e)
 		eq.debug("Boat to firiona (2) has reached the Elf docks. Name is: " .. e.self:GetName() .. " Time is: " .. hour ..":" .. minute .. "", 1);
 	elseif(e.wp == 5) then
 		eq.signal(96075,2); -- NPC: Island_Shuttle
-	elseif(e.wp == 19) then
+	elseif(e.wp == 18) then -- signal one before 19 to allow them to move sooner
 		eq.debug("Boat to firiona (2) has reached the shuttle. Name is: " .. e.self:GetName() .. " Time is: " .. hour ..":" .. minute .. "", 1);
-		eq.signal(842,1); -- NPC: Captains_Skiff	
+		--eq.signal(842,1); -- NPC: Captains_Skiff	
+        eq.signal(846,1); -- NPC: Shuttle_I
+        eq.signal(847,1); -- NPC: Shuttle_II
+        eq.signal(848,1); -- NPC: Shuttle_III
+        eq.signal(849,1); -- NPC: Shuttle_IV
 	elseif(e.wp == 30) then
 		eq.debug("Boat to firiona (2) has reached its destination! Name is: " .. e.self:GetName() .. " Time is: " .. hour ..":" .. minute .. "", 1);
 		eq.get_entity_list():ForeachClient(
@@ -43,4 +47,11 @@ function event_waypoint_arrive(e)
 			end
 		);
 	end
+end
+
+function event_waypoint_depart(e)
+    if(e.wp == 5) then
+        -- signal BB shuttles to depart
+        eq.signal(68236,2);
+    end
 end
