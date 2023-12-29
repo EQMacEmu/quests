@@ -16,7 +16,6 @@ function event_waypoint_arrive(e)
 		eq.signal(96075,2); -- NPC: Island_Shuttle
 	elseif(e.wp == 18) then -- signal one before 19 to allow them to move sooner
 		eq.debug("Boat to firiona (2) has reached the shuttle. Name is: " .. e.self:GetName() .. " Time is: " .. hour ..":" .. minute .. "", 1);
-		--eq.signal(842,1); -- NPC: Captains_Skiff	
         eq.signal(846,1); -- NPC: Shuttle_I
         eq.signal(847,1); -- NPC: Shuttle_II
         eq.signal(848,1); -- NPC: Shuttle_III
