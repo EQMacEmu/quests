@@ -14,7 +14,7 @@ function event_signal(e)
 		eq.get_entity_list():ForeachClient(
 			function(ent)
 				ent:Signal(2);
-					end,
+			end,
 			function(ent)
 				-- Server thinks we're on Maidens_Voyage and are about to zone.
 				if(ent:GetBoatID() == 838 and ent:GetX() < -7100) then
