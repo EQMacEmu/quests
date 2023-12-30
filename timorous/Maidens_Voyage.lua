@@ -14,21 +14,23 @@ function event_waypoint_arrive(e)
 		eq.debug("Boat to firiona (2) has reached the Elf docks. Name is: " .. e.self:GetName() .. " Time is: " .. hour ..":" .. minute .. "", 1);
 	elseif(e.wp == 5) then
 		eq.signal(96075,2); -- NPC: Island_Shuttle
-	elseif(e.wp == 18) then -- signal one before 19 to allow them to move sooner
+	elseif(e.wp == 17) then -- signal before 19 to allow them to move sooner (we pause at 19)
 		eq.debug("Boat to firiona (2) has reached the shuttle. Name is: " .. e.self:GetName() .. " Time is: " .. hour ..":" .. minute .. "", 1);
-        eq.signal(846,1); -- NPC: Shuttle_I
-        eq.signal(847,1); -- NPC: Shuttle_II
-        eq.signal(848,1); -- NPC: Shuttle_III
-        eq.signal(849,1); -- NPC: Shuttle_IV
+		eq.signal(846,1); -- NPC: Shuttle_I
+		eq.signal(847,1); -- NPC: Shuttle_II
+		eq.signal(848,1); -- NPC: Shuttle_III
+		eq.signal(849,1); -- NPC: Shuttle_IV
 	elseif(e.wp == 30) then
 		eq.debug("Boat to firiona (2) has reached its destination! Name is: " .. e.self:GetName() .. " Time is: " .. hour ..":" .. minute .. "", 1);
 		eq.get_entity_list():ForeachClient(
 			function(ent)
 				ent:Signal(1);
-					end,
+			end,
 			function(ent)
-				-- Server thinks we're on Island_Shuttle and are about to zone.
-				if(ent:GetBoatID() == 96075 and ent:GetX() < -2000 and ent:GetY() > 500) then
+				local boat_id = ent:GetBoatID();
+				local diff_boat_check = boat_id == 96075 or boat_id == 846 or boat_id == 847 or boat_id == 848 or boat_id == 849;
+				-- Server thinks we're on Island_Shuttle, Shuttle_I, Shuttle_II, Shuttle_III or Shuttle_IV and are about to zone.
+				if(diff_boat_check and ent:GetX() < -2000 and ent:GetY() > 500) then
 					return true;
 				end
 				return false;
@@ -49,8 +51,8 @@ function event_waypoint_arrive(e)
 end
 
 function event_waypoint_depart(e)
-    if(e.wp == 5) then
-        -- signal BB shuttles to depart
-        eq.signal(68236,2);
-    end
+	if(e.wp == 5) then
+		-- signal BB shuttles to depart
+		eq.signal(68236,2);
+	end
 end
