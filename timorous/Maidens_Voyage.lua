@@ -27,10 +27,14 @@ function event_waypoint_arrive(e)
 				ent:Signal(1);
 			end,
 			function(ent)
+				local px = ent:GetX();
+				local py = ent:GetY();
 				local boat_id = ent:GetBoatID();
 				local diff_boat_check = boat_id == 96075 or boat_id == 846 or boat_id == 847 or boat_id == 848 or boat_id == 849;
+				-- bounding box of Maiden_Voyage at wp 30
+				local valid_pos_check = px >= -3000 and px <= -1700 and py >= 0 and py <= 1800;
 				-- Server thinks we're on Island_Shuttle, Shuttle_I, Shuttle_II, Shuttle_III or Shuttle_IV and are about to zone.
-				if(diff_boat_check and ent:GetX() < -2000 and ent:GetY() > 500) then
+				if(diff_boat_check and valid_pos_check) then
 					return true;
 				end
 				return false;
