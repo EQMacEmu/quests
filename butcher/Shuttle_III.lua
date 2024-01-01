@@ -44,7 +44,7 @@ function event_waypoint_arrive(e)
         );
         eq.get_entity_list():ForeachClient(
             function(ent)
-                ent:MovePC(96, -7665, 3580, 19, 72);
+                ent:MovePC(96, -7665, 3580, 19, 142);
             end,
             function(ent)
                 local px = ent:GetX();
