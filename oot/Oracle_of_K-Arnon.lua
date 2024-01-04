@@ -33,7 +33,9 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18302})) then -- Book of Scale
 		e.self:Say("Unbelievable! The legendary Book of Scale is mine! Please, take this as a small token of my thanks. I warn you however, if you ever manage to join the corporeal body to the evil that resides within, you will rue the day.");
-		e.other:QuestReward(e.self,0,0,0,0,19072); -- Miragul's Phylactery
+		e.other:Faction(e.self,402, 10); -- Faction: Oracle of Karnon
+		e.other:Faction(e.self,403, -10); -- Faction: Oracle of Marud
+		e.other:QuestReward(e.self,0,0,0,0,19072,25000); -- Miragul's Phylactery
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 18202})) then -- Book of Turmoil
 		e.self:Say("Thank thee for this tome. Be sure to check back with me later, as I might have another task for thee.");
 		e.other:Faction(e.self,402, 10); -- Faction: Oracle of Karnon

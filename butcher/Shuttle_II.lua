@@ -18,7 +18,7 @@ function event_waypoint_arrive(e)
     local minute = zone_time["zone_minute"];
     if(e.gridid == 21 and e.wp == 11) then
         eq.stop();
-        eq.move_to(3158, 836, -13, 65.27, true);
+        eq.move_to(3158, 834, -13, 65.27, true);
     end
     if(e.gridid == 17 and e.wp == 12) then
         eq.spawn_condition("butcher",4,0);
@@ -44,7 +44,7 @@ function event_waypoint_arrive(e)
         );
         eq.get_entity_list():ForeachClient(
             function(ent)
-                ent:MovePC(96, -7580, 3580, 19, 142);
+                ent:MovePC(96, -7580, 3580, 19, 144);
             end,
             function(ent)
                 local px = ent:GetX();

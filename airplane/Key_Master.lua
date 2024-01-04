@@ -3,7 +3,7 @@ function event_signal(e)
 
 	if(e.signal == 1) then -- azarack
 		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(71111) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(71031) == false) then
-			eq.spawn2(71059,0,0,-602.2,-254.4,-333.5,201.5); -- NPC: Protector_of_Sky
+			eq.spawn2(71059,0,0,-386,-236,-317,201.5); -- NPC: Protector_of_Sky
 		end
 	end
 	if(e.signal == 2) then

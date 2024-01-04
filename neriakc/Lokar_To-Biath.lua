@@ -2,7 +2,13 @@
 --Red Wine (Part of Tome of Ages)
 
 function event_say(e)
-	if(e.message:findi("scribe of dal")) then
+	if(e.message:findi("hail")) then
+		if(e.other:GetFactionValue(e.self) >= 0) then
+			e.self:Say("I am the Scribe of Innoruuk. If you do not have business with me, begone!");
+		else
+			e.self:Say("Your reputation precedes you. You are no friend to the Dark Bargainers.");		
+		end
+	elseif(e.message:findi("scribe of dal")) then
 		if(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("The Scribes of Dal? All of them are long since [dead].. or at least most would say that.");
 		else

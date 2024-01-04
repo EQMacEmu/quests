@@ -13,7 +13,7 @@ function event_say(e)
 			end
 		elseif(e.message:findi("dogs") or e.message:findi("mutts")) then
 			e.self:Say("It's those Darkpaws.. They've beat me pretty badly.. but they'll get theirs soon enough!");
-		elseif(e.message:findi("silent.* clan")) then
+		elseif(e.message:findi("clan")) then
 			e.self:Say("I am a new member of the Silent Fist Clan.. I need someone from my guild to help me find my way back.");
 		elseif(e.message:findi("seta.* find you")) then
 			e.self:Say("Oh.. Thank goodness you found me.. I'm lost and weak, those [mutts] are a vicious lot.. an you carry my [backpack] for me?");

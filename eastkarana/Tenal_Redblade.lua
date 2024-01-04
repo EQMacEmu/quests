@@ -1,7 +1,7 @@
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say(string.format("What brings you to my home, %s? Do you seek knowledge of Rallos Zek and the great wars to come?",e.other:GetName()));
+		e.self:Say("What brings you to my home, " .. e.other:GetCleanName() .. "? Do you seek knowledge of Rallos Zek and the great wars to come?");
 	end
 end
 

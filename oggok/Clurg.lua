@@ -6,7 +6,7 @@ function event_say(e)
 	elseif(e.message:findi("flaming clurg")) then
 		e.self:Say("The Flaming Clurg was my greatest creation. It brought me great respect in Oggok. Unfortunately, I have heard tales of an [imposter drink].");
 	elseif(e.message:findi("imposter drink")) then
-		if(e.other:GetFactionValue(e.self) >= 70) then -- must be at high indifferent
+		if(e.other:GetFactionValue(e.self) >= 50) then -- must be at high indifferent
 			e.self:Say("I have heard there is a barkeep who dares to sell a similar drink in Neriak's Foreign Quarter. I have put a price on his head. Anyone who returns with his head shall be greatly rewarded.");
 		elseif(e.other:GetFactionValue(e.self) >= 0) then	
 			e.self:Say("Find ways to help all in Oggok. Then we will have conversation.");
@@ -20,7 +20,7 @@ function event_say(e)
 	elseif(e.message:findi("barkeeps in freeport")) then
 		e.self:Say("Yes. I have journeyed to many taverns, but it was in Freeport that I acquired most of my art. I compiled all my drink recipes in a [special book].")	
 	elseif(e.message:findi("special book")) then
-		if(e.other:GetFactionValue(e.self) >= 70) then -- must be at high indifferent	
+		if(e.other:GetFactionValue(e.self) >= 50) then -- must be at high indifferent	
 			e.self:Say("I compiled all my drinks into one book. I lost this book while in Freeport. No doubt some barkeep is experimenting with it. I would pay dearly for the return of my Barkeep Compendium.")
 		elseif(e.other:GetFactionValue(e.self) >= 0) then	
 			e.self:Say("Find ways to help all in Oggok. Then we will have conversation.");
@@ -33,7 +33,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 
-	if(e.other:GetFactionValue(e.self) >= 70 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13379})) then -- must be at high indifferent
+	if(e.other:GetFactionValue(e.self) >= 50 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13379})) then -- must be at high indifferent
 		e.self:Say("Ahhh!! My Barkeep Compendium has been returned!! I am in your debt. I do not like to be in any man's debt. Let me offer you this as payment for your great service. Obtaining my book could not have been a simple task.");
 		-- confirmed live factions
 		e.other:Faction(e.self,228,50);   --Clurg
@@ -42,7 +42,7 @@ function event_trade(e)
 		e.other:Faction(e.self,232,50);   --Craknek Warriors
 		e.other:Faction(e.self,337,50);  --Oggok Guards
 		e.other:QuestReward(e.self,0,0,0,0,13380,500);
-	elseif(e.other:GetFactionValue(e.self) >= 70 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13378})) then -- must be at high indifferent
+	elseif(e.other:GetFactionValue(e.self) >= 50 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13378})) then -- must be at high indifferent
 		e.self:Say("Haha! He shall mix no more Flaming Pungla's! I shall drink from his rotting skull tonight. As for you, take this and call it yours. Consider yourself a friend of Clurg.");
 		-- confirmed live factions
 		e.other:Faction(e.self,228,15);   --Clurg
