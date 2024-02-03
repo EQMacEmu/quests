@@ -17,17 +17,14 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20793, item2 = 20794, item3 = 20932})) then 	--monk test of strength using finely woven gold mesh, silken strands, verdant tessera
-		e.self:Say("You have done well, " .. e.other:GetCleanName() .. ".");
-		e.other:QuestReward(e.self,0,0,0,0,27714,100000); --Back Straps of Mastery
-		eq.depop();
+		e.self:Say("You are truly enlightened, " .. e.other:GetCleanName() .. ".  I am honored by your presence.");
+		e.other:QuestReward(e.self,0,0,0,0,27714,100000); --Back Straps of Mastery -- Original: Mystical Back Straps (1282)
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20796, item2 = 20939, item3 = 20795})) then --monk test of sight using cracked leather eyepatch, gold disc, tiny ruby
-		e.self:Say("You have done well, " .. e.other:GetCleanName() .. ".");
+		e.self:Say("This eye patch once belonged to the great Ton Po. Please, you must take it as you are far more enlightened than I.");
 		e.other:QuestReward(e.self,0,0,0,0,1281,100000); --ton po's eyepatch
-		eq.depop();
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20946, item2 = 20798, item3 = 20797})) then --monk test of speed using adumbrate globe, dove slippers, shimmering opal
-		e.self:Say("You have done well, " .. e.other:GetCleanName() .. ".");
+		e.self:Say("Take these sandals, " .. e.other:GetCleanName() .. ".  It is you who deserves to wear them, not I.");
 		e.other:QuestReward(e.self,0,0,0,0,1280,100000); --sandals of alacrity
-		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

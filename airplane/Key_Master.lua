@@ -19,12 +19,14 @@ end
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hello there, brave traveller. I sell keys that take you to other islands in this here Plane of Sky. My prices are the best around. Heh, heh.");
+	elseif(e.message:findi("what.* key")) then
+		e.self:Say("The keys? Heh, heh... Well, let's just say between you and me, them there faeries ain't much of the fightin' type. At least they ain't as strong as lotsa other stuff that's up on these here islands that we be standin' on now.");
 	end
 end
 
 function event_timer(e)
 	if(e.timer == "soul") then
-		eq.unique_spawn(71075,0,0,-996.3,910.5,192.3,18.0); -- NPC: Keeper_of_Souls
+		eq.unique_spawn(71075,0,0,-1484,720,146,8.0); -- NPC: Keeper_of_Souls
 		eq.stop_timer("soul");
 	end
 end

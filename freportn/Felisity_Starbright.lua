@@ -1,6 +1,24 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say(string.format("Hail. %s - If you are interested in helping the League of Antonican Bards by delivering some mail you should talk to Ton Twostring.",e.other:GetName()));
+		e.self:Say("Hail, " .. e.other:GetCleanName() .. " - If you are interested in helping the League of Antonican Bards by delivering some mail you should talk to Ton Twostring.");
+	elseif(e.message:findi("mail")) then
+		e.self:Say("The League of Antonican Bards has a courier system made up of travelers, adventurers and [agents].  We pay good gold to anyone who will take messages from bards such as myself to one of our more distant offices.  Are you [interested]?");
+	elseif(e.message:findi("agent")) then
+		e.self:Say("Silna Songsmith, Travis Two-Tone, Drizda Tunesinger and Dark Deathsinger all report to me.");
+	elseif(e.message:findi("silna songsmith")) then
+		e.self:Say("Silna Songsmith lives with the small folk in the city of Rivervale.");
+	elseif(e.message:findi("travis.* tone")) then
+		e.self:Say("Travis Two-Tone scouts the forest of Nektulos, near the dark elf city of Neriak.");
+	elseif(e.message:findi("drizda tunesinger")) then
+		e.self:Say("Drizda Tunesinger scouts the Feerrott, near the ogre city of Oggok.");
+	elseif(e.message:findi("dark deathsinger")) then
+		e.self:Say("Dark Deathsinger scouts the Innothule Swamp, near the troll city of Grobb.");
+	elseif(e.message:findi("marsinger")) then
+		e.self:Say("Postmaster Tralyn Marsinger lives in the city of Qeynos.");
+	elseif(e.message:findi("lislia goldtune")) then
+		e.self:Say("Postmistress Lislia Goldtune lives in the fortress of High Keep.");
+	elseif(e.message:findi("jakum webdancer")) then
+		e.self:Say("Postmaster Jakum Webdancer lives in the city of Kelethin.");
 	end
 end
 

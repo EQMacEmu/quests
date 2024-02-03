@@ -19,21 +19,17 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20952, item2 = 20760, item3 = 20761})) then --magician test of summoning using harpy statuette, finely woven cloth amice, large diamond
-		e.self:Say("Take this.");
+		e.self:Say("This amice suits you, " .. e.other:GetCleanName() .. ".  Wear it.");
 		e.other:QuestReward(e.self,0,0,0,0,2708,100000); --Drake-hide amice
-		eq.depop();
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20959, item2 = 20762, item3 = 20763})) then --magician test of interpretation using carmine spiroc feather, blood sky amethyst, golden efreeti ring
 		e.self:Say("The ring of Duennan will protect you in times of trouble, mage. Take it and wear it with pride.");
 		e.other:QuestReward(e.self,0,0,0,0,11687,100000); --duennan shielding ring
-		eq.depop();
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20966, item2 = 20764, item3 = 20766, item4 = 20765})) then --magician test of displacement using sweet nectar, crown of elemental mastery, large opal, djinni stave
 		e.self:Say("Finally you return, " .. e.other:GetCleanName() .. ". This staff will aid you, I hope.");
 		e.other:QuestReward(e.self,0,0,0,0,11568,100000); --staff of elemental mastery
-		eq.depop();
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20870, item2 = 20966, item3 = 20871, item4 = 20872})) then --magician test of gesticulationt Efreeti Magi Staff, Sweet Nectar, Sphinx Crown, Hazy Opal
-		e.self:Say("Take this as your reward.");
+		e.self:Say("Congratulations, " .. e.other:GetCleanName() .. ".");
 		e.other:QuestReward(e.self,0,0,0,0,11650,100000); --Staff of the Magister
-		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

@@ -19,17 +19,13 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20932, item2 = 20780, item3 = 20781})) then 	--necromancer test of flight using verdant tessera, ebon shard, griffon's beak
-		e.self:Say("Very good. Now take this and leave me.");
-		e.other:QuestReward(e.self,0,0,0,0,27712,1000000); --bloody griffon-hide wrist guard
-		eq.depop();
+		e.self:Say("Yesss? You do well, " .. e.other:GetCleanName() .. ".  Take thisss sssmall token to show my ressspect for you.");
+		e.other:QuestReward(e.self,0,0,0,0,27712,1000000); --bloody griffon-hide wrist guard -- Original: Rotted Griffon-Hide Wrist Guard (2709)
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20938, item2 = 20782, item3 = 20783})) then --necromancer test of power using silver disc, spiroc feathers, black silk cape
 		e.self:Say("This feathered cape should be more than enough payment, now be gone from my sight!");
 		e.other:QuestReward(e.self,0,0,0,0,1278,1000000); --cloak of spiroc feathers
-		eq.depop();
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20945, item2 = 20784, item3 = 20785})) then --necromancer test of mind using rogous globe, djinni blood, fine cloth raiment
-		e.self:Say("Very good. Now take this and leave me.");
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20945, item2 = 20784, item3 = 20785})) then --necromancer test of mind using rogous globe, djinni blood, fine cloth raiment -- no reward dialogue, confirmed
 		e.other:QuestReward(e.self,0,0,0,0,1279,1000000); --bloodsoaked raiment
-		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

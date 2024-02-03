@@ -17,17 +17,14 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20800, item2 = 20954, item3 = 20799})) then --monk test of tears using silken wrap, spiroc statuette, spiroc talon
-		e.self:Say("You have moved closer to enlightenment.");
+		e.self:Say("You have come a long way in your search for enlightenment, " .. e.other:GetCleanName() .. ".  Please, take these shoulder wraps of the legendary Ton Po.");
 		e.other:QuestReward(e.self,0,0,0,0,1283,100000); --ton po's shoulder wraps
-		eq.depop();
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20803, item2 = 20801, item3 = 20802, item4 = 20960})) then --monk test of fists using brass knuckles, ethereal amethyst, nebulous sapphire, white spiroc feather
-		e.self:Say("You have moved closer to enlightenment.");
-		e.other:QuestReward(e.self,0,0,0,0,27715,100000); --Wu's Fist of Mastery
-		eq.depop();
+		e.self:Say("You embody tranquility, " .. e.other:GetCleanName() .. ". You may now wield the Fist of Wu.  May Quellious bless you with peace.");
+		e.other:QuestReward(e.self,0,0,0,0,27715,100000); --Wu's Fist of Mastery -- Original: Wu's Tranquil Fist (11690)
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20967, item2 = 20804, item3 = 20805})) then --monk test of tranquility using aged nectar, writ of quellious, tear of quellious
-		e.self:Say("You have moved closer to enlightenment.");
+		e.self:Say("You have done well, " .. e.other:GetCleanName() .. ".  You have both my respect and the legendary golden sash.  Wear it well, enlightened one.");
 		e.other:QuestReward(e.self,0,0,0,0,11698,100000); --golden sash of tranquility
-		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

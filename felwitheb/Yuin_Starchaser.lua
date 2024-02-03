@@ -7,25 +7,25 @@ function event_say(e)
 		e.self:Say("You will need this specially prepared Curing Kit to craft the Art Keepers clothing. The materials required vary depending on the piece of clothing you desire to craft. Once you have been outfitted in the garments return to me and you may be assistance with another [task]. Do you desire to craft a art keepers [cap], [wristband], [gloves], [boots], [sleeves], [pantaloons], or [robe]?");
 		e.other:SummonCursorItem(17125); -- Curing Kit
 	elseif(e.message:findi("boots")) then
-		e.self:Say("To craft Art Keepers Boots you require two [silk thread], giant wasp worker pollen, a woven spider silk, and two ruined forest drakeling scales. Once you have the necessary components combine them in your Curing Kit with this Tattered Boot Pattern.");
+		e.self:Say("To craft Art Keepers Boots you require two [silk thread], giant wasp worker pollen, a woven spider silk, and two ruined forest drakeling scales. Once you have the necessary components, combine them in your Curing Kit with this Tattered Boot Pattern.");
 		e.other:SummonCursorItem(19561); -- Tattered Boot Pattern
 	elseif(e.message:findi("cap")) then
-		e.self:Say("To craft an Art Keepers Cap you will require two [silk thread], giant wasp worker pollen, and a woven spider silk. Once you have the necessary components combine them in your Curing Kit with this Tattered Cap Pattern.");
+		e.self:Say("To craft an Art Keepers Cap you will require two [silk thread], giant wasp worker pollen, and a woven spider silk. Once you have the necessary components, combine them in your Curing Kit with this Tattered Cap Pattern.");
 		e.other:SummonCursorItem(19555); -- Tattered Cap Pattern
 	elseif(e.message:findi("gloves")) then
-		e.self:Say("To craft Art Keepers Gloves you require two [silk thread], giant wasp worker pollen, two woven spider silks, and a ruined forest drakeling scales. Once you have the necessary components combine them in your Curing Kit with this Tattered Glove Pattern.");
+		e.self:Say("To craft Art Keepers Gloves you require two [silk thread], giant wasp worker pollen, two woven spider silks, and a ruined forest drakeling scales. Once you have the necessary components, combine them in your Curing Kit with this Tattered Glove Pattern.");
 		e.other:SummonCursorItem(19559); -- Tattered Glove Pattern
 	elseif(e.message:findi("pantaloons")) then
-		e.self:Say("To craft Art Keepers Pantaloons you require two [silk thread], giant wasp warrior pollen, two woven spider silks, and two forest drakeling scales. Once you have the necessary components combine them in your Curing Kit with this Tattered Leggings Pattern.");
+		e.self:Say("To craft Art Keepers Pantaloons you require two [silk thread], giant wasp warrior pollen, two woven spider silks, and two forest drakeling scales. Once you have the necessary components, combine them in your Curing Kit with this Tattered Leggings Pattern.");
 		e.other:SummonCursorItem(19560); -- Tattered Pant Pattern
 	elseif(e.message:findi("robe")) then
-		e.self:Say("To craft an Art Keepers Robe you will require three [silk thread], giant wasp warrior pollen, two woven spider silks, and a pristine forest drakeling scales. Once you have the necessary components combine them in your Curing Kit with this Tattered Robe Pattern.");
+		e.self:Say("To craft an Art Keepers Robe you will require three [silk thread], giant wasp warrior pollen, two woven spider silks, and a pristine forest drakeling scales. Once you have the necessary components, combine them in your Curing Kit with this Tattered Robe Pattern.");
 		e.other:SummonCursorItem(11395); -- Tattered Robe Pattern
 	elseif(e.message:findi("sleeves")) then
-		e.self:Say("To craft Art Keepers Sleeves you require two [silk thread], giant wasp warrior pollen, a woven spider silk, and a forest drakeling scales. Once you have the necessary components combine them in your Curing Kit with this Tattered Sleeves Pattern.");
+		e.self:Say("To craft Art Keepers Sleeves you require two [silk thread], giant wasp warrior pollen, a woven spider silk, and a forest drakeling scales. Once you have the necessary components, combine them in your Curing Kit with this Tattered Sleeves Pattern.");
 		e.other:SummonCursorItem(19557); -- Tattered Sleeves Pattern
 	elseif(e.message:findi("wristband")) then
-		e.self:Say("To craft an Art Keepers Wristband you require a [silk thread], giant wasp drone pollen, and a woven spider silk. Once you have the necessary components combine them in your Curing Kit with this Tattered Wristband Pattern.");
+		e.self:Say("To craft an Art Keepers Wristband you require a [silk thread], giant wasp drone pollen, and a woven spider silk. Once you have the necessary components, combine them in your Curing Kit with this Tattered Wristband Pattern.");
 		e.other:SummonCursorItem(19558); -- Tattered Wristband Pattern
 	elseif(e.message:findi("task")) then
 		e.self:Say("One of the responsibilities of the Keepers of the Art is to weave and maintain powerful magic wards that help protect Felwithe from enemy magic. An understanding of the magic wielded by Felwithes many foes is vital to the success of our protective wards. With the help of the paladins of the Koada'Vie we have discovered many of the secrets of the orcish shaman that reside in the citadel of Clan Crushbone to the north of the Faydarks but there is still much to learn. The task I have to present you will take you into the [Crushbone Citadel] itself.");

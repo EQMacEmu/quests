@@ -19,15 +19,12 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20955, item2 = 20856, item3 = 20857})) then 					--ranger test of the element of thunder using djinni statuette, spiroc thunder totem, white gold earring
 		e.self:Say("Great work, " .. e.other:GetCleanName() .. ", take this earring as a token of my admiration.");
 		e.other:QuestReward(e.self,0,0,0,0,14568,100000); --thunderforged earring
-		eq.depop();
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20859, item2 = 20860, item3 = 20858, item4 = 20962})) then 	--ranger test of the blade using bitter honey, circlet of brambles, efreeti long sword, emerald spiroc feather
 		e.self:Say("You are indeed a ranger of noble bearing. The sword Arydryidriyorn will do well at your side.");
-		e.other:QuestReward(e.self,0,0,0,0,27732,100000); --arydryidriyorn
-		eq.depop();
+		e.other:QuestReward(e.self,0,0,0,0,27732,100000); --arydryidriyorn -- Original: Yannikil (11697)
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20861, item2 = 20969, item3 = 20862, item4 = 20863})) then 	--ranger test of the art of ranged attack using efreeti war bow, thickened nectar, sphinx tallow, shimmering pearl
 		e.self:Say("You are a walking legend, " .. e.other:GetCleanName() .. ". Please take Windstriker. It needs one such as yourself to wield it.");
 		e.other:QuestReward(e.self,0,0,0,0,11696,100000); --windstriker
-		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

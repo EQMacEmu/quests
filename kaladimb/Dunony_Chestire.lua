@@ -1,6 +1,6 @@
 function event_say(e)
 	if(e.message:findi("Hail")) then
-		e.self:Say('Hello. I am the guild master.');
+		e.self:Say("Hello. I am the guild master.");
 	end
 end
 

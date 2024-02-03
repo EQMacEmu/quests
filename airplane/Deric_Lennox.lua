@@ -20,15 +20,12 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20813, item2 = 20812, item3 = 20954})) then 					--cleric test of resolution using silvered spiroc necklace, spiroc healing totem, spiroc statuette
 		e.self:Say("This necklace suits you well, " .. e.other:GetCleanName() .. ".");
 		e.other:QuestReward(e.self,0,0,0,0,14562,100000); --necklace of resolution
-		eq.depop();
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20815, item2 = 20816, item3 = 20814, item4 = 20961})) then 	--cleric test of theurgy using djinni aura, efreeti mace, glowing sapphire, saffon spiroc feather
 		e.self:Say("This weapon will aid you even as you fight. Use it wisely, " .. e.other:GetCleanName() .. ".");
-		e.other:QuestReward(e.self,0,0,0,0,27718,100000); --theurgist's star
-		eq.depop();
+		e.other:QuestReward(e.self,0,0,0,0,27718,100000); --theurgist's star -- Original: Theurgist (11692)
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20817, item2 = 20968, item3 = 20819, item4 = 20818})) then 	--cleric test of the weak using efreeti standard, manna nectar, mithril bands, shimmering topaz
-		e.self:Say("Good on ya!");
-		e.other:QuestReward(e.self,0,0,0,0,27719,100000); --Baton of the Sky
-		eq.depop();
+		e.self:Say("You are a legend among clerics, " .. e.other:GetCleanName() .. ". Your deeds will be well remembered. Please, take this baton as a token of my admiration.");
+		e.other:QuestReward(e.self,0,0,0,0,27719,100000); --Baton of the Sky -- Original: Truwian Baton (11691)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

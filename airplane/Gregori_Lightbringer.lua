@@ -21,15 +21,12 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20725, item2 = 20964, item3 = 20726, item4 = 20727})) then 		--paladin test of compassion using efreeti zweihander, dulcet nectar, golden hilt, large sky diamond
 		e.self:Say("Truvinan is now yours, " .. e.other:GetCleanName() .. ". I pray that you use the Divine Wind wisely.");
 		e.other:QuestReward(e.self,0,0,0,0,11682,100000); --Truvinan, the divine wind
-		eq.depop();
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20950, item2 = 20721, item3 = 20722})) then 	--paladin test of sacrifice using griffon statuette, spiroc peace totem, bixie sword blade
 		e.self:Say("Rare is it to see one such as yourself go so far. Wield Aldryn with pride, " .. e.other:GetCleanName() .. ", and know that you are perhaps unique among your peers.");
 		e.other:QuestReward(e.self,0,0,0,0,27708,100000); --Aldryn, blade of the ocean
-		eq.depop();
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20957, item2 = 20723, item3 = 20724})) then 	--paladin test of love using dark spiroc feather, ethereal topaz, sphinx claw
 		e.self:Say("You are indeed worthy of this divine sword, " .. e.other:GetCleanName() .. ". As long as you wield Thelvorn, you will follow the true path.");
-		e.other:QuestReward(e.self,0,0,0,0,27709,100000); --Thelvorn, Blade of Light
-		eq.depop();
+		e.other:QuestReward(e.self,0,0,0,0,27709,100000); --Thelvorn, Blade of Light -- Original: Zephyrwind (11681)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

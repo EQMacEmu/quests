@@ -24,6 +24,8 @@ function event_say(e)
 		e.self:Say("I've even heard of the ghosts of poor children haunting the estate. Have you ever [seen a child's ghost]?");
 	elseif(e.message:findi("seen.* ghost")) then
 		e.self:Say("You have? Did it speak to you?  What did it say?  Only the essences of those unjustly wronged or the vilest of souls are bound to this realm and sometimes end up in that accursed place.  Only that which binds them to this realm may set them free.   Curse those who would harm an innocent child!  I knew of one such unfortunate child.  I was to bring her a [doll] for her birthday but she fell to a thieving cutthroat's sword!'  Baenar's eyes fill with tears.  'Pardon me, friends, she was like a daughter to me.  I loved her as I would my own!");
+	elseif(e.message:findi("marfen")) then
+		e.self:Say("The gnome merchant?  He resides within the walls of Solusek's Eye.  I came across the mining colony in my travels and found therein, machinations the likes of which I've never seen!  That's where I saw the doll I would give her.  There's nothing like it and she would have loved it so!  But, I must ask you to go now, the memories are hard for me to bear in front of an audience.  I bid you farewell. '  Baeran stares off toward the horizon.");
 	elseif(e.message:findi("doll")) then
 		e.self:Say("What's that you say? You wish to have the doll I was to give her? Whatever for? Bah! Nevermind me. I rant like an old woman sometimes. I should let her memory go but I would stop my heart from beating before I forget that child. Here, take this invoice. I have no further use for it. Give it to Marfen Binkdirple.");
 		e.other:SummonCursorItem(20372); -- Solusek Mining Company Invoice

@@ -13,3 +13,11 @@ function event_say(e)
 		e.self:DoAnim(67); --salute
 	end
 end
+
+function event_waypoint_arrive(e)
+	if(e.wp == 6) then
+		eq.get_entity_list():GetDoorsByDoorID(1):ForceOpen(e.self);
+		eq.get_entity_list():GetDoorsByDoorID(2):ForceOpen(e.self);
+		eq.get_entity_list():GetDoorsByDoorID(49):ForceOpen(e.self);
+	end
+end

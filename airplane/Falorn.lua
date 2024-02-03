@@ -14,7 +14,7 @@ function event_say(e)
 	elseif(e.message:findi("force")) then 		--warrior test of force
 		e.self:Say("Foolishness or bravery Gendal?  We shall see. Return to me a pearlescent globe, a silver mesh and a spiroc air totem  In return, you will receive both my deepest respect and the aerated pauldrons.");
 	elseif(e.message:findi("skill")) then 		--warrior test of skill
-		e.self:Say("'Test of skill it is. Go upward and retrieve these three items; an ivory tessera, a small ruby, and an azure ring. Return these to me and the azure ruby ring shall be yours.");
+		e.self:Say("Test of skill it is. Go upward and retrieve these three items; an ivory tessera, a small ruby, and an azure ring. Return these to me and the azure ruby ring shall be yours.");
 	end
 end
 
@@ -23,15 +23,10 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20935, item2 = 20972, item3 = 20973})) then			--warrior test of strength using bronze disc, small pick, stone amulet
 		e.self:Say("I am impressed, " .. e.other:GetCleanName() .. ". You are stronger than I thought.");
 		e.other:QuestReward(e.self,0,0,0,0,14569,100000); 	--runed wind amulet
-		eq.depop();
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20942, item2 = 20974, item3 = 20975})) then		--warrior test of force using pearlescent globe, silver mesh, spiroc air totem
-		e.self:Say("You have proven yourself worthy.");
-		e.other:QuestReward(e.self,0,0,0,0,27701,100000); 	--Pauldrons of the Blue Sky
-		eq.depop();
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20942, item2 = 20974, item3 = 20975})) then		--warrior test of force using pearlescent globe, silver mesh, spiroc air totem -- no reward text, confirmed
+		e.other:QuestReward(e.self,0,0,0,0,27701,100000); 	--Pauldrons of the Blue Sky -- Original: Aerated Pauldrons (4321)
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20928, item2 = 20970, item3 = 20971})) then		--warrior test of skill using ivory tessera, small ruby, azure ring
-		e.self:Say("You have proven yourself worthy.");
 		e.other:QuestReward(e.self,0,0,0,0,14551,100000); 	--azure ruby ring
-		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

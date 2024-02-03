@@ -16,18 +16,15 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20931, item2 = 20754, item3 = 20755})) then --magician test of clarification using crimson tessera, ethereal sapphire, feathered cape
-		e.self:Say("Take this as your reward.");
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20931, item2 = 20754, item3 = 20755})) then --magician test of clarification using crimson tessera, ethereal sapphire, feathered cape -- dialogue is correct, says cape for some reason
+		e.self:Say("Take this cape, mage, you have earned it.");
 		e.other:QuestReward(e.self,0,0,0,0,1274,100000); --bracelet of clarification
-		eq.depop();
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20937, item2 = 20756, item3 = 20757})) then --magician test of empowerment using iron disc, gem of empowerment, ceramic mask
 		e.self:Say("This mask will suit you well, mage. Use it sparingly.");
 		e.other:QuestReward(e.self,0,0,0,0,2707,100000); --mask of empowerment
-		eq.depop();
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20944, item2 = 20758, item3 = 20759})) then	--magician test of shielding using hyaline globe, ivory pendant, golden coffer
 		e.self:Say("A pendant of gold and white, " .. e.other:GetCleanName() .. ", wear it and beat back the night.");
 		e.other:QuestReward(e.self,0,0,0,0,14557,100000); --gold white pendant
-		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

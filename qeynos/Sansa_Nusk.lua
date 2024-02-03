@@ -1,6 +1,8 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hello..  Welcome to the Wind Spirit's Song.  I'm Sansa, and I help out the local bards here.");
+	elseif(e.message:findi("lute")) then
+		e.self:Say("We carry many types of lutes and strings.  The bard guild here keeps us very busy.  And our customers, like [Fabian], keep us even busier.");
 	elseif(e.message:findi("fabian")) then
 		e.self:Say("Ahh - jolly Fabian. He is one of our best customers! That is, of course, due to the fact that he has the heaviest fingers of any bard I know. Anyhow, down to business. I assume he sent you for a new set of strings. Unfortunately, I have not been able to procure any of the special - uhh - things needed to make his strings lately.");
 	elseif(e.message:findi("special things")) then

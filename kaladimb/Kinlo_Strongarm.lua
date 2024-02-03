@@ -22,9 +22,9 @@ function event_say(e)--indifferent or better
 			e.self:Say("Aye. Some says their souls were bound into their hammers by an Erudite necromancer and enchanter. They say they used the power of the hammers ta profit by makin' ships, boats, and houses better than any other merchants. Sad tale, if'n it be true.");
 		elseif(e.message:findi("necromancer") or e.message:findi("enchanter")) then
 			e.self:Say("I'm not knowin' more about the story, lad. Everythin' I know is already in what I said. Aye, Erudites. I suppose if yer wantin' ta run after shortbeard tales ya can look over on that plague island they call Odus.");
-		elseif((e.message:findi("rock")) or (e.message:findi("gem")) or (e.message:findi("metal"))) then
+		elseif(e.message:findi("rock") or e.message:findi("gem") or e.message:findi("metal")) then
 			e.self:Say("Aye, good stuff ta be workin' with.");
-		elseif(e.message:findi("arrrr")) then
+		elseif(e.message:findi("arr.*")) then
 			e.self:Say("Har, har!  Ooooo!  Arrrrrr!");
 		end
 	else

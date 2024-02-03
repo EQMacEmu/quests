@@ -17,17 +17,14 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20928, item2 = 20984, item3 = 20985})) then 	--rogue test of thievery using ivory tessera, gem of invigoration, inlaid choker
-		e.self:Say("Excellent! Fizzlethorpe blesses you with this gift.");
+		e.self:Say("Very good, " .. e.other:GetCleanName() .. "!  Take this choker as evidence of your abilities.");
 		e.other:QuestReward(e.self,0,0,0,0,14552,100000); 	--wispy choker of vigor
-		eq.depop();
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20989, item2 = 20942, item3 = 20988})) then --rogue test of silence using spiroc sky totem, pearlescent globe, black griffon feather
 		e.self:Say("These spauldors made from griffon wings will aid you in your ascent to greatness, " .. e.other:GetCleanName() .. ".");
 		e.other:QuestReward(e.self,0,0,0,0,2703,100000); 	--griffon wing spauldors
-		eq.depop();
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20956, item2 = 20992, item3 = 20993})) then --rogue test of trickery using mottled spiroc feather, cracked leather belt, sphinxian circlet
 		e.self:Say("If one is slow, he dies a quick death. With this belt, you can avoid all that with nary a breath.");
 		e.other:QuestReward(e.self,0,0,0,0,11676,100000); 	--renard's belt of quickness
-		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

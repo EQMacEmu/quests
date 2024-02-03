@@ -3,7 +3,7 @@
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Hail. good adventurer!  Do you bring word from my [husband]?");
+		e.self:Say("Hail, good adventurer!  Do you bring word from my [husband]?");
 	elseif(e.message:findi("husband")) then
 		e.self:Say("Tolkar is his name. My beloved husband. He still lives in Felwithe while I study here. It must be hard on him."); 
 	end

@@ -3,6 +3,8 @@ function event_say(e)
 		e.self:Say("Hello. It is always good to meet someone new. I am Lady Shae of the House of Dumas. And what [house] are you from?");
 	elseif(e.message:findi("no house")) then
 		e.self:Say("Good. I care not to hang around any snobs this evening. Would you be so kind as to buy me some wine?");
+	elseif(e.message:findi("wine")) then
+		e.self:Say("Why, yes, I would love a drink! Pandos, my bodyguard, keeps telling me to try the white wine.");
 	elseif(e.message:findi("steel warriors sent me")) then
 		e.self:Say("Thank you for checking into this matter. I told the Militia, but they just ignored me. It appears the dark elves keep coming in leaving mail for [Shintl] Lowbrew. Before I tell you more could you please buy me A white wine please.");
 	elseif(e.message:findi("shintl")) then
@@ -11,6 +13,8 @@ function event_say(e)
 		e.self:Say("I can tell. You look like you ATE a house of pancakes.");
 	elseif(e.message:findi("house of style")) then
 		e.self:Say("I would of never guessed by the way you look.");
+	elseif(e.message:findi("house of pain")) then
+		e.self:Say("How droll. I have no interest in warriors or bad jesters.");
 	elseif(e.message:findi("dyllin")) then
 		e.self:Say("Dyllin was the name of a Qeynos guard who was sent to pick up the list I was holding for dear, sweet Antonius. He left just yesterday. If you wish to meet up with him, I heard him say he was going to stop at Highpass Hold.");
 	end

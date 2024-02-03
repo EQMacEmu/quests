@@ -31,6 +31,8 @@ function event_say(e)
 		e.self:Say("The prison is on the lower level of the palace inside the City Office.");
 	elseif(e.message:findi("who.* chief")) then
 		e.self:Say("Chief Adair is the highest ranking sentinel. He oversees our operations.");
+	elseif(e.message:findi("what.* sentinel")) then
+		e.self:Say("Every sentinel in Erudin is a paladin and member of the High Guard. They belong to either the Temple of Divine Light or the Deepwater Temple. They protect Erudin from evil.");
 	end
 end
 

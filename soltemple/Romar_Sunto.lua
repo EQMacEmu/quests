@@ -2,16 +2,16 @@ function event_say(e)
 	if(e.other:GetFactionValue(e.self) >= 0) then
 		if(e.message:findi("hail")) then
 			e.self:Say("I am Romar Sunto, servant of Solusek Ro.  I am searching for the [coin] of the mighty enchanter [Tash] - if you are interested in helping me acquire it, I will [reward] you with a powerful spell.  I am also a dispenser of the Staff of Ro, sometimes also called [darkwood staves].");
-		elseif(e.message:findi("darkwood staves")) then
+		elseif(e.message:findi("darkwood stave")) then
 			e.self:Say("Bring me a lambent stone from a hill giant, a sand giant or a griffon and I will give you a darkwood staff.");
 		elseif(e.message:findi("tash")) then
 			e.self:Say("Tash was a mighty enchanter and a master jewelcrafter.");
 		elseif(e.message:findi("reward")) then
-			e.self:Say("'I will reward you with a scroll for the spell Tashania. For personal use, of course.");
+			e.self:Say("I will reward you with a scroll for the spell Tashania. For personal use, of course.");
 		elseif(e.message:findi("coin pouch")) then
 			e.self:Say("I will gladly lend you this coin pouch - put all 10 antique silver coins into it and combine them into the Coin of Tash.");
 			e.other:SummonCursorItem(17511); -- A coin pouch - to combine the coins in
-		elseif(e.message:findi("coin")) then
+		elseif(e.message:findi("what.* coin")) then
 			e.self:Say("Tash had a collection of ten antique silver coins that were left in different cities around the world.  If you were to collect all 10 coins, I would give you a [coin pouch] that would let you combine them into the master coin of Tash.  If you are interested, I will sell you a copy of the Tome of Tash, detailing where the coins were reportedly left, for a mere 50 gold.");
 		end
 	else

@@ -25,6 +25,8 @@ function event_say(e)
 		e.self:Say("You can find provisions in the port district.");
 	elseif(e.message:findi("king") or e.message:findi("leader")) then
 		e.self:Say("Within the palace you shall find the High Council which is the governing body of Erudin. The overseer of this council is the guildmaster of the Gatecallers, Markus Jaevins.");
+	elseif(e.message:findi("what.* sentinel")) then
+		e.self:Say("Every sentinel in Erudin is a paladin and member of the High Guard. They belong to either the Temple of Divine Light or the Deepwater Temple. They protect Erudin from evil.");
 	end
 end
 

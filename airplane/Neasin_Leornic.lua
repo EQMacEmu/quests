@@ -16,18 +16,13 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20930, item2 = 20741, item3 = 20742})) then 	--wizard test of concentration using azure tessera, augmentor's gem, grey damask cloak
-		e.self:Say("Ah good. Take this as your reward.");
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20930, item2 = 20741, item3 = 20742})) then 	--wizard test of concentration using azure tessera, augmentor's gem, grey damask cloak -- confirmed no reward dialogue
 		e.other:QuestReward(e.self,0,0,0,0,1272,100000); --augmentor's mask
-		eq.depop();
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20937, item2 = 20743, item3 = 20744})) then --wizard test of focus using iron disc, ethereal opal, woven skull cap
-		e.self:Say("Ah good. Take this as your reward.");
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20937, item2 = 20743, item3 = 20744})) then --wizard test of focus using iron disc, ethereal opal, woven skull cap -- confirmed no reward dialogue
 		e.other:QuestReward(e.self,0,0,0,0,1271,100000); --Al`kabor's cap of binding
-		eq.depop();
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20944, item2 = 20745, item3 = 20746})) then --wizard test of meditation using hyaline globe, sky topaz, high quality raiment
-		e.self:Say("Ah good. Take this as your reward.");
+		e.self:Say("This mantle will sit well on your shoulders, " .. e.other:GetCleanName() .. ".  Take it as a reward for your troubles.");
 		e.other:QuestReward(e.self,0,0,0,0,1273,100000); --raiment of thunder
-		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

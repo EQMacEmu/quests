@@ -17,17 +17,14 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20845, item2 = 20955, item3 = 20842, item4 = 20841})) then 		--shaman test of shrink using efreeti war club, djinni statuette, corrosive venom, wooden bands
-		e.self:Say("Excellent! Take this as your reward.");
-		e.other:QuestReward(e.self,0,0,0,0,27729,100000); --spiroc warhammer
-		eq.depop();
+		e.self:Say("Take this warhammer of the wind as your reward, " .. e.other:GetCleanName() .. ".");
+		e.other:QuestReward(e.self,0,0,0,0,27729,100000); --Warhammer of the Wind -- Original: Spiroc Warhammer (missing)
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20962, item2 = 20843, item3 = 20844})) then 	--shaman test of the snake using emerald spiroc feather, bixie essence, spiritualist's ring
 		e.self:Say("This ring should aid you greatly, " .. e.other:GetCleanName() .. ". Use it wisely.");
-		e.other:QuestReward(e.self,0,0,0,0,27730,100000); --Vermilion Sky Ring
-		eq.depop();
+		e.other:QuestReward(e.self,0,0,0,0,27730,100000); --Vermilion Sky Ring -- Original: Crimson Ring of Desinence (11695)
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20846, item2 = 20969, item3 = 20848, item4 = 20847})) then 	--shaman test of the witch doctor using efreeti war maul, thickened nectar, fire sky ruby, symbol of veeshan
 		e.self:Say("Your deeds are beyond compare, " .. e.other:GetCleanName() .. ". Use Garduk with care though, for it is more powerful than any other weapon you have wielded.");
 		e.other:QuestReward(e.self,0,0,0,0,11694,100000); --garduk
-		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

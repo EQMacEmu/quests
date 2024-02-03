@@ -4,13 +4,13 @@ function event_say(e)
 			e.self:Say("I am Vilissia, chosen of Solusek Ro.  I am a practitioner in the wizardly arts, and keeper of lore for the [runescale cloak], [Tishan's kilt] and the [acumen mask].");
 		elseif(e.message:findi("runescale cloak")) then
 			e.self:Say("The Runescale cloak is a wonderful item of defense for any wizard.  Are you [interested] in the [cloak]?");
-		elseif(e.message:findi("interested in the cloak")) then
+		elseif(e.message:findi("interested.* cloak")) then
 			e.self:Say("I can assemble for you a runescale cloak, but I will need you to bring me the necessary components.  I will need a lizardscale cloak from the temple of Cazic-Thule and the three Runes of Scale.  All three can be found on crocodiles - saltwater crocodiles in the caverns of Guk, deepwater crocodiles in the Oasis of Marr and firescale crocodiles in the mountains of Lavastorm.  Bring me these items, and I will make you a runescale cloak.");
 		elseif(e.message:findi("acumen mask")) then
 			e.self:Say("The acumen mask, as its name suggests, confers to its wearer certain powers of insight and knowledge.  Are you [interested] in obtaining a [mask]?");
-		elseif(e.message:findi("interested in the mask")) then
+		elseif(e.message:findi("interested.* mask")) then
 			e.self:Say("I can make an acumen mask for you, but you will need to bring me the proper components.  I will need a glowing mask from a skeletal monk in the caverns of Guk, a patch of Shadow from our mortal enemies, the shadowed men, a darkbone Skull from a darkbone skeleton in the Estate of Unrest, and a bonechipped mask from a goblin headmaster in the Ocean of Tears.  Bring me these four items, and I will make for you an acumen mask.");
-		elseif(e.message:findi("Tishan's kilt")) then
+		elseif(e.message:findi("tishan.* kilt")) then
 			e.self:Say("Tishan was once counted among the mightiest of wizards, and his items are items of power.  If you are interested in acquiring Tishan's kilt, you must take a shadowed ball from our mortal enemies, the shadowed men, and bring it to Trankia in the Everfrost Mountains.");
 		end
 	else

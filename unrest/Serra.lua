@@ -3,7 +3,7 @@ function event_say(e)
 		e.self:Say("H..h..hello? Can you help me? I lost [something] and I need it so I can go back home.");
 	elseif(e.message:findi("something")) then
 		e.self:Say("I never got my doll for my birthday. Before he could bring it to me I was h..hurt by the bad man. I cannot leave without my doll. Will you please help me?");
-	elseif(e.message:findi("doll")) then
+	elseif(e.message:findi("doll") or e.message:findi("yes")) then
 		e.self:Emote("claps her hands. 'Oh goody! But... I cannot seem to remember his name. He gave me this note before I...");
 	elseif(e.message:findi("note")) then
 		e.self:Say("I hope it will help you out. Please find him so I can leave this place?");

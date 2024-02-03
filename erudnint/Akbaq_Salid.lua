@@ -8,7 +8,7 @@ function event_say(e)
 		elseif(e.message:findi("sample")) then
 			e.self:Say("The titan spirits of the Stonebrunt Mountains appear in several various animal forms seemingly with different areas of influence in the spirit world. I am interested in conducting some experiments on the hides of the giant leopard titan and the giant sabretooth titan. Once I have acquired those hides I will seek to conduct experiments on the [others]."); 
 		elseif(e.message:findi("other")) then
-			e.self:Say("Once I have finished my studies of the feline titans pelts I am interested in experimenting with the hides of the strongest of the stonebrunt titans. the gigantic gorilla and the gargantuan panda. The [ancient snake] that inhabits those mountains is another matter that you may be interested in as well."); 
+			e.self:Say("Once I have finished my studies of the feline titans pelts I am interested in experimenting with the hides of the strongest of the stonebrunt titans, the gigantic gorilla and the gargantuan panda. The [ancient snake] that inhabits those mountains is another matter that you may be interested in as well."); 
 		elseif(e.message:findi("ancient snake")) then
 			e.self:Say("I believe I have uncovered a process with which to harness the mystical properties of the scales of the snake titan so that they can be fashioned into a powerful robe. If you bring me the ancient snake skin and some platinum thread I am sure there will be enough material to craft multiple robes and I shall reward you with one for your assistance."); 
 		end

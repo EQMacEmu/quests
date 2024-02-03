@@ -27,8 +27,15 @@ function event_say(e)
 		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(71076) == false) then
 			eq.spawn2(71076,0,0,-929,-1035,1093,64); 							--used Magelo to get the closest loc as possible.
 		end
-	elseif(e.message:findi("traverse this plane") and qglobals["sirran"] == "1") then
+	elseif(e.message:findi("plane") and qglobals["sirran"] == "1") then
 		e.self:Say("Ahah! Wise you are and tell you I will. Hrm? Don't have wings, do you? Fairies have swords! Fairies stole my lucky feet! Hand me them, one by one, and be in for a treat! Haha!");
+	elseif(e.message:findi("go away") and qglobals["sirran"] == "1") then
+		e.self:Say("Oh, so you want me gone, eh? So be it.  Your wish is my command.  Wait?  I'm not listening to you!  Go away!");
+		eq.attack(e.other:GetName());
+	elseif(e.message:findi("do") and qglobals["sirran"] == "1") then
+		e.self:Say("I can tell you how to get from island to island, so, nyah!  I can also tell you about the Veil. Hold on to everything you find up here.  It may come in handy.");
+	elseif(e.message:findi("veil") and qglobals["sirran"] == "1") then
+		e.self:Say("The veil is dissolving!  Centuries ago, when Veeshan brought me to this place, she sealed the plane with the Veil.  By you being here, it is evidence that the Veil is lifting.");
 	end
 end
 

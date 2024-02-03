@@ -29,6 +29,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	local text = "I need no fewer than four infected rat livers!! Now, go get me what I require!!";
+	local text1 = "I require all four reagents, anything less is useless. Incompetence will get you nowhere amongst the faithful of Cazic-Thule!";
 
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18019})) then -- Harbingers of Fear Guild Note
 		e.self:Say("You are welcomed into the fold. Now go out. and prove yourself. young one. You have much to learn about the Dark Truth.");
@@ -46,7 +47,7 @@ function event_trade(e)
 		e.other:Faction(e.self,242,-5); -- Faction: Deepwater Knights
 		e.other:Faction(e.self,254,-5); -- Faction: Gate Callers
 		e.other:QuestReward(e.self,math.random(10),math.random(20),0,0,1437,500);
-	elseif(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13074, item2 = 16990, item3 = 14102, item4 = 14103})) then
+	elseif(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13074, item2 = 16990, item3 = 14102, item4 = 14103},1,text1)) then
 		e.self:Say("Excellent Job " .. e.other:GetCleanName() .. ". These components will help with our research immeasurably. You will soon be reaping the rewards granted by our Lord Cazic-Thule!! If you want to further assist our research effots, talk to Atdehim Sqonci.");
 		e.other:Faction(e.self,265,30); -- Faction: Heretics
 		e.other:Faction(e.self,231,-30); -- Faction: Craftkeepers

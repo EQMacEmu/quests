@@ -1,13 +1,13 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		if(e.other:GetFactionValue(e.self) >= 0) then	
-			e.self:Say("Hail and well met, " .. e.other:GetCleanName() .. "!  Have you come to study. or can you [perform a task] for me this day?");
+			e.self:Say("Hail and well met, " .. e.other:GetCleanName() .. "!  Have you come to study, or can you [perform a task] for me this day?");
 		else
 			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
 		end
 	elseif(e.message:findi("perform a task")) then
 		if(e.other:GetFactionValue(e.self) >= 0) then	
-			e.self:Say("That is the spirit.  There are many black wolves wandering Faydark these days.  One of my brethren needs a black wolf skin as a component for his magic.  Bring me a black wolf skin. and I shall reward you for your efforts."); 
+			e.self:Say("That is the spirit.  There are many black wolves wandering Faydark these days.  One of my brethren needs a black wolf skin as a component for his magic.  Bring me a black wolf skin, and I shall reward you for your efforts."); 
 		else
 			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
 		end

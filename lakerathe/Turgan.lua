@@ -3,7 +3,7 @@
 function event_say(e)
 	if(e.message:findi("Hail")) then
 		e.self:Say("Hail!  What brings you here?");
-	elseif(e.message:findi("icon of the reliant")) then
+	elseif(e.message:findi("reliant")) then
 		e.self:Say("Where did you hear... I don't know what you are talking about.  Begone!  Back to Kithicor with you!");
 	end
 end

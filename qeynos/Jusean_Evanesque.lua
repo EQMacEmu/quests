@@ -31,6 +31,12 @@ function event_say(e)
 		else
 			e.self:Say("The League of Antonican Bards is very displeased with your recent actions.   And I don't particularly care for you, or your stench, either!");	
 		end
+	elseif(e.message:findi("flute")) then
+		if(e.other:GetFactionValue(e.self) >= -200) then			
+			e.self:Say("Sorry, I'm not in the flute-making business anymore.");
+		else
+			e.self:Say("The League of Antonican Bards is very displeased with your recent actions.   And I don't particularly care for you, or your stench, either!");	
+		end
 	end
 end
 

@@ -1,24 +1,22 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		if(e.other:GetFaction(e.self) < 8) then
+		if(e.other:GetFactionValue(e.self) >= -300) then
 			e.self:Say("Welcome to the mines of Kaladim!");
 		else
 			e.self:Say("The word around the mines is that you are not to be trusted. You'd best leave before my dagger finds a new home in your back.");
 		end
 	elseif(e.message:findi("ready to earn mining pick 628")) then
-		if(e.other:GetFaction(e.self) < 5) then -- Requires high amiable on live
+		if(e.other:GetFactionValue(e.self) >= 200) then -- Requires high amiable on live
 			e.self:Say("So you have heard of Mining Pick 628 and feel you are ready to wield one? You shall earn one with the return of the ogre head of [Boog Mudtoe] and the 300 gold pieces he still owes me. Don't return unless you have the head and the 300 gold!!");
-		end
-		if(e.other:GetFaction(e.self) < 6) then
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("Don't take this personally, but I can't quite trust you with such matters. Maybe a few less Butcherblock bandits would prove your worth.");
 		else
 			e.self:Say("The word around the mines is that you are not to be trusted. You'd best leave before my dagger finds a new home in your back.");
 		end
 	elseif(e.message:findi("boog mudtoe")) then
-		if(e.other:GetFaction(e.self) < 5) then -- Requires high amiable on live
+		if(e.other:GetFactionValue(e.self) >= 200) then -- Requires high amiable on live
 			e.self:Say("Boog Mudtoe is one of the last remaining ogres of the Mudtoe clan. We helped him escape the assault of the Stormguard for a small fee. Unfortunately for him, we have come to believe his head to be more valuable than the fee. We hear there is someone near the port of Butcherblock who knows of the Mudtoe's whereabouts.");
-		end
-		if(e.other:GetFaction(e.self) < 6) then
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("Don't take this personally, but I can't quite trust you with such matters. Maybe a few less Butcherblock bandits would prove your worth.");
 		else
 			e.self:Say("The word around the mines is that you are not to be trusted. You'd best leave before my dagger finds a new home in your back.");
@@ -30,7 +28,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	local text = "I will not hand you a Mining Pick 628 until I see Boog Mudtoe's ogre head and my 300 gold pieces!";
 	
-	if(e.other:GetFaction(e.self) < 6 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13316, gold = 300},1,text)) then -- Ogre Head
+	if(e.other:GetFactionValue(e.self) >= 200 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13316, gold = 300},1,text)) then -- Ogre Head
 		e.self:Say("Very good!! You found him. His head shall bring us a great reward from the Stormguard. And as for you, here is your Mining Pick 628. Only a member of 628 can wield this fine weapon. We are the only ones who can wield it in such a way as to pierce our foes.");
 		e.other:Faction(e.self,322, 10); 	-- Miners Guild 628
 		e.other:Faction(e.self,223, -10); 	-- Circle Of Unseen Hands

@@ -19,17 +19,14 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20929, item2 = 20997, item3 = 20998})) then 	--shadowknight test of bash using ebon tessera, sphinx eye opal, finely crafted amulet
-		e.self:Say("You is powerful! Take this!");
-		e.other:QuestReward(e.self,0,0,0,0, 27705,100000); -- Amulet of the Sphinx Eye
-		eq.depop();
+		e.self:Say("Gragrot see uuz strong barsher so Gragrot give uuz amulet!");
+		e.other:QuestReward(e.self,0,0,0,0,27705,100000); -- Amulet of the Sphinx Eye -- Original: Sphinx Eye Amulet (14554)
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20936, item2 = 20999, item3 = 20700})) then --shadowknight test of smash using copper disc, small sapphire, silvery ring
-		e.self:Say("You is powerful! Take this!");
-		e.other:QuestReward(e.self,0,0,0,0,27706,100000); --Crimson Ring of the Djinni
-		eq.depop();
+		e.self:Say("Gragrot give uuz ring, now uuz use it!");
+		e.other:QuestReward(e.self,0,0,0,0,27706,100000); --Crimson Ring of the Djinni -- Original: Djinni Finger Ring (14553)
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20943, item2 = 20701, item3 = 20702})) then --shadowknight test of slash using diaphanous globe, dried leather, finely woven cloth belt
 		e.self:Say("Take this belt with the blessing of Veeshan, " .. e.other:GetCleanName() .. ".");
 		e.other:QuestReward(e.self,0,0,0,0,2704,100000); --pegasus-hide belt
-		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

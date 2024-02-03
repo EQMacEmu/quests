@@ -17,17 +17,14 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20934, item2 = 20834, item3 = 20835})) then	--shaman test of might using auburn tessera, drake fang, leather cord
-		e.self:Say("Excellent! Take this as your reward.");
-		e.other:QuestReward(e.self,0,0,0,0,27726,100000); --Amulet of the Fang
-		eq.depop();
+		e.self:Say("Take this amulet.  You deserve it.");
+		e.other:QuestReward(e.self,0,0,0,0,27726,100000); --Amulet of the Fang -- Original: Drake Fang Amulet (14566)
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20940, item2 = 20836, item3 = 20837, item4 = 20838})) then --shaman test of health using platinum disc, ethereal amber, shimmering amber, ceremonial belt
 		e.self:Say("The bracelet of the spirits will fit you well, " .. e.other:GetCleanName() .. ".");
-		e.other:QuestReward(e.self,0,0,0,0,27727,100000); --bracelet of the spirits
-		eq.depop();
+		e.other:QuestReward(e.self,0,0,0,0,27727,100000); --bracelet of the spirits -- Original: Elder Shaman's Ceremonial Bracelet (2713)
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 20947, item2 = 20839, item3 = 20840})) then --shaman test of sight using phosphoric globe, sphinx hide, light damask mantle
 		e.self:Say("Great work, " .. e.other:GetCleanName() .. "! Take this mantle as a token of my respect for you.");
-		e.other:QuestReward(e.self,0,0,0,0,27728,100000); --fairy-hide mantle
-		eq.depop();
+		e.other:QuestReward(e.self,0,0,0,0,27728,100000); --fairy-hide mantle -- Original: Sphinx-Hide Mantle (2712)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

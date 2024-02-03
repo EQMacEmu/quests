@@ -1,6 +1,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Well met. " .. e.other:GetCleanName() .. "! I am Tanalin Silverkale, provider of the finest [mithril ore] and master craftsman of [mithril chainmail]!");
+		e.self:Say("Well met, " .. e.other:GetCleanName() .. "! I am Tanalin Silverkale, provider of the finest [mithril ore] and master craftsman of [mithril chainmail]!");
 	elseif(e.message:findi("mithril ore")) then
 		e.self:Say("Mithril ore is a special variation of silver. We Koada'Dal have developed specialized techniques in working the ore to produce the finest quality armors and weapons in all of Norrath. Mithril can only be worked in our unique Koada'Dal Forge. It is worked in the same manner as standard ores but must be tempered with Morning Dew instead of Water. and Folded Mithril Sheets must be hammered with our Elven Smithy Hammers instead of the crude standard Smithy Hammer. Powerful enchanters have also successfully developed the means to enchant small bricks of mithril ore that can be worked in our Koada'Dal Forge.");
 	elseif(e.message:findi("mithril chainmail")) then

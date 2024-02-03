@@ -35,7 +35,7 @@ function event_trade(e)
 	local text = "Wait, " .. e.other:GetCleanName() .. ", are you not forgetting something?";
 
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 13743,item2 = 10035},1,text)) then
-		e.self:Say("What strength you must have to return with a fire goblin totem. You have surprised me - I did not think you up to the task. Take this crafted helm - you have indeed earned it.");
+		e.self:Say("By the gods, a fire goblin totem! Well done, warrior! Here is your crafted helm. Wear it with pride, for it is a true warrior's helmet.");
 		e.other:QuestReward(e.self,0,0,0,0,4173,25000); -- Item: Crafted Helm
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13737,item2 = 10032,item3 = 10032},1,text)) then
 		e.self:Say("Ho ho! An aviak charm. These are not easy to come by. You have proven yourself a mighty warrior, and therefore deserve to wear these crafted warrior gauntlets.");
