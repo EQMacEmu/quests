@@ -76,6 +76,3 @@ function event_trade(e)
 	item_lib.return_items(e.self, e.other, e.trade)
 end
 
-function event_signal(e)
-	e.self:Say("You dare disgrace us?' She hisses at you. 'If you have truly lost the marking of our castle, you will need to take this note and speak to the Toilmaster immediatley. Read it on the way and praise the will of Cazic-Thule.'");
-end

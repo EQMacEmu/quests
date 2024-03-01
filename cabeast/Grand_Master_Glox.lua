@@ -1,7 +1,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Emote('shows no reaction to your greeting.');
-		eq.signal(106097,1); -- NPC: Master_Niska
 	elseif(e.message:findi("trial of agility")) then
 		e.self:Say('I knew you were not the whiff others claimed you to be, are you sure you are [ready] to be tested in agility?');
 	elseif(e.message:findi("ready")) then

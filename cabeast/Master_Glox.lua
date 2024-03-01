@@ -6,9 +6,6 @@ function event_say(e)
 	end
 end
 
-function event_death_complete(e)
-	e.self:Say("You have come into your own. Spread the pain you have shown me to all of your foes.");
-end
 
 --Submitted by Jim Mills
 -------------------------------------------------------------------------------------------------

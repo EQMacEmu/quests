@@ -1,4 +1,4 @@
---Cloak of Lesser Pernicity
+--Cloak of Greater Pernicity
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings " .. e.other:GetCleanName() .. "! I wish I had time to chatter but my duties to the list and the Grand Librarian keep me extremely busy.");
@@ -13,7 +13,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 15980})) then --Note to Fimli
 		e.self:Say("Great! I see you got the items to uncle; perhaps he will stop badgering me now and let me be in my work. Hmmmmm, Uncle mentions in his letter that he worked out a way for a gnome to make a giant set of crab crackers. He states it is useless in Norrath but I may be able to make some use of it out here. I guess it wouldn't hurt to share it with you and file it away in the library. To create the cracker combine two metal rods, firewater and a knuckle joint in a toolbox. Interesting indeed, anyways here if your reward; I hope you can put it to good use.");
-		e.other:QuestReward(e.self,0,0,0,0,15807,1000); --Cloak of Lesser Pernicity
+		e.other:QuestReward(e.self,0,0,0,0,15802,1000); --Cloak of Greater Pernicity
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

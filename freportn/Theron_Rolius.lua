@@ -27,8 +27,10 @@ function event_say(e)
 
 function event_trade(e)
 	local item_lib = require("items");
+	local dmh = item_lib.count_handed_item(e.self, e.trade, {13921});
 
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 13921})) then
+	if(e.other:GetFactionValue(e.self) >= -500 and (dmh > 0))  then -- Damaged Militia Helmet - 13921
+		repeat
 		e.self:Say("Fantastic work, my young knight.  Here is a small token of the my appreciation.  I would offer you a sharkskin shield, but I have made only a few and the paladins are testing them.");
 		e.other:Faction(e.self,281,25,0); -- knights of truth
 		e.other:Faction(e.self,271,-3,0); -- dismal rage
@@ -36,7 +38,10 @@ function event_trade(e)
 		e.other:Faction(e.self,362,5,0); -- priests of marr
 		e.other:Faction(e.self,311,2,0); -- steel warriors
 		e.other:QuestReward(e.self,0,0,0,3,0,1000);
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13873})) then
+			dmh = dmh - 1;
+		until dmh == 0
+	end	
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 13873})) then
 		e.self:Say("Thanks for the hard work, here is a shield to help you in your duties.");
 		e.other:Faction(e.self,281,25,0); -- knights of truth
 		e.other:Faction(e.self,271,-3,0); -- dismal rage
