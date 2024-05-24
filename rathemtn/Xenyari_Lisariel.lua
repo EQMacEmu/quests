@@ -1,6 +1,17 @@
+function event_spawn(e)
+	eq.set_timer("wish",800000);
+end
+
+function event_timer(e)
+	if(e.timer == "wish" and not e.self:IsEngaged())then
+		e.self:Say("Oh, I wish I had a prickly pear.  I just have this insatiable craving for a prickly pear.  But Permafrost is just so far! <Sigh.>");
+		eq.stop_timer(e.timer);
+	end
+end
+
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Hello, " .. e.other:GetCleanName() .. ". Oh, I wish I had a prickly pear. I just have this insatiable craving for a prickly pear. But Permafrost is just so far! <Sigh.>");
+		e.self:Say("Hello, " .. e.other:GetCleanName() .. ".");
 	elseif(e.message:findi("prickly pear")) then
 		e.self:Say("Yes, yes! Prickly pears! Do you have any? I just love prickly pears but Permafrost is just so far away even for us druids.");
 	end

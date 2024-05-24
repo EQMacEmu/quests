@@ -13,7 +13,9 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12839, item2 = 4194, item3 = 4195})) then
+	local text = "I made a pact to reward the shackle of steel to one who could deliver the coppernickel key and the shackles of copper and bronze.";		
+	
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12839, item2 = 4194, item3 = 4195},1,text)) then
 		e.self:Emote("hands you a shackle and removes the coppernickel shackle so he may flee. He places your shackles on his wrists and darts into the darkness.");
 		e.other:Faction(e.self,444,20); -- Faction: Swift Tails
 		e.other:Faction(e.self,441,10); -- Faction: Legion of Cabilis

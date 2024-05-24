@@ -1,5 +1,4 @@
 function event_say(e)
-	local fac = e.other:GetFaction(e.self);
 
 	if(e.message:findi("hail")) then
 		e.self:Say("Beware!!..  Beware, the Teir'Dal walk the halls of Highkeep!!");

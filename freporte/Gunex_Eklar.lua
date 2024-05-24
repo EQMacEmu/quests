@@ -1,11 +1,17 @@
 function event_say(e)
-	if(e.message:findi("hail")) then
-		e.self:Say("Begone lest you seek instruction, I am very busy. I teach those who [follow the path of rage] as a Shadowknight, the leaders of the Dismal Rage.");
-	elseif(e.message:findi("follow the path of rage")) then
-		e.self:Say("As the leaders of the Dismal Rage we Shadowknights forefront of our struggles. We use the spiritual guidance of our Clerics, the Dark Arts of our Necromancers, and the tactics of our Warriors to advance the causes and secure the needs of our followers. If you aspire to be of importance to your colleagues you must first obtain a suit of armor to defend you from the aggressions of our enemies. Take this note to Quan Nektogo here in the eastern quarter of Freeport. He will aid you in the construction of your armor. When you are properly outfitted return to me and I will present you with an [important task].");
-		e.other:SummonCursorItem(19845); -- Note to Quan Nektogo
-	elseif(e.message:findi("important task")) then
-		e.self:Say("It has come to our attention that a paladin of the Sentries of Passion, Raenna Griff, has been aiding sympathizers and wanted members of the Sentries of Passion and the Knights of Truth in the sewer tunnels beneath the western quarter of Freeport. The incompetent Freeport Militia has yet to capture these wanted followers of the Mar twins. We will wait for their capture no longer. Seek this Raenna Griff individual and slay her. I want her head presented to me this very night!");
+	if(eq.is_the_shadows_of_luclin_enabled()) then
+		if(e.message:findi("hail")) then
+			e.self:Say("Begone lest you seek instruction, I am very busy. I teach those who [follow the path of rage] as a Shadowknight, the leaders of the Dismal Rage.");
+		elseif(e.message:findi("follow the path of rage")) then
+			e.self:Say("As the leaders of the Dismal Rage we Shadowknights forefront of our struggles. We use the spiritual guidance of our Clerics, the Dark Arts of our Necromancers, and the tactics of our Warriors to advance the causes and secure the needs of our followers. If you aspire to be of importance to your colleagues you must first obtain a suit of armor to defend you from the aggressions of our enemies. Take this note to Quan Nektogo here in the eastern quarter of Freeport. He will aid you in the construction of your armor. When you are properly outfitted return to me and I will present you with an [important task].");
+			e.other:SummonCursorItem(19845); -- Note to Quan Nektogo
+		elseif(e.message:findi("important task")) then
+			e.self:Say("It has come to our attention that a paladin of the Sentries of Passion, Raenna Griff, has been aiding sympathizers and wanted members of the Sentries of Passion and the Knights of Truth in the sewer tunnels beneath the western quarter of Freeport. The incompetent Freeport Militia has yet to capture these wanted followers of the Mar twins. We will wait for their capture no longer. Seek this Raenna Griff individual and slay her. I want her head presented to me this very night!");
+		end
+	else
+		if(e.message:findi("hail")) then
+			e.self:Say("Begone lest you seek instruction, I am very busy. I teach those who follow the path of rage as a Shadowknight, the leaders of the Dismal Rage."); --text made up
+		end
 	end
 end
 

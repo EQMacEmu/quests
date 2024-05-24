@@ -10,9 +10,15 @@ function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings, traveler! Have you need of provisions or perhaps other wares? I sell what I find upon the battlegrounds of the Commonlands.");
 	elseif(e.message:findi("Where is your house")) then
-		e.self:Say("Follow me.");
-		eq.move_to(4791.06,-83.55,-51.47);
-		eq.unique_spawn(22196, 0, 0, 4707.63, -105.49, -51.47); -- NPC: Squire_Narl
+		if(e.other:GetFactionValue(e.self) >= 100) then
+			e.self:Say("Follow me.");
+			eq.move_to(4791.06,-83.55,-51.47);
+			eq.unique_spawn(22196, 0, 0, 4707.63, -105.49, -51.47); -- NPC: Squire_Narl
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
+			e.self:Say("Work on the ways of valor before we discuss such things. You are on the righteous path of the Truthbringer, but there is more work to do.");
+		else
+			e.self:Say("Leave my presence at once. Your ways of life are not acceptable to one who follows the Truthbringer.");
+		end
 	end
 end
 

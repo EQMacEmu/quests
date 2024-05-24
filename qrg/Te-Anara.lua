@@ -8,10 +8,10 @@ function event_say(e)
 	elseif(e.message:findi("wrong with mammoth")) then
 		e.self:Say("Mammoth is not eating. We believe something is lodged in his throat. We require a young druid to [fetch a special potion].");
 	elseif(e.message:findi("special potion")) then
-		if(e.other:GetFaction(e.self) < 5) then -- must be at least amiably	
+		if(e.other:GetFactionValue(e.self) >= 50) then -- mid indifferent
 			e.self:Say("Go to the gnome city of Ak'Anon on the continent of Faydwer. With their great zoo, you will find a gnome named Kimble Nogflop. Give him this flask of nitrates and he shall hand you a special potion which will force Mammoth to cough up whatever may be stuck inside his throat. Be sure to show me what you find inside his throat upon your return.");
 			e.other:SummonCursorItem(13945); -- Item: Flask of Nitrates
-		elseif(e.other:GetFaction(e.self) == 5) then -- indifferent text
+		elseif(e.other:GetFactionValue(e.self) >= 0) then 
 			e.self:Say("We, the Jaggedpine Treefolk, appreciate the help you've given us in the past. But, we must trust you more before allowing you to handle such important matters.");
 		else
 			e.self:Say("You are an enemy of the Jaggedpine Treefolk, this forest, and the residents of it. Begone, before I am forced to take drastic measures!");

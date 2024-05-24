@@ -40,9 +40,9 @@ function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 2396, item2 = 28065, item3 = 28066})) then
 		e.self:Say("Dese will surely be a great addition to me trophy room " .. e.other:GetCleanName() .. "! I knew I could count on you to not have a problem collecting these things for me. As I promised, I have prepared you a fine blade that will surely guide you to victory wherever your travels may take you. Gud luck to ye " .. e.other:GetCleanName() .. ", hammers high!");
-		e.other:Faction(e.self,227,1); -- Faction: Clerics of Underfoot
-		e.other:Faction(e.self,274,1); -- Faction: Kazon Stormhammer
-		e.other:Faction(e.self,293,1); -- Faction: Miners Guild 249
+		e.other:Faction(e.self,227,20); -- Faction: Clerics of Underfoot
+		e.other:Faction(e.self,274,20); -- Faction: Kazon Stormhammer
+		e.other:Faction(e.self,293,15); -- Faction: Miners Guild 249
 		e.other:QuestReward(e.self,0,0,0,0,26077,500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

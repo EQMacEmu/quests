@@ -7,7 +7,9 @@ function event_signal(e)
 end
 
 function event_death_complete(e)
-	if(math.random(100) > 24) then
-		eq.spawn2(72105,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+	if(eq.is_the_ruins_of_kunark_enabled()) then
+		if(math.random(100) > 24) then
+			eq.spawn2(72105,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+		end
 	end
 end

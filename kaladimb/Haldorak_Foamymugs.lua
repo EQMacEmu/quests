@@ -55,11 +55,11 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	-- Handin: Aqua Goblin Blood, Green Goblin Blood
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 28062, item2 = 28062, item3 = 28061, item4 = 28061})) then
-		-- Quest: Brells Blessed Platemail Help (End)
-		e.self:Say("Well done " .. e.other:GetCleanName() .. "! Here is your reward.");
-		-- Blessed Brellium Warhammer
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 28062, item2 = 28062, item3 = 28061, item4 = 28061})) then 	--  Aqua Goblin Blood, Green Goblin Blood
+		e.self:Say("Dese are the exact samples I needed, I am sure my alchemist will be pleased! Yer good deeds will surely not go unnoticed , please take this weapon as a symbol of my gratitude!");
+		e.other:Faction(e.self,227,20);             -- Clerics of Underfoot
+		e.other:Faction(e.self,274,20);            -- Kazon Stormhammer
+		e.other:Faction(e.self,293,15);            -- Miners Guild 249
 		e.other:QuestReward(e.self,0,0,0,0,26075); -- Item: Blessed Brellium Warhammer
 	end
 end

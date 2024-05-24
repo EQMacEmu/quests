@@ -16,7 +16,7 @@ function event_say(e)
 		else
 			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common. Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here? Now go away!","I wonder how much I could get for the tongue of a blithering fool? Leave before I decide to find out for myself."));		
 		end
-	elseif(e.message:findi("emperor") or e.message:findi("xalgoz")) then
+	elseif(e.message:findi("xalgoz")) then
 		if(e.other:GetFactionValue(e.self) >= 100) then			
 			e.self:Say("At last you see " .. e.other:GetCleanName() .. ". The one you speak of is indeed a servant of Rile's father. His presence on this world has disrupted the spirits of the ancients. This disruption must be put to an end. Slaying him will do little good unfortunately. We will have to make use of other powers to truly banish him from this world. If we are to do this we shall need a true relic of Rile, and the soul of his father. Only with these items can we hope to free Rile's soul from the void between death and life. But first there are others that serve the risen emperor that must be destroyed.");
 		elseif(e.other:GetFactionValue(e.self) >= 0) then
@@ -35,6 +35,14 @@ function event_say(e)
 	elseif(e.message:findi("venril")) then
 		if(e.other:GetFactionValue(e.self) >= 100) then
 			e.self:Emote("smiles coldly. So you have learned a thing or two about your ancestors, that is good. But what do you know of the present young mystic? A true Oracle's power is in his ability to entwine past present and future into a single entity. You have already encountered the emperor's servants, although you may not have know it. Show me that you have the clarity of mind to discern this riddle and we shall embark on a journey of enlightenment you and I.");
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
+			e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");
+		else
+			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common. Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here? Now go away!","I wonder how much I could get for the tongue of a blithering fool? Leave before I decide to find out for myself."));		
+		end
+	elseif(e.message:findi("emperor")) then
+		if(e.other:GetFactionValue(e.self) >= 100) then			
+			e.self:Emote("seems to snap back into reality and again looks into your eyes.  Your lack of knowledge of our history is pathetic Seer.  Were you a true follower of the order you would know of that which I speak.  Find for yourself the knowledge to understand.  Only then will I be able to help you in your quest for the knowledge of the ancients.");
 		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");
 		else

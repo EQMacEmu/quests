@@ -23,7 +23,7 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	local text = "The arangement was for three shark bones and 10 gold coins";
+	local text = "The arangement was for three shark bones and 10 gold coins.";
 
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12126,item2 = 12126,item3 = 12126, gold = 10},1,text)) then
 		e.self:Say("I thank you for your ten gold coins. Now we can pay the weekly oxygen tax imposed by the militia. Here is the shark powder.");

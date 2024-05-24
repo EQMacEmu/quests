@@ -18,7 +18,7 @@ function event_trade(e)
 		e.other:QuestReward(e.self,0,0,0,0,20490,2500000); -- naturewalker's scimitar
 	elseif(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13411})) then
 		e.self:Say("Heh heh! Excellent, small one!  My roots have been longing for some fresh jumjum juice!  Thank you!  Take this for your trouble.  Be sure to thank the Tagglefoots for me.");
-		e.other:QuestReward(e.self,0,1,0,0,eq.ChooseRandom(13977,84004,13083),500); -- carrot, fishing pole, pine needles
+		e.other:QuestReward(e.self,0,1,0,0,eq.ChooseRandom(13977,13100,13083),500); -- carrot, fishing pole, pine needles
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

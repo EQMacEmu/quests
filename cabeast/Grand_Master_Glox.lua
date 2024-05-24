@@ -1,16 +1,22 @@
 function event_say(e)
-	if(e.message:findi("hail")) then
-		e.self:Emote('shows no reaction to your greeting.');
-	elseif(e.message:findi("trial of agility")) then
-		e.self:Say('I knew you were not the whiff others claimed you to be, are you sure you are [ready] to be tested in agility?');
-	elseif(e.message:findi("ready")) then
-		if(e.other:GetFactionValue(e.self) >= 100) then
-			e.self:Say('We shall spar then, I hope you are as prepared as you think you are.');
-			e.self:CastSpell(2064,e.other:GetID(),0,1); -- Spell: Cabilis Sending
-		elseif(e.other:GetFactionValue(e.self) >= 0) then
-			e.self:Say("The Swifttail Caste desires further service before I can share this with you.");
-		else
-			e.self:Say("Leave at once!  I will warn you no longer.  You are no friend to the Swifttail Caste.");
+	if(eq.is_the_shadows_of_luclin_enabled()) then
+		if(e.message:findi("hail")) then
+			e.self:Emote('shows no reaction to your greeting.');
+		elseif(e.message:findi("trial of agility")) then
+			e.self:Say('I knew you were not the whiff others claimed you to be, are you sure you are [ready] to be tested in agility?');
+		elseif(e.message:findi("ready")) then
+			if(e.other:GetFactionValue(e.self) >= 100) then
+				e.self:Say('We shall spar then, I hope you are as prepared as you think you are.');
+				e.self:CastSpell(2064,e.other:GetID(),0,1); -- Spell: Cabilis Sending
+			elseif(e.other:GetFactionValue(e.self) >= 0) then
+				e.self:Say("The Swifttail Caste desires further service before I can share this with you.");
+			else
+				e.self:Say("Leave at once!  I will warn you no longer.  You are no friend to the Swifttail Caste.");
+			end
+		end
+	else
+		if(e.message:findi("hail")) then
+			e.self:Emote('shows no reaction to your greeting.');
 		end
 	end
 end

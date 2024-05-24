@@ -28,7 +28,7 @@ function event_say(e)
 		if(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("I.. um.. can make.. um.. a good cloak for you. You have to get me a bear skin of high quality and my brother says I should not make them unless you also give me 21 gold pieces. I used to give them away but [Baobob] got mad at me so I don't do that anymore.");
 		else
-			e.self:Say("Hmm.. I really would not feel comfortable helping you in that way. You need to prove yourself to me by aiding my friends and family in the Plains of Karana before I will help you.");
+			e.self:Say("I...  um...  don't know you well enough to help you with th... th... that...  If you um... do stuff... for me and my brother or our family and friends in the Plains of Karana I might... um... reconsider...");
 		end
 	elseif(e.message:findi("belt")) then
 		e.self:Say("Oh, yes, I like making belts! They are easy! All I need is a bear skin and 5 gold pieces. The bear skin doesn't have to be that great but don't bring me a ruined one. The gold was my brother's idea.. sorry.");

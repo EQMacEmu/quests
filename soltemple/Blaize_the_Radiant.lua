@@ -33,6 +33,7 @@ function event_trade(e)
 		e.self:Say("Wear this with pride!");
 		e.other:QuestReward(e.self,0,0,0,0,4923,1000); -- vambraces of the fervent
 	end
+	item_lib.return_items(e.self, e.other, e.trade)
 end
 
 -- Quest by mystic414

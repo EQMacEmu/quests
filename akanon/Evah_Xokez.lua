@@ -1,30 +1,40 @@
 -- Converted to .lua by Speedz
 
 function event_say(e)
-	if(e.message:findi("hail")) then
+	if(eq.is_the_ruins_of_kunark_enabled()) then
+		if(e.message:findi("hail")) then
+			if(e.other:GetFactionValue(e.self) >= 100) then -- Needs amiably or better, the other phrases work at indifferent
+				e.self:Say("Be wary, " .. e.other:GetCleanName() .. ", there are unseen powers within these mines that can destroy the strongest warriors or the wisest seers. Do you find the rust that corrodes the mechanisms around you and the decaying forms that wander [these tunnels pleasing]?");
+			elseif(e.other:GetFaction(e.self) == 5) then
+				e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");
+			else
+				e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
+			end
+		elseif(e.message:findi("pleasing")) then
+			if(e.other:GetFactionValue(e.self) >= 0) then -- Needs indifferent
+				e.self:Say("Then perhaps you share the vision of we who have made these mines our home. We are the Dark Reflection and our perceptions have been refined to allow us to see the poisons and disease coursing through every creature's veins and the decay afflicting all forms of matter in Norrath. I can teach you to harness the powers of our divine benefactor if you are [willing to learn] through service to the Dark Reflection.");
+			else
+				e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
+			end
+		elseif(e.message:findi("willing.* learn")) then
+			if(e.other:GetFactionValue(e.self) >= 0) then -- Needs indifferent
+				e.self:Say("Then your first lesson shall be the fulfillment of spreading infection and disease. Some of the best carriers of infectious diseases are rodents. Take this vial containing a slow and painful infection and give it to one of the pregnant giant rodents that can be found outside in the Steamfont Mountains. This way you can spread the disease to not only those creatures which cross the mother's path but also to those who cross the paths of her future offspring. Bring me the empty vial when the task has been completed.");
+				e.other:SummonCursorItem(10262); 	-- vial of infectious disease
+			else
+				e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
+			end
+		elseif(e.message:findi("components")) then
+			if(e.other:GetFactionValue(e.self) >= 0) then -- Needs indifferent
+				e.self:Say("The recipe we use to make the plague rat disease is fairly simple. We could easily extract the fluids from the infected rat livers but that would be counterproductive to our cause since it would require the deaths of our rodent carriers. Instead, I need you to collect two parts diseased bone marrow, one sprig of wormwood and one part gnomish spirits to be used as a medium. When you have combined all the components in the container I have provided, return it to me so that we may continue to spread the disease!");
+			else
+				e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
+			end
+		end
+	else
 		if(e.other:GetFactionValue(e.self) >= 100) then -- Needs amiably or better, the other phrases work at indifferent
-			e.self:Say("Be wary, " .. e.other:GetCleanName() .. ", there are unseen powers within these mines that can destroy the strongest warriors or the wisest seers. Do you find the rust that corrodes the mechanisms around you and the decaying forms that wander [these tunnels pleasing]?");
+			e.self:Say("Be wary, " .. e.other:GetCleanName() .. ", there are unseen powers within these mines that can destroy the strongest warriors or the wisest seers."); -- made up dialogue
 		elseif(e.other:GetFaction(e.self) == 5) then
 			e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");
-		else
-			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
-		end
-	elseif(e.message:findi("pleasing")) then
-		if(e.other:GetFactionValue(e.self) >= 0) then -- Needs indifferent
-			e.self:Say("Then perhaps you share the vision of we who have made these mines our home. We are the Dark Reflection and our perceptions have been refined to allow us to see the poisons and disease coursing through every creature's veins and the decay afflicting all forms of matter in Norrath. I can teach you to harness the powers of our divine benefactor if you are [willing to learn] through service to the Dark Reflection.");
-		else
-			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
-		end
-	elseif(e.message:findi("willing.* learn")) then
-		if(e.other:GetFactionValue(e.self) >= 0) then -- Needs indifferent
-			e.self:Say("Then your first lesson shall be the fulfillment of spreading infection and disease. Some of the best carriers of infectious diseases are rodents. Take this vial containing a slow and painful infection and give it to one of the pregnant giant rodents that can be found outside in the Steamfont Mountains. This way you can spread the disease to not only those creatures which cross the mother's path but also to those who cross the paths of her future offspring. Bring me the empty vial when the task has been completed.");
-			e.other:SummonCursorItem(10262); 	-- vial of infectious disease
-		else
-			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
-		end
-	elseif(e.message:findi("components")) then
-		if(e.other:GetFactionValue(e.self) >= 0) then -- Needs indifferent
-			e.self:Say("The recipe we use to make the plague rat disease is fairly simple. We could easily extract the fluids from the infected rat livers but that would be counterproductive to our cause since it would require the deaths of our rodent carriers. Instead, I need you to collect two parts diseased bone marrow, one sprig of wormwood and one part gnomish spirits to be used as a medium. When you have combined all the components in the container I have provided, return it to me so that we may continue to spread the disease!");
 		else
 			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
 		end

@@ -22,7 +22,7 @@ end
 function event_death_complete(e)
 	sirran= nil;
 	eq.set_global("sirran","4",3,"M20");
-	eq.spawn2(71058,0,0,-543,767,174,64); -- NPC: Sirran_the_Lunatic
+	eq.spawn2(71058,0,0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: Sirran_the_Lunatic
 end
 
 --Quest by: Solid11

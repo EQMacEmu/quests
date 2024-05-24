@@ -31,7 +31,7 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 19928,item2 = 19852})) then
-		e.self:Emote("fashions a grip out of the giant rattlesnake skin and polishes the blade of the sword with a strange glowing substance. 'May your new sword see the deaths of many enemies!'");
+		e.self:Emote("fashions a grip out of the giant rattlesnake skin and polishes the blade of the sword with a strange glowing substance. 'May your new sword see the deaths of many enemies!");
 		e.other:QuestReward(e.self,0,0,0,0,19940,100); -- Item: Dismal Rage Long Sword
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 19845})) then
 		e.self:Say("Sorry buddy I didn't realize you were one of us. I've got no problem helping out an associate of Gunex. You'll need this Mail Assembly Kit to construct your new armor. The materials required depend on the section of armor you're planning on crafting. Do you plan on crafting a [dismal knight helm], a [dismal knight bracer], [dismal knight gauntlets], [dismal knight boots], [dismal knight vambraces], [dismal knight greaves], or a [dismal knight breastplate].");

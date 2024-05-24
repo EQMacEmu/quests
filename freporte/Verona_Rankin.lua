@@ -41,7 +41,7 @@ function event_trade(e)
 		e.self:Say("Ah, Tovan sent you for a suit of traders clothing. I can instruct you on how to prepare your suit of clothing but you will have to acquire the required materials yourself. Use this Curing Kit to construct the clothing once you have done so. Do you wish to prepare Coalition Trader [Gloves], Coalition Trader [Boots], a Coalition Trader [Bracer], a Coalition Trader [Cap], Coalition Trader [Leggings], Coalition Trader [Sleeves], or a Coalition Trader [Tunic]?");
 		e.other:QuestReward(e.self,0,0,0,0,17125);
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 19919,item2 = 19925,item3 = 19850})) then
-		e.self:Say("You have proven yourself worthy of our cause. Take this and use it to bring down non followers of Innoruuk.");
+		e.self:Emote("secures the gem into the hilt of the dagger and crafts a grip from the rattlesnake skin. 'Here is your new dirk, " .. e.other:GetCleanName() .. ". Congratulations.");
 		e.other:Faction(e.self,336,5); -- Coalition of Trade Folk Underground
 		e.other:Faction(e.self,229,5); -- Coalition of Trade Folk
 		e.other:Faction(e.self,329,1); -- Carson McCabe

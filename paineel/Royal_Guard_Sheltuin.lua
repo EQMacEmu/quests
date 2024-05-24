@@ -1,17 +1,23 @@
 function event_say(e)
-	if(e.message:findi("hail")) then
-		e.self:Emote("appears to be ignoring you completely.");
-	elseif(e.message:findi("audience with the overlord")) then
-		e.self:Say("The Overlord is not seeing anyone at this time. however. I may have work for you. You seem to have some experience with the kobold annoyance in the region. Are you [interested]. " .. e.other:GetCleanName() .. "?");
-	elseif(e.message:findi("interested")) then
-		e.self:Say("Then I shall give you a task. I assume you are aware of the kobold lair nearby. Many of our adventurous knights and priests crusade to destroy those pests so seeing many Erudites frequent the area is normal. However. it is not normal to see someone carry large crates into the lair and return empty handed. This person's movements also show he is attempting to remain unseen.....the [fool].");
-	elseif(e.message:findi("fool")) then
-		e.self:Say("Whoever it is. obviously is not an Erudite. even though he appears to be. Only an outsider would take us to be such idiots as to fall for their pitiful attempt at disguise. Or perhaps....well. never mind that. I want you to enter the kobold lair and find these crates. Return one to me and we'll decide what to do from there.");
-	elseif(e.message:findi("important task")) then
-		e.self:Say("According to the evidence we've uncovered, it appears the kobolds are nothing but pawns to harass us. Or perhaps even all of Odus. If they wish to play these games, then we'll humor them. We'll take their pawn with one of our knights. Will you be the knight, " .. e.other:GetCleanName() .. "?");
-	elseif(e.message:findi("knight")) then
-		e.self:Say("Then you will deliver this chest for us. Don't worry about what's inside it. Although we enjoy our solitude, we do make allies. We also make use of those allies. We will do so now. Take the chest to Lyris Moonbane below the human city of Qeynos. You will then follow her instructions and complete any tasks she assigns you. In return, she will send you back with what we wish. Fear is our armor.");
-		e.other:SummonCursorItem(1792); -- Heavy Locked Chest
+	if(eq.is_the_scars_of_velious_enabled()) then
+		if(e.message:findi("hail")) then
+			e.self:Emote("appears to be ignoring you completely.");
+		elseif(e.message:findi("audience with the overlord")) then
+			e.self:Say("The Overlord is not seeing anyone at this time, however, I may have work for you. You seem to have some experience with the kobold annoyance in the region. Are you [interested]. " .. e.other:GetCleanName() .. "?");
+		elseif(e.message:findi("interested")) then
+			e.self:Say("Then I shall give you a task. I assume you are aware of the kobold lair nearby. Many of our adventurous knights and priests crusade to destroy those pests so seeing many Erudites frequent the area is normal. However, it is not normal to see someone carry large crates into the lair and return empty handed. This person's movements also show he is attempting to remain unseen.....the [fool].");
+		elseif(e.message:findi("fool")) then
+			e.self:Say("Whoever it is, obviously is not an Erudite, even though he appears to be. Only an outsider would take us to be such idiots as to fall for their pitiful attempt at disguise. Or perhaps....well, never mind that. I want you to enter the kobold lair and find these crates. Return one to me and we'll decide what to do from there.");
+		elseif(e.message:findi("important task")) then
+			e.self:Say("According to the evidence we've uncovered, it appears the kobolds are nothing but pawns to harass us. Or perhaps even all of Odus. If they wish to play these games, then we'll humor them. We'll take their pawn with one of our knights. Will you be the knight, " .. e.other:GetCleanName() .. "?");
+		elseif(e.message:findi("knight")) then
+			e.self:Say("Then you will deliver this chest for us. Don't worry about what's inside it. Although we enjoy our solitude, we do make allies. We also make use of those allies. We will do so now. Take the chest to Lyris Moonbane below the human city of Qeynos. You will then follow her instructions and complete any tasks she assigns you. In return, she will send you back with what we wish. Fear is our armor.");
+			e.other:SummonCursorItem(1792); -- Heavy Locked Chest
+		end
+	else
+		if(e.message:findi("hail")) then
+			e.self:Emote("appears to be ignoring you completely.");
+		end
 	end
 end
 

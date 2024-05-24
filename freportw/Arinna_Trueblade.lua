@@ -1,8 +1,8 @@
 function event_say(e)
-	if(e.message:findi("hail")) then
-		e.self:Say("Well met, "..e.other:GetName()..". I am Arianna Trueblade, Warlord of the Steel Warriors. I am personally in charge of all the training that our young warriors receive. I take pride in knowing that my teaching can help make the foundation of a Freeport Champion. If you are a [warrior] then we might just have something to talk about.");
-	elseif(e.other:Class() == "Warrior") then
-		if(e.message:findi("warrior")) then
+	if(eq.is_the_shadows_of_luclin_enabled()) then
+		if(e.message:findi("hail")) then
+			e.self:Say("Well met, "..e.other:GetName()..". I am Arianna Trueblade, Warlord of the Steel Warriors. I am personally in charge of all the training that our young warriors receive. I take pride in knowing that my teaching can help make the foundation of a Freeport Champion. If you are a [warrior] then we might just have something to talk about.");
+		elseif(e.message:findi("warrior")) then
 			e.self:Say("So you think you have what it takes to become one of Freeports finest? I will warn you now that we expect every single warrior that is brought into our ranks to go through a series of exercises. Rest assured you will be rewarded for your hard work with a set of armor that I will walk you though the process of making. Are you [ready to begin your testing]?");
 		elseif(e.message:findi("ready to begin")) then
 			e.self:Say("Very well, "..e.other:GetName()..". Here is your Steel Warriors Mail Kit. This kit will be your main tool in creating your own armor. You will gather various items from all areas of Freeport from monsters and stores alike. You will use specific item combinations in this kit to fashion together armor materials that you will combine in a forge with the appropriate mold to make an armor piece. Once you are ready to attempt a piece of armor simply tell me what piece you want to craft. I will then present you with the recipe and mold for Steel Warrior [Helms], [Bracers], [Armguards], [Boots], [Greaves], [Gauntlets] and [Breastplates].");
@@ -30,6 +30,10 @@ function event_say(e)
 			e.other:SummonCursorItem(22616); -- An Enchanted Breastplate Mold
 		elseif(e.message:findi("final task")) then
 			e.self:Say("I am in need of some assistance to craft a special sword that I would like to present all graduates of my training like yourself with. However. I don't have all the pieces I need to make one. If you could retrieve a Pristine Giant Scarab Leg, one Lion Paw and one Vial of Smoke I will have all I need to create this weapon. I would have no problem presenting you with the first if I was able to create it. See you soon.");
+		end
+	else
+		if(e.message:findi("hail")) then
+			e.self:Say("Well met, "..e.other:GetName()..". I am Arianna Trueblade, Warlord of the Steel Warriors. I am personally in charge of all the training that our young warriors receive. I take pride in knowing that my teaching can help make the foundation of a Freeport Champion.");
 		end
 	end
 end

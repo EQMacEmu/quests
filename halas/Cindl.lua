@@ -5,7 +5,7 @@ function event_say(e)
 		e.self:Say("I will offer any hunter some used Tattered Armor for every Polar Bear Skin. I am sure that even you can wrestle the skins from the back of a polar bear cub.");
 	elseif(e.message:findi("second job")) then
 		e.self:Say("I have seen the warriors bringing in items called Wrath Orc Wristbands. Apparently they find them upon the lifeless bodies of the snow orc troopers. They are made from a skin I have yet to find. I will gladly reward you with either a Rawhide Tunic or Leggings or even perhaps Leather Gloves. All I ask for are Two Wrath Orc Wristbands.");
-	elseif(e.message:findi("mammoth hide parchment")) then -- can be done at dubiously
+	elseif(eq.is_the_ruins_of_kunark_enabled() and e.message:findi("mammoth hide parchment")) then -- can be done at dubiously
 		e.self:Say("Jinkus must've sent ye fer some more mammoth hide parchment fer his posters. Here, take it, free o' charge, as a donation to teh church and to the will o' the Tribunal as well");
 		e.other:SummonCursorItem(12621); 							--Mammoth Hide Parchment
 	end

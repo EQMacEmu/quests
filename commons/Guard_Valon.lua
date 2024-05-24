@@ -3,10 +3,12 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings, traveler! If you wish to walk upon the road to Freeport, you will pay the toll of two silver pieces. And you should. It is not safe to stray from the pathway. There are many [dangers in the Commonlands].");
-	elseif(e.message:findi("dangers in the commonlands")) then
+	elseif(e.message:findi("dangers.* commonlands")) then
 		e.self:Say("The orcs have been a nuisance of late. Many travelers have perished at the hands of the orc pawns. Would you like to [assist the Freeport Militia] in ridding the lands of the orcs?");
-	elseif(e.message:findi("assist the freeport militia")) then
+	elseif(e.message:findi("assist.* militia")) then
 		e.self:Say("Sir Lucan would be proud!! Patrol the Commonlands and watch for any orc pawns. Should you find any orc pawn picks on them, I will pay you for every four you return to me. Be off, then! For the glory of Freeport!!");
+	elseif(e.message:findi("no")) then
+		eq.attack(e.other:GetName());
 	elseif(e.message:findi("hunt dervish cutthroats")) then
 		if(e.other:GetFactionValue(e.self) >= 100) then
 			e.self:Say("You will make a fine reserve!! Take this bag and fill it with Dervish Cutthroat Insignia Rings. When they are combined and returned to me you shall be accepted into the Reserve Freeport Militia!!");
@@ -37,6 +39,8 @@ function event_trade(e)
 		e.other:Faction(e.self,281,-1); -- knights of truth
 		e.other:Faction(e.self,362,-1); -- priests of marr
 		e.other:QuestReward(e.self,0,0,0,0,12273,500); -- Item: Militia Armory Token
+	elseif(item_lib.check_turn_in(e.self, e.trade, {silver = 2}, 0)) then
+		e.self:Say("It is best you donate to the Freeport Militia. I would hate to see anything happen to you.");
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

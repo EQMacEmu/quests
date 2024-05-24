@@ -6,7 +6,7 @@ end
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail, " .. e.other:GetCleanName() .. ". Are you perchance a minstrel?");
-	elseif(e.message:findi("i am a minstrel")) then
+	elseif(e.message:findi("minstrel")) then
 		e.self:Say("I, too, am a bard, or was rather. I have been cursed by that blasted pile of bones who calls itself, Trakanon.");
 	elseif(e.message:findi("trakanon")) then
 		e.self:Say("He is the undead dragon who rules this realm. I came on a quest seeking strings for my new instrument.");

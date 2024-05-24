@@ -9,6 +9,8 @@ function event_say(e)
 		e.self:Emote("takes a sip of Legion Lager. 'Puhh...lease!! That's the little trophy the War Baron brought back from Sebilis. He got it stolen from him by some thieves!! I say it was the [Steelhead gang]. They were waltzing in and out of Cabilis like it was a blasted public vomitorium!!'");
 	elseif(e.message:findi("What steelhead gang?")) then
 		e.self:Emote("picks some flesh from between his teeth. 'The Steelhead gang were a band of Forsaken thieves. No one knew this!! They used to walk around here like they were rebirthed!! They used to frequent my place and get involved in head butt contests. Whew!! I tell ya, the only way to crack their skulls is with a forging hammer!! Heheh!!'");
+	elseif(e.message:findi("lager")) then
+		e.self:Say("Legion Lager?  I am afraid we are no longer allowed to serve that.  An order from the legion itself. Too many jabbers drinking the day away.  If you want any, you will have to brew it yourself.  You're gonna need a bottle, a giant blood sac, some bloodwater and some foraged deadbone barley.  Good luck, and don't get caught!");
 	end
 end
 

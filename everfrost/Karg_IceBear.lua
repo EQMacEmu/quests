@@ -1,11 +1,3 @@
-function event_spawn(e)
-     eq.set_timer("depop",3600000);
-end
-
-function event_timer(e)
-	eq.depop_with_timer();
-end
-
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail, traveller! I am Karg of Clan Icebear, lone hunter of the Everfrost Peaks. Have you seen any polar bears about?");

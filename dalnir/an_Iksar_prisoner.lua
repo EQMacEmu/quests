@@ -10,7 +10,7 @@ function event_trade(e)
 	local item_lib = require("items");
 	
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 14812}, 0)) then
-		e.self:Emote(" takes the wire and quickly saws through the rusted shackles. He hands you an icon and says as he runs off, 'Show that to the Arch Duke in Cabilis! He will reward you. Now I'm off to escape!'");
+		e.self:Emote("takes the wire and quickly saws through the rusted shackles. He hands you an icon and says as he runs off, 'Show that to the Arch Duke in Cabilis! He will reward you. Now I'm off to escape!'");
 		e.other:QuestReward(e.self,{itemid = 14814, exp = 500})
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

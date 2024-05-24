@@ -2,7 +2,7 @@
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Pleased to meet you, " .. e.other:GetCleanName() .. ", I am Aliafya Mistrunner Preserver of Nature and loyal servant of Tunare. I have resided in this guild house for many of my years. I pride myself on being a mentor to many young druids of Tunare that come up through our ranks. If you are a [druid of Tunare] then I might have some work for you.");
+		e.self:Say("Pleased to meet you, " .. e.other:GetCleanName() .. ". I am Aliafya Mistrunner Preserver of Nature and loyal servant of Tunare. I have resided in this guild house for many of my years. I pride myself on being a mentor to many young druids of Tunare that come up through our ranks. If you are a [druid of Tunare] then I might have some work for you.");
 	elseif(e.message:findi("druid of Tunare")) then
 		e.self:Say("I am always pleased to see new faces amongst us indeed " .. e.other:GetCleanName() .. ". However, I must learn if you are loyal to your house and your god by asking you to complete a series of training exercises. These tests will enable you to learn your way around this great land we call home and to pick up some very valuable hunting skills that will aid you in all of your battles to come. When you are [ready to begin your training] I will present you with your Leafrunners Assembly Kit.");
 	elseif(e.message:findi("ready to begin")) then

@@ -19,5 +19,9 @@ function event_say(e)
 		e.self:Say("Rest is what you seek.  Venture over to Ak'Anon's Zoo.  Within its structure you shall find this city's only inn.");
 	elseif(e.message:findi("weapon")) then
 		e.self:Say("Weapons are forged and sold at the Tools of Battle near Ak'Anon Zoo.  You can also find weapons at the warrior guild, Gemchopper Hall.");
+	elseif(e.message:findi("monk guild") or e.message:findi("bard guild") or e.message:findi("shaman guild") or e.message:findi("druid guild") or e.message:findi("ranger guild")) then
+		e.self:Say("We have no need for such a guild within Ak'Anon.");
+	elseif(e.message:findi("dark reflection")) then
+		e.self:Say("The Dark Reflection is said to be all that is left of Meldrath's followers.  Unlike the Asylum, these were not insane gnomes, but rather evil twisted and intelligent gnome warriors, rogues, necromancers and such.  Some say they exist within Ak'Anon itself.  I say that is madness.");
 	end
 end

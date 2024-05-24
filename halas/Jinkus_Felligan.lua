@@ -1,19 +1,24 @@
 function event_say(e)
-	if(e.message:findi("hail")) then
-		e.self:Say("Welcome! Welcome to the Church o' the Tribunal! Do ye require healing or are ye [new to the Shamans o' Justice], then, eh?");
-	elseif(e.message:findi("new to the shamans") and e.other:GetFaction(e.self) < 5) then
-		e.self:Say("Then I welcome ye into our noble order. Ye'll serve us well or spend an eternity in the dungeons o' the Tribunal. Are ye willing to [contribute to our church] or did ye just come to meditate within our walls?");
-	elseif(e.message:findi("contribute") and e.other:GetFaction(e.self) < 5) then
-		e.self:Say("Ye'll help all o' Halas by doing the bidding o' this church. Go to Holana. Tell her [Jinkus sent] ye to assist her. She'll have work fer ye. Perhaps, if ye're planning on passing near Qeynos, ye can [make a delivery] as well?");
-	elseif(e.message:findi("make a delivery") and e.other:GetFaction(e.self) < 5) then
-		e.self:Say("Excellent! First, visit Cindl and tell er ye need a Mammoth Hide Parchment. Then, I need ye to visit Greta and tell her you need some ink. Bring these back to me and we will continue from there.");
-	elseif((e.message:findi("make a delivery") or e.message:findi("contribute") or e.message:findi("new to the shamans")) and e.other:GetFaction(e.self) == 5) then
-		e.self:Say("Ye're no criminal to the Shamans o' Justice, but ye've yet to prrove yer devotion to justice.");
-	elseif((e.message:findi("make a delivery") or e.message:findi("contribute") or e.message:findi("new to the shamans")) and e.other:GetFaction(e.self) > 4) then
-		e.self:Say("The scales o' the Shamans o' Justice dinnae tip in yer favor. Ye'd best flee while ye still have the chance.");
+	if(eq.is_the_ruins_of_kunark_enabled()) then
+		if(e.message:findi("hail")) then
+			e.self:Say("Welcome! Welcome to the Church o' the Tribunal! Do ye require healing or are ye [new to the Shamans o' Justice], then, eh?");
+		elseif(e.message:findi("new to the shamans") and e.other:GetFaction(e.self) < 5) then
+			e.self:Say("Then I welcome ye into our noble order. Ye'll serve us well or spend an eternity in the dungeons o' the Tribunal. Are ye willing to [contribute to our church] or did ye just come to meditate within our walls?");
+		elseif(e.message:findi("contribute") and e.other:GetFaction(e.self) < 5) then
+			e.self:Say("Ye'll help all o' Halas by doing the bidding o' this church. Go to Holana. Tell her [Jinkus sent] ye to assist her. She'll have work fer ye. Perhaps, if ye're planning on passing near Qeynos, ye can [make a delivery] as well?");
+		elseif(e.message:findi("make a delivery") and e.other:GetFaction(e.self) < 5) then
+			e.self:Say("Excellent! First, visit Cindl and tell er ye need a Mammoth Hide Parchment. Then, I need ye to visit Greta and tell her you need some ink. Bring these back to me and we will continue from there.");
+		elseif((e.message:findi("make a delivery") or e.message:findi("contribute") or e.message:findi("new to the shamans")) and e.other:GetFaction(e.self) == 5) then
+			e.self:Say("Ye're no criminal to the Shamans o' Justice, but ye've yet to prrove yer devotion to justice.");
+		elseif((e.message:findi("make a delivery") or e.message:findi("contribute") or e.message:findi("new to the shamans")) and e.other:GetFaction(e.self) > 4) then
+			e.self:Say("The scales o' the Shamans o' Justice dinnae tip in yer favor. Ye'd best flee while ye still have the chance.");
+		end
+	else
+		if(e.message:findi("hail")) then
+			e.self:Say("Welcome! Welcome to the Church o' the Tribunal!"); --made up text
+		end
 	end
 end
-
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12621, item2 = 12619})) then 		--Mammoth Hide Parchment, Vial of Datura Ink

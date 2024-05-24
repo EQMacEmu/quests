@@ -1,25 +1,30 @@
 function event_say(e)
-	if(e.message:findi("hail")) then
-		e.self:Say("Um, you. Hi.. You Shaman of War now, right? You gotta learns war and war spells. We fights all and makes the Warlord likes us. You [gonna help] or me gonna feed you fat stoopid boddie to doggies.");
-	elseif(e.message:findi("help")) then
-		if(e.other:GetFactionValue(e.self) >= 50) then 
-			e.self:Say("Good. Warlord need many boddie.. I means Shamans of War.. to kill and gets killed.. no, ummm.. kill and smoosh for Him and makes Him happy. You goes show me you can smoosh tings good. Gets me four froglok tadpole fleshies for me to munchings on and me be happy.. um, He, the Warlord be so berry happy. Helping our tuff friends de Greenbloods but be watching for dem scummy Crakneks, dumb ogres dey is. No good, no our friends. Go now. Me.. er.. he waiting and hungry.");
-		elseif(e.other:GetFactionValue(e.self) >= 0) then	
-			e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");
-		else
-			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common. Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here? Now go away!","I wonder how much I could get for the tongue of a blithering fool? Leave before I decide to find out for myself."));
+	if(eq.is_the_ruins_of_kunark_enabled()) then
+		if(e.message:findi("hail")) then
+			e.self:Say("Um, you. Hi.. You Shaman of War now, right? You gotta learns war and war spells. We fights all and makes the Warlord likes us. You [gonna help] or me gonna feed you fat stoopid boddie to doggies.");
+		elseif(e.message:findi("help")) then
+			if(e.other:GetFactionValue(e.self) >= 50) then 
+				e.self:Say("Good. Warlord need many boddie.. I means Shamans of War.. to kill and gets killed.. no, ummm.. kill and smoosh for Him and makes Him happy. You goes show me you can smoosh tings good. Gets me four froglok tadpole fleshies for me to munchings on and me be happy.. um, He, the Warlord be so berry happy. Helping our tuff friends de Greenbloods but be watching for dem scummy Crakneks, dumb ogres dey is. No good, no our friends. Go now. Me.. er.. he waiting and hungry.");
+			elseif(e.other:GetFactionValue(e.self) >= 0) then	
+				e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");
+			else
+				e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common. Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here? Now go away!","I wonder how much I could get for the tongue of a blithering fool? Leave before I decide to find out for myself."));
+			end
+		elseif(e.message:findi("bedder shaman")) then
+			if(e.other:GetFactionValue(e.self) >= 50) then 
+				e.self:Say("Yoo want to be bedda shaman? Them lizards in de Feerrott tink de bedda den us and bodder us wit der majiks like fleas on a dog. Kill dem and bring me, um, one of dem bags dey wear around dem necks and, um, three of dem dolls dey hold.");
+			elseif(e.other:GetFactionValue(e.self) >= 0) then	
+				e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");
+			else
+				e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common. Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here? Now go away!","I wonder how much I could get for the tongue of a blithering fool? Leave before I decide to find out for myself."));
+			end
 		end
-	elseif(e.message:findi("bedder shaman")) then
-		if(e.other:GetFactionValue(e.self) >= 50) then 
-			e.self:Say("Yoo want to be bedda shaman? Them lizards in de Feerrott tink de bedda den us and bodder us wit der majiks like fleas on a dog. Kill dem and bring me, um, one of dem bags dey wear around dem necks and, um, three of dem dolls dey hold.");
-		elseif(e.other:GetFactionValue(e.self) >= 0) then	
-			e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");
-		else
-			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common. Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here? Now go away!","I wonder how much I could get for the tongue of a blithering fool? Leave before I decide to find out for myself."));
+	else
+		if(e.message:findi("hail")) then
+			e.self:Say("Um, you. Hi.. You Shaman of War now, right? You gotta learns war and war spells. We fights all and makes the Warlord likes us."); --made up text
 		end
 	end
 end
-
 function event_trade(e)
 	local item_lib = require("items");
 

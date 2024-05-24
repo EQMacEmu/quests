@@ -143,7 +143,7 @@ function SarnakNW(e)
 	if(math.random(100) > 45) then
 		sarnak = 92048;
 	else
-		sarnak = eq.ChooseRandom(92040,92007,92014,92033,92035,92041,92050,92053,92054);
+		sarnak = eq.ChooseRandom(92040,92007,92014,92033,92035,92041,92050,92053,92054,92059);
 	end
 	if(location == 6) then
 		eq.spawn2(sarnak,28,0,3006,1960,233,0);
@@ -344,6 +344,10 @@ function Sarnak10Death(e)
 	BruteSE(e);
 end
 
+function Sarnak11Death(e)
+	BruteSE(e);
+end
+
 function event_encounter_load(e)
 	eq.register_npc_event("FMCycle", Event.timer, 92042, CycleTimer);
 	eq.register_npc_event("FMCycle", Event.spawn, 92042, CycleSpawn);
@@ -393,4 +397,5 @@ function event_encounter_load(e)
 	eq.register_npc_event("FMCycle", Event.death_complete, 92050, Sarnak8Death);
 	eq.register_npc_event("FMCycle", Event.death_complete, 92053, Sarnak9Death);
 	eq.register_npc_event("FMCycle", Event.death_complete, 92054, Sarnak10Death);
+	eq.register_npc_event("FMCycle", Event.death_complete, 92059, Sarnak11Death);
 end

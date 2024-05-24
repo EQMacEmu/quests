@@ -30,7 +30,7 @@ function event_trade(e)
 			e.other:Faction(e.self,445,1);  -- +Scaled Mystics
 			e.other:Faction(e.self,442,1);   -- +Crusaders of Greenmist
 			e.other:Faction(e.self,444,1);  -- +Swifttails
-			e.other:QuestReward(e.self,0,0,0,0,12657);
+			e.other:QuestReward(e.self,0,0,1,0,12657,1000);
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

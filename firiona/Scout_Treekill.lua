@@ -1,7 +1,8 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Emote("has a massive scar on his face.  'Hail, and welcome to the outpost of Firiona Vie!  If you plan on exploring, I suggest you get well equipped.  There are no cities beyond here.  I would also suggest joining the next group heading out on an expedition.  This is no place to travel alone.'");
-		e.self:DoAnim(67);
+		e.self:Emote("has a helm tied to his belt.  He is chewing something.  He spits some shells out and they land on your chest.  'Sorry about that.  Hehe.");
+	elseif(e.message:findi("chew")) then
+		e.self:Say("Can't you tell?!  It's on your chest.  Heh!  What a dim one!  They're flarefire seeds.  Only good thing about this land.  Trackers find 'em in the Field of Bone near some lizard city.");
 	end
 end
 

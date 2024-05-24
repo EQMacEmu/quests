@@ -1,22 +1,33 @@
 function event_say(e)
-	if(e.message:findi("hail")) then
-		if(e.other:GetFactionValue(e.self) >= 100) then
-			e.self:Say("Salutations, " .. e.other:GetCleanName() .. "! Your devotion to our Lord Innoruuk is evident in your actions and on your soul. As a member of the Spires of Innoruuk, you are required to obtain and wear the symbol of your station among the clergy. I can award you the [hematite symbol of Innoruuk] worn by the initiates of the Spires.");
-		elseif(e.other:GetFactionValue(e.self) >= 0) then
-			e.self:Say("Although I sense the hate building within you, you have not yet done enough service to this temple to be trusted!");
-		else
-			e.self:Say("You are worthless and pathetic! You could never be of service to our temple!  Begone before your innards decorate our walls!");		
+	if(eq.is_the_ruins_of_kunark_enabled()) then
+		if(e.message:findi("hail")) then
+			if(e.other:GetFactionValue(e.self) >= 100) then
+				e.self:Say("Salutations, " .. e.other:GetCleanName() .. "! Your devotion to our Lord Innoruuk is evident in your actions and on your soul. As a member of the Spires of Innoruuk, you are required to obtain and wear the symbol of your station among the clergy. I can award you the [hematite symbol of Innoruuk] worn by the initiates of the Spires.");
+			elseif(e.other:GetFactionValue(e.self) >= 0) then
+				e.self:Say("Although I sense the hate building within you, you have not yet done enough service to this temple to be trusted!");
+			else
+				e.self:Say("You are worthless and pathetic! You could never be of service to our temple!  Begone before your innards decorate our walls!");		
+			end
+		elseif(e.message:findi("hematite symbol of Innoruuk")) then
+			if(e.other:GetFactionValue(e.self) >= 150) then
+				e.self:Say("The forest beyond the gates of our grand city has been shaped by the magic of our Lord Innoruuk to be more hospitable to our kind. There are halfling druids in the service of Karana who have set up shrines there in hopes of restoring the forest to its former state. They could never succeed in their task with their feeble powers granted by their insignificant god, yet still, they are a nuisance. Bring me four of the holy symbols worn by the druids and I shall grant you the initiate symbol of Innoruuk.");
+			elseif(e.other:GetFactionValue(e.self) >= 0) then
+				e.self:Say("Although I sense the hate building within you, you have not yet done enough service to this temple to be trusted!");
+			else
+				e.self:Say("You are worthless and pathetic! You could never be of service to our temple!  Begone before your innards decorate our walls!");		
+			end
 		end
-	elseif(e.message:findi("hematite symbol of Innoruuk")) then
-		if(e.other:GetFactionValue(e.self) >= 150) then
-			e.self:Say("The forest beyond the gates of our grand city has been shaped by the magic of our Lord Innoruuk to be more hospitable to our kind. There are halfling druids in the service of Karana who have set up shrines there in hopes of restoring the forest to its former state. They could never succeed in their task with their feeble powers granted by their insignificant god, yet still, they are a nuisance. Bring me four of the holy symbols worn by the druids and I shall grant you the initiate symbol of Innoruuk.");
-		elseif(e.other:GetFactionValue(e.self) >= 0) then
-			e.self:Say("Although I sense the hate building within you, you have not yet done enough service to this temple to be trusted!");
-		else
-			e.self:Say("You are worthless and pathetic! You could never be of service to our temple!  Begone before your innards decorate our walls!");		
+	else
+		if(e.message:findi("hail")) then
+			if(e.other:GetFactionValue(e.self) >= 100) then
+				e.self:Say("Salutations, " .. e.other:GetCleanName() .. "! Your devotion to our Lord Innoruuk is evident in your actions and on your soul.");
+			elseif(e.other:GetFactionValue(e.self) >= 0) then
+				e.self:Say("Although I sense the hate building within you, you have not yet done enough service to this temple to be trusted!");
+			else
+				e.self:Say("You are worthless and pathetic! You could never be of service to our temple!  Begone before your innards decorate our walls!");		
+			end	
 		end
 	end
-	
 end
 
 function event_trade(e)

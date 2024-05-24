@@ -1,6 +1,6 @@
 function event_death_complete(event)
-	-- 5% chance to spawn a wurm or two on death
-	if ( math.random() < 0.05 ) then
+	-- 10% chance to spawn a wurm or two on death
+	if ( math.random() < 0.10 ) then
 	
 		function getRandomWurm()
 			local randomWurm = math.random(1, 10);
