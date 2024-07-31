@@ -37,14 +37,14 @@ function event_trade(e)
 		e.other:Faction(e.self,441,2); -- Faction: Legion of Cabilis
 		e.other:QuestReward(e.self,0,0,math.random(15),0,4263,200); --dark binder skullcap
 	elseif(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 18065, item2 = 4263})) then 				--a journal and dark binder skullcap
-		e.self:Say("I did not expect you to return. You made me lose a bet with one of the other scholars. Seeing as you have delivered the tome, I shall not harm you, but rather welcome you into the rank of the dark circles. Listen well to the scholars within this tower and seek the [Keepers Grotto] for knowledge of our spells. This drape shall be the sign to all iksar that you walk with the Brood. Now go speak with Xydoz.");
+		e.self:Say("I did not expect you to return. You have made me lose a bet with one of the other scholars. Seeing as you have delivered the tome, I shall not harm you, but rather welcome you into the rank of occultist. Now go see Keeper Rott and tell him you are [the chosen occultist]");
 		e.other:Faction(e.self,443,10); -- Faction: Brood of Kotiz
 		e.other:Faction(e.self,441,2); -- Faction: Legion of Cabilis
 		e.other:QuestReward(e.self,0,0,math.random(15),0,4264,200); --occultist skullcap
 	elseif(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 12853, item2 = 12852, item3 = 4264},1,text2)) then	--Stem of Candlestick, Foot of Candlestick, occultist skullcap
 		e.self:Emote("grabs the candle parts and puts them in an odd pouch, then takes your cap which disintegrates in his palm. He hands you another cap. 'Welcome, Revenant " .. e.other:GetCleanName() .. ". You have done well. The Harbinger awaits you. He seeks a [new revenant].'");
-		e.other:Faction(e.self,443,10); -- Faction: Brood of Kotiz
-		e.other:Faction(e.self,441,2); -- Faction: Legion of Cabilis
+		e.other:Faction(e.self,443,20); -- Faction: Brood of Kotiz
+		e.other:Faction(e.self,441,5); -- Faction: Legion of Cabilis
 		e.other:QuestReward(e.self,0,0,math.random(15),0,4265,200); --Revenant Skullcap
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

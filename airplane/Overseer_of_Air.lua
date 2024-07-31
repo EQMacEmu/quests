@@ -14,7 +14,7 @@ function event_say(e)
 end
 
 function event_death_complete(e)
-	eq.spawn2(71060,48,0,-1462.2,-270.1,1250.9,62.9); -- NPC: the_Hand_of_Veeshan
+	eq.unique_spawn(71060,48,0,-1462.2,-270.1,1250.9,62.9); -- NPC: the_Hand_of_Veeshan
 end
 
 -------------------------------------------------------------------------------------------------

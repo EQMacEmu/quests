@@ -4,21 +4,17 @@ function event_spawn(e)
 end
 
 function event_combat(e)
-	if(e.joined == true) then
-		e.self:Say("Good, your sense of timing is correct. Now begin! Show me that your training has not been wasted.");
+	if(e.joined) then
+		if(not eq.is_paused_timer("Depop3")) then
+			eq.pause_timer("Depop3");
+		end
+	else
+		eq.resume_timer("Depop3");
 	end
 end
 
 function event_timer(e)
-	if(e.timer == "Depop3") then
-		eq.stop_timer("Depop3");
-		eq.depop();
-	end
-end
-
-function event_death_complete(e)
-	eq.stop_timer("Depop3");
-	e.self:Say("Your ability is strong, may you serve Cazic Thule with all your might.");
+	eq.depop();
 end
 
 function event_trade(e)

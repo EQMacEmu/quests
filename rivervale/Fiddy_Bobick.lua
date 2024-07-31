@@ -28,7 +28,7 @@ local item_lib = require("items");
 		e.other:Faction(e.self,263,1); -- Faction: Guardians of the Vale  
 		e.other:Faction(e.self,286,1); -- Faction: Mayor Gubbin 
 		e.other:Faction(e.self,336,-1); -- Faction: Coalition of Tradefolk Underground
-		e.other:QuestReward(e.self,0,math.random(8),math.random(0,3),0,0,15);
+		e.other:QuestReward(e.self,0,math.random(8),math.random(0,3),0,eq.ChooseRandom(13006,13007,13016,13018,17001),200); --Water Flask, Ration, Bottle of Kalish, Short Ale, Wrist Pouch
 	else
 		item_lib.return_items(e.self, e.other, e.trade); -- return unused items
 	end

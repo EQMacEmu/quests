@@ -19,8 +19,8 @@ function event_trade(e)
 	end
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12661})) then
 		e.self:Say("Good work, " .. e.other:GetCleanName() .. ". You would make a fine trooper in my garrison. As instructed by the War Baron, I reward you with the geozite tool. May you find your place among the Legion of Cabilis and win many battles.");
-		e.other:Faction(e.self, 440,2); -- Faction: Cabilis Residents
 		e.other:Faction(e.self, 441,10); -- Faction: Legion of Cabilis
+		e.other:Faction(e.self, 440,2); -- Faction: Cabilis Residents
 		e.other:Faction(e.self, 445,2); -- Faction: Scaled Mystics
 		e.other:Faction(e.self, 444,2); -- Faction: Swift Tails
 		e.other:Faction(e.self, 442,2); -- Faction: Crusaders of Greenmist

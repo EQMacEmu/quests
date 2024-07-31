@@ -59,7 +59,7 @@ function event_trade(e)
 		e.other:Faction(e.self,286,1); -- +Mayor Gubbin
 		e.other:Faction(e.self,292,1); -- +Merchants of Rivervale
 		e.other:Faction(e.self,324,-1); -- -Unkempt Druids
-		e.other:QuestReward(e.self,0,math.random(0,15),math.random(0,10),0,eq.ChooseRandom(10308,8303,8304,10302,10303,10304,10305,10306,10309,17302,12001,10301,17301,17300,12002,12000),27440); -- Item(s): Anti-Poison Amulet (10308), Arrow of Contagion (8303), Arrow of Frost (8304), Earring of Disease Reflection (10302), Earring of Fire Reflection (10303), Earring of Frost Reflection (10304), Earring of Magic Reflection (10305), Earring of Poison Reflection (10306), Eye of Disvan (10309), Pierces Pouch of Storing (17302), Rod of Identification (12001), Runners Ring (10301), Travelers Pack (17301), Travelers Pouch (17300), Wand of Frost Bolts (12002), Compass (12000)
+		e.other:QuestReward(e.self,0,math.random(0,15),math.random(0,15),0,eq.ChooseRandom(10308,8303,8304,10302,10303,10304,10305,10306,10309,17302,12001,10301,17301,17300,12002,12000),27440); -- Item(s): Anti-Poison Amulet (10308), Arrow of Contagion (8303), Arrow of Frost (8304), Earring of Disease Reflection (10302), Earring of Fire Reflection (10303), Earring of Frost Reflection (10304), Earring of Magic Reflection (10305), Earring of Poison Reflection (10306), Eye of Disvan (10309), Pierces Pouch of Storing (17302), Rod of Identification (12001), Runners Ring (10301), Travelers Pack (17301), Travelers Pouch (17300), Wand of Frost Bolts (12002), Compass (12000)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

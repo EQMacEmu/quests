@@ -1,8 +1,7 @@
 function event_say(e)
 	
 	if ( e.message:findi("hail") ) then
-		e.self:Say("Greetings!  I am Cordelia, a traveling piper. I am afraid I cannot play a tune for you, however, as my [flute] is gone.");
-		
+		e.self:Say("Greetings!  I am Cordelia, a traveling piper. I am afraid I cannot play a tune for you, however, as my [flute] is gone.");		
 	elseif ( e.message:findi("flute") ) then
 		e.self:Say("I traded my flute to a hermit in the southern plains of Karana. I had a spare flute, but that was taken from me by some bandits. If you could find this hermit and ask him for my flute back, I would be most appreciative.");
 	end
