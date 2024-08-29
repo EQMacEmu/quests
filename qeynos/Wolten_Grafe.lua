@@ -61,7 +61,7 @@ function event_trade(e)
 		e.other:Faction(e.self,221,-50,0); -- Bloodsabers
 		e.other:Faction(e.self,341,37,0); -- Preists of Life
 		e.other:Faction(e.self,262,37,0); -- Guards of Qeynos
-		e.other:QuestReward(e.self,0,0,math.random(10),0,18822,500); -- Item: A Note ID's as: Note to hall of truth
+		e.other:QuestReward(e.self,0,0,math.random(10),0,18816,500); -- Item: A Note ID's as: Note to hall of truth
 	elseif(e.other:GetFactionValue(e.self) >= -500 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13396})) then -- Rat Kings Head -- confirmed faction with lower than -300, wouldn't give quest but accepted human head
 		e.self:Say("We have finally destroyed the Rat King. You have performed a great service to Qeynos. Here is a small reward. Please continue with the work of the Rainkeeper.");
 		-- Confirmed Live Factions

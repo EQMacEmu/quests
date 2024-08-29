@@ -14,8 +14,10 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18272, item2 = 24770})) then	--The Penance quest
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18272, item2 = 24770})) then	--The Penance quest --faction hits not confirmed
 		e.self:Emote("takes the bag and tome from you and in return gives you the item that you have been thinking of all of this time.'Lucky you. You have earned a second chance. Praise Cazic-Thule!'");
+		e.other:Faction(e.self,443,100); --Brood of Kotiz
+		e.other:Faction(e.self,441,25); --Legion of Cabilis
 		e.other:QuestReward(e.self,0,0,0,0,12407); -- Item: Drape of the Brood
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

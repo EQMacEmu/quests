@@ -11,7 +11,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18822})) then
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18816})) then
 		e.self:Say("So the great Antonius Bayle wishes to ally himself with the mighty Knights of Truth. How pathetic. It would appear that the alliance has spawned infiltrators of sorts. Of course, we of the Dismal Rage are already aware of this, but I am sure Sir Lucan D'Lere knows nothing as usual. I have a [mission] for any evil shadowknight of Innoruuk.");
 		e.other:Faction(e.self,271,20); -- Faction: Dismal Rage
 		e.other:Faction(e.self,281,-3); -- Faction: Knights of Truth

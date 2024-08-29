@@ -68,10 +68,10 @@ function event_trade(e)
 		e.other:Faction(e.self,441,1); -- Faction: Legion of Cabilis
 		e.other:QuestReward(e.self,0,0,0,0,7881,20000); --Mark of Clarity
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 18272, item2 = 24770})) then
-		e.self:Say("You dare disgrace us?' She hisses at you. 'If you have truly lost the marking of our caste, you will need to take this note and speak to the Toilmaster immediately. Read it on the way and praise the will of Cazic-Thule.");
+		e.self:Say("You have earned your replacement Shackle of Dust, do take better care of it."); --made up reward text
 		e.other:Faction(e.self,444,100); -- Faction: Swift Tails
 		e.other:Faction(e.self,441,25); -- Faction: Legion of Cabilis
-		e.other:QuestReward(e.self,0,0,0,0,4190,500);	--Shackle of Dust
+		e.other:QuestReward(e.self,1,1,0,0,4190,500);	--Shackle of Dust
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

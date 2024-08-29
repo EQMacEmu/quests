@@ -26,9 +26,11 @@ function event_trade(e)
 	local item_lib = require("items");
 	local text1 = "seems to black out, and then recover. He speaks with the voice of an ancient. 'We are Dai and Die and we await our skulls and your iron cudgel of the prophet. Become a channeler.";	
 	
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18272, item2 = 24770})) then --The Penance quest
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18272, item2 = 24770})) then --The Penance quest --faction hits not confirmed
 		e.self:Emote("takes the bag and tome from you and in return gives you the item that you have been thinking of all of this time. 'Lucky you. You have earned a second chance. Praise Cazic-Thule!'");
-		e.other:QuestReward(e.self,0,0,0,0,5140); 				--Iron Cudgel of the Petitioner
+		e.other:Faction(e.self,445, 100); 				--Scaled Mystics
+		e.other:Faction(e.self,441, 25); 				--Legion of Cabilis
+		e.other:QuestReward(e.self,1,1,0,0,5140); 				--Iron Cudgel of the Petitioner
 	end
 	--Shaman Skull Quest No.3.1 turn in - Check for  A froglok hex doll
 	if(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 12734})) then

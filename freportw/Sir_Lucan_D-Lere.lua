@@ -13,7 +13,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18822})) then
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18816})) then
 		e.self:Say("So I see you decided to bring me the message. Good. I would hate to have to hunt you down. It could have gotten really messy and I hate reading bloodstained messages. Well it seems Antonius Bayle and the Knights of Truth have begun an alliance. And it sounds as though I may have a traitor among my guards. If you wish to switch your allegiance to Freeport, then find me this traitor. Bring me his militia tunic. Try to keep the blood from staining it.");
 		-- HK confirmed live factions
 		e.other:Faction(e.self,330,25,0); -- Faction: The Freeport Militia

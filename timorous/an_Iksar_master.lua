@@ -16,17 +16,13 @@ function event_say(e)
 		e.other:SummonCursorItem(17039); -- Item: Empty Tin Box
 	elseif(e.message:findi("whistling fists")) then
 		e.self:Say("The Whistling Fists are rumored to be magical instruments of destruction which can only be wielded by monks. The founder, Supreme Master Tynn, was the only lizard to ever gaze upon the weapon. He only spoke of it to his student Marthor. Marthor rarely spoke of it and when he did it was usually after a few flagons of Trog Brew. That is why many consider it to be babble.");
-	elseif(eq.is_the_scars_of_velious_enabled()) then
-		if(e.message:findi("student")) then
-			e.self:Emote("hands you what appears to be the base of a key. 'This was delivered to me by a dying student. He collapsed just after handing it to me. He was accompanying a student of mine named Veltar. They were questing for the legendary Whistling Fists. The key is made of a metal I have never felt or heard of. Find him.'");
-			e.other:SummonCursorItem(17040); -- Item: Part of a Large Key
-		end
-	elseif(eq.is_the_shadows_of_luclin_enabled()) then
-		if(e.message:findi("test of patience") or e.message:findi("trial of patience")) then
-			e.self:Say("So your time has finally come to be tested for the final rung. To show your patience you shall spar with me. When you have gained the insight and strategy to strike you will know when. Strike me too soon and you will perish, too late and I will be gone. Come at me when the time is right. Let us begin.");
-			eq.unique_spawn(96318,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-			eq.depop_with_timer();
-		end
+	elseif(e.message:findi("student") and eq.is_the_scars_of_velious_enabled()) then
+		e.self:Emote("hands you what appears to be the base of a key. 'This was delivered to me by a dying student. He collapsed just after handing it to me. He was accompanying a student of mine named Veltar. They were questing for the legendary Whistling Fists. The key is made of a metal I have never felt or heard of. Find him.'");
+		e.other:SummonCursorItem(17040); -- Item: Part of a Large Key
+	elseif ((e.message:findi("test of patience") or e.message:findi("trial of patience")) and eq.is_the_shadows_of_luclin_enabled()) then
+		e.self:Say("So your time has finally come to be tested for the final rung. To show your patience you shall spar with me. When you have gained the insight and strategy to strike you will know when. Strike me too soon and you will perish, too late and I will be gone. Come at me when the time is right. Let us begin.");			
+		eq.unique_spawn(96318,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
+		eq.depop_with_timer();
 	end
 end
 

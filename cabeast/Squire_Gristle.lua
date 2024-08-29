@@ -14,9 +14,10 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 18272, item2 = 24770})) then	--The Penance quest
-		e.self:Emote("takes the bag and tome from you and in return gives you the item that you have been thinking of all of this time.");
-		e.self:Say("Lucky you. You have earned a second chance. Praise Cazic-Thule!");
-		e.other:QuestReward(e.self,0,0,0,0,5120); -- Item: Pawn's Khukri
+		e.self:Emote("takes the bag and tome from you and in return gives you the item that you have been thinking of all of this time. Lucky, you... you have earned a second chance. Praise Cazic-Thule!");
+		e.other:Faction(e.self,440,100); 	--Cabilis Residents
+		e.other:Faction(e.self,441,25); 	--Legion of Cabilis
+		e.other:QuestReward(e.self,1,1,0,0,5120); -- Item: Pawn's Khukri
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
