@@ -14,7 +14,7 @@ function items.check_turn_in(npc, trade, trade_check, keepitems, text, emote)
 			end
 		end
 
-		eq.debug("".. npc:GetCleanName() .. " requires " .. required_items .. " more items for this handin.", 3);
+		eq.debug("".. npc:GetCleanName() .. " requires " .. required_items .. " more items for this handin.", 2);
 	end
 
 	local trade_return = {};
@@ -33,7 +33,7 @@ function items.check_turn_in(npc, trade, trade_check, keepitems, text, emote)
 				local curkey = "item" .. b;
 				if(add ~= nil and add.valid and trade_check[curkey] ~= nil and trade_check[curkey] ~= 0) then
 					if(trade_check[curkey] == add:GetID()) then
-						eq.debug("Item " .. add:GetID() .. " added to QUEST loot.", 3);
+						eq.debug("Item " .. add:GetID() .. " added to QUEST loot.", 2);
 						npc:AddQuestLoot(add:GetID());
 						trade_return["item" .. a] = nil;
 						founditem = true;
@@ -58,14 +58,14 @@ function items.check_turn_in(npc, trade, trade_check, keepitems, text, emote)
 				end
 			end
 			if(npc:Charmed() and itemid > 1000 and not npc:GetPetLoot(itemid) and not npc:GetQuestLoot(itemid)) then
-				eq.debug("Item " .. itemid .. " added to PET loot.", 3);
+				eq.debug("Item " .. itemid .. " added to PET loot.", 2);
 				npc:AddPetLoot(itemid);
 			end
 		end
 		-- The npc was handed an item it doesn't need.
 		if(not founditem and trade_check["copper"] == nil and trade_check["silver"] == nil and trade_check["gold"] == nil and trade_check["platinum"] == nil) then
             if(accepted) then
-                eq.debug("NPC was handed an item it doesn't need, but also received valid items.", 3);
+                eq.debug("NPC was handed an item it doesn't need, but also received valid items.", 2);
             end
 			return false;
 		end
@@ -108,11 +108,11 @@ function items.check_turn_in(npc, trade, trade_check, keepitems, text, emote)
 					if(hasitem) then
 						found = true;											
 					else
-						eq.debug("An item the NPC requires (" .. trade_check[key] .. ") was not handed to them and is not in their loot.", 3);
+						eq.debug("An item the NPC requires (" .. trade_check[key] .. ") was not handed to them and is not in their loot.", 2);
 						return false;
 					end
 				else
-					eq.debug("(Non-MQ) An item the NPC requires (" .. trade_check[key] .. ") was not handed to them.", 3);
+					eq.debug("(Non-MQ) An item the NPC requires (" .. trade_check[key] .. ") was not handed to them.", 2);
 					return false;
 				end
 			end
@@ -141,7 +141,7 @@ function items.check_turn_in(npc, trade, trade_check, keepitems, text, emote)
 		-- If the quest requires multiple of the same item, this counts up the NPC's loottable items for us.
 		local count = npc:HasRequiredQuestLoot(item1, item2, item3, item4);
 		if(not count) then
-			eq.debug("The NPC does not have the required number of items it needs.", 3);
+			eq.debug("The NPC does not have the required number of items it needs.", 2);
 			return false;
 		end
 	end
@@ -195,7 +195,7 @@ function items.check_turn_in(npc, trade, trade_check, keepitems, text, emote)
 	return_money = return_money - (trade.silver * 10);
 
 	trade.copper = return_money;
-	eq.debug("The quest completed successfully.",3);
+	eq.debug("The quest completed successfully.",2);
 	return true;
 end
 
@@ -215,7 +215,7 @@ function items.return_items(npc, client, trade, text)
 			
 				if (npc:Charmed()) then
 					if (itemid > 1000 and not npc:GetPetLoot(itemid)) then
-						eq.debug("Item " .. itemid .. " added to PET loot.", 3);
+						eq.debug("Item " .. itemid .. " added to PET loot.", 2);
 						npc:AddPetLoot(itemid);
 					end
 				else		
@@ -229,7 +229,7 @@ function items.return_items(npc, client, trade, text)
 							npc:Say(text);
 						end
 					end
-					eq.debug("Handing back an item it doesn't need (" .. itemid .. ").", 3);
+					eq.debug("Handing back an item it doesn't need (" .. itemid .. ").", 2);
 					returned = true;
 				end
 			end
@@ -237,7 +237,7 @@ function items.return_items(npc, client, trade, text)
 	end
 
 	if(npc:Charmed()) then
-		eq.debug("NPC is a charmed pet, it does not return items.", 3);
+		eq.debug("NPC is a charmed pet, it does not return items.", 2);
 		return returned;
 	end
 
@@ -269,7 +269,7 @@ function items.return_items(npc, client, trade, text)
 	return returned;
 end
 
-function items.count_handed_item(npc, trade, items, min_count)
+function items.count_handed_item(npc, trade, items, min_count, text, emote)
 
 	local itemid1 = items[1] or 0;
 	local itemid2 = items[2] or 0;
@@ -296,15 +296,22 @@ function items.count_handed_item(npc, trade, items, min_count)
 				if(min_count > 1) then
 					-- This item may be added to quest loot, add to mq array for further processing below.							
 					mq_loot["item" .. j] = trade["item" .. j];
+					if(count < min_count and (text ~= nil or emote ~= nil)) then
+						if(text ~= nil) then
+							npc:Say("" .. text .. "");
+						elseif(emote ~= nil) then
+							npc:Emote("" .. emote .. "");
+						end
+					end
 				end
 				trade["item" .. j] = nil;
-				eq.debug("Found item in slot (" .. j .. ") count is now " .. count .. "", 3);
+				eq.debug("Found item in slot (" .. j .. ") count is now " .. count .. "", 2);
 			end
 		end
 	end
 
 	if(handed_count == 0) then
-		eq.debug("Quest will not complete.",3);
+		eq.debug("Quest will not complete.",2);
 		return 0;
 	end
 
@@ -342,7 +349,7 @@ function items.count_handed_item(npc, trade, items, min_count)
 
 	if(clear_loot) then
 		-- Clear out any quest items that got saved from a previous hand-in.
-		eq.debug("Clearing quest loot", 3);
+		eq.debug("Clearing quest loot", 2);
 		npc:DeleteQuestLoot(itemid1,itemid2,itemid3,itemid4);
 		if(itemid5 > 0) then
 			npc:DeleteQuestLoot(itemid5,itemid6,itemid7,itemid8);
@@ -350,7 +357,7 @@ function items.count_handed_item(npc, trade, items, min_count)
 
 	end
 
-	eq.debug("Quest will complete " .. count .. " times.", 3);
+	eq.debug("Quest will complete " .. count .. " times.", 2);
 	return count;
 
 end

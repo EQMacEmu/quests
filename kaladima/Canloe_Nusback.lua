@@ -2,11 +2,11 @@ function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Step forward and speak up, young " .. e.other:GetCleanName() .. "! Kaladim can always use another warrior. Are you [ready to serve Kaladim] or has a yellow streak appeared down your back?");
 	elseif(e.message:findi("ready to serve kaladim")) then
-		e.self:Say("Then serve you shall. Let your training begin on the battlefields of Faydwer. Seek out and destroy all [Crushbone orcs]. Return their belts to me.  I shall also reward you for every two orc legionnaire shoulder pads  returned.  A warrior great enough to slay one legionnaire shall surely have no problem with another.  Go. and let the cleansing of Faydwer begin.");
+		e.self:Say("Then serve you shall. Let your training begin on the battlefields of Faydwer. Seek out and destroy all [Crushbone orcs]. Return their belts to me.  I shall also reward you for every two orc legionnaire shoulder pads returned.  A warrior great enough to slay one legionnaire shall surely have no problem with another.  Go, and let the cleansing of Faydwer begin.");
 	elseif(e.message:findi("crushbone orcs")) then
 		e.self:Say("The army of the Crushbone orcs is deadly indeed. They are great military strategists. It was a legion of them that brought down the great [Trondle Ogrebane]. Speak with Furtog Ogrebane about the Crushbones. He has need of warriors such as you.");
 	elseif(e.message:findi("trondle")) then
-		e.self:Say("Trondle Ogrebane is the legary dwarven warrior who single-handedly exterminated the ogre clan called the [Mudtoes]. He was recently killed in battle. It took an entire legion of Crushbone orcs to bring him down. Furtog is still fuming about that.");
+		e.self:Say("Trondle Ogrebane is the legendary dwarven warrior who single-handedly exterminated the ogre clan called the [Mudtoes]. He was recently killed in battle. It took an entire legion of Crushbone orcs to bring him down. Furtog is still fuming about that.");
 	elseif(e.message:findi("mudtoes")) then
 		e.self:Say("The Mudtoes were a small clan of ogres. They lived somewhere in the Butcherblock Mountains. They had an insatiable appetite for dwarves. They were finally destroyed by the hand of Trondle Ogrebane.");
 	elseif(e.message:findi("irontoe")) then
@@ -22,9 +22,9 @@ function event_trade(e)
 	local item_lib = require("items");
 	
 	-- experience reward verified from live packet for both shoulder and belt
-	local belt = item_lib.count_handed_item(e.self, e.trade, {13318});
-	local shoulder = item_lib.count_handed_item(e.self, e.trade, {13319}, 2);
 	local text = "Yes, yes!! You have slain one legionnaire, but I reward for proof of two. Certainly you do not find another battle with the legionnaires difficult!!";
+	local belt = item_lib.count_handed_item(e.self, e.trade, {13318});
+	local shoulder = item_lib.count_handed_item(e.self, e.trade, {13319}, 2, text);
 	
 	if(belt > 0) then
 		repeat

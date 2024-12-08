@@ -14,19 +14,9 @@ function event_say(e)
 end
 
 function event_trade(e)
-	local muffin = 0;
 	local item_lib =require("items");
 
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 13014,item2 = 13014,item3 = 13014,item4 = 13014}, 0)) then
-		muffin = 4;
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13014,item2 = 13014,item3 = 13014}, 0)) then
-		muffin = 3;
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13014,item2 = 13014}, 0)) then
-		muffin = 2;
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13014}, 0)) then
-		muffin = 1;
-	end
-	
+	local muffin = item_lib.count_handed_item(e.self, e.trade, {13014});
 	if(muffin > 0) then
 		repeat
 			e.self:Say("Mmmm. This smells delicious. Oh great!! No milk!! Don't you have any sense?! Just tell me the name of the bakery and I will run and get it myself. I am sure Lady Shae will be safe.");

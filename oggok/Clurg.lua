@@ -27,6 +27,8 @@ function event_say(e)
 		else
 			e.self:Say("You are brave. An enemy are you of Oggok. Leave while you still can.");		
 		end					
+	elseif(e.message:findi("blood temper")) then
+		e.self:Say("I have been working with the bouncers on designing mighty weapons and armor with which to slay our foes. The blood temper I invented is needed for the armor and weapons to be their strongest. It is simply Ogre Swill brewed with the blood of an elf, the blood of a human, and the blood of a dwarf.");
 	end
 end
 

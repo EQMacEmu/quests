@@ -4,7 +4,7 @@ function event_say(e)
 		e.self:Say("SNORT!  HHUUUUCCCSSH..  Peh!  You speak at Kaglari, High Priestess of Dark Ones.  Children of Hate.  Spawn of Innoruuk.  " .. e.other:GetCleanName() .. " . speak or be gone!  <SNORT!>  You [wish majik power]?");
 	elseif (e.message:findi("wish majik power")) then
 		if(e.other:GetFactionValue(e.self) >= 100) then	
-			e.self:Say("GOOD! SNORT!! Innoruuk needs more childrens.  You show majik skill or I give you to Innoruuk.  You bring two snake scales and two bone chips ..<SNORT>..  from old bones.  I teach you majik.  GO!  <SNORT!!>");
+			e.self:Say("GOOD! SNORT!! Innoruuk needs more childrens.  You show majik skill or I give you to Innoruuk.  You bring two tadpole fleshes and two bone chips ..<SNORT>..  from old bones.  I teach you majik.  GO!  <SNORT!!>");
 		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");
 		else
@@ -15,7 +15,7 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	if (e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13073, item2 = 13073, item3 = 13070, item4 = 13070})) then -- Majik power
+	if (e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13073, item2 = 13073, item3 = 13187, item4 = 13187})) then -- Majik power
 		e.self:Say("SNORT!! Good. Innoruuk get special gift. Not you, dis time. Here. Learning majik wid dis. You more want to help Innoruuk?");
 		e.other:Faction(e.self,237,5);  -- +Dark Ones
 		e.other:Faction(e.self,308,1);  -- +Shadowknights of Night Keep

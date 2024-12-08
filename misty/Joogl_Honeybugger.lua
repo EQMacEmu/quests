@@ -13,22 +13,10 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	local bandage = 0;
-	--Handin: Bandage
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 13009, item2 = 13009, item3 = 13009, item4 = 13009}, 0)) then
-		bandage=4;
-	end
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 13009, item2 = 13009, item3 = 13009}, 0)) then
-		bandage=3;
-	end
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 13009, item2 = 13009}, 0)) then
-		bandage=2;
-	end
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 13009}, 0)) then
-		bandage=1;
-	end
+	local bandage = item_lib.count_handed_item(e.self, e.trade, {13009});
+	
 	if(bandage > 0) then
-		for i = 1, bandage do
+		repeat
 			--Bandages for Honeybugger (END)
 			e.self:Say("Oh thank you, " .. e.other:GetCleanName() .. ". If you are ever going to gather bixie honeycomb's pray you do not run into the queen. The only way I know of collecting the honey is by intercepting the drone's and taking the honeycomb's they sometime's carry. Good luck!!");
 			-- confirmed live factions and confirmed no exp
@@ -37,8 +25,8 @@ function event_trade(e)
 			e.other:Faction(e.self,263,1);  -- +Guardians of the Vale
 			e.other:Faction(e.self,286,1);  -- +Mayor Gubbin
 			e.other:Faction(e.self,336,-1); -- -Coalition of Trade Folk Underground
-
-		end
+			bandage = bandage - 1;
+		until bandage == 0;
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

@@ -1,6 +1,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say(string.format("Hello. How nice to meet you. %s!",e.other:GetName()));
+		e.self:Say("Hello. How nice to meet you, " .. e.other:GetCleanName() .. "!");
 	end
 end
 

@@ -15,11 +15,11 @@ end
 
 
 function event_say(e)
-	if(e.message:findi("water")) then
-		e.self:Say("Aye, water, m'lord. For my brother. He is very sick. He's needin' drink. He's burnin' up. I am sick myself but still able to move, a little. I must [take this water to him] before he gets worse.");
-	elseif(e.message:findi("take")) then
+	if(e.message:findi("take")) then
 		e.self:Emote("looks at you.  'Surely you are a pure soul.  If you would take this bucket of water to my brother, I would be forever grateful.  I'm just so tired, I need to rest...'  She slumps to the floor and begins to breathe shallowly, in short, harsh gasps.");
 		e.other:SummonCursorItem(29008); -- bucket of water
+	elseif(e.message:findi("water")) then
+		e.self:Say("Aye, water, m'lord. For my brother. He is very sick. He's needin' drink. He's burnin' up. I am sick myself but still able to move, a little. I must [take this water to him] before he gets worse.");
 	end
 end
 

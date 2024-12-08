@@ -10,7 +10,11 @@ end
 
 function event_signal(e)
 	-- Signal from Beur_Tenlah
-	e.self:Say("Bah! Don't listen to this fool. Listen, I've something a little more important for you to do than buy ales. I need you to take a [message] to my friend Janam over in West Freeport.");
+	if(e.signal == 1) then
+		e.self:Say("Bah! Don't listen to this fool. Listen, I've something a little more important for you to do than buy ales. I need you to take a [message] to my friend Janam over in West Freeport.");
+	elseif(e.signal == 2) then
+		e.self:Say("Yeah, yeah, shut your stinky can, big, tall and ugly! Bwa ha ha!");
+	end
 end
 
 function event_trade(e)

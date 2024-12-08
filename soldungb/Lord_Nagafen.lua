@@ -12,12 +12,15 @@ function event_spawn(e)
 	SpawnH = e.self:GetHeading();
 	local range = 230;
 	eq.set_proximity(SpawnX - range, SpawnX + range, SpawnY - range, SpawnY + range);
+	if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(32003)) then -- Depop Zordak if Zordak is up
+		eq.depop_with_timer(32003);
+	end
 end
 
 function event_enter(e)
 	if(e.other:GetLevel() > 52 and e.other:Admin() < 80) then
 		e.other:Message(4,"I will not fight you, but I shall banish you!");
-		e.other:MovePC(27,534,913,55,0); -- Zone: bothunder 
+		e.other:MovePC(27,534,913,55,0); -- Zone: lavastorm 
 	end
 end
 

@@ -77,7 +77,7 @@ function event_trade(e)
 	elseif(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13282})) then -- Scrap Metal
 		e.self:Say("I thank you, my friend. I was to destroy this metal monster months ago. I could never find him. Please accept this reward for such good service. Oh yes.. And take this card to a man named [Doran Vargnus]. He is a fine blacksmith. I am sure he will reward you with one of his finest suits of armor. Perhaps you may now assist in an [important Stormguard matter].");
 		e.other:Faction(e.self,312, 20); -- Storm Guard
-		e.other:Faction(e.self,274, 5); -- Kazon Stormhammer
+		e.other:Faction(e.self,274, 3); -- Kazon Stormhammer
 		e.other:Faction(e.self,293, 3); -- Miner's Guild 249
 		e.other:Faction(e.self,290, 5); -- Merchants of Kaladim
 		e.other:Faction(e.self,232, -5); -- Craknek Warriors
@@ -86,7 +86,7 @@ function event_trade(e)
 		--Quest text, exp, cash, factions made up
 		e.self:Say("You've found it! I'm glad you managed to hunt down and return the stolen eye for us, " .. e.other:GetCleanName() .. ". Such effort requires a similar reward so take this and use it well.");
 		e.other:Faction(e.self,312, 20); -- Storm Guard
-		e.other:Faction(e.self,274, 5); -- Kazon Stormhammer
+		e.other:Faction(e.self,274, 3); -- Kazon Stormhammer
 		e.other:Faction(e.self,293, 3); -- Miner's Guild 249
 		e.other:Faction(e.self,290, 5); -- Merchants of Kaladim
 		e.other:Faction(e.self,232, -5); -- Craknek Warriors

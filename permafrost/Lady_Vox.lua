@@ -18,7 +18,7 @@ end
 function event_enter(e)
 	if(e.other:GetLevel() > 52 and e.other:Admin() < 80) then
 		e.other:Message(4,"I will not fight you, but I shall banish you!");
-		e.other:MovePC(30,-7024,2020,-60.7,0); -- Zone: burningwood 
+		e.other:MovePC(30,-7024,2020,-60.7,0); -- Zone: everfrost 
 	end
 end
 
