@@ -1,8 +1,10 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Greetings, friend. I am the keeper of the [Boots of Ro]. Please rest here with us in our camp of righteousness. No harm can come to you while we paladins keep watch.");
+		if(not eq.is_content_flag_enabled("Classic_OldWorldDrops")) then
+			e.self:Say("Greetings, friend. I am the keeper of the [Boots of Ro]. Please rest here with us in our camp of righteousness. No harm can come to you while we paladins keep watch.");
+		end
 	elseif(e.message:findi("boots of ro")) then
-		if(e.other:GetFactionValue(e.self) >= 50) then  -- mid indiff or better to get the quest
+		if(not eq.is_content_flag_enabled("Classic_OldWorldDrops") and e.other:GetFactionValue(e.self) >= 50) then  -- mid indiff or better to get the quest
 			e.self:Say("If you desire the mold needed for smithing the Boots of Ro, then first, you shall prove your power. I have long sought an ancient holy weapon called the brazen brass kilij. I have heard rumors of detailed plans on how to make it, coming from Faydwer. Seek out the kilij plans. Bring them to me and you shall have the mold.");
 		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("You and I must be brothers and serve the Lord of Underfoot. Go to Kaladim and serve her cathedral. When you think you are ready. then ask Lord Datur if you are an [honored member] of the temple. If the answer is yes, then I will trust you.");

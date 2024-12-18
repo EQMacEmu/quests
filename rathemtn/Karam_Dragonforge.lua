@@ -8,10 +8,18 @@ function event_say(e)
 			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
 		end
 	elseif(e.message:findi("white dragonscale cloak")) then
-		if(e.other:GetFactionValue(e.self) >= 0) then
-			e.self:Say("Hrmmm. A white dragonscale cloak eh? Hrmmm. Well, I will make you a deal. You can save me some footwork and I will craft your cloak. I want to propose to my [fiancee] but I have neither a [wedding ring] nor a [present] for her. So, return with a white dragon hide, a wedding ring, and a present for my fiancee, and I will fashion your cloak for you.");
+		if(eq.is_the_scars_of_velious_enabled()) then
+			if(e.other:GetFactionValue(e.self) >= 0) then
+				e.self:Say("Hrmmm. A white dragonscale cloak eh? Hrmmm. Well, I will make you a deal. You can save me some footwork and I will craft your cloak. I want to propose to my [fiancee] but I have neither a [wedding ring] nor a [present] for her. So, return with a white dragon hide, a wedding ring, and a present for my fiancee, and I will fashion your cloak for you.");
+			else
+				e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
+			end
 		else
-			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
+			if(e.other:GetFactionValue(e.self) >= 0) then
+				e.self:Say("Hrmmm. A white dragonscale cloak eh? Hrmmm. Well, I will make you a deal. You can save me some footwork and I will craft your cloak. I want to propose to my [fiancee] but I have neither a [wedding ring] nor a [present] for her. So, return with a white dragon scale, a wedding ring, and a present for my fiancee, and I will fashion your cloak for you.");
+			else
+				e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
+			end
 		end
 	elseif(e.message:findi("fiancee")) then
 		if(e.other:GetFactionValue(e.self) >= 0) then
@@ -43,18 +51,16 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 
-	if(e.other:GetFactionValue(e.self) >= 0 and item_lib.check_turn_in(e.self, e.trade, {item1 = 14707, item2 = 14703, item3 = 9240})) then
-		e.self:Say("My fiancee will be so excited! An exquisite ring for the wedding and a gorgeous necklace as my wedding gift to her. Well, as promised, here is your white dragonscale cloak.");
-		e.other:QuestReward(e.self,0,0,0,0,11603); -- White Dragonscale Cloak
-	elseif(e.other:GetFactionValue(e.self) >= 0 and item_lib.check_turn_in(e.self, e.trade, {item1 = 11622, item2 = 14402, platinum = 1000})) then
+
+	if(e.other:GetFactionValue(e.self) >= 0 and item_lib.check_turn_in(e.self, e.trade, {item1 = 11622, item2 = 14402, platinum = 1000})) then
 		e.self:Say("Wonderful! Now I can get back to my fiancee instantly! Isn't Love grand? As for your Red Dragonscale Armor, it is all done. Farewell!");
 		e.other:QuestReward(e.self,0,0,0,0,11623); -- Red Dragonscale Armor
+	elseif(eq.is_the_scars_of_velious_enabled() and e.other:GetFactionValue(e.self) >= 0 and item_lib.check_turn_in(e.self, e.trade, {item1 = 14707, item2 = 14703, item3 = 9240})) then --white dragon hide
+			e.self:Say("My fiancee will be so excited! An exquisite ring for the wedding and a gorgeous necklace as my wedding gift to her. Well, as promised, here is your white dragonscale cloak.");
+			e.other:QuestReward(e.self,0,0,0,0,11603); -- White Dragonscale Cloak
+	elseif(not eq.is_the_scars_of_velious_enabled() and e.other:GetFactionValue(e.self) >= 0 and item_lib.check_turn_in(e.self, e.trade, {item1 = 14707, item2 = 14703, item3 = 11602})) then --white dragon scale
+		e.self:Say("My fiancee will be so excited! An exquisite ring for the wedding and a gorgeous necklace as my wedding gift to her. Well, as promised, here is your white dragonscale cloak.");
+		e.other:QuestReward(e.self,0,0,0,0,11603); -- White Dragonscale Cloak
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
-
---END of FILE : Zone : rathemtn : NPC_ID : 50119 : Karam Dragonforge
--------------------------------------------------------------------------------------------------
--- Converted to .lua using MATLAB converter written by Stryd and manual edits by Speedz
--- Find/replace data for .pl --> .lua conversions provided by Speedz, Stryd, Sorvani and Robregen
--------------------------------------------------------------------------------------------------

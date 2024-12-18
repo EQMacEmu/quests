@@ -2,7 +2,7 @@ function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Welcome to the Church of Underfoot. Please open your soul to the greatness of Brell Serilis. May he guide you in all your future eavors. And may your soles long for the [Soil of Underfoot].");
 	elseif(e.message:findi("soil")) then
-		if(e.other:GetFactionValue(e.self) >= 500) then -- kindly or better to get quest.
+		if(e.other:GetFactionValue(e.self) >= 450) then -- high amiable, allakhazam comments show 400 not high enough but 453 worked
 			e.self:Say("I can trust you with the soil of Underfoot, but first you must obtain four portions of fairy dust. Return them to me and I shall mix it and pray over it. Then I shall give you a pouch of soil of Underfoot.");		
 		else
 			e.self:Say("The Clerics of Underfoot have yet to see your faith directed towards our wills. Perhaps you should assist Master Gunlok Jure in the crusade against the undead.");
@@ -22,7 +22,7 @@ function event_trade(e)
 		e.other:Faction(e.self,274,100); -- Kazon Stormhammer
 		e.other:Faction(e.self,293,75); -- Miners Guild 249
 		e.other:QuestReward(e.self,0,0,0,0,13514,20); -- Item: Dusty Tunic*
-	elseif(e.other:GetFactionValue(e.self) >= 500 and item_lib.check_turn_in(e.self, e.trade, {item1 = 12106, item2 = 12106, item3 = 12106, item4 = 12106},1,text)) then  -- Fairy Dust need kindly as verified from live
+	elseif(e.other:GetFactionValue(e.self) >= 450 and item_lib.check_turn_in(e.self, e.trade, {item1 = 12106, item2 = 12106, item3 = 12106, item4 = 12106},1,text)) then  -- Fairy Dust need kindly as verified from live
 		e.self:Say("May the mighty power of Brell saturate this soil with his divinity.  Here you are, my noble friend.  You may have a pouch of the soil of Underfoot.");
 		-- verified live faction
 		e.other:Faction(e.self,227,5); -- Clerics of Underfoot

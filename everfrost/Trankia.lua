@@ -3,7 +3,7 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hmmph.");
- 	elseif(e.message:findi("avenge your brother")) then
+ 	elseif(e.message:findi("avenge.* brother")) then
 		e.self:Say("My brother was part of a raiding party that adventured into the Caverns of Guk. Somewhere within he was betrayed and left for dead by the dastardly brother of Karg IceBear - Martar. I want you to find me what remains of my brothers body and bring it back to me. I am told that he died within a mine shaft.");
 	end
 end
