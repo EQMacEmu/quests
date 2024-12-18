@@ -15,6 +15,7 @@ function event_spawn(e)
 	if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(32003)) then -- Depop Zordak if Zordak is up
 		eq.depop_with_timer(32003);
 	end
+	eq.discord_send("TLP Spawn Notices", "".. e.self:GetCleanName() .." has spawned");
 end
 
 function event_enter(e)

@@ -13,6 +13,7 @@ function event_spawn(e)
 	local range = 210;
 	local range2 = 98;
 	eq.set_proximity(SpawnX - range, SpawnX + range, SpawnY - range2, SpawnY + range, SpawnZ - 20, SpawnZ + 50);
+	eq.discord_send("TLP Spawn Notices", "".. e.self:GetCleanName() .." has spawned");
 end
 
 function event_enter(e)
