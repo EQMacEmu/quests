@@ -49,7 +49,10 @@ function IsValueInTable(t, v)
 end
 
 function OrcSpawnEvent(e)
-	e.self:PauseWandering(20);
+
+	if(e.self:GetGrid() > 0) then
+		e.self:PauseWandering(20);
+	end
 	
 	if ( e.self:GetSpawnPointID() == 336266 ) then -- controller spawn; 6 minutes
 	
@@ -74,10 +77,15 @@ function OrcSpawnEvent(e)
 		end
 		eq.debug("Orc spawn wave: "..(roll + 1).." orcs"); -- these won't spawn if they are already spawned
 	end
+	
+	
 end
 
 function GnollSpawnEvent(e)
-	e.self:PauseWandering(20);
+
+	if(e.self:GetGrid() > 0) then
+		e.self:PauseWandering(20);
+	end
 	
 	if ( e.self:GetSpawnPointID() == 368619 ) then -- controller spawn; 10 minutes
 	
@@ -102,6 +110,7 @@ function GnollSpawnEvent(e)
 		end
 		eq.debug("Gnoll spawn wave: "..(roll + 1).." gnolls");
 	end
+	
 end
 
 function event_encounter_load(e)
