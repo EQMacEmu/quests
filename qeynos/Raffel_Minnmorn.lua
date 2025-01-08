@@ -7,9 +7,6 @@ function event_say(e)
 		e.self:Say("Hello, friend. I am visiting from the plains. I hope to make a FORTUNE here in Qeynos.");
 	elseif(e.message:findi("Flockwalker")) then
 		e.self:Say("Gash Flockwalker is a druid from Surefall Glade. I have a special delivery for him.");
-	elseif(e.message:findi("special delivery")) then
-		e.self:Say("I shall chop you down as your people chopped down the beauty of the forests!!");
-		eq.attack(e.other:GetName());
 	end
 end
 

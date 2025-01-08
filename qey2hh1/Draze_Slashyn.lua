@@ -10,13 +10,14 @@
 -- Converted to Lua by robregen
 -- ####################################
 
-function event_spawn(e)
-	eq.move_to(-7756,-3726,1);
-	eq.set_timer("shout",5000)
+function event_say(e)
+	if(e.message:findi("hail")) then
+		e.self:Say("Step aside.  I have no quarrel with you.");
+	end
 end
 
-function event_timer(e)
-	e.self:Emote("shouts 'Come out of that house, Linaya Sowlin!! I am waiting! It is time for you to die!'")
-	e.self:Say("I shall chop you down as your people chopped down the beauty of the forests!!")
-	eq.stop_timer("shout")
+function event_spawn(e)
+	eq.move_to(-7756,-3726,1);
 end
+
+

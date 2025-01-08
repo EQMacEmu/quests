@@ -51,6 +51,7 @@ function event_trade(e)
 		e.other:Faction(e.self,223,-1,0); -- Circle of Unseen Hands
 		e.other:Faction(e.self,291,1,0); -- Merchants of Qeynos
 		e.other:QuestReward(e.self,math.random(10),math.random(9),math.random(5),0,0,500);
+		eq.unique_spawn(1179,0,0,-100,222,3,128); -- Spawn Raffel_Minnmorn			
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 8280}, 0)) then
 		e.self:Emote("scans the report with a furrowed brow. 'So the threat is worse then we had anticipated. The intelligence we have gathere is true. We have little time, return to Sergeant Caelin and give him these orders. Time is of the essence. Hurry now, these people are in grave danger and something must be done to stop this!");
 		e.other:QuestReward(e.self,0,0,0,0,8287);

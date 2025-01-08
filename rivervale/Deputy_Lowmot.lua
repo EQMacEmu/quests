@@ -42,7 +42,7 @@ local item_lib = require("items");
 		e.other:Faction(e.self,355, 1); -- Faction: Storm Reapers
 		e.other:Faction(e.self,292, 1); -- Faction: Merchants of Rivervale
 		e.other:Faction(e.self,334, -1); -- Faction: Dreadguard Outer
-		e.other:QuestReward(e.self,7,0,0,0,0,10);
+		e.other:QuestReward(e.self,math.random(5),math.random(2),0,0,0,10);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

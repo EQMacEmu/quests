@@ -14,13 +14,19 @@ function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Step right up!  The name's Ping Fuzzlecutter, groomer to the royal crowns of Norrath and alchemist of fine hair care products.  It was I who took the grey out of Felwithe, who added curls to Kaladim and tamed the tangles of Moggok of Oggok.  Step right up and find yourself a new look!  Hey, is that a bald spot?!");
 	elseif(e.message:findi("coffin")) then
-		e.self:Say("You're looking for a craftsman, are you? Well look no further! For I, Ping Fizzlecutter, am the best in all the lands! Or at lest this side of Freeport. So you're the one that Valeron was talking about, eh? Well, while you were off traipsing around the lands he and I discussed the details of the coffin. I require nothing less than these [components]. Get me them and I will gladly make you a coffin any king would be proud to be buried in!");
+		if(eq.is_the_ruins_of_kunark_enabled()) then
+			e.self:Say("You're looking for a craftsman, are you? Well look no further! For I, Ping Fizzlecutter, am the best in all the lands! Or at lest this side of Freeport. So you're the one that Valeron was talking about, eh? Well, while you were off traipsing around the lands he and I discussed the details of the coffin. I require nothing less than these [components]. Get me them and I will gladly make you a coffin any king would be proud to be buried in!");
+		end
 	elseif(e.message:findi("components")) then
-		e.self:Say("I require a diamond, a star ruby, a pearl, a [special fire emerald], a sapphire, a fire opal, and two enchanted platinum bars. Take this bag and combine the items once you have them all and bring it back to me.");
-		-- Empty Gem Bag ID-17512
-		e.other:SummonCursorItem(17512); -- Item: Empty Gem Bag
+		if(eq.is_the_ruins_of_kunark_enabled()) then
+			e.self:Say("I require a diamond, a star ruby, a pearl, a [special fire emerald], a sapphire, a fire opal, and two enchanted platinum bars. Take this bag and combine the items once you have them all and bring it back to me.");
+			-- Empty Gem Bag ID-17512
+			e.other:SummonCursorItem(17512); -- Item: Empty Gem Bag
+		end
 	elseif(e.message:findi("special fire emerald")) then
-		e.self:Say("Now the fire emerald I want is not the normal one you receive from most jewelers. There is one jeweler I know who has the special one I want. Last time I heard, she had traveled to the elven outpost. Just ask her about special fire emeralds.");
+		if(eq.is_the_ruins_of_kunark_enabled()) then
+			e.self:Say("Now the fire emerald I want is not the normal one you receive from most jewelers. There is one jeweler I know who has the special one I want. Last time I heard, she had traveled to the elven outpost. Just ask her about special fire emeralds.");
+		end
 	elseif(e.message:findi("repair the toupee")) then
 		e.self:Say("Ah!! You have a toupee to repair. It must be the [Mane Attraction]. I gave a one out and it seems to always fall to pieces. Seeing as it has a 100 season warranty and I only created it 5 seasons ago, I suppose I can do it. Do you want me to [make the Mane Attraction].");
 	elseif(e.message:findi("what is the mane attraction")) then

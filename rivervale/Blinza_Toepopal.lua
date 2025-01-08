@@ -37,7 +37,7 @@ function event_trade(e)
 		e.other:Faction(e.self,292, -1); -- Faction: Merchants of Rivervale
 		e.other:Faction(e.self,336, 1); -- Faction: Coalition of Tradefolk Underground
 		e.other:Faction(e.self,329, 1); -- Faction: Carson McCabe
-		e.other:QuestReward(e.self,10,0,0,0,0,20);
+		e.other:QuestReward(e.self,math.random(5),math.random(2),0,0,0,20);
 	elseif (item_lib.check_turn_in(e.self, e.trade,  {item1 = 13971})) then
 		e.self:Say("What are these?!  I am trying to make stew for the mayor and you bring me ROTTEN CARROTS?!  Have you no sense??  Take these back to Reebo.");
 		e.other:Faction(e.self,241, -5); -- Faction: DeepPockets

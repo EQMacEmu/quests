@@ -47,7 +47,7 @@ function event_trade(e)
 	local text = "Only two blackboxes shall prove your worth to this hall.";
 	local text1 = "There are a total of four C series clockworks.";
 	
-	if(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13208,item2 = 13208},1,text)) then
+	if(e.other:GetFactionValue(e.self) >= 0 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13208,item2 = 13208},1,text)) then
 		e.self:Say("Excellent work! You were born to be a warrior. Here is a little bonus for the good job.");
 		-- confirmed live faction
 		e.other:Faction(e.self,255,5,0); 	-- gem choppers

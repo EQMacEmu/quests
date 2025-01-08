@@ -80,7 +80,11 @@ function event_trade(e)
 		e.other:Faction(e.self,239,-1,0); -- the dead
 		e.other:Faction(e.self,255,1,0); 	-- gem choppers
 		e.other:Faction(e.self,333,1,0); 	-- king ak'anon
-		e.other:QuestReward(e.self,math.random(0,10),math.random(0,10),math.random(0,5),0,eq.ChooseRandom(15205,15211,15288,15310,15311,15313,15331,15050,15093,15315,15316,15058,15317,15318,15036,15094,15246,15322,15323,15325,15851,15324,15332,15400,15399,15398,15042,15613),100); -- mage lvl 1-8 spells excluding pet item spells
+		if (eq.is_content_flag_enabled("Classic_OldWorldDrops")) then
+			e.other:QuestReward(e.self,math.random(0,10),math.random(0,10),math.random(0,5),0,eq.ChooseRandom(15205,15211,15288,15310,15311,15313,15331,15050,15093,15315,15316,15058,15317,15318,15036,15094,15246,15322,15323,15325,15324,15332,15400,15399,15398,15042,15613),100); -- mage lvl 1-8 spells excluding pet item spells
+		else
+			e.other:QuestReward(e.self,math.random(0,10),math.random(0,10),math.random(0,5),0,eq.ChooseRandom(15205,15211,15288,15310,15311,15313,15331,15050,15093,15315,15316,15058,15317,15318,15036,15094,15246,15322,15323,15325,15851,15324,15332,15400,15399,15398,15042,15613),100); -- mage lvl 1-8 spells excluding pet item spells
+		end
 	elseif(e.other:GetFactionValue(e.self) >= 100 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13272})) then -- Bozinite Pestle
 		e.self:Say("The Eldritch Collective thanks you. You have done a great service. We need these special bozinite pestles for use with our eldritch mortars. Here is a scroll from our library. Study it and use it wisely.");
 		e.other:Faction(e.self,245,10,0);	-- eldritch collective

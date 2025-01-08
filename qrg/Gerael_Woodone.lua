@@ -12,8 +12,10 @@ function event_say(e)
 		end
 	elseif(e.message:findi("Jale Phlintoes")) then
 		e.self:Say("Jale Phlintoes was trained in the ways of the Jaggedpine Treefolk since his birth. He was only eight when his parents were killed by poachers. Young Jale would have had his throat slit also if he were not off fishing at the lake. Unfortunate. The now orphaned Jale was brought up by us druids. After many conflicts with our council, he ran off to start his own sect somewhere in the nearby lands. For his terrorist activities his head now brings a high price.");
-	elseif(e.message:findi("Unkempt Druid")) then
+	elseif(e.message:findi("unkempt druid")) then
 		e.self:Say("The Unkempt Druids are a radical splinter group of druids. Their beliefs have been contorted by the mad druid [Jale Phlintoes]. It is he who engineers and coordinates the druids' transgressions. From setting lumbermills aflame to murdering any man who dares to wear a bearhide. They must be stopped!! Citizens must learn to understand Tunare's will, not fear it.");
+	elseif(e.message:findi("linaya")) then
+		e.self:Say("Linaya Sowlin is an old student of mine.  When her father passed away, she inherited his farmhouse in the Plains of Karana.  A tent in the Jaggedpine or an estate on the plains?  I would choose the former.");
 	elseif(e.message:findi("leader")) then
 		e.self:Say("The land of Surefall Glade is ruled by no single hand other than Tunare, but if guidance is what you seek, I would suggest you speak with Te`Anara.  She is the head of the Jaggedpine Treefolk.  Otherwise, you could speak with Hager Sureshot of the Protectors of the Pine.");
 	elseif(e.message:findi("poacher")) then
