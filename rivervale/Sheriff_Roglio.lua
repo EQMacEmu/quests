@@ -27,7 +27,7 @@ function event_trade(e)
 		e.other:Faction(e.self,292, 15,0); -- Merchants of Rivervale
 		e.other:Faction(e.self,334,-15,0); -- Dreadguard Outer
 		e.other:QuestReward(e.self,0,0,0,0,13540,20); -- Old Tan Tunic
-	elseif(item_lib.count_handed_item(e.self, e.trade, {13931}, 4) > 0) then -- Hand in Runnyeye Warbeads -- works regardless of faction for takp era
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13931, item2 = 13931, item3 = 13931, item4 = 13931})) then -- Hand in Runnyeye Warbeads -- works regardless of faction for takp era
 		e.self:Say("Good work, Deputy " .. e.other:GetCleanName() .. "! We shall soon rid our countryside of the goblin threat. Here are your wages. Eat well tonight!");
 		e.other:Faction(e.self,263, 1,0); -- Gaurdians of the Vale
 		e.other:Faction(e.self,286, 1,0); -- Mayor Gubbin
