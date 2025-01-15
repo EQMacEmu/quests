@@ -54,7 +54,7 @@ function event_trade(e)
 		e.other:Faction(e.self,266,2); -- High Council of Erudin
 		e.other:Faction(e.self,265,-3); -- Heretics 
 		e.other:Faction(e.self,267,3); -- High Guard of Erudin
-		e.other:QuestReward(e.self,0,0,0,0,13122,50); -- Item: Eruds Tonic
+		e.other:QuestReward(e.self,0,0,0,0,13122,300); -- Item: Eruds Tonic
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13123})) then
 		e.self:Say("Fantastic. Now I can rest assured that my brother stands a better chance of finding the right path without that manipulating little man around. Master Lanken can rest assured that the waters are safe from abuse.");
 		-- Confirmed Live Faction

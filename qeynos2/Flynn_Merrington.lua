@@ -28,7 +28,7 @@ function event_trade(e)
 		e.other:Faction(e.self,230,-3,0); -- Faction: Corrupt Qeynos Guards
 		e.other:Faction(e.self,262,3,0); -- Faction: Guards of Qeynos
 		e.other:Faction(e.self,273,-2,0); -- Faction: Kane Bayle
-		e.other:QuestReward(e.self,0,0,0,0,13123,20000); -- Item: Label of Erud's Tonic
+		e.other:QuestReward(e.self,0,0,0,0,13123,1000); -- Item: Label of Erud's Tonic
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
