@@ -13,7 +13,7 @@ function event_trade(e)
 		e.other:Faction(e.self,355, 1); -- Faction: Storm Reapers
 		e.other:Faction(e.self,292, 1); -- Faction: Merchants of Rivervale
 		e.other:Faction(e.self,334, -1); -- Faction: Dreadguard Outer
-		e.other:QuestReward(e.self,math.random(20),0,0,0,0,500);
+		e.other:QuestReward(e.self,math.random(20),0,0,0,0,50); --verified exp
 	end
 end
 

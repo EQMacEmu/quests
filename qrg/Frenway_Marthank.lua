@@ -1,6 +1,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Greetings. stranger. Please excuse my melancholy state.  I have had some [bad news] that has brought me great sorrow.");
+		e.self:Say("Greetings, stranger. Please excuse my melancholy state.  I have had some [bad news] that has brought me great sorrow.");
 	elseif(e.message:findi("bayle list")) then
 		e.self:Say("The Bayle List is my property.  Return it to me if you have it.  There is no more I can say of the list, but if you have the note and refuse to return it, then I shall let it be known that you betray [Antonius Bayle] himself!");
 	elseif(e.message:findi("toe.* bayle list")) then

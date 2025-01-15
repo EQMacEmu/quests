@@ -18,7 +18,7 @@ function event_trade(e)
 		e.self:Say("It's about time you figured it out, genius! Maybe you should spend more time in the library. Here, take this tonic and get out of here before they see me giving it to you and turn us both inside out.");
 		-- confirmed live faction
 		e.other:Faction(e.self,694,5,0); -- Faction: Erudite Citizen
-		e.other:QuestReward(e.self,0,0,0,0,13118,50); -- Item: Eruds Tonic
+		e.other:QuestReward(e.self,0,0,0,0,13118,50); -- Item: Eruds Tonic -- verified xp on live
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

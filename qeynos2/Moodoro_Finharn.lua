@@ -43,8 +43,8 @@ function event_trade(e)
 		e.other:Faction(e.self,233,20,0); -- Faction: Crimson Hands
 		e.other:Faction(e.self,266,2,0); -- Faction: High Council of Erudin
 		e.other:Faction(e.self,265,-3,0); -- Faction: Heretics
-		e.other:Faction(e.self,267,2,0); -- Faction: High Guard of Erudin
-		e.other:QuestReward(e.self,math.random(10),0,0,0,0,100);
+		e.other:Faction(e.self,267,3,0); -- Faction: High Guard of Erudin
+		e.other:QuestReward(e.self,math.random(10),0,0,0,0,100); --verified xp and faction
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13994})) then
 		e.self:Say("Lucky you. We were hoping to really clean you out. Here you go. Take the page. Even together, the book is nothing more than fiction.");
 		e.other:QuestReward(e.self,0,0,0,0,13836); -- Item: Page 34 of a Book

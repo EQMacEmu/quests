@@ -4,7 +4,9 @@ function event_say(e)
 	elseif(e.message:findi("serve innoruuk")) then
 		e.self:Say("Wise choice. We of the Dismal Rage have learned of the value of incompetence. As the Teir'Dal use the ogres and the trolls so to shall the Dismal Rage have A pawn in this game. Ours is the Freeport Militia. They trust us. How unfortunate for them. I want you to go speak with Sir Lucan D'lere, the so called ruler of this city and leader of this mob of ruffians called the Freeport Militia. Tell him you are [ from the Shrine of Innoruuk ]. Do as he asks. Little favors lead to large debts. And if you should find something of importance, bring it to me not that inept warrior.");
 	elseif(e.message:findi("mission")) then
-		e.self:Say("Antonius Bayle has created a strong alliance with certain groups from four other cities. He and his allies are clearly up to no good, or rather, all good. We require more information. Visiting our fair city is a woman called Lady Shae. We have learned that she is heading to Qeynos soon, returning something called the [Bayle List]. Find her before she leaves. Bring me her Bayle List III.");		
+		if(not eq.is_content_flag_enabled("Classic_OldWorldDrops")) then
+			e.self:Say("Antonius Bayle has created a strong alliance with certain groups from four other cities. He and his allies are clearly up to no good, or rather, all good. We require more information. Visiting our fair city is a woman called Lady Shae. We have learned that she is heading to Qeynos soon, returning something called the [Bayle List]. Find her before she leaves. Bring me her Bayle List III.");		
+		end
 	end
 end
 

@@ -4,7 +4,11 @@ end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Welcome to the Temple of Thunder. We are home to paladins and clerics who follow the ways of Karana. Do you [need guidance] or are you [already a follower of Karana]?"); 
+		if(not eq.is_content_flag_enabled("Classic_OldWorldDrops")) then
+			e.self:Say("Welcome to the Temple of Thunder. We are home to paladins and clerics who follow the ways of Karana. Do you [need guidance] or are you [already a follower of Karana]?"); 
+		else
+			e.self:Say("Welcome to the Temple of Thunder. We are home to paladins and clerics who follow the ways of Karana. Do you [need guidance]?"); --made up text
+		end		
 	elseif(e.message:findi("need guidance")) then
 		e.self:Say("Then go forth into the church and speak with Gehna Solbenya. She will assist you."); 
 	elseif(e.message:findi("follower of karana") or e.message:findi("wish to assist")) then
@@ -20,13 +24,15 @@ function event_say(e)
 			e.self:Say("You have proven yourself not only an enemy of the Knights of Thunder, but an enemy of Karana himself. Now leave, sewer rat!");
 		end	
 	elseif(e.message:findi("retrieve the Bayle list")) then
-		if(e.other:GetFactionValue(e.self) >= 900) then
-			e.self:Say("The Temple of Thunder was asked by Antonius Bayle to retrieve a list. He does not trust his own militia of late. He asked me to send a knight to the Jaggedpine to find a man named Frenway Marthank. When you find him, you are to tell him that [Toe needs the Bayle List]. Return the Bayle List and your Thunder Staff to me and I shall provide a fine reward. Be aware that the shadowknights of Bertoxxulous are also after the list. Be careful!");	
-		elseif(e.other:GetFactionValue(e.self) >= 0) then
-			e.self:Say("Well, friend, the Temple of Thunder has recognized and appreciates your past deeds for us.  But this matter is of vital importance to us and we need more proof of your devotion to our cause.");
-		else
-			e.self:Say("You have proven yourself not only an enemy of the Knights of Thunder, but an enemy of Karana himself. Now leave, sewer rat!");
-		end			
+		if(not eq.is_content_flag_enabled("Classic_OldWorldDrops")) then
+			if(e.other:GetFactionValue(e.self) >= 900) then
+				e.self:Say("The Temple of Thunder was asked by Antonius Bayle to retrieve a list. He does not trust his own militia of late. He asked me to send a knight to the Jaggedpine to find a man named Frenway Marthank. When you find him, you are to tell him that [Toe needs the Bayle List]. Return the Bayle List and your Thunder Staff to me and I shall provide a fine reward. Be aware that the shadowknights of Bertoxxulous are also after the list. Be careful!");	
+			elseif(e.other:GetFactionValue(e.self) >= 0) then
+				e.self:Say("Well, friend, the Temple of Thunder has recognized and appreciates your past deeds for us.  But this matter is of vital importance to us and we need more proof of your devotion to our cause.");
+			else
+				e.self:Say("You have proven yourself not only an enemy of the Knights of Thunder, but an enemy of Karana himself. Now leave, sewer rat!");
+			end			
+		end
 	elseif(e.message:findi("honored member")) then
 		if(e.other:GetFactionValue(e.self) >= 50) then
 			e.self:Say("Yes.  The light of righteousness shines from within you.");

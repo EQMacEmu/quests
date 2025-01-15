@@ -14,12 +14,16 @@ function event_say(e)
 	elseif(e.message:findi("nerissa")) then
 		e.self:Say("You keep your eyes off that sweet, innocent girl! She is under my care.");		
 	elseif(e.message:findi("the disease is spreading")) then
-		e.self:Say("Good to see you, my friend. S'ragg said he would be sending his finest. I pray he is right. Do you feel like [going to Highpass] or [going home]?");
+		if(not eq.is_content_flag_enabled("Classic_OldWorldDrops")) then
+			e.self:Say("Good to see you, my friend. S'ragg said he would be sending his finest. I pray he is right. Do you feel like [going to Highpass] or [going home]?");
+		end
 	elseif(e.message:findi("going home")) then
 		e.self:Say("Just as well.  Get the shrine to send me someone of strength.  No more cowards!");
 	elseif(e.message:findi("going to Highpass")) then
-		e.self:Say("You will be taking this with you. Give this marked bottle to a man called Barn Bloodstone. He is known to hang around a place called the Golden Rooster. He has a package for me. He will then give you instructions to your next destination. Now, be off! Time is of the essence!");
-		e.other:SummonCursorItem(13130); -- Item: Blackburrow Stout
+		if(not eq.is_content_flag_enabled("Classic_OldWorldDrops")) then
+			e.self:Say("You will be taking this with you. Give this marked bottle to a man called Barn Bloodstone. He is known to hang around a place called the Golden Rooster. He has a package for me. He will then give you instructions to your next destination. Now, be off! Time is of the essence!");
+			e.other:SummonCursorItem(13130); -- Item: Blackburrow Stout
+		end
 	end
 end
 
