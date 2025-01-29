@@ -34,7 +34,7 @@ function event_trade(e)
 		e.other:Faction(e.self,274, 7); -- Faction: Kazon Stormhammer
 		e.other:Faction(e.self,227, 10); -- Faction: Clerics of Underfoot
 		e.other:Faction(e.self,216, 1); -- Faction: Veeshan
-		e.other:QuestReward(e.self,0,0,0,0,5376,7500); -- Item: Holy Partisan of Underfoot
+		e.other:QuestReward(e.self,{itemid = 5376, exp = 7500}); -- Item: Holy Partisan of Underfoot
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

@@ -15,12 +15,7 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20530},0)) then
 		e.self:Say("Where did you find this? I thought the cyclops took it. I am in your debt, " .. e.other:GetCleanName() .. ". This horn has always been special to me.");
 		e.self:Emote("reaches into her pack and pulls out a note. 'Do you think you could deliver this to my gnome friend Forpar? I have not spoken to him in a while and unfortunatly I will be unable to make the trip to visit him. If you are looking to have an instrument made he is the man to ask.'");
-		e.other:QuestReward(e.self,0,0,0,0,20378);
+		e.other:QuestReward(e.self,{itemid = 20378});
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
-
--------------------------------------------------------------------------------------------------
--- Converted to .lua using MATLAB converter written by Stryd
--- Find/replace data for .pl --> .lua conversions provided by Speedz, Stryd, Sorvani and Robregen
--------------------------------------------------------------------------------------------------

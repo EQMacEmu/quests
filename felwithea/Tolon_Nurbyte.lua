@@ -46,3 +46,15 @@ function event_say(e)
 		end
 	end
 end
+
+function event_trade(e)
+	local item_lib = require("items");
+	if(e.other:GetFactionValue(e.self) >= 500 and item_lib.check_turn_in(e.self, e.trade, {item1 = 18841})) then
+		e.self:Say("So I see you completed your mission. Good work. You just may be a member of the Silent Watch someday. Well my friend. I will be keeping my eye on you. No doubt we will meet again. Oh, I almost forgot. The Princess wanted you to have this. Now show yourself the door.");
+		e.other:Faction(e.self,226,25); -- Faction: Clerics of Tunare
+		e.other:Faction(e.self,279,25); -- Faction: King Tearis Thex
+		e.other:Faction(e.self,5002,18); -- Faction: Anti-mage
+		e.other:QuestReward(e.self,0,0,0,0,13353,500); -- Item: Thex Dagger
+		eq.depop_with_timer();
+	end
+end

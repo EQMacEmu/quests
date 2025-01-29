@@ -12,6 +12,8 @@ function event_say(e)
 		e.self:Say("The Halfling Druids from Rivervale that frequent the ancient druid ruins in the Nektulos Forest are guarded by Leatherfoot Warriors. The peck druids perform the rituals that they hope will prevent Innoruuks corruption from spreading deeper into the Forest and the lands beyond. Should you slay the peck warriors guarding the druids and obtain a Leatherfoot Short Bow, take the bow, a Black Mamba Skin, and a Lock of Zombie Hair to Andara C'Luzz at The Bleek Fletcher in the Neriak Commons near the headquarters of the Indigo Brotherhood.");
 	elseif(e.message:findi("weapon")) then
 		e.self:Say("Beyond the mouth of Neriak lies the Nektulos Forest. There the Halflings of Rivervale have set up camps at ancient druid holy sites in an attempt to cleanse Innoruuks corruption that is spreading through the Nektulos Forest. Slay these trespassers and bring me a Large Snake Skin, a Halfling Fibula bone, and a Halfling Clavicle bone.");
+	elseif(e.message:findi("forge")) then
+		e.self:Say("There is a forge near the Blue Flame Armory in the Neriak Commons and in the Ogre section of the Foreign Quarter. Sharpening stones can be purchased from vendors who deal in blacksmithing supplies.");
 	end
 end
 

@@ -1,10 +1,9 @@
 function event_say(e)
-
 	if(e.message:findi("hail")) then
-		e.self:Say("Beware!!..  Beware, the Teir'Dal walk the halls of Highkeep!!");
-	elseif(e.message:findi("princess lenya thex")) then
+		e.self:Say("Beware!!..  Beware, the Teir'Dal walk the halls of Highkeep!!");		
+	elseif(e.message:findi("princess")) then
 		e.self:Say("The Princess Lenya Thex is the daughter of His Royal Majesty, King Tearis Thex of Felwithe. She was on her way to Qeynos when we believe she was kidnapped by Carson McCabe, the governor of this vile city. I await the paladin from Felwithe.");
-	elseif(e.message:findi("all is not bright above the clouds")) then
+	elseif(e.message:findi("all is not bright above the clouds") and not eq.is_content_flag_enabled("Classic_OldWorldDrops")) then
 		if(e.other:GetFactionValue(e.self) >= 500) then
 			e.self:Say("Taken from this place she has been.  Seek the Highpass hussy.  Ask of her.  Only she knows where.  Find the Princess.  Give her this.  Show your allegiance.  This and her key. Then return the room key to me with the prize from the princess.  Become a hero!!");
 			e.other:SummonCursorItem(13108); -- Item: Tearons Bracer

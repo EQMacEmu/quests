@@ -20,7 +20,7 @@ function event_trade(e)
 		e.other:Faction(e.self,289,5); -- +Merchants of Erudin
 		e.other:Faction(e.self,266,3); -- +High Council of Erudin
 		e.other:Faction(e.self,267,3); -- +High Guard of Erudin
-		e.other:QuestReward(e.self,0,0,0,0,13822,2500);
+		e.other:QuestReward(e.self,0,0,0,0,13822,300); --verified xp
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
