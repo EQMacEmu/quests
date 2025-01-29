@@ -3,7 +3,7 @@ function event_say(e)
 		e.self:Say("Greeetingsssssssssss. What brings sssssuch asssss you to the heart of the Feerrott? Do you [know fear]?");
 	elseif(e.message:findi("know fear")) then
 		e.self:Say("Yesssss. I can tassssste the fear in your pitiful heart. I am Roror, High Priessst of Cazic-Thule! I sssseek to sssssspread terror acrossssss all of Norrath! I ssssshall let you live thisss day so you can sssshare the fear that liessss within you.");
-	elseif(e.message:findi("not.* know.* fear") or ("know.* no.* fear") then
+	elseif(e.message:findi("not.* know.* fear") or ("know.* no.* fear")) then
 		e.self:Say("YOU SSSSSSHALL! For I, Roror, High Prissst of Cazic-Thule, I sssshall teach you!");
 		eq.attack(e.other:GetName());
 	elseif(e.message:findi("hay")) then
