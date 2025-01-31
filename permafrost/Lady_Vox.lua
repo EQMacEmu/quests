@@ -26,6 +26,7 @@ end
 function event_combat(e)
 	if(e.joined) then
 		eq.set_timer("1",1000); --a 1 second leash timer.
+		eq.discord_send("TLP Spawn Notices", "".. e.self:GetCleanName() .." has engaged");
 	else
 		eq.stop_timer("1");
 		e.self:GMMove(SpawnX,SpawnY,SpawnZ,SpawnH);
@@ -58,6 +59,10 @@ function event_timer(e)
 			);
 		end
 	end
+end
+
+function event_death_complete(e)
+	eq.discord_send("TLP Spawn Notices", "".. e.self:GetCleanName() .." has been defeated.");
 end
 
 function event_signal(e)
