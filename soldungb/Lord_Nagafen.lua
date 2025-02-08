@@ -1,15 +1,11 @@
 -- Attempt to limit players level 53 and over from engaging nagafen and vox.
 -- Banished to Lavastorm.
-local SpawnX = 0;
-local SpawnY = 0;
-local SpawnZ = 0;
-local SpawnH = 0;
+local SpawnX = -870;
+local SpawnY = -1394;
+local SpawnZ = 105;
+local SpawnH = 23;
 
 function event_spawn(e)
-	SpawnX = e.self:GetX();
-	SpawnY = e.self:GetY();
-	SpawnZ = e.self:GetZ();
-	SpawnH = e.self:GetHeading();
 	local range = 230;
 	eq.set_proximity(SpawnX - range, SpawnX + range, SpawnY - range, SpawnY + range);
 	if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(32003)) then -- Depop Zordak if Zordak is up
