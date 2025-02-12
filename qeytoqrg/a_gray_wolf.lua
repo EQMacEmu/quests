@@ -1,4 +1,4 @@
-llocal despawntime;
+local despawntime;
 
 function event_spawn(e)
 	if(e.self:GetSpawnPointID() == 365105 or e.self:GetSpawnPointID() == 365106) then
