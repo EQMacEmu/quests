@@ -1,13 +1,5 @@
-function event_signal(e)
-	e.self:Say("Yeah, Yeah. I hope you fall in, you little creep.");
-end
-
 function event_say(e)
-	if(e.message:findi("hail")) then
-		e.self:Say("Greetings, " .. e.other:GetCleanName() .. ".  Welcome to Fish's Ale.  Have fun but watch your step.  We get a rough crowd in here and I would hate to have to bust your head in if you started trouble.");
-	elseif(e.message:findi("trumpy")) then
-		e.self:Say("Trumpy?  That little chunk of troll dung is around here most of the time.  Try looking under the tables.");
-	elseif(e.message:findi("weapon")) then
+	if(e.message:findi("weapon")) then
 		e.self:Say("This city has been blessed with the craftsmanship of the Ironforges.  Their weapons are supreme.  Their shop can be found near the Temple of Life in North Qeynos.  You may also try the local warrior guild.");
 	elseif(e.message:findi("order of the three")) then
 		e.self:Say("The Order of Three consists of the three positive circles of the arcane known as magic, enchantment and wizardry.  This guild keeps very busy in its hall near the arena.  All in Qeynos respect their powers.");

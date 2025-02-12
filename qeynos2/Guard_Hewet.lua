@@ -1,12 +1,6 @@
-function event_signal(e)
-	e.self:Say("Yeah, Yeah. I hope you fall in, you little creep.");
-end
-
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Greetings, " .. e.other:GetCleanName() .. ".  Welcome to Fish's Ale.  Have fun but watch your step.  We get a rough crowd in here and I would hate to have to bust your head in if you started trouble.");
-	elseif(e.message:findi("trumpy")) then
-		e.self:Say("Trumpy?  That little chunk of troll dung is around here most of the time.  Try looking under the tables.");
+		e.self:Say("Well met " .. e.other:GetCleanName() .. ", but I must get back to my duties. Stay out of trouble.");
 	elseif(e.message:findi("weapon")) then
 		e.self:Say("This city has been blessed with the craftsmanship of the Ironforges.  Their weapons are supreme.  Their shop can be found near the Temple of Life in North Qeynos.  You may also try the local warrior guild.");
 	elseif(e.message:findi("order of the three")) then
@@ -18,7 +12,7 @@ function event_say(e)
 	elseif(e.message:findi("port") or e.message:findi("dock")) then
 		e.self:Say("The port of Qeynos is located in South Qeynos.  From here one may catch the ship to Erudin.");
 	elseif(e.message:findi("kane")) then
-		e.self:Say("Commander Kane Bayle is the commander of all the Qeynos Guard.  He is second only to his brother, Antonius Bayle.  His post is in the guard house at the city gates.  Mind you, do not bother him, he has a bit of a temper.");
+		e.self:Say("Commander Kane Bayle is the finest soldier I have ever known.  He is the commanding officer of the entire Qeynos Militia and the younger brother of our so called ruler, Antonius Bayle.");
 	elseif(e.message:findi("circle.* unseen hand")) then
 		e.self:Say("The Circle of the Unseen Hand?  I have heard nothing of them.  Are they some sort of performing magic troupe?");
 	elseif(e.message:findi("paladin guild") or e.message:findi("cleric guild")) then
@@ -31,10 +25,10 @@ function event_say(e)
 		e.self:Say("In Surefall Glade there are druids called the Jaggedpine Treefolk.  These men and women often assist our army during times of war.");
 	elseif(e.message:findi("linarius")) then
 		e.self:Say("The Qeynos Tower Guards of the hills and plains are commanded by Captain Linarius Graffe.  He often has much to report.  He is posted in a keep which spans a river.  I believe it is in the northern Plains of Karana.");
-	elseif(e.message:findi("north qeynos")) then
+	elseif(e.message:findi("south qeynos")) then
 		e.self:Say("The passages to North Qeynos can be found near the bard's guild or next to the Clock of Ak'Anon.");
 	elseif(e.message:findi("inn") or e.message:findi("rest")) then	
-		e.self:Say("If you need a place to rest, I highly recommend the Lion's Mane Inn and Tavern.  Poor adventurers all huddle together in one of the backrooms of Fish's.");	
+		e.self:Say("If you need a place to rest, I highly recommend the Lion's Mane Inn and Tavern.  Poor adventurers all huddle together in one of the backrooms of Fish's.");
 	elseif(e.message:findi("antonius")) then
 		e.self:Say("Antonius Bayle is the ruler of Qeynos. He is such a great man that they renamed this continent after him. He brought Qeynos to the glory it now is. He formed the mightest army on Norrath, the Qeynos Guard. It is through his guidance that we shall protect all nations of Antonica from any evil threat. He does not venture into the city streets often. He is quite busy.");
 	elseif(e.message:findi("tillin")) then

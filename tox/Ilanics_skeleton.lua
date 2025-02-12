@@ -9,12 +9,12 @@ function event_say(e)
 	elseif(e.message:findi("scroll")) then
 		e.self:Say("Kobold! Kobold!");
 		eq.unique_spawn(38172,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
-		eq.depop();
+		eq.depop_with_timer();
 	end
 end
 
 function event_timer(e)
-	eq.depop();
+	eq.depop_with_timer();
 end
 
 function event_trade(e)

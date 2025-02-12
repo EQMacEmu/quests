@@ -1,6 +1,6 @@
 function event_timer(e)
 	if(e.timer == "lenyadepop") then
-		eq.depop();
+		eq.depop_with_timer();
 	end
 end
 
