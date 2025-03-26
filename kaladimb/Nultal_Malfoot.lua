@@ -30,7 +30,7 @@ function event_trade(e)
 		e.other:Faction(e.self,227,5,0); 			--Clerics of Underfoot
 		e.other:Faction(e.self,274,5,0); 		--Kazon Stormhammer
 		e.other:Faction(e.self,293,3,0); 		--Miners Guild 249
-		if (eq.is_content_flag_enabled("GoingPostal")) then
+		if (eq.is_content_flag_enabled("May1999")) then
 			e.other:QuestReward(e.self,0,math.random(0,10),0,0,eq.ChooseRandom(15203,15229,15560,15036,15216,15215),5000); --Random Spell: Cure Poison, Fear, Furor, Gate, Stun, Reckless Strength -- Verified exp
 		else
 			e.other:QuestReward(e.self,0,math.random(0,10),0,0,eq.ChooseRandom(15203,15229,15036,15216,15215),5000); --Random Spell: Cure Poison, Fear,Gate, Stun, Reckless Strength -- Verified exp

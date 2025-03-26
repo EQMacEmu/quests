@@ -46,7 +46,7 @@ function event_trade(e)
 		e.other:Faction(e.self,330,-3,0); -- Faction: The Freeport Militia
 		e.other:Faction(e.self,362,4,0); -- Faction: Priests of Marr
 		e.other:Faction(e.self,311,2,0); -- Faction: Steel Warriors
-		if (eq.is_content_flag_enabled("GoingPostal")) then
+		if (eq.is_content_flag_enabled("May1999")) then
 			e.other:QuestReward(e.self,0,0,0,0,eq.ChooseRandom(15560,15230,15219,15229,15222,15012),5000); -- Item(s): Spell: Furor (15560), Spell: Root (15230), Spell: Center (15219), Spell: Fear (15229), Spell: Invigor (15222), Spell: Healing (15012)
 		else
 			e.other:QuestReward(e.self,0,0,0,0,eq.ChooseRandom(15230,15219,15229,15222,15012),5000); -- Item(s): Spell: Root (15230), Spell: Center (15219), Spell: Fear (15229), Spell: Invigor (15222), Spell: Healing (15012)

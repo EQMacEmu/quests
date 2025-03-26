@@ -28,11 +28,11 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 
-	if(e.other:GetFactionValue(e.self) >= 50 and item_lib.check_turn_in(e.self, e.trade, {item1 = 13187, item2 = 13187, item3 = 13187, item4 = 13187})) then
+	if(e.other:GetFactionValue(e.self) >= 50 and eq.is_the_ruins_of_kunark_enabled() and item_lib.check_turn_in(e.self, e.trade, {item1 = 13187, item2 = 13187, item3 = 13187, item4 = 13187})) then
 		e.self:Say("Oh, me.. um.. Warlord BERRY happy. Berry like dese. Gimme. Uh, why is you still here? Take dis and gets more kills. You learning good, come sees me. I teaches you bout stuff. Make you [bedder shaman]. Go. He and me watching.");
 		e.other:Faction(e.self,394, 5); -- Faction: Shamen of War
 		e.other:QuestReward(e.self,0,0,0,0,15093,500);
-	elseif(e.other:GetFactionValue(e.self) >= 50 and item_lib.check_turn_in(e.self, e.trade, {item1 = 14199, item2 = 13367, item3 = 13367, item4 = 13367})) then
+	elseif(e.other:GetFactionValue(e.self) >= 50 and eq.is_the_ruins_of_kunark_enabled() and item_lib.check_turn_in(e.self, e.trade, {item1 = 14199, item2 = 13367, item3 = 13367, item4 = 13367})) then
 		e.self:Say("Dis good stuff! Me and Warlord happy! Wear dis symbol and he make yoo strong with majik!");
 		e.other:Faction(e.self,394, 5); -- Faction: Shamen of War
 		e.other:QuestReward(e.self,0,0,0,0,1444,500);
