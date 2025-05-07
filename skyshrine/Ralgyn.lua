@@ -2,44 +2,58 @@ function event_say(e)
 	if(e.message:findi("hail")) then
 		if(e.other:GetFactionValue(e.self) >= 1000) then -- high warmly with CoV
 			e.self:Say("Hello, " .. e.other:GetCleanName() .. ", what brings you to these sacred quarters on this day? If it is treasure that you seek please ask someone else for I do not have time to think of such petty things. My worries are much greater at this time I am afraid.");
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
+			e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");		
 		else
-			e.self:Say("I have nothing to speak about to the likes of you.");		
+			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
 		end
 	elseif(e.message:findi("worries")) then
 		if(e.other:GetFactionValue(e.self) >= 1000) then
 			e.self:Say("Well I suppose I can tell you of my promise if you are willing to listen as I do not feel you have intentions of using anything I tell you against my dragonkin. Not many can walk these quarters unless they are very trusted amongst us.");
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
+			e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");		
 		else
-			e.self:Say("I have nothing to speak about to the likes of you.");		
+			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
 		end
 	elseif(e.message:findi("promise")) then
 		if(e.other:GetFactionValue(e.self) >= 1000) then
 			e.self:Say("I made a promise a very long time ago to my wingmate Faliana, a promise that I feel I may have broken.");
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
+			e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");		
 		else
-			e.self:Say("I have nothing to speak about to the likes of you.");		
+			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
 		end
 	elseif(e.message:findi("broken")) then
 		if(e.other:GetFactionValue(e.self) >= 1000) then
 			e.self:Say("I promised my dear Faliana that I would always keep her talisman close to me. If something has happened to my son I must retain his talisman so that I may keep Faliana's Talisman secure, as I promised her I always would. Before she perished she split her talisman into two pieces one of which I always will carry and the other half which my son Glanitar carries. My son has not returned to me for some time and I am deeply concerned for this is not normal behavior for him. I fear something must have happened to him for he has never been so involved in his training to not inform me of his whereabouts or to not come visit.");
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
+			e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");		
 		else
-			e.self:Say("I have nothing to speak about to the likes of you.");		
+			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
 		end
 	elseif(e.message:findi("training")) then
 		if(e.other:GetFactionValue(e.self) >= 1000) then
 			e.self:Say("It seems like it was only yesterday that my only son Glanitar was practicing his skills as a young Wurm. Before long he quickly mastered many fighting skills and the development of his magical skills rapidly progressed. He was coming along so well in his training that he was quickly drafted for the Patrol. Even when he was away for his training he would often return to me and tell me of his progress. I was very proud of him for his involvement with the Patrol. Although I am very proud of his accomplishments, I have not seen him for longer then I have ever been away from him and I fear for the worst.");
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
+			e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");		
 		else
-			e.self:Say("I have nothing to speak about to the likes of you.");		
+			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
 		end
 	elseif(e.message:findi("patrol")) then
 		if(e.other:GetFactionValue(e.self) >= 1000) then
 			e.self:Say("Ah yes, the patrol. Well in the Great Divide there is a collection of caves that the dragonkind holds as a sacred territory. For this reason we always have a number of our strongest up and coming younger ones train there with the great [Kardakor]. They patrol the caved labyrinth to make sure it is free from unwanted intruders who are quickly dealt with upon discovery.");
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
+			e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");		
 		else
-			e.self:Say("I have nothing to speak about to the likes of you.");		
+			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
 		end
 	elseif(e.message:findi("kardakor")) then
 		if(e.other:GetFactionValue(e.self) >= 1000) then
 			e.self:Say("Kardakor is a strong and powerful Warrior. He has fought in many battles against the vile Giants and is well respected amongst our people as a champion. For this reason when one was needed to train our young fighters seeking guidance in developing both their magical and fighting techniques it was clear to us who we should select for this honor, Kardakor.");
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
+			e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");		
 		else
-			e.self:Say("I have nothing to speak about to the likes of you.");		
+			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
 		end
 	end
 end

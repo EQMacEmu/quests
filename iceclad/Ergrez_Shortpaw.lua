@@ -42,10 +42,10 @@ function event_trade(e)
 		e.other:QuestReward(e.self,0,0,0,0,30028); -- Cougarskin Sleeves
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 30025,item2 = 30062,item3 = 30062})) then -- Medium Quality Dire wolf fur, Skinning Rock
 		e.self:Emote("works with the fur for awhile by skinning it and sewing it");
-		e.other:QuestReward(e.self,0,0,0,0,25019); -- Dire wolf-hide Cloak
+		e.other:QuestReward(e.self,0,0,0,0,30018); -- Direwolf Fur Cloak
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 =  30024,item2 =  30063,item3 = 30063})) then -- Low Quality Dire wolf fur, Bark Bindings
 		e.self:Emote("works with the fur for awhile by skinning it and sewing it");
-		e.other:QuestReward(e.self,0,0,0,0,30029); -- Dire wolf-hide hood
+		e.other:QuestReward(e.self,0,0,0,0,30029); -- Direwolf Fur Hood
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

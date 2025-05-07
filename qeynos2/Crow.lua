@@ -41,7 +41,7 @@ function event_signal(e)
 		e.self:Say("You ok Sabs?");
 		eq.signal(2083, 2); -- NPC: Sabnie_Blagard
 	elseif(e.signal == 2) then
-		e.self:Say("'Testing one two three four'");
+		e.self:Say("Does he?");
 		eq.signal(2083,5); -- NPC: Sabnie_Blagard
 	elseif(e.signal == 3) then
 		e.self:Say("Excellent. To think that he thought he could stroll in here from Highpass and take over my action. He will learn the hard way what happens to merchants who think they can operate here without our support and protection.");

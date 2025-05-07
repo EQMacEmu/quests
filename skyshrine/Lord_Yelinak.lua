@@ -2,20 +2,26 @@ function event_say(e)
 	if(e.message:findi("hail")) then
 		if(e.other:GetFactionValue(e.self) >= 200) then
 			e.self:Say("Welcome, young mortal. Word of your deeds has preceded your arrival. Your intentions seem honorable, young one, however my trust is not an easy thing to win these days. Like you, there has been another that came before me with the trust of the dragon kin, and trust them too I did, but alas that proved to be destructive. I note your deeds to this shrine young one, but should you wish my counsel, you must prove your worth beyond doubt. Perhaps a small challenge shall be of interest to you?");
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
+			e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");		
 		else
-			e.self:Say("I have nothing to speak about to the likes of you.");
+			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
 		end
 	elseif(e.message:findi("prove")) then
 		if(e.other:GetFactionValue(e.self) >= 200) then
 			e.self:Say("Then as agreed, young mortal, I will grant you one chance to prove your worth in my eyes. The Storm King Tormax sits on a throne carved from the skull of one of our fallen within the city of Kael, which disgraces the mighty children of Veeshan. His life alone is a blight upon the children of Veeshan. Should you be a true patriot to our cause, I seek of you but one task. Should you succeed in this task, not only will your actions offset the balance of this war in our favor, but will surely take a step in driving the vileness of the giants from our noble lands. Bring me, young one, the head of Tormax, and then we shall speak further.");
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
+			e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");		
 		else
-			e.self:Say("I have nothing to speak about to the likes of you.");
+			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
 		end
 	elseif(e.message:findi("treasure")) then
 		if(e.other:GetFactionValue(e.self) >= 200) then
 			e.self:Say("This sword is a symbol of our evolution and ancient heritage. Back when our feathered relatives were not so distant, a sword was forged and enchanted with the spirit of an elder griffin. This noble griffin bound his soul to the sword, the essence of his being honing the blade to an edge imperceptible to mortal eyes. Although our races have evolved away from each other, we still hold them in high regard. But if you think you are not worthy to wield this honor, return the sword to me and I have other tokens you may find of more use.");
+		elseif(e.other:GetFactionValue(e.self) >= 0) then
+			e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");		
 		else
-			e.self:Say("I have nothing to speak about to the likes of you.");
+			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common.  Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here?  Now go away!","I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.","Oh look..a talking lump of refuse..how novel!"));
 		end
 	end
 end
