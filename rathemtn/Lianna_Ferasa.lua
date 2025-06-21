@@ -5,6 +5,8 @@ function event_say(e)
 		e.self:Say("Regis was my one true love, but he was [killed] and his soul enslaved by Zahal the Vile.");
 	elseif(e.message:findi("killed")) then
 		e.self:Say("He was killed in the northern tree line to the east in North Karana. If you kill Zahal, Regis' body will rise from the place where he died. If my flute is on the body, please bring it to me.");
+	elseif(e.message:findi("zahal")) then
+		e.self:Say("Zahal roams the plains of North Karana. Kill him and you will free my beloved's soul.");
 	end
 end
 

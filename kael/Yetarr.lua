@@ -31,7 +31,7 @@ function event_say(e)
 		end
 	elseif(e.message:findi("assassinate")) then
 		if(e.other:GetFactionValue(e.self) >= 400) then
-			e.self:Say("Perhaps assassinate is not the best word. I simply wish the death of some of the more compitent (sic) advisors of that foolish Dain. Within the halls of Icewell keep dwells a huntsman that has stood by the Dains side since he was a mere child. The court scribe is also more then he appears to be. Bring me their heads, I will reward you for each one. That is the only proof I will take of their deaths.");
+			e.self:Say("Perhaps assassinate is not the best word. I simply wish the death of some of the more competent advisors of that foolish Dain. Within the halls of Icewell keep dwells a huntsman that has stood by the Dains side since he was a mere child. The court scribe is also more than he appears to be. Bring me their heads, I will reward you for each one. That is the only proof I will take of their deaths.");
 		elseif(e.other:GetFactionValue(e.self) >= 0) then
 			e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");		
 		else

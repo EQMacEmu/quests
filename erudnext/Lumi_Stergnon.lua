@@ -41,12 +41,19 @@ function event_trade(e)
 		-- Confirmed Live Experience
 		e.other:QuestReward(e.self,0,math.random(20),math.random(5),0,eq.ChooseRandom(17005,17002,10018,2144,2145,2146,6011,6016,15203,15207,15201,15208,15209,15014,15205,15210,6012),500); -- Item(s): Backpack (17005), Belt Pouch (17002), Hematite (10018), Raw-hide Sleeves (2144), Raw-hide Wristbands (2145), Raw-hide Gloves (2146), Rusty Mace (6011), Rusty Morning Star (6016)
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13816})) then -- The completed Peacekeeper Staff
-		e.self:Say("You have done well, neophyte.Let me add the touch of harmony to finish the job.. Here, then. Take these supplies. I am sure you'll need them. Soon you may be able to assist us in [important missions].");
+		e.self:Say("You have done well, my child. Let me add the touch of harmony to finish the job... Here, then. Take these supplies. I am sure you'll need them. Soon you may be able to assist us in [important missions].");
 		-- Confirmed Live Factions
 		e.other:Faction(e.self,298,10,0);  -- Peace Keepers (Quellious temple)      
 		e.other:Faction(e.self,266,2,0);  -- High Council of Erudin      
 		e.other:Faction(e.self,265,-2,0);  -- Heretics      
-		e.other:QuestReward(e.self,math.random(20),math.random(10),0,0,eq.ChooseRandom(17005,17002,10018,2144,2145,2146,6011,6016,6012,2109,2101,2106),2500); -- Item(s): Backpack (17005), Belt Pouch (17002), Hematite (10018), Raw-hide Sleeves (2144), Raw-hide Wristbands (2145), Raw-hide Gloves (2146), Rusty Mace (6011), Rusty Morning Star (6016), Worn Great Staff (6012), Tattered Wristband, Tattered Skullcap, Patchwork Cloak
+		e.other:QuestReward(e.self,math.random(20),math.random(10),math.random(5),0,eq.ChooseRandom(17005,17002,10018,2144,2145,2146,6011,6016,6012,2109,2101,2106),2500); -- Item(s): Backpack (17005), Belt Pouch (17002), Hematite (10018), Raw-hide Sleeves (2144), Raw-hide Wristbands (2145), Raw-hide Gloves (2146), Rusty Mace (6011), Rusty Morning Star (6016), Worn Great Staff (6012), Tattered Wristband, Tattered Skullcap, Patchwork Cloak
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13815})) then -- Battle Staff
+		e.self:Say("You have done well, my child. Let me add the touch of harmony to finish the job... Here, then. Take these supplies. I am sure you'll need them. Soon you may be able to assist us in [important missions].");
+		-- Confirmed Live Factions
+		e.other:Faction(e.self,298,5,0);  -- Peace Keepers (Quellious temple)      
+		e.other:Faction(e.self,266,1,0);  -- High Council of Erudin      
+		e.other:Faction(e.self,265,-1,0);  -- Heretics      
+		e.other:QuestReward(e.self,math.random(10),math.random(10),math.random(2),0,eq.ChooseRandom(17005,17002,10018,2144,2145,2146,6011,6016,6012,2109,2101,2106),2500); -- Item(s): Backpack (17005), Belt Pouch (17002), Hematite (10018), Raw-hide Sleeves (2144), Raw-hide Wristbands (2145), Raw-hide Gloves (2146), Rusty Mace (6011), Rusty Morning Star (6016), Worn Great Staff (6012), Tattered Wristband, Tattered Skullcap, Patchwork Cloak
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end
