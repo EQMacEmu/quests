@@ -21,8 +21,8 @@ function event_trade(e)
 		e.self:Say("Excellent! Rodcet smiles upon us this day! Here, please take this pouch of evidence to Jahnda in the Temple of Life. She will know what we must do. I will remain here to keep an eye out for the minions of Bertoxxlous. Also, accept this small reward as a token of my appreciation of your efforts to rid Norrath of the influence of the Plaguebringer.");
 		eq.delete_global("niclaus");
 		-- Confirmed Live Factions and Experience
-		e.other:Faction(e.self,341,50); -- Priest of Life
-		e.other:Faction(e.self,280,15); -- Knight of Thunder
+		e.other:Faction(e.self,341,50); -- Priests of Life
+		e.other:Faction(e.self,280,15); -- Knights of Thunder
 		e.other:Faction(e.self,262,25); -- Guards of Qeynos
 		e.other:Faction(e.self,221,-12); -- Bloodsabers
 		e.other:Faction(e.self,219,7); -- Antonius Bayle

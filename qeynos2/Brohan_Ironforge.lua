@@ -31,7 +31,7 @@ function event_trade(e)
 		e.other:Faction(e.self,219,7); -- Antonius Bayle
 		e.other:Faction(e.self,229,5); -- Coalition of Tradefolk
 		e.other:Faction(e.self,262,10); -- Guards of Qeynos
-		e.other:QuestReward(e.self,0,0,0,0,eq.ChooseRandom(5303,5304,5305,5313,6303,6311,6312,7300,7301,7311,7499),1000);
+		e.other:QuestReward(e.self,0,0,0,0,eq.ChooseRandom(5303,5304,5305,5313,6303,6311,6312,7300,7301,7311),1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

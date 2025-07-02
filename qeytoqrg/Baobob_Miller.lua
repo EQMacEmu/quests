@@ -48,21 +48,21 @@ function event_trade(e)
 		e.other:Faction(e.self,345,2,0); -- Karana Residents
 		e.other:Faction(e.self,262,1,0); -- Guards of Qeynos
 		e.other:Faction(e.self,341,1,0); -- Priests of Life
-		e.other:Faction(e.self,280,1,0); -- Priests of Life
+		e.other:Faction(e.self,280,1,0); -- Knights of Thunder
 		e.other:QuestReward(e.self,{itemid = 2905,exp = 50}); -- Item: Wolf-hide Cape		
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13754, gold = 15},1,text)) then
 		e.self:Say("They are exquisite, if I do say so myself. Hope they fit.");
 		e.other:Faction(e.self,345,2,0); -- Karana Residents
 		e.other:Faction(e.self,262,1,0); -- Guards of Qeynos
 		e.other:Faction(e.self,341,1,0); -- Priests of Life
-		e.other:Faction(e.self,280,1,0); -- Priests of Life
+		e.other:Faction(e.self,280,1,0); -- Knights of Thunder
 		e.other:QuestReward(e.self,{itemid = 2906,exp = 50}); -- Item: Wolf-hide Boots
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13753, gold = 5},1,text)) then
 		e.self:Say("I hate working with such low quality hides. They lack the sheen that makes a high quality pelt look so fine! Anyhow, here's your belt.");
 		e.other:Faction(e.self,345,2,0); -- Karana Residents
 		e.other:Faction(e.self,262,1,0); -- Guards of Qeynos
 		e.other:Faction(e.self,341,1,0); -- Priests of Life
-		e.other:Faction(e.self,280,1,0); -- Priests of Life
+		e.other:Faction(e.self,280,1,0); -- Knights of Thunder
 		e.other:QuestReward(e.self,{itemid = 2907,exp = 50}); -- Item: Wolf-hide Belt
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

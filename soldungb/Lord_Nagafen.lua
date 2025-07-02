@@ -68,3 +68,9 @@ function event_signal(e)
 		e.self:Shout("Ha!  The Ring and Claws are doomed!  The Sleeper has been awakened, what a glorious day!  Lady Vox, I will see you soon, our long delayed nuptials can now proceed!");
 	end
 end
+
+function event_death_complete(e)
+	if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(32005)) then
+		eq.signal(32005,1);
+	end
+end
