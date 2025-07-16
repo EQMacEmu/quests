@@ -13,7 +13,7 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	if(e.other:GetLevel() > 52 and e.other:Admin() < 80) then
+	if(eq.is_the_scars_of_velious_enabled() and e.other:GetLevel() > 52 and e.other:Admin() < 80) then
 		e.other:Message(4,"I will not fight you, but I shall banish you!");
 		e.other:MovePC(30,-7024,2020,-60.7,0); -- Zone: everfrost 
 	end
@@ -33,7 +33,7 @@ function event_timer(e)
 	if(e.timer == "1") then
 		if(e.self:GetX() < -431 or e.self:GetX() > -85 or e.self:GetY() < 770 or e.self:GetY() > 1090 or e.self:GetZ()  < -50) then
 			e.self:GMMove(SpawnX,SpawnY,SpawnZ,SpawnH);
-		elseif(e.self:CountHateList() > 0) then
+		elseif(eq.is_the_scars_of_velious_enabled() and e.self:CountHateList() > 0) then
 			e.self:ForeachHateList(
 				function(ent, hate, damage, frenzy)
 					if(ent:IsClient()) then

@@ -8,7 +8,8 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12990, item2 = 12755})) then --Scribblings, Stoneleer Emerald Plume
+	local text = "You shall see my master when I have Jarldyn's scribblings and an emerald plume.";	
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 12990, item2 = 12755},1,text)) then --Scribblings, Stoneleer Emerald Plume
 		e.self:Say("Ha ha ha!! Fool! I have what I need. Now you are granted an audience with a noble sarnak lord, not my master. I am quite sure he shall do away with you. Ha ha ha!!");
 		e.other:QuestReward(e.self,0,0,0,0,0,5000);
 		e.other:MovePC(87,-4039,6280,-53); --Atheling Plague's Tower
