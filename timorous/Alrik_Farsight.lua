@@ -1,4 +1,6 @@
 -- ancient pattern quest -- ranger epic
+local inrange = 0;
+
 function event_say(e)
 	if(e.other:GetFaction(e.self) < 5) then --amiable or better Keepers of the Art
 		if(e.message:findi("hail")) then
@@ -25,13 +27,13 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
+	inrange = 0;
+	
 	if(e.other:GetFaction(e.self) < 5) then --amiable or better Keepers of the Art
 		if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20474})) then
 			e.self:Emote("grins happily. 'Excellent! Was he pleased with the artifact? Oh, that's not even worth answering. I'm sure he was. He's always happy with the things I send him. That's why he honored me with this position of esteem, searching for useful and powerful items in this newly discovered land.'");
 			e.other:QuestReward(e.self,0,0,0,0,18960);
-			if(e.self:GetWaypointID >= 3 and e.self:GetWaypointID <= 10) then
-				eq.signal(96035,2,30); -- NPC: Xiblin_Fizzlebik
-			end
+			inrange = 1;
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
@@ -44,6 +46,9 @@ function event_waypoint_arrive(e)
 	end
 	if(e.wp == 14) then
 		e.self:Emote("grins a little and mumbles. 'This place is great.  Feels like I'm at the end of the universe.'");
+	end
+	if(inrange == 1 and e.wp >= 3 and e.wp <= 10) then
+		eq.signal(96035,2,30); -- NPC: Xiblin_Fizzlebik
 	end
 end
 
