@@ -27,7 +27,6 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	inrange = 0;
 	
 	if(e.other:GetFaction(e.self) < 5) then --amiable or better Keepers of the Art
 		if(item_lib.check_turn_in(e.self, e.trade, {item1 = 20474})) then
@@ -49,6 +48,7 @@ function event_waypoint_arrive(e)
 	end
 	if(inrange == 1 and e.wp >= 3 and e.wp <= 10) then
 		eq.signal(96035,2,30); -- NPC: Xiblin_Fizzlebik
+		inrange = 0;
 	end
 end
 
