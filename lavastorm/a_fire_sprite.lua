@@ -3,6 +3,6 @@ function event_say(e)
 		e.self:Emote("ignores you.");
 	elseif(e.message:findi("challenge eejag")) then
 		eq.unique_spawn(27119,0,0,298,1037,-60,0); -- NPC: Eejag
-		eq.depop_withtimer();
+		eq.depop_with_timer();
 	end
 end
