@@ -22,7 +22,7 @@ function event_trade(e)
 		e.other:Faction(e.self,333,1); -- Faction: King Ak'Anon
 		e.other:QuestReward(e.self,0,math.random(10),math.random(5),0,0,1000);
 		eq.depop_with_timer();
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 1717})) then
+	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 18887})) then
 		e.self:Say("Ah! A letter from my brother! Mmm... no... no I don't have Tergon's spellbook. The orc's prophet took it and then they locked me in chains! Now why don't you go do something useful and get me key number 15!!");
 		e.other:Faction(e.self,245,2); -- Faction: Eldritch Collective
 		e.other:Faction(e.self,238,-1); -- Faction: Dark Reflection

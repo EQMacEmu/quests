@@ -24,7 +24,7 @@ function event_say(e)
 	elseif(e.message:findi("travel abroad")) then
 		if(e.other:GetFactionValue(e.self) >= 100) then -- Needs amiably or better
 			e.self:Say("You will go to Freeport and seek out the Academy of Arcane Science. There you shall find my brother Retlon. He has scribed some new spells in my [personal spellbook]. Hand him this note as proof of your alliance. He works closely with Master Dooly Jonkers.");
-			e.other:SummonCursorItem(1717); -- Item: Sealed Letter
+			e.other:SummonCursorItem(18887); -- Item: Sealed Letter
 		elseif(e.other:GetFaction(e.self) == 5) then
 			e.self:Say("There is much more you must do for the Library of Mechanimagica before such things can be revealed to you.  Perhaps fetching minotaur horns and returning them to Professor Theardor will earn you membership to the Library of Mechanimagica.");
 		else
