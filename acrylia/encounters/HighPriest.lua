@@ -50,6 +50,7 @@ function ShackleTimer(e)
 				if(wave == 31) then
 					eq.get_entity_list():GetMobByNpcTypeID(154107):Shout("Master, the tresspassers persist. I beg, make them pay for their foolishness!");
 				end				
+				rand = math.random(1,2);
 				if(rand == 2) then
 					eq.spawn2(154021,9,0,150,-690,2,0);
 					eq.spawn2(154021,9,0,153,-695,2,0);
