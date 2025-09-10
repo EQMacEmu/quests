@@ -23,42 +23,34 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
+	local chip = item_lib.count_handed_item(e.self, e.trade, {13073});
 	-- experience reward verified through live data
 	
 	if(item_lib.check_turn_in(e.self, e.trade, {gold = 2}, 0)) then
 		e.self:Say("Thank you for the donation to the Temple of Life. May Rodcet Nife cleanse your body of all ills.");
 		e.self:CastSpell(213,e.other:GetID()); -- Cure Disease
 		-- Confirmed Live Factions
-		e.other:Faction(e.self,341,1,0); -- Priests of Life
-		e.other:Faction(e.self,280,1,0); -- Knights of Thunder
-		e.other:Faction(e.self,262,1,0); -- Guards of Qeynos
-		e.other:Faction(e.self,221,-1,0); -- Bloodsabers
-		e.other:Faction(e.self,219,1,0);		-- Antonius Bayle
-		e.other:QuestReward(e.self,0,0,0,0,0,1);
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13073,item2 = 13073,item3 = 13073,item4 = 13073}, 0)) then -- 4 Bone Chips
-		local times = 2
+		e.other:Faction(e.self,341,1); -- Priests of Life
+		e.other:Faction(e.self,280,1); -- Knights of Thunder
+		e.other:Faction(e.self,262,1); -- Guards of Qeynos
+		e.other:Faction(e.self,221,-1); -- Bloodsabers
+		e.other:Faction(e.self,219,1); -- Antonius Bayle
+		e.other:QuestReward(e.self,{exp = 1});
+	elseif(chip > 0) then
 		repeat
-			e.self:Say("Very well, young one. May the light of the Prime Healer wash away your scars.");
-			e.self:CastSpell(200,e.other:GetID()); -- Minor Healing
+			if(chip == 2) then
+				e.self:Say("Very well, young one. May the light of the Prime Healer wash away your scars."); -- 2 Bone Chips
+				e.self:CastSpell(200,e.other:GetID()); -- Minor Healing
+			end
 			-- Confirmed Live Factions
 			e.other:Faction(e.self,341,1,0); -- Priests of Life
 			e.other:Faction(e.self,280,1,0); -- Knights of Thunder
 			e.other:Faction(e.self,262,1,0); -- Guards of Qeynos
 			e.other:Faction(e.self,221,-1,0); -- Bloodsabers
 			e.other:Faction(e.self,219,1,0);		-- Antonius Bayle
-			e.other:QuestReward(e.self,0,0,0,0,0,100);
-			times = times - 1
-		until times <= 0			
-	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 13073,item2 = 13073}, 0)) then
-		e.self:Say("Very well, young one. May the light of the Prime Healer wash away your scars."); -- 2 Bone Chips
-		e.self:CastSpell(200,e.other:GetID()); -- Minor Healing
-		-- Confirmed Live Factions
-		e.other:Faction(e.self,341,1,0); -- Priests of Life
-		e.other:Faction(e.self,280,1,0); -- Knights of Thunder
-		e.other:Faction(e.self,262,1,0); -- Guards of Qeynos
-		e.other:Faction(e.self,221,-1,0); -- Bloodsabers
-		e.other:Faction(e.self,219,1,0);		-- Antonius Bayle
-		e.other:QuestReward(e.self,0,0,0,0,0,100);
+			e.other:QuestReward(e.self,{exp = 100});
+			chip = chip - 1;
+		until chip == 0;
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
