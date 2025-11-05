@@ -1,13 +1,6 @@
-function event_say(e)
-	if(e.message:findi("hail")) then
-		e.self:Emote("ignores you.");
-	elseif(e.message:findi("prepared")) then	-- Monk Epic 1.0
-		eq.attack(e.other:GetName());
-	end
-end
-
-function event_spawn(e)				-- Monk Epic 1.0
-	e.self:Say("Im ready when you are. Tell me when you are [prepared].");
+function event_death_complete(e)
+		-- send a signal to the Key_Master
+		eq.signal(71056,2); -- NPC: Key_Master
 end
 
 -------------------------------------------------------------------------------------------------

@@ -1,14 +1,14 @@
 function event_spawn(e)
 	eq.set_timer("depop",3600000);
-	-- eq.set_anim(69132,1);
-end
-
-function event_spawn(e)
 	eq.set_timer("overwhelming",1200000);
 end
 
 function event_timer(e)
-	e.self:Say("Heeelp!  The evil undead on this isle are overwhelming!");
+	if(e.timer == "depop") then
+		eq.depop();
+	elseif(e.timer == "overwhelming") then
+		e.self:Say("Heeelp!  The evil undead on this isle are overwhelming!");
+	end
 end
 
 function event_say(e)
@@ -47,12 +47,6 @@ function event_waypoint_arrive(e)
 	elseif(e.wp == 5) then
 		e.self:Say("Many thanks to all who aided in this battle. I offer you this, a weapon I found on a slain Erudite paladin. May Marr watch over his soul and may Marr guide yours. Now I must go.");
 		eq.create_ground_object(5414,-6963,-886,139,0,1800000); -- deepwater harpoon
-		eq.depop();
-	end
-end
-
-function event_timer(e)
-	if(e.timer == "depop") then
 		eq.depop();
 	end
 end
