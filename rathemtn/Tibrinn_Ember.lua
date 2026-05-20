@@ -8,10 +8,15 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
+	local text1 = "Impressive, do you have the rest?";
 	
-	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 4310, item2 = 6335})) then
-		e.self:Say("You have done well. Here is the reward for your deeds.");
-		e.other:QuestReward(e.self,0,0,0,0,6364,25000);
+	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 4310, item2 = 6335},1,text1)) then
+		e.self:Say("You are now a respected ally of the Unkempt. Wield this with pride.");
+		e.other:Faction(e.self,324,20,0); -- Unkempt Druids
+		e.other:Faction(e.self,262,-5,0); -- Guards of Qeynos	
+		e.other:Faction(e.self,272,-15,0); -- Jaggedpine Treefolk
+		e.other:Faction(e.self,343,10,0); -- QRG Protected Animals	
+		e.other:QuestReward(e.self,0,0,0,0,6364,0); -- confirmed no xp on live
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
