@@ -6,5 +6,5 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	e.other:CastToClient():Message(0,"A sentinel's voice invades your thoughts: 'Beware mortal!  This land is marked by Veeshan, and is sacred to her brood.  None but Dragonkin are welcome here.  Your life is forteit if you proceed.  Ignore this message at your peril!'");
+	e.other:CastToClient():Message(0,"A sentinel's voice invades your thoughts: 'Beware mortal!  This land is marked by Veeshan, and is sacred to her brood.  None but Dragonkin are welcome here.  Your life is forfeit if you proceed.  Ignore this message at your peril!'");
 end
