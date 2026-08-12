@@ -21,11 +21,7 @@ function event_signal(e)
 	local turn, bard;
 	
 	if ( e.signal == 1 ) then
-		-- This NPC text is not precise.  It was put together from these alla comments:
-		-- http://everquest.allakhazam.com/db/npc.html?id=985#m107866514287264
-		-- http://everquest.allakhazam.com/db/npc.html?id=896#m107866603072607
-		-- I just really wanted this bar fight in, which does happen
-		e.self:Say("Go ahead and unite, fools. It will make it easier for the Teir'Dal to conquer you.");
+		e.self:Say("Go ahead and unite, you fools. It will make conquering you that much easier.");
 		eq.signal(10163, 10);	-- Plnorrick_Spinecracker
 	elseif ( e.signal == 2 ) then
 		e.self:Say("Those halfwit ogres make good pets. If they are housebroken.");

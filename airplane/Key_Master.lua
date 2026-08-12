@@ -1,11 +1,6 @@
 function event_signal(e)
 	local qglobals = eq.get_qglobals();
 
-	if(e.signal == 1) then -- azarack
-		if(eq.get_entity_list():IsMobSpawnedByNpcTypeID(71111) == false and eq.get_entity_list():IsMobSpawnedByNpcTypeID(71031) == false) then
-			eq.unique_spawn(71059,0,0,-386,-236,-317,201.5); -- NPC: Protector_of_Sky
-		end
-	end
 	if(e.signal == 2) then
 		if(qglobals["keeper"] == nil) then
 			-- eq.set_timer("13",300000); what is this referred to?
