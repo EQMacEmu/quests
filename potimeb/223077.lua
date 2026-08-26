@@ -697,8 +697,8 @@ function event_signal(e)
 						end
 						
 						if ( GetEngagedBossTime() > 0 and not zonedFromDial and bossEngagedTime > 0 ) then
-						
-							if ( client:FindBuff(756) and client:GetHPRatio() < 25 and client:GetManaRatio() < 5 and client:GetItemHPBonuses() < 100 ) then -- Resurrection Effects
+							local hasRezEffect = client:FindBuff(756) or client:FindBuff(757);
+							if ( hasRezEffect and client:GetHPRatio() < 40 and client:GetManaRatio() < 5 and client:GetItemHPBonuses() < 100 ) then
 								eq.debug(client:GetName().." resurrected in combat");
 								return
 							end

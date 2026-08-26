@@ -43,7 +43,7 @@ function event_click_door(e)
 		
 		local rz = eq.get_entity_list():GetMobByNpcTypeID(214312);	-- Rallos_Zek_the_Warlord
 		if ( rz and rz.valid and rz:IsEngaged() ) then
-			e.self:MovePC(214, rz:GetX(), rz:GetY(), rz:GetZ(), rz:GetHeading());
+			e.self:MovePC(214, rz:GetX(), rz:GetY(), rz:GetZ(), rz:GetHeading()*2);
 			return;
 		end
 
