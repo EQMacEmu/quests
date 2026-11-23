@@ -37,7 +37,7 @@ function GetWraith()
 		
 			if ( npc:GetNPCTypeID() == 214305 ) then -- level 63 a_War_Wraith
 				local spawnId = npc:GetSpawnPointID();
-				if ( spawnId == 361197 or spawnId == 361205 or 361205 == 361211 ) then -- arena spawns
+				if ( spawnId == 361197 or spawnId == 361205 or spawnId == 361211 ) then -- arena spawns
 					return npc;
 				end
 			end
